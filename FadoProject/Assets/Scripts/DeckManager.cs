@@ -16,6 +16,12 @@ public class DeckManager : MonoBehaviour
         Card[] cards = Resources.LoadAll<Card>("Cards");
 
         allCards.AddRange(cards);
+
+        HandManager hand = FindFirstObjectByType<HandManager>();
+        for(int i=0; i<5; i++)
+        {
+            DrawCard(hand);
+        }
     }
 
     public void DrawCard(HandManager handManager)

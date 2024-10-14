@@ -26,7 +26,7 @@ public class HandManager : MonoBehaviour
 
     private void Update()
     {
-        updateHandVisuals();
+        //updateHandVisuals();
     }
 
     //Adiciona uma carta na mão(apenas os dados)
