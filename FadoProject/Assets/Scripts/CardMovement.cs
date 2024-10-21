@@ -19,6 +19,13 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
     [SerializeField] private GameObject playArrow;
     [SerializeField] private float lerpFactor = 0.1f;
 
+    //Vars para dar zoom
+    [SerializeField] private float zoomFactor = 2.0f;
+    private Vector3 zoomedPosition;
+    private Vector3 zoomedScale;
+    private float zoomDuration = 0.2f;
+    private bool isZoomed = false;
+
     void Awake() 
     { 
         rectTransform = GetComponent<RectTransform>();
@@ -28,6 +35,8 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
         originalRotation = rectTransform.localRotation;
         glowEffect.SetActive(false);
         playArrow.SetActive(false);
+
+        zoomedScale = originalScale * zoomFactor;
     }
 
     void Update()
@@ -49,6 +58,16 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
                 if (!Input.GetMouseButton(0))
                 {
                     TransitionToState0();
+                }
+                break;
+            case 4:
+                if (!isZoomed)
+                {
+                    StartCoroutine(ZoomIn());
+                }
+                if (Input.GetMouseButtonDown(1))
+                {
+                    StartCoroutine(ZoomOut());
                 }
                 break;
         }
@@ -135,5 +154,56 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
             currentState = 2;
             playArrow.SetActive(false);
         }
+    }
+
+    //Achando o centro da tela
+
+    private Vector3 GetScreenCenterPosition()
+    {
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+        Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height /2, 0f);
+
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenCenter, canvas.worldCamera, out localPoint);
+        return localPoint;
+    }
+
+
+    //Funções de zoom
+
+    private System.Collections.IEnumerator ZoomIn()
+    {
+        isZoomed = true;
+        float elapsedTime = 0f;
+        zoomedPosition = GetScreenCenterPosition();
+
+        while (elapsedTime < zoomDuration)
+        {
+            rectTransform.localPosition = Vector3.Lerp(originalPosition, zoomedPosition, elapsedTime / zoomDuration);
+            rectTransform.localScale = Vector3.Lerp(originalScale, zoomedScale, elapsedTime / zoomDuration);
+            elapsedTime = elapsedTime + Time.deltaTime;
+            yield return null;
+        }
+
+        rectTransform.localPosition = zoomedPosition;
+        rectTransform.localScale = zoomedScale;
+    }
+
+    private System.Collections.IEnumerator ZoomOut()
+    {
+        isZoomed = false;
+        float elapsedTime = 0f;
+        zoomedPosition = GetScreenCenterPosition();
+
+        while(elapsedTime < zoomDuration)
+        {
+            rectTransform.localPosition = Vector3.Lerp(zoomedPosition, originalPosition, elapsedTime / zoomDuration);
+            rectTransform.localScale = Vector3.Lerp(zoomedScale, originalScale, elapsedTime / zoomDuration);
+            elapsedTime = elapsedTime + Time.deltaTime;
+            yield return null;
+        }
+
+        rectTransform.localPosition = originalPosition;
+        rectTransform.localScale = originalScale;
     }
 }
