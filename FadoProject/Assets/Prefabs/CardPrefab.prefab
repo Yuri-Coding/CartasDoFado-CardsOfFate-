@@ -279,7 +279,6 @@ MonoBehaviour:
   playArrow: {fileID: 1851272643080257426}
   lerpFactor: 0.1
   zoomFactor: 2
-  zoomCenter: {fileID: 7330908650942963683, guid: 23fbc18d4bd0751418728df93499298b, type: 3}
 --- !u!1 &4995997077192084887
 GameObject:
   m_ObjectHideFlags: 0

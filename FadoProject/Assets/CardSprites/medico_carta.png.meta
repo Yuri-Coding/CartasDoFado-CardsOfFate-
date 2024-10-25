@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      medico_carta_0: 1308830767022127242
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -18,5 +18,5 @@ MonoBehaviour:
   cardType: 1
   cardEffect: 
   cardLore: 
-  effects: 
+  effects: 00000000
   canTarget: 1
