@@ -1,9 +1,15 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private RectTransform rectTransform;
+
+    private GameObject canvasObject;
+    private RectTransform newCanvas;
+    private GameObject newCanvasObject;//N tem nenhuma relação com canvas kkk, tá pegando o handPos só msm mas deu preguiça de mudar o nome
     private Canvas canvas;
     private Vector2 originalLocalPointerPosition;
     private Vector3 originalPanelLocalPosition;
@@ -19,15 +25,23 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
     [SerializeField] private GameObject playArrow;
     [SerializeField] private float lerpFactor = 0.1f;
 
+    //Coisas das text boxes
+    [SerializeField] private GameObject effectBox;
+    [SerializeField] private GameObject loreBox;
+
     //Vars para dar zoom
     [SerializeField] private float zoomFactor = 2.0f;
     private Vector3 zoomedPosition;
-    private Vector3 zoomedScale;
     private float zoomDuration = 0.2f;
     private bool isZoomed = false;
 
+
+
     void Awake() 
-    { 
+    {
+        newCanvasObject = GameObject.Find("HandPos");
+        newCanvas = newCanvasObject.GetComponent<RectTransform>();
+        //newCanvas.anchoredPosition = new Vector3(1000,1000,1); Da uma testadinha aqui
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
         originalScale = rectTransform.localScale;
@@ -36,7 +50,6 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
         glowEffect.SetActive(false);
         playArrow.SetActive(false);
 
-        zoomedScale = originalScale * zoomFactor;
     }
 
     void Update()
@@ -61,14 +74,15 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
                 }
                 break;
             case 4:
-                if (!isZoomed)
-                {
-                    StartCoroutine(ZoomIn());
-                }
-                if (Input.GetMouseButtonDown(1))
-                {
-                    StartCoroutine(ZoomOut());
-                }
+                if (isZoomed == true) return;
+                StartCoroutine(ZoomIn());
+                break;
+            case 5:
+                if (isZoomed == false) return;
+                StartCoroutine(ZoomOut());
+                break;
+            case 6:
+                //Idle Zoom
                 break;
         }
     }
@@ -106,11 +120,19 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if(currentState == 1)
+        if(currentState == 1 && eventData.button == PointerEventData.InputButton.Left)
         {
             currentState = 2;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.GetComponent<RectTransform>(),eventData.position, eventData.pressEventCamera, out originalLocalPointerPosition);
             originalPanelLocalPosition = rectTransform.localPosition;
+        }
+        if(currentState == 1 && eventData.button == PointerEventData.InputButton.Right)
+        {
+            currentState = 4;
+        }
+        if(currentState == 6 && eventData.button == PointerEventData.InputButton.Right)
+        {
+            currentState = 5;
         }
     }
 
@@ -176,17 +198,27 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
         isZoomed = true;
         float elapsedTime = 0f;
         zoomedPosition = GetScreenCenterPosition();
+        zoomedPosition.x += -250;
+        zoomedPosition.y += 700;
+        glowEffect.SetActive(false);
 
         while (elapsedTime < zoomDuration)
         {
             rectTransform.localPosition = Vector3.Lerp(originalPosition, zoomedPosition, elapsedTime / zoomDuration);
-            rectTransform.localScale = Vector3.Lerp(originalScale, zoomedScale, elapsedTime / zoomDuration);
+            rectTransform.localScale = Vector3.Lerp(originalScale, originalScale * zoomFactor, elapsedTime / zoomDuration);
+            rectTransform.localRotation = Quaternion.Lerp(originalRotation, Quaternion.identity, elapsedTime / zoomDuration);
+            newCanvas.anchoredPosition = Vector3.Lerp(new Vector3(-100,-315,0), new Vector3 (-100, -500, 0), elapsedTime / zoomDuration);
             elapsedTime = elapsedTime + Time.deltaTime;
             yield return null;
         }
+        //Colocar ativação de text boxes
+        effectBox.SetActive(true);
+        loreBox.SetActive(true);
 
-        rectTransform.localPosition = zoomedPosition;
-        rectTransform.localScale = zoomedScale;
+        /*transform.position = zoomedPosition;
+        transform.localScale = originalScale * zoomFactor;
+        transform.rotation = Quaternion.identity;*/
+        currentState = 6;
     }
 
     private System.Collections.IEnumerator ZoomOut()
@@ -194,16 +226,26 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
         isZoomed = false;
         float elapsedTime = 0f;
         zoomedPosition = GetScreenCenterPosition();
+        glowEffect.SetActive(false);
 
-        while(elapsedTime < zoomDuration)
+        //Desativando text boxes
+        effectBox.SetActive(false);
+        loreBox.SetActive(false);
+
+        while (elapsedTime < zoomDuration)
         {
             rectTransform.localPosition = Vector3.Lerp(zoomedPosition, originalPosition, elapsedTime / zoomDuration);
-            rectTransform.localScale = Vector3.Lerp(zoomedScale, originalScale, elapsedTime / zoomDuration);
+            rectTransform.localScale = Vector3.Lerp(originalScale * zoomFactor, originalScale, elapsedTime / zoomDuration);
+            rectTransform.localRotation = Quaternion.Lerp(rectTransform.localRotation, originalRotation, elapsedTime / zoomDuration);
+            newCanvas.anchoredPosition = Vector3.Lerp(new Vector3(-100, -500, 0), new Vector3(-100, -315, 0), elapsedTime / zoomDuration);
             elapsedTime = elapsedTime + Time.deltaTime;
             yield return null;
         }
 
-        rectTransform.localPosition = originalPosition;
-        rectTransform.localScale = originalScale;
+        /*transform.position = originalPosition;
+        transform.localScale = originalScale;
+        transform.rotation = originalRotation;*/
+        currentState = 0;
+        //yield return null;        
     }
 }
