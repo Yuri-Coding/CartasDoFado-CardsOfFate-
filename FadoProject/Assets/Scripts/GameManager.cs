@@ -27,7 +27,20 @@ public class GameManager : MonoBehaviour
         popup.PopupMessage("Bem vindo ao cartas do fado");
     }
 
-    
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Se deseja que o GameManager persista entre cenas
+        }
+        else
+        {
+            Destroy(gameObject); // Destruir duplicatas, se houver
+        }
+    }
+
+
     void Update()
     {
         HandleState();
