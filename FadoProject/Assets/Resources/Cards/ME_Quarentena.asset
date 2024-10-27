@@ -16,7 +16,8 @@ MonoBehaviour:
   cardSprite: {fileID: 1308830767022127242, guid: 5d5f365de0a3f9440b818a5601617831, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: 
-  cardLore: 
+  cardEffect: "Pula a vota\xE7\xE3o nesta rodada.\\n-6 Veneno\\n-2 Corrup\xE7\xE3o"
+  cardLore: "Para fazer com que a praga n\xE3o se espalhe, o isolamento e distanciamento
+    \xE9 uma arma muito forte. Perder a vida de poucos pode salvar a de muitos."
   effects: 
   canTarget: 1

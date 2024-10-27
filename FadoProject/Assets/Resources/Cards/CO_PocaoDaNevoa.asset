@@ -16,7 +16,9 @@ MonoBehaviour:
   cardSprite: {fileID: -7959052698411436611, guid: 3fe6b3abd7cc1a5449fdea1a624bb96c, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 1
-  cardEffect: 
-  cardLore: 
+  cardEffect: "Reduz as a\xE7\xF5es de dois jogadores pela metade no pr\xF3ximo turno.\\n+10
+    Influ\xEAncia\\n+1 Corrup\xE7\xE3o para o alvo"
+  cardLore: "Uma po\xE7\xE3o feita de ervas raras e escuras que, quando inalada,
+    deixa os sentidos embotados e os movimentos pesados."
   effects: 
   canTarget: 1

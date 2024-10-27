@@ -16,7 +16,9 @@ MonoBehaviour:
   cardSprite: {fileID: -7959052698411436611, guid: 3fe6b3abd7cc1a5449fdea1a624bb96c, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 1
-  cardEffect: 
-  cardLore: 
+  cardEffect: "For\xE7a o voto do alvo a ser o mesmo que o seu.\\n+5 Influ\xEAncia"
+  cardLore: "Criado com ervas alucin\xF3genas do novo continente, usadas em rituais
+    de casamento e lua de mel, faz com que o alvo se enfatue por voc\xEA e concorde
+    com tudo que \xE9 dito por seu amante."
   effects: 
   canTarget: 1

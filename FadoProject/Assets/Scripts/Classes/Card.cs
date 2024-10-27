@@ -14,6 +14,8 @@ namespace FadoProject {
         public string cardLore;
         public List<Effects> effects;
         public bool canTarget;
+        public string choice1;
+        public string choice2;
 
         public enum CardType
         {

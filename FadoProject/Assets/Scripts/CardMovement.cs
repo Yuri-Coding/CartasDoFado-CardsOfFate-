@@ -68,10 +68,10 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
                 break;
             case 3:
                 HandlePlayState();
-                if (!Input.GetMouseButton(0))
+                /*if (!Input.GetMouseButton(0))
                 {
                     TransitionToState0();
-                }
+                }*/
                 break;
             case 4:
                 if (isZoomed == true) return;
