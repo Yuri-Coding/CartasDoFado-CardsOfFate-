@@ -38,6 +38,7 @@ public class HandManager : MonoBehaviour
 
         //Colocar os dados da carta na carta instanciada
         newCard.GetComponent<CardDisplay>().cardData = cardData;
+        newCard.GetComponent<CardMovement>().currentCard = cardData;
 
         updateHandVisuals();
     }
