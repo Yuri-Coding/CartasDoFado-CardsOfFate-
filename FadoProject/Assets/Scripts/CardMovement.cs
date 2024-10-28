@@ -133,10 +133,16 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 		switch (currentState)
 		{
 			case 2:
-				currentCardDisplay.closeTaskUI();
+				if (currentCard.cardType == 0)
+				{
+                    currentCardDisplay.closeTaskUI();
+                }
 				break;
 			case 3:
-                currentCardDisplay.updateTaskUI();
+				if (currentCard.cardType == 0)
+				{
+                    currentCardDisplay.updateTaskUI();
+                }
                 break;
 		}
 	}
