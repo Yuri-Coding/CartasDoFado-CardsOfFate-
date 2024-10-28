@@ -4,8 +4,27 @@ using UnityEngine;
 
 public class EffectHandler : MonoBehaviour
 {
-    
-    // Adicionar valor nos parâmetros do jogador
+    public Player currentPlayer;
+
+    public void ApplyTask(List<Effect> effects)
+    {
+        currentPlayer = GameManager.currentPlayer;
+        Debug.Log(currentPlayer.PlayerName);
+        foreach (Effect ef in effects)
+        {
+            Debug.Log(ef.Type);
+        }
+    }
+
+    public void ApplyAll (Player cplayer, Player tplayer, List<Effect> effects)
+    {
+        currentPlayer = cplayer;
+        foreach (Effect ef in effects)
+        {
+
+        }
+    }
+
     public void ApplyValue (Player target, string type,  int amount) 
     {
         switch (type)

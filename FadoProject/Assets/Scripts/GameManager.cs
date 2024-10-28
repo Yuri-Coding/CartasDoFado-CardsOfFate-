@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 	public HandManager handManager;
 	public Popup popup;
 
-	public Player currentPlayer;
+	public static Player currentPlayer;
 	public int mainPlayerIndex;
 	public int currentIndex = 0;
 
@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
 	}
 
 	void Update() { /*HandleState();*/ }
+
 	void SetState(GameState newState) {
 		currentState = newState;
 		Debug.Log($"O estado mudou para {currentState}.");
