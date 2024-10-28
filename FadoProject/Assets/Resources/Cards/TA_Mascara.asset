@@ -20,7 +20,22 @@ MonoBehaviour:
     2: +10 Moralidade +5 Influ\xEAncia +1 Corrup\xE7\xE3o"
   cardLore: "Voc\xEA conseguiu uma m\xE1scara que protege contra a infec\xE7\xE3o.
     Um amigo sem m\xE1scara est\xE1 ficando cada vez mais doente."
-  effects: 
   canTarget: 0
   choice1: "Dar sua m\xE1scara ao amigo. "
   choice2: "Usar a m\xE1scara e se proteger. "
+  targetEffects: []
+  selfEffects: []
+  choice1Effects:
+  - Type: 2
+    Value: 15
+  - Type: 4
+    Value: 5
+  - Type: 5
+    Value: 1
+  choice2Effects:
+  - Type: 2
+    Value: 10
+  - Type: 4
+    Value: 5
+  - Type: 3
+    Value: 1

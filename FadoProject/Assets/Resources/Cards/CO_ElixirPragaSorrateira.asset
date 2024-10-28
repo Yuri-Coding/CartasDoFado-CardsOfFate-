@@ -19,5 +19,14 @@ MonoBehaviour:
   cardEffect: "Envenena um jogador, adicionando +1 marcadores de veneno.\\n+15 Influ\xEAncia"
   cardLore: "Extra\xEDda do cora\xE7\xE3o de uma flor venenosa, esta po\xE7\xE3o
     induz febres discretas e mortais que corroem lentamente a vitalidade."
-  effects: 
   canTarget: 1
+  choice1: 
+  choice2: 
+  targetEffects:
+  - Type: 5
+    Value: 1
+  selfEffects:
+  - Type: 4
+    Value: 15
+  choice1Effects: []
+  choice2Effects: []

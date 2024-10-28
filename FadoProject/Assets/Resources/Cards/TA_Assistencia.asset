@@ -20,7 +20,20 @@ MonoBehaviour:
     Influ\xEAncia +20 Moralidade +1 Corrup\xE7\xE3o"
   cardLore: "V\xE1rios habitantes est\xE3o adoecendo rapidamente. Voc\xEA se voluntaria
     para cuidar dos enfermos, mesmo correndo risco?"
-  effects: 
   canTarget: 0
   choice1: 'Ajudar os doentes. '
   choice2: Proteger-se e evitar contato.
+  targetEffects: []
+  selfEffects: []
+  choice1Effects:
+  - Type: 4
+    Value: 10
+  - Type: 2
+    Value: 15
+  choice2Effects:
+  - Type: 4
+    Value: 5
+  - Type: 2
+    Value: 20
+  - Type: 3
+    Value: 1

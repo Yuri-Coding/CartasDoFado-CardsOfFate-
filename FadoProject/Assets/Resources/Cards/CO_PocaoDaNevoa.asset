@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: CO_PocaoDaNevoa
   m_EditorClassIdentifier: 
-  cardName: "Po\xE7\xE3o da n\xE9voa let\xE1rgica"
+  cardName: "Po\xE7\xE3o da N\xE9voa Let\xE1rgica"
   cardSprite: {fileID: -7959052698411436611, guid: 3fe6b3abd7cc1a5449fdea1a624bb96c, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 1
@@ -20,5 +20,16 @@ MonoBehaviour:
     Influ\xEAncia\\n+1 Corrup\xE7\xE3o para o alvo"
   cardLore: "Uma po\xE7\xE3o feita de ervas raras e escuras que, quando inalada,
     deixa os sentidos embotados e os movimentos pesados."
-  effects: 
   canTarget: 1
+  choice1: 
+  choice2: 
+  targetEffects:
+  - Type: 7
+    Value: 50
+  - Type: 3
+    Value: 1
+  selfEffects:
+  - Type: 4
+    Value: 10
+  choice1Effects: []
+  choice2Effects: []

@@ -21,7 +21,20 @@ MonoBehaviour:
   cardLore: "Em meio \xE0 escassez de alimentos, voc\xEA encontrou um pequeno suprimento
     que poderia alimentar sua fam\xEDlia por alguns dias. No entanto, seu vizinho
     est\xE1 \xE0 beira da fome."
-  effects: 
   canTarget: 0
   choice1: 'Dividir o alimento com seu vizinho. '
   choice2: "Guardar tudo para voc\xEA."
+  targetEffects: []
+  selfEffects: []
+  choice1Effects:
+  - Type: 2
+    Value: 10
+  - Type: 4
+    Value: 5
+  choice2Effects:
+  - Type: 4
+    Value: 5
+  - Type: 2
+    Value: 15
+  - Type: 3
+    Value: 1

@@ -6,16 +6,23 @@ namespace FadoProject {
 
     [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
     public class Card : ScriptableObject{
+
         public string cardName;
         public Sprite cardSprite;
         public Sprite zoomedSprite;
+
         public CardType cardType;
         public string cardEffect;
         public string cardLore;
-        public List<Effects> effects;
+
         public bool canTarget;
         public string choice1;
         public string choice2;
+
+        public List<Effect> targetEffects;
+        public List<Effect> selfEffects;
+        public List<Effect> choice1Effects;
+        public List<Effect> choice2Effects;
 
         public enum CardType
         {
@@ -23,20 +30,6 @@ namespace FadoProject {
             Poison,
             Medicine,
             Item
-        }
-
-        public enum Effects
-        {
-            Silence,
-            Immunity,
-            PlusMorale,
-            MinusMorale,
-            PlusInfluence,
-            MinusInfluence,
-            PlusPoison,
-            MinusPoison,
-            PlusCorruption,
-            MinusCorruption
         }
     }
 }

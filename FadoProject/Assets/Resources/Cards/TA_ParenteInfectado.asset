@@ -21,7 +21,20 @@ MonoBehaviour:
   cardLore: "Um parente pr\xF3ximo foi infectado pela peste e est\xE1 isolado. Voc\xEA
     tem a escolha de visit\xE1-lo, correndo o risco de se infectar, ou se proteger
     e evitar o contato."
-  effects: 
   canTarget: 0
   choice1: "Visitar o parente e confort\xE1-lo. "
   choice2: 'Ficar seguro e evitar o contato. '
+  targetEffects: []
+  selfEffects: []
+  choice1Effects:
+  - Type: 2
+    Value: 10
+  - Type: 4
+    Value: 5
+  - Type: 5
+    Value: 2
+  choice2Effects:
+  - Type: 4
+    Value: 5
+  - Type: 2
+    Value: 15

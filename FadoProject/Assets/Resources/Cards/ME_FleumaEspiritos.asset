@@ -20,5 +20,16 @@ MonoBehaviour:
     na vota\xE7\xE3o por 1 turno e sua Moralidade cai em 5 pontos."
   cardLore: "Remover a peste te aproxima da raz\xE3o. No entanto a um pre\xE7o a
     se pagar."
-  effects: 
   canTarget: 1
+  choice1: 
+  choice2: 
+  targetEffects:
+  - Type: 5
+    Value: -1
+  selfEffects:
+  - Type: 0
+    Value: 1
+  - Type: 2
+    Value: -5
+  choice1Effects: []
+  choice2Effects: []

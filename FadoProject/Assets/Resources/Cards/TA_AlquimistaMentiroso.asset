@@ -21,7 +21,6 @@ MonoBehaviour:
   cardLore: "O famoso alquimista da cidade Arvid, te fez uma oferta de venda de po\xE7\xF5es
     afrodis\xEDacas falsas. Arvid lhe oferece muito dinheiro, fama e liberdade de
     vida para voc\xEA vender e prometer falsas ofertas para os moradores locais."
-  effects: 
   canTarget: 0
   choice1: "Aceitar a oferta sozinho, aplicar o golpe em seus companheiros e nos
     moradores locais e ganhar todo o dinheiro e fama oferecida. Grande parte n\xE3o
@@ -29,3 +28,19 @@ MonoBehaviour:
     voc\xEA e o famoso alquimista."
   choice2: "N\xE3o aceitar, denunciar aos seus colegas e os moradores, sobre a falsidade
     de Arvid. Alguns moradores acreditam, outros defendem Arvid com sangue nos olhos."
+  targetEffects: []
+  selfEffects: []
+  choice1Effects:
+  - Type: 2
+    Value: 75
+  - Type: 4
+    Value: 2
+  - Type: 3
+    Value: 1
+  choice2Effects:
+  - Type: 2
+    Value: 5
+  - Type: 4
+    Value: 25
+  - Type: 3
+    Value: -1

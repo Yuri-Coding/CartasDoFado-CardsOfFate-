@@ -20,7 +20,22 @@ MonoBehaviour:
     2: +5 Influ\xEAncia +25 Moralidade +1 Corrup\xE7\xE3o"
   cardLore: "Voc\xEA possui uma quantidade limitada de rem\xE9dios contra a peste.
     Poderia distribu\xED-los de forma justa entre os necessitados."
-  effects: 
   canTarget: 0
   choice1: Distribuir igualmente entre os necessitados.
   choice2: "Guardar uma por\xE7\xE3o maior para si mesmo."
+  targetEffects: []
+  selfEffects: []
+  choice1Effects:
+  - Type: 4
+    Value: 15
+  - Type: 2
+    Value: 5
+  - Type: 3
+    Value: -1
+  choice2Effects:
+  - Type: 4
+    Value: 5
+  - Type: 2
+    Value: 25
+  - Type: 3
+    Value: 1

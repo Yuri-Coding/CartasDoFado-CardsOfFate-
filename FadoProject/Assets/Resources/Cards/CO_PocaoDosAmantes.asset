@@ -20,5 +20,14 @@ MonoBehaviour:
   cardLore: "Criado com ervas alucin\xF3genas do novo continente, usadas em rituais
     de casamento e lua de mel, faz com que o alvo se enfatue por voc\xEA e concorde
     com tudo que \xE9 dito por seu amante."
-  effects: 
   canTarget: 1
+  choice1: 
+  choice2: 
+  targetEffects:
+  - Type: 6
+    Value: 0
+  selfEffects:
+  - Type: 4
+    Value: 5
+  choice1Effects: []
+  choice2Effects: []

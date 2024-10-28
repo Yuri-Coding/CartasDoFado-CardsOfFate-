@@ -10,7 +10,8 @@ public class Player
 	public int      Morale { get; private set; }
 	public int      Influence { get; private set; }
 	public int      Corruption { get; private set; }
-	public int      SilenceTurn { get; set; }
+	public int      SilenceTurn { get; private set; }
+	public int		ImmunityTurn { get; private set; }
     public bool		IsMainPlayer { get; set; }
 
 
@@ -73,17 +74,24 @@ public class Player
 		}
 	}
 
-	// Silenciar o jogador
-	public void Silence(int turn)
-	{
 
+	// Silenciar o jogador
+	public void ApplySilence(int duration)
+	{
+		SilenceTurn = duration;
+	}
+
+	public void ApplyImmunity(int duration)
+	{
+		ImmunityTurn = duration;
 	}
 
 	// End the turn
 	public void EndTurn()
 	{
-		// Apply any end-of-turn effects (regenerate mana, etc.)
-		Debug.Log(PlayerName + "'s turn has ended.");
+		SilenceTurn  -= 1;
+		ImmunityTurn -= 1;
+		Debug.Log($"O turno de {PlayerId} finalizou.");
 	}
 
     public void DebugPlayer()

@@ -19,5 +19,14 @@ MonoBehaviour:
   cardEffect: +1 Veneno para o alvo nesta rodada\nImunidade ao veneno por 2 rodadas
   cardLore: "Ao injetar a praga no corpo das pessoas elas criam defesa contra a mesma,
     o pre\xE7o a se pagar \xE9 correr o risco de contrair a pr\xF3pria praga."
-  effects: 
   canTarget: 1
+  choice1: 
+  choice2: 
+  targetEffects:
+  - Type: 5
+    Value: 1
+  - Type: 1
+    Value: 2
+  selfEffects: []
+  choice1Effects: []
+  choice2Effects: []
