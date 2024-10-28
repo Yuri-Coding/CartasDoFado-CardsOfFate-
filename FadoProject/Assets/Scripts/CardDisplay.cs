@@ -17,6 +17,8 @@ public class CardDisplay : MonoBehaviour
     public TMP_Text choiceText1;
     public TMP_Text choiceText2;
 
+    public Animation anim;
+
 
 
     // Start is called before the first frame update
@@ -25,6 +27,8 @@ public class CardDisplay : MonoBehaviour
         choiceContext = GameObject.Find("ChoiceContext").GetComponent<TMP_Text>();
         choiceText1 = GameObject.Find("Choice1Text").GetComponent<TMP_Text>();
         choiceText2 = GameObject.Find("Choice2Text").GetComponent<TMP_Text>();
+
+        anim = GameObject.Find("ChoicePopup").GetComponent<Animation>();
         updateCardDisplay();
     }
 
@@ -37,9 +41,15 @@ public class CardDisplay : MonoBehaviour
 
     public void updateTaskUI()
     {
+        anim.Play("fadein");
         choiceContext.text = cardData.cardLore;
         choiceText1.text = cardData.choice1;
         choiceText2.text = cardData.choice2;
+    }
+
+    public void closeTaskUI()
+    {
+        anim.Play("fadeout");
     }
 
 }

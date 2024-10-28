@@ -47,6 +47,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 		newCanvasObject = GameObject.Find("HandPos");
 		newCanvas = newCanvasObject.GetComponent<RectTransform>();
 		//newCanvas.anchoredPosition = new Vector3(1000,1000,1); Da uma testadinha aqui
+
 		rectTransform = GetComponent<RectTransform>();
 		canvas = GetComponentInParent<Canvas>();
 		originalScale = rectTransform.localScale;
@@ -112,7 +113,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 			originalRotation = rectTransform.localRotation;
 			originalScale = rectTransform.localScale;
 
-			currentState = 1;
+			 ChangeCurrentState(1);
 		}
 	}
 
@@ -121,6 +122,22 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 		if (currentState == 1)
 		{
 			TransitionToState0();
+		}
+	}
+
+	// Função de Mudança de Estado
+	// (o switch case só será executado uma vez quando alterar o estado)
+	void ChangeCurrentState(int newState)
+	{
+		currentState = newState;
+		switch (currentState)
+		{
+			case 2:
+				currentCardDisplay.closeTaskUI();
+				break;
+			case 3:
+                currentCardDisplay.updateTaskUI();
+                break;
 		}
 	}
 
@@ -153,7 +170,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
 				if (rectTransform.localPosition.y > cardPlay.y)
 				{
-					currentState = 3;
+					ChangeCurrentState(3);
 					playArrow.SetActive(true);
 					rectTransform.localPosition = Vector3.Lerp(rectTransform.localPosition,playPosition,lerpFactor);
 				}
@@ -175,8 +192,6 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 	private void HandlePlayState()
 	{
 		//Debug.Log(currentCard.cardName);
-		currentCardDisplay.updateTaskUI();
-
         rectTransform.localPosition = playPosition;
 		rectTransform.localRotation = Quaternion.identity;
 
@@ -184,7 +199,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
 		if(Input.mousePosition.y < cardPlay.y)
 		{
-			currentState = 2;
+			ChangeCurrentState(2);
 			playArrow.SetActive(false);
 		}
 	}
