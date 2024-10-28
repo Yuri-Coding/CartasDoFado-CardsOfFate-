@@ -16,7 +16,12 @@ MonoBehaviour:
   cardSprite: {fileID: 6184597330533857579, guid: a378c64da994ad84b9fd193f9066778d, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 0
-  cardEffect: 
-  cardLore: 
+  cardEffect: "Op\xE7\xE3o 1:+10 Moralidade  +5 Influ\xEAncia\\nOp\xE7\xE3o 2:+5
+    Influ\xEAncia +15 Moralidade +1 Corrup\xE7\xE3o"
+  cardLore: "Em meio \xE0 escassez de alimentos, voc\xEA encontrou um pequeno suprimento
+    que poderia alimentar sua fam\xEDlia por alguns dias. No entanto, seu vizinho
+    est\xE1 \xE0 beira da fome."
   effects: 
   canTarget: 0
+  choice1: 'Dividir o alimento com seu vizinho. '
+  choice2: "Guardar tudo para voc\xEA."

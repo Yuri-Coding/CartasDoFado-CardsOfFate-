@@ -16,7 +16,11 @@ MonoBehaviour:
   cardSprite: {fileID: 6184597330533857579, guid: a378c64da994ad84b9fd193f9066778d, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 0
-  cardEffect: 
-  cardLore: 
+  cardEffect: "Op\xE7\xE3o 1: +15 Moralidade +5 Influ\xEAncia +1 Veneno para voc\xEA\\nOp\xE7\xE3o
+    2: +10 Moralidade +5 Influ\xEAncia +1 Corrup\xE7\xE3o"
+  cardLore: "Voc\xEA conseguiu uma m\xE1scara que protege contra a infec\xE7\xE3o.
+    Um amigo sem m\xE1scara est\xE1 ficando cada vez mais doente."
   effects: 
   canTarget: 0
+  choice1: "Dar sua m\xE1scara ao amigo. "
+  choice2: "Usar a m\xE1scara e se proteger. "

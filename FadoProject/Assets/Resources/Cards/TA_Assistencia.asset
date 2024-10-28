@@ -16,7 +16,11 @@ MonoBehaviour:
   cardSprite: {fileID: 6184597330533857579, guid: a378c64da994ad84b9fd193f9066778d, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 0
-  cardEffect: 
-  cardLore: 
+  cardEffect: "Op\xE7\xE3o 1: +10 Influ\xEAncia +15 Moralidade\\nOp\xE7\xE3o 2: +5
+    Influ\xEAncia +20 Moralidade +1 Corrup\xE7\xE3o"
+  cardLore: "V\xE1rios habitantes est\xE3o adoecendo rapidamente. Voc\xEA se voluntaria
+    para cuidar dos enfermos, mesmo correndo risco?"
   effects: 
   canTarget: 0
+  choice1: 'Ajudar os doentes. '
+  choice2: Proteger-se e evitar contato.
