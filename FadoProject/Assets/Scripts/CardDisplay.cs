@@ -20,7 +20,7 @@ public class CardDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        popup = GameObject.Find("PopUp").GetComponent<Popup>();
+        popup = GameObject.Find("PopupManager").GetComponent<Popup>();
         updateCardDisplay();
     }
 

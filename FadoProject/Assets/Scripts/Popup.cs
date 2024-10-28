@@ -11,7 +11,7 @@ using FadoProject;
 
 public class Popup : MonoBehaviour
 {
-	private Animation anim;
+	public Animation singleAnim;
 
 	public TMP_Text contentObject;
     private bool isWaitingForInput = true;
@@ -25,13 +25,18 @@ public class Popup : MonoBehaviour
 
     public Animation choiceAnim;
 
-	public Card currentCard;
+
+    public TMP_Text corruptionText;
+    public TMP_Text moraleText;
+    public TMP_Text influenceText;
+
+
+    private Card currentCard;
 	public EffectHandler effectHandler;
 
 
     void Start()
 	{
-		anim = gameObject.GetComponent<Animation>();
 
 
 		// Buscar objetos Choice Screen na cena
@@ -51,7 +56,7 @@ public class Popup : MonoBehaviour
 
 	public void PopupMessage(string content)
 	{
-		anim.Play("fadein");
+		singleAnim.Play("fadein");
 		contentObject.text = content;
 
         StartCoroutine(AutoHidePopup(7f));
@@ -59,7 +64,7 @@ public class Popup : MonoBehaviour
 
 	void Popdown()
 	{
-		anim.Play("fadeout");
+		singleAnim.Play("fadeout");
         isWaitingForInput = true;
         GameManager.Instance.OnInitPopdown();
 	}
@@ -105,14 +110,22 @@ public class Popup : MonoBehaviour
 		switch (choice)
 		{
 			case 1:
-                effectHandler.ApplyTask(currentCard.choice1Effects);
+                effectHandler.ApplySelf(currentCard.choice1Effects);
 				break;
 			case 2:
-                effectHandler.ApplyTask(currentCard.choice2Effects);
+                effectHandler.ApplySelf(currentCard.choice2Effects);
 				break;
 
         }
 		
         PopdownChoice();
+	}
+
+	public void UpdatePanel()
+	{
+		
+        corruptionText.text = GameManager.currentPlayer.Corruption.ToString();
+        moraleText.text		= GameManager.currentPlayer.Morale.ToString();
+        influenceText.text	= GameManager.currentPlayer.Influence.ToString();
 	}
 }
