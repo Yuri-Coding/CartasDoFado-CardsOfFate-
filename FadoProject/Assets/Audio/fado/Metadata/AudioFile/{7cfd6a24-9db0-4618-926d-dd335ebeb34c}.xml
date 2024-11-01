@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7cfd6a24-9db0-4618-926d-dd335ebeb34c}">
+		<property name="assetPath">
+			<value>sfx/card_draw.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.74303854875283448</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{89757b69-adbe-4930-a686-b54a389845a1}</destination>
+		</relationship>
+	</object>
+</objects>

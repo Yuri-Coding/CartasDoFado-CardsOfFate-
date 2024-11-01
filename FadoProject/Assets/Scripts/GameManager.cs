@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 		NextPlayer,
 		AwaitPlayer,
 		HandlePlayerCard,
+		Voting,
 		AwaitOther,
 		HandleOtherCard,
 		EndPhase,
@@ -118,7 +119,7 @@ public class GameManager : MonoBehaviour
 
 	void AwaitPlayer()
 	{
-		Debug.Log($"(playerId: {currentPlayer.PlayerId} == mainPlayerIndex{mainPlayerIndex})");
+		Debug.Log($"(playerId: {currentPlayer.PlayerId}, mainPlayerIndex{mainPlayerIndex})");
 		if (currentPlayer.PlayerId == mainPlayerIndex)
 		{
 			deckManager.DrawCard(handManager);

@@ -17,7 +17,9 @@ public class EffectHandler : MonoBehaviour
             Debug.Log(ef.Type);
             ApplyValue(currentPlayer, ef.Type, ef.Value);
         }
+
         popup.UpdatePanel();
+        PlayerActionDone();
     }
 
     public void ApplySingleTarget (Player tplayer, List<Effect> selfEffects, List<Effect> targetEffects)
@@ -58,6 +60,12 @@ public class EffectHandler : MonoBehaviour
                 target.Add("Corruption", amount);
                 break;
         }
+    }
+
+    public void PlayerActionDone()
+    {
+        // Chamar evento para falar que o jogador executou uma ação.
+        currentPlayer.PerformAction();
     }
 
     public void ApplySilence (Player target, int duration)
