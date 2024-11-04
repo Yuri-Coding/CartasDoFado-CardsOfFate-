@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
 	public DeckManager deckManager;
+	public EffectHandler effectHandler;
 	public List<Player> players = new List<Player>();
 	public List<Player> bots = new List<Player>();
 	
@@ -56,6 +57,26 @@ public class PlayerManager : MonoBehaviour
             Card botCard = eligibleCards[currentIndex];
 
 			Debug.Log($"O {bot.PlayerName} usou a carta {botCard.cardName}.");
-        }
+			switch (bot.PlayerRole)
+			{
+				case Roles.Honest:
+
+					break;
+
+				case Roles.Corrupt:
+                case Roles.Medic:
+					List<Player> eligibleTarget = players.FindAll(player => player.PlayerId != bot.PlayerId);
+					Player randomTarget;
+
+                    int index = Random.Range(0, eligibleTarget.Count);
+                    randomTarget = eligibleTarget[index];
+
+					if (botCard.selfEffects.Count != 0) { effectHandler.ApplySelf(botCard.selfEffects); }
+					if (botCard.targetEffects.Count != 0) { effectHandler.ApplySelf(botCard.selfEffects); }
+				
+
+					break;
+			}
+		}
 	}
 }

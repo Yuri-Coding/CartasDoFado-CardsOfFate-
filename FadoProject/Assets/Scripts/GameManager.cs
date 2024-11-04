@@ -142,6 +142,8 @@ public class GameManager : MonoBehaviour
 		round++;
 		Debug.Log("Fase de Finalização de Turno");
 		SetState(GameState.AwaitAction);
+
+		// Condições de Vitória e Derrota
 	}
 
 	void Win()

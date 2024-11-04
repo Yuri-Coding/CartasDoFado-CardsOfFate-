@@ -36,30 +36,9 @@ public class Player
 		IsMainPlayer =		isMainPlayer;
 		IsBot =				isBot;
 	}
-
-	// Methods
-
-	// Play a card from hand to field
 	public void PlayCard(int handIndex)
 	{
-		/*
-		if (handIndex >= 0 && handIndex < hand.Count)
-		{
-			Card cardToPlay = hand[handIndex];
-			if (mana >= cardToPlay.manaCost)
-			{
-				mana -= cardToPlay.manaCost;
-				field.Add(cardToPlay);
-				hand.RemoveAt(handIndex);
-				Debug.Log(playerName + " played: " + cardToPlay.name);
-			}
-			else
-			{
-				Debug.Log("Not enough mana to play " + cardToPlay.name);
-			}
-		}
 		
-		*/
 	}
 
 	// Alterar parâmetro:
@@ -118,16 +97,6 @@ public class Player
 	{
 		Debug.Log($"{PlayerName} realizou uma ação para Player.cs.");
 		OnPlayerAction?.Invoke();
-	}
-
-	public void PerformRandomAction()
-	{
-		if (IsBot == false) {
-			Debug.LogError("O player não é um BOT!");
-			return;
-		}
-
-		Debug.Log("Ação Aleatória definida para o jogador");
 	}
 
     public CardType GetCardType(Roles role)
