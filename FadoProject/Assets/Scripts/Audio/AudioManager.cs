@@ -51,7 +51,7 @@ public class AudioManager : MonoBehaviour
     
     public void SetMusic(Musics music)
     {
-        Debug.Log($"SetMusic() called to {music}");
+        //Debug.Log($"SetMusic() called to {music}");
 
         if (musicEventInstance.isValid())
         {

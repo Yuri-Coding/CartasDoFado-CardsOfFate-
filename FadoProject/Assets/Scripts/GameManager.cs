@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +16,11 @@ public class GameManager : MonoBehaviour
     public int mainPlayerIndex;
 	public int currentIndex = 0;
 
-	public static GameManager Instance { get; private set; }
+	public int round = 1;
+
+    public TMP_Text roundText;
+
+    public static GameManager Instance { get; private set; }
 	void Awake()
 	{
 		if (Instance == null) {
@@ -60,7 +65,19 @@ public class GameManager : MonoBehaviour
 				HandleActions();
 				break;
 
-			case GameState.EndPhase:
+            case GameState.ShowResults:
+                HandleShowResults();
+                break;
+
+			case GameState.VotingPhase:
+				HandleVotingPhase();
+				break;
+
+			case GameState.ProcessVoteResults:
+				HandleProcessVoteResults();
+				break;
+
+            case GameState.EndPhase:
 				EndPhase();
 				break;
 
@@ -82,7 +99,6 @@ public class GameManager : MonoBehaviour
 
 	void AwaitAction()
 	{
-		deckManager.DrawCard(handManager);
 
 		// Inscreve-se no evento de ação do jogador
 		mainPlayer.OnPlayerAction += OnPlayerActionCompleted;
@@ -100,10 +116,33 @@ public class GameManager : MonoBehaviour
 
 	void HandleActions()
 	{
-
+		playerManager.HandleBotAction();
+		SetState(GameState.ShowResults);
 	}
 
-	void EndPhase() { /* Handle end phase logic */ }
+	void HandleShowResults()
+	{
+		Debug.Log("Fase de Mostrar Resultados (Jornal)");
+		SetState(GameState.VotingPhase);
+	}
+
+	void HandleVotingPhase()
+	{
+		Debug.Log("Fase de Votação");
+		SetState(GameState.ProcessVoteResults);
+	}
+
+	void HandleProcessVoteResults()
+	{
+		Debug.Log("Fase de Contagem de Votos");
+		SetState(GameState.EndPhase);
+	}
+
+	void EndPhase() {
+		round++;
+		Debug.Log("Fase de Finalização de Turno");
+		SetState(GameState.AwaitAction);
+	}
 
 	void Win()
 	{
@@ -117,8 +156,8 @@ public class GameManager : MonoBehaviour
 
 	public void OnInitPopdown()
 	{
-		Player p1 = new Player(0, "Matias", Roles.Honest,  false, true );
-		Player p2 = new Player(1, "Cassis", Roles.Corrupt, true , false);
+		Player p1 = new Player(0, "Matias", Roles.Corrupt, false, true );
+		Player p2 = new Player(1, "Cassis", Roles.Honest,  true , false);
 		Player p3 = new Player(2, "Yuras" , Roles.Medic,   false, true );
 		Player p4 = new Player(3, "Sales" , Roles.Honest,  false, true );
 		Player p5 = new Player(4, "Robson", Roles.Honest,  false, true );
@@ -139,4 +178,9 @@ public class GameManager : MonoBehaviour
 		SetState(GameState.AwaitAction);
 
 	}
+
+	public void UpdateUI()
+	{
+        roundText.text = round.ToString();
+    }
 }

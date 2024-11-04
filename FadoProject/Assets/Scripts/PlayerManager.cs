@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FadoProject;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -50,7 +51,11 @@ public class PlayerManager : MonoBehaviour
 	{
 		foreach (Player bot in bots)
 		{
-            
+			List<Card> eligibleCards = deckManager.FilterCardsByType(bot.PlayerCardType);
+            int currentIndex = Random.Range(0, eligibleCards.Count);
+            Card botCard = eligibleCards[currentIndex];
+
+			Debug.Log($"O {bot.PlayerName} usou a carta {botCard.cardName}.");
         }
 	}
 }

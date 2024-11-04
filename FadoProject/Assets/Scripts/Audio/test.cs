@@ -23,7 +23,7 @@ public class TestTracks : MonoBehaviour
         {
             // Configura o track atual no AudioManager
             audioManager.SetMusic(track);
-            Debug.Log($"Playing track: {track}");
+            //Debug.Log($"Playing track: {track}");
 
             // Aguarda 6 segundos antes de reproduzir o próximo track
             yield return new WaitForSeconds(6f);
