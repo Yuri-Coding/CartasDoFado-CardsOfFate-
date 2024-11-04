@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 using TMPro;
 
 using FadoProject;
+using Unity.VisualScripting;
 
 
 public class Popup : MonoBehaviour
@@ -34,6 +36,8 @@ public class Popup : MonoBehaviour
     private Card currentCard;
 	public EffectHandler effectHandler;
 
+	//Criando um evento para ser ouvido
+	public event Action actionRemoveCard;
 
     void Start()
 	{
@@ -107,18 +111,19 @@ public class Popup : MonoBehaviour
 	public void OnChoiceMade(int choice)
 	{
 		Debug.Log($"Escolha {choice} selecionada");
-		switch (choice)
+        switch (choice)
 		{
 			case 1:
                 effectHandler.ApplySelf(currentCard.choice1Effects);
 				break;
 			case 2:
-                effectHandler.ApplySelf(currentCard.choice2Effects);
-				break;
+                effectHandler.ApplySelf(currentCard.choice2Effects);                
+                break;
 
         }
-		
         PopdownChoice();
+		//Chama todas as funções que ficam registradas na ação(ouvindo)
+		actionRemoveCard?.Invoke();
 	}
 
 	public void UpdatePanel()

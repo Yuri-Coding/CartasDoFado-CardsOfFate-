@@ -29,7 +29,7 @@ public class HandManager : MonoBehaviour
         //updateHandVisuals();
     }
 
-    //Adiciona uma carta na m?o(apenas os dados)
+    //Adiciona uma carta na mão(apenas os dados)
     public void addCardToHand(Card cardData)
     {
         //Instanciando a carta
@@ -43,8 +43,8 @@ public class HandManager : MonoBehaviour
         updateHandVisuals();
     }
     
-    //Adiciona uma carta na m?o(visualmente)
-    private void updateHandVisuals()
+    //Adiciona uma carta na mão(visualmente)
+    public void updateHandVisuals()
     {
         int cardCount = cardsInHand.Count;
         for (int i = 0; i < cardCount; i++)

@@ -46,6 +46,7 @@ public class DeckManager : MonoBehaviour
 		//currentIndex = (currentIndex + 1) % allCards.Count;
 	}
 
+
 	//Implementar a compra de cartas de item na loja
 	public void BuyCard(HandManager handManager)
 	{

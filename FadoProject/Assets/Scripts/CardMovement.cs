@@ -40,6 +40,9 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 	private float zoomDuration = 0.2f;
 	private bool isZoomed = false;
 
+	//Var para encontrar o popUp
+	private Popup popup;
+
 
 
 	void Awake() 
@@ -47,6 +50,8 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 		newCanvasObject = GameObject.Find("HandPos");
 		newCanvas = newCanvasObject.GetComponent<RectTransform>();
 		//newCanvas.anchoredPosition = new Vector3(1000,1000,1); Da uma testadinha aqui
+		//Pegando o script "Popup.cs" dentro do Popup manager
+		popup = GameObject.Find("PopupManager").GetComponent<Popup>();
 
 		rectTransform = GetComponent<RectTransform>();
 		canvas = GetComponentInParent<Canvas>();
@@ -136,16 +141,27 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 				if (currentCard.cardType == 0)
 				{
                     currentCardDisplay.closeTaskUI();
+					popup.actionRemoveCard -= removeCard;
                 }
 				break;
 			case 3:
 				if (currentCard.cardType == 0)
 				{
                     currentCardDisplay.updateTaskUI();
+					popup.actionRemoveCard += removeCard;
                 }
                 break;
 		}
 	}
+
+	private void removeCard()
+	{
+		popup.actionRemoveCard -= removeCard;
+		HandManager handManager = FindAnyObjectByType<HandManager>();
+        handManager.cardsInHand.Remove(gameObject);
+        Destroy(gameObject);
+        handManager.updateHandVisuals();
+    }
 
 	public void OnPointerDown(PointerEventData eventData)
 	{
@@ -192,7 +208,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
 	private void HandleDragState()
 	{
-		rectTransform.localRotation = Quaternion.identity;//Zerando a rota鈬o da carta
+		rectTransform.localRotation = Quaternion.identity;//Zerando a rotação da carta
 	}
 
 	private void HandlePlayState()
@@ -223,7 +239,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 	}
 
 
-	//Fun鋏es de zoom
+	//Funções de zoom
 
 	private System.Collections.IEnumerator ZoomIn()
 	{
@@ -243,7 +259,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 			elapsedTime = elapsedTime + Time.deltaTime;
 			yield return null;
 		}
-		//Colocar ativa鈬o de text boxes
+		//Colocar ativação de text boxes
 		effectBox.SetActive(true);
 		loreBox.SetActive(true);
 
