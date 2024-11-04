@@ -7,7 +7,8 @@ public class Player
 {
 	public int		PlayerId { get; private set; }
 	public string	PlayerName { get; set; }
-	
+	public Roles	PlayerRole { get; set; }
+	public CardType PlayerCardType { get; set; }
 	public int		Morale { get; private set; }
 	public int		Influence { get; private set; }
 	public int		Corruption { get; private set; }
@@ -22,15 +23,18 @@ public class Player
 
 	// Constructor
 	public Player(
-		int playerId,
-		string playerName,
-		bool isMainPlayer,
-		bool isBot)
+		int		playerId,
+		string	playerName,
+		Roles	playerRole,
+		bool	isMainPlayer,
+		bool	isBot)
 	{
-		PlayerId = playerId;
-		PlayerName = playerName;
-		IsMainPlayer = isMainPlayer;
-		IsBot = isBot;
+		PlayerId =			playerId;
+		PlayerName =		playerName;
+		PlayerRole =		playerRole;
+		PlayerCardType =	GetCardType(PlayerRole);
+		IsMainPlayer =		isMainPlayer;
+		IsBot =				isBot;
 	}
 
 	// Methods
@@ -125,4 +129,21 @@ public class Player
 
 		Debug.Log("Ação Aleatória definida para o jogador");
 	}
+
+    public CardType GetCardType(Roles role)
+    {
+        switch (role)
+        {
+            case Roles.Honest:
+                return CardType.Task;
+
+            case Roles.Corrupt:
+                return CardType.Poison;
+
+            case Roles.Medic:
+                return CardType.Medic;
+        }
+		Debug.LogError("Não foi selecionado.");
+		return CardType.Medic;
+    }
 }

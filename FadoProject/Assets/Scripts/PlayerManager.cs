@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+	public DeckManager deckManager;
 	public List<Player> players = new List<Player>();
+	public List<Player> bots = new List<Player>();
+	
 	public int currentPlayerIndex = 0;
 
 	public void AddPlayer(Player newPlayer) {
@@ -23,16 +26,11 @@ public class PlayerManager : MonoBehaviour
 		return players;
 	}
 
-	public Player GetNextPlayer()
-	{
-		currentPlayerIndex = (currentPlayerIndex + 1) % players.Count;
-		return players[currentPlayerIndex];
-	}
-
 	public void InitializePlayers()
 	{
 		foreach (Player player in players)
 		{
+			if (player.IsBot == true) { bots.Add(player); }
 			player.InitializePlayer();
 		}
 	}
@@ -46,5 +44,13 @@ public class PlayerManager : MonoBehaviour
 	{
         players[currentPlayerIndex].PerformAction();
 		Debug.Log("Ação acionada em Player.");
+	}
+
+	public void HandleBotAction()
+	{
+		foreach (Player bot in bots)
+		{
+            
+        }
 	}
 }

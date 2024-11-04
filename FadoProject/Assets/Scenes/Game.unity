@@ -484,6 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fbfcf6636aae34693da35321c6c7ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deckManager: {fileID: 763798870}
   currentPlayerIndex: 0
 --- !u!4 &117878854
 Transform:
@@ -2829,6 +2830,7 @@ MonoBehaviour:
   deckManager: {fileID: 763798870}
   handManager: {fileID: 1717145552}
   popup: {fileID: 670056277}
+  mainRole: 0
   mainPlayerIndex: 0
   currentIndex: 0
   currentState: 0

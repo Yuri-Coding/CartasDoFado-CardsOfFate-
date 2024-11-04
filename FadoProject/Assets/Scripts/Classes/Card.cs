@@ -24,12 +24,5 @@ namespace FadoProject {
         public List<Effect> choice1Effects;
         public List<Effect> choice2Effects;
 
-        public enum CardType
-        {
-            Task,
-            Poison,
-            Medicine,
-            Item
-        }
     }
 }

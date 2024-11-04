@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 	public Popup popup;
 
     public Player mainPlayer;
+	public Roles mainRole;
 
     public int mainPlayerIndex;
 	public int currentIndex = 0;
@@ -116,11 +117,12 @@ public class GameManager : MonoBehaviour
 
 	public void OnInitPopdown()
 	{
-		Player p1 = new Player(0, "Matias", false, true );
-		Player p2 = new Player(1, "Cassis", true , false);
-		Player p3 = new Player(2, "Yuras" , false, true );
-		Player p4 = new Player(3, "Sales" , false, true );
-		Player p5 = new Player(4, "Robson", false, true );
+		Player p1 = new Player(0, "Matias", Roles.Honest,  false, true );
+		Player p2 = new Player(1, "Cassis", Roles.Corrupt, true , false);
+		Player p3 = new Player(2, "Yuras" , Roles.Medic,   false, true );
+		Player p4 = new Player(3, "Sales" , Roles.Honest,  false, true );
+		Player p5 = new Player(4, "Robson", Roles.Honest,  false, true );
+
 		playerManager.AddPlayer(p1);
 		playerManager.AddPlayer(p2);
 		playerManager.AddPlayer(p3);
@@ -128,11 +130,13 @@ public class GameManager : MonoBehaviour
 		playerManager.AddPlayer(p5);
 
 		playerManager.InitializePlayers();
+
 		mainPlayer = p2;
+		mainRole = mainPlayer.PlayerRole;
+		
 
 		Debug.Log("Init Finalizado.");
 		SetState(GameState.AwaitAction);
 
 	}
-
 }

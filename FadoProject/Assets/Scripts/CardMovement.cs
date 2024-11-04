@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,7 +10,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
 	private GameObject canvasObject;
 	private RectTransform newCanvas;
-	private GameObject newCanvasObject;//N tem nenhuma relação com canvas kkk, tá pegando o handPos só msm mas deu preguiça de mudar o nome
+	private GameObject newCanvasObject;//N tem nenhuma relaéˆ¬o com canvas kkk, tãƒ»pegando o handPos sãƒ»msm mas deu preguiè»‹ de mudar o nome
 	private Canvas canvas;
 	private Vector2 originalLocalPointerPosition;
 	private Vector3 originalPanelLocalPosition;
@@ -19,7 +19,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 	private Quaternion originalRotation;
 	private Vector3 originalPosition;
 
-	// Importar informação do Card
+	// Importar informaéˆ¬o do Card
 	public Card currentCard;
 	public CardDisplay currentCardDisplay;
 
@@ -94,7 +94,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 		}
 	}
 
-	//Volta a carta pro estado original dela (em rotação, escala e posição)
+	//Volta a carta pro estado original dela (em rotaéˆ¬o, escala e posiéˆ¬o)
 	private void TransitionToState0()
 	{
 		currentState = 0;
@@ -125,8 +125,8 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 		}
 	}
 
-	// Função de Mudança de Estado
-	// (o switch case só será executado uma vez quando alterar o estado)
+	// Funéˆ¬o de MudanÃ§a de Estado
+	// (o switch case serÃ¡ executado uma vez quando alterar o estado)
 	void ChangeCurrentState(int newState)
 	{
 		currentState = newState;
@@ -192,7 +192,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
 	private void HandleDragState()
 	{
-		rectTransform.localRotation = Quaternion.identity;//Zerando a rotação da carta
+		rectTransform.localRotation = Quaternion.identity;//Zerando a rotaéˆ¬o da carta
 	}
 
 	private void HandlePlayState()
@@ -223,7 +223,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 	}
 
 
-	//Funções de zoom
+	//Funé‹es de zoom
 
 	private System.Collections.IEnumerator ZoomIn()
 	{
@@ -243,7 +243,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 			elapsedTime = elapsedTime + Time.deltaTime;
 			yield return null;
 		}
-		//Colocar ativação de text boxes
+		//Colocar ativaéˆ¬o de text boxes
 		effectBox.SetActive(true);
 		loreBox.SetActive(true);
 
