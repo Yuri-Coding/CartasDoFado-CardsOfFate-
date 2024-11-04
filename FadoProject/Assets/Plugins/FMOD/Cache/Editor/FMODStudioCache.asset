@@ -27,6 +27,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8428560930459928864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/fado/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638660045194134885
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
+  Exists: 1
 --- !u!114 &-8298877652085596229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +98,78 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1036
+  Exists: 1
+--- !u!114 &-6456035231469515575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/fado/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638659981030680418
+  FileSizes:
+  - Name: Desktop
+    Value: 7776
+  Exists: 1
+--- !u!114 &-6329275520882487512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/track
+  m_EditorClassIdentifier: 
+  Name: track
+  StudioPath: 
+  Min: 0
+  Max: 7
+  Default: 0
+  ID:
+    data1: 947474763
+    data2: 1234972167
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - CantoDaVila
+  - Duvida
+  - Fleuma
+  - Respiracao
+  - TerraDoAmanha
+  - AQueCusto
+  - BrilhoDeTorbernita
+  - Postuma
+  Exists: 1
+--- !u!114 &-4779471886630056716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/fado/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638660045194204848
+  FileSizes:
+  - Name: Desktop
+    Value: 942
   Exists: 1
 --- !u!114 &-3140630347324746605
 MonoBehaviour:
@@ -199,18 +291,18 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -1234436853839877025}
-  - {fileID: 4126347950146203763}
-  - {fileID: -2121704992763439719}
-  - {fileID: 6064623868039173933}
+  - {fileID: -4779471886630056716}
+  - {fileID: 8029682279033317798}
+  - {fileID: -8428560930459928864}
+  - {fileID: -6456035231469515575}
   EditorEvents:
-  - {fileID: 401004084593317093}
-  - {fileID: -8632272423580682551}
+  - {fileID: 3501263504838488823}
+  - {fileID: 7507044781574568850}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 4126347950146203763}
+  - {fileID: -8428560930459928864}
   StringsBanks:
-  - {fileID: -1234436853839877025}
+  - {fileID: -4779471886630056716}
   cacheTime: 638660045195663948
   cacheVersion: 131620
 --- !u!114 &401004084593317093
@@ -241,6 +333,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3501263504838488823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music
+  Guid:
+    Data1: -1521324083
+    Data2: 1120932695
+    Data3: -411909199
+    Data4: 869600548
+  Banks:
+  - {fileID: 8029682279033317798}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6329275520882487512}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4126347950146203763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +382,53 @@ MonoBehaviour:
     Value: 1036
   Exists: 1
 --- !u!114 &6064623868039173933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/fado/Build/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 638660045195663948
+  FileSizes:
+  - Name: Desktop
+    Value: 5924992
+  Exists: 1
+--- !u!114 &7507044781574568850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CardDrew
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CardDrew
+  Guid:
+    Data1: 554977503
+    Data2: 1101732435
+    Data3: 104065426
+    Data4: -91136548
+  Banks:
+  - {fileID: -6456035231469515575}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8029682279033317798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
