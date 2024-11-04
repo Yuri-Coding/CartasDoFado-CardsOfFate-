@@ -5,17 +5,17 @@ using FadoProject;
 
 public class EffectHandler : MonoBehaviour
 {
-    public Player currentPlayer;
+    public Player mainPlayer;
     public Popup popup;
 
     public void ApplySelf(List<Effect> effects)
     {
-        currentPlayer = GameManager.currentPlayer;
-        Debug.Log(currentPlayer.PlayerName);
+        mainPlayer = GameManager.Instance.mainPlayer;
+        Debug.Log(mainPlayer.PlayerName);
         foreach (Effect ef in effects)
         {
             Debug.Log(ef.Type);
-            ApplyValue(currentPlayer, ef.Type, ef.Value);
+            ApplyValue(mainPlayer, ef.Type, ef.Value);
         }
 
         popup.UpdatePanel();
@@ -65,7 +65,7 @@ public class EffectHandler : MonoBehaviour
     public void PlayerActionDone()
     {
         // Chamar evento para falar que o jogador executou uma ação.
-        currentPlayer.PerformAction();
+        mainPlayer.PerformAction();
     }
 
     public void ApplySilence (Player target, int duration)

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,8 +9,9 @@ public class GameManager : MonoBehaviour
 	public HandManager handManager;
 	public Popup popup;
 
-	public static Player currentPlayer;
-	public int mainPlayerIndex;
+    public Player mainPlayer;
+
+    public int mainPlayerIndex;
 	public int currentIndex = 0;
 
 	public static GameManager Instance { get; private set; }
@@ -24,20 +25,6 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	
-	public enum GameState
-	{
-		InitGame,
-		NextPlayer,
-		AwaitPlayer,
-		HandlePlayerCard,
-		Voting,
-		AwaitOther,
-		HandleOtherCard,
-		EndPhase,
-		Win,
-		Lose
-	}
 
 	public GameState currentState;
 
@@ -64,24 +51,12 @@ public class GameManager : MonoBehaviour
 				InitGame();
 				break;
 
-			case GameState.NextPlayer:
-				NextPlayer();
+			case GameState.AwaitAction:
+				AwaitAction();
 				break;
 
-			case GameState.AwaitPlayer:
-				AwaitPlayer();
-				break;
-
-			case GameState.HandlePlayerCard:
-				HandlePlayerCard();
-				break;
-
-			case GameState.AwaitOther:
-				AwaitOther();
-				break;
-
-			case GameState.HandleOtherCard:
-				HandleOtherCard();
+			case GameState.HandleActions:
+				HandleActions();
 				break;
 
 			case GameState.EndPhase:
@@ -104,58 +79,29 @@ public class GameManager : MonoBehaviour
 
 	}
 
-	void NextPlayer()
+	void AwaitAction()
 	{
-		currentPlayer = playerManager.GetNextPlayer();
+		deckManager.DrawCard(handManager);
 
-		if (playerManager.IsMainPlayer(currentPlayer)) {
-			deckManager.DrawCard(handManager);
-			SetState(GameState.AwaitPlayer);
-		} else {
-			SetState(GameState.AwaitOther);
-		}
-		
-	}
+		// Inscreve-se no evento de aÃ§Ã£o do jogador
+		mainPlayer.OnPlayerAction += OnPlayerActionCompleted;
+		Debug.Log("Await Player: Modo espera ativado.");
 
-	void AwaitPlayer()
-	{
-		Debug.Log($"(playerId: {currentPlayer.PlayerId}, mainPlayerIndex{mainPlayerIndex})");
-		if (currentPlayer.PlayerId == mainPlayerIndex)
-		{
-			deckManager.DrawCard(handManager);
-
-			// Inscreve-se no evento de ação do jogador
-			currentPlayer.OnPlayerAction += OnPlayerActionCompleted;
-			Debug.Log("Await Player: Modo espera ativado.");
-		}
-		else
-		{
-			SetState(GameState.AwaitOther);
-		}
 	}
 
 	private void OnPlayerActionCompleted()
 	{
-		currentPlayer.OnPlayerAction -= OnPlayerActionCompleted;
-		Debug.Log("GameManager detectou ação");
+		mainPlayer.OnPlayerAction -= OnPlayerActionCompleted;
+		Debug.Log("GameManager detectou aÃ§Ã£o");
 
-		SetState(GameState.HandlePlayerCard);
+		SetState(GameState.HandleActions);
 	}
 
-	void HandlePlayerCard()
-	{
-
-	}
-	void AwaitOther()
+	void HandleActions()
 	{
 
 	}
 
-	void HandleOtherCard()
-	{
-
-	}
-   
 	void EndPhase() { /* Handle end phase logic */ }
 
 	void Win()
@@ -170,11 +116,11 @@ public class GameManager : MonoBehaviour
 
 	public void OnInitPopdown()
 	{
-		Player p1 = new Player(0, "Matias", false);
-		Player p2 = new Player(1, "Cassis", true );
-		Player p3 = new Player(2, "Yuras" , false);
-		Player p4 = new Player(3, "Sales" , false);
-		Player p5 = new Player(4, "Robson", false);
+		Player p1 = new Player(0, "Matias", false, true );
+		Player p2 = new Player(1, "Cassis", true , false);
+		Player p3 = new Player(2, "Yuras" , false, true );
+		Player p4 = new Player(3, "Sales" , false, true );
+		Player p5 = new Player(4, "Robson", false, true );
 		playerManager.AddPlayer(p1);
 		playerManager.AddPlayer(p2);
 		playerManager.AddPlayer(p3);
@@ -182,10 +128,10 @@ public class GameManager : MonoBehaviour
 		playerManager.AddPlayer(p5);
 
 		playerManager.InitializePlayers();
-		currentPlayer = playerManager.GetNextPlayer();
+		mainPlayer = p2;
 
 		Debug.Log("Init Finalizado.");
-		SetState(GameState.AwaitPlayer);
+		SetState(GameState.AwaitAction);
 
 	}
 

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -45,6 +45,6 @@ public class PlayerManager : MonoBehaviour
 	public void DebugAction()
 	{
         players[currentPlayerIndex].PerformAction();
-		Debug.Log("Ação acionada em Player.");
+		Debug.Log("AÃ§Ã£o acionada em Player.");
 	}
 }

@@ -32,6 +32,8 @@ public class DeckManager : MonoBehaviour
         currentIndex = Random.Range(0,allCards.Count);
         Card nextCard = allCards[currentIndex];
         handManager.addCardToHand(nextCard);
+
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.CardDrew, gameObject.transform.localPosition);
         //Da um loop no deck caso as cartas acabem
         //currentIndex = (currentIndex + 1) % allCards.Count;
     }

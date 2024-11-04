@@ -1,32 +1,36 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
 
 public class Player
 {
-	public int      PlayerId { get; private set; }
-	public string   PlayerName { get; set; }
-	public int      Morale { get; private set; }
-	public int      Influence { get; private set; }
-	public int      Corruption { get; private set; }
-	public int      SilenceTurn { get; private set; }
+	public int		PlayerId { get; private set; }
+	public string	PlayerName { get; set; }
+	
+	public int		Morale { get; private set; }
+	public int		Influence { get; private set; }
+	public int		Corruption { get; private set; }
+	public int		SilenceTurn { get; private set; }
 	public int		ImmunityTurn { get; private set; }
-    public bool		IsMainPlayer { get; set; }
+	public bool		IsMainPlayer { get; set; }
+    public bool		IsBot { get; set; }
 
 
     public event Action OnPlayerAction;
 
 
-    // Constructor
-    public Player(
+	// Constructor
+	public Player(
 		int playerId,
 		string playerName,
-		bool isMainPlayer)
+		bool isMainPlayer,
+		bool isBot)
 	{
 		PlayerId = playerId;
 		PlayerName = playerName;
 		IsMainPlayer = isMainPlayer;
+		IsBot = isBot;
 	}
 
 	// Methods
@@ -54,11 +58,11 @@ public class Player
 		*/
 	}
 
-	// Alterar par�metro:
-	// Caso queira diminuir um par�metro, repassar valor negativo no amount.
+	// Alterar parâmetro:
+	// Caso queira diminuir um par穃etro, repassar valor negativo no amount.
 	public void Add(string type, int amount)
 	{
-		switch(type)
+		switch (type)
 		{
 			case "Morale":
 				Morale += amount;
@@ -69,7 +73,7 @@ public class Player
 				break;
 
 			case "Corruption":
-				Corruption+= amount;
+				Corruption += amount;
 				break;
 		}
 	}
@@ -89,15 +93,15 @@ public class Player
 	// End the turn
 	public void EndTurn()
 	{
-		SilenceTurn  -= 1;
+		SilenceTurn -= 1;
 		ImmunityTurn -= 1;
 		Debug.Log($"O turno de {PlayerId} finalizou.");
 	}
 
-    public void DebugPlayer()
-    {
-        Debug.Log($"Player {PlayerId}: {PlayerName} - Moralidade: {Morale}, Influencia: {Influence}, Corrup��o: {Corruption}");
-    }
+	public void DebugPlayer()
+	{
+		Debug.Log($"Player {PlayerId}: {PlayerName} - Moralidade: {Morale}, Influencia: {Influence}, Corrupção: {Corruption}");
+	}
 
 	public void InitializePlayer()
 	{
@@ -106,9 +110,19 @@ public class Player
 		Corruption = 0;
 		SilenceTurn = 0;
 	}
-    public void PerformAction()
-    {
-        Debug.Log($"{PlayerName} realizou uma a��o para Player.cs.");
-        OnPlayerAction?.Invoke();
-    }
+	public void PerformAction()
+	{
+		Debug.Log($"{PlayerName} realizou uma ação para Player.cs.");
+		OnPlayerAction?.Invoke();
+	}
+
+	public void PerformRandomAction()
+	{
+		if (IsBot == false) {
+			Debug.LogError("O player não é um BOT!");
+			return;
+		}
+
+		Debug.Log("Ação Aleatória definida para o jogador");
+	}
 }

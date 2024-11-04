@@ -124,8 +124,8 @@ public class Popup : MonoBehaviour
 	public void UpdatePanel()
 	{
 		
-        corruptionText.text = GameManager.currentPlayer.Corruption.ToString();
-        moraleText.text		= GameManager.currentPlayer.Morale.ToString();
-        influenceText.text	= GameManager.currentPlayer.Influence.ToString();
+        corruptionText.text = GameManager.Instance.mainPlayer.Corruption.ToString();
+        moraleText.text		= GameManager.Instance.mainPlayer.Morale.ToString();
+        influenceText.text	= GameManager.Instance.mainPlayer.Influence.ToString();
 	}
 }

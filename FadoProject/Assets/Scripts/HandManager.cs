@@ -10,11 +10,11 @@ public class HandManager : MonoBehaviour
 
     public GameObject cardPrefab; //Serve pra colocar o prefab de carta criado, usa o inspector
 
-    public Transform handTransform; //Define uma "âncora" pra posição da mão
+    public Transform handTransform; //Define uma "?ncora" pra posi??o da m?o
 
-    public float HandSpread = -5f;//Vai servir pra angular as cartas na mão
+    public float HandSpread = -5f;//Vai servir pra angular as cartas na m?o
 
-    public List<GameObject> cardsInHand = new List<GameObject>(); //Lista de cartas(o objeto) que estão na mão
+    public List<GameObject> cardsInHand = new List<GameObject>(); //Lista de cartas(o objeto) que est?o na m?o
 
     public float HorizontalSpacing = 175f;
     public float VerticalSpacing = 50f;
@@ -29,7 +29,7 @@ public class HandManager : MonoBehaviour
         //updateHandVisuals();
     }
 
-    //Adiciona uma carta na mão(apenas os dados)
+    //Adiciona uma carta na m?o(apenas os dados)
     public void addCardToHand(Card cardData)
     {
         //Instanciando a carta
@@ -43,13 +43,13 @@ public class HandManager : MonoBehaviour
         updateHandVisuals();
     }
     
-    //Adiciona uma carta na mão(visualmente)
+    //Adiciona uma carta na m?o(visualmente)
     private void updateHandVisuals()
     {
         int cardCount = cardsInHand.Count;
         for (int i = 0; i < cardCount; i++)
         {
-            //Serve pra tirar um erro de divisão por 0
+            //Serve pra tirar um erro de divis?o por 0
             if(cardCount == 1)
             {
                 cardsInHand[i].transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
@@ -57,18 +57,18 @@ public class HandManager : MonoBehaviour
                 return;
             }
 
-            //Angulando as cartas na mão
+            //Angulando as cartas na m?o
             float cardAngle = (HandSpread * (i - (cardCount - 1) / 2f));
             cardsInHand[i].transform.localRotation = Quaternion.Euler(0f, 0f, cardAngle);
             
-            //Arrumando a posição horizontal com o centro da mão
+            //Arrumando a posi??o horizontal com o centro da m?o
             float horizontalSpread = (HorizontalSpacing * (i - (cardCount - 1) / 2f));
 
-            //Arrumando a posição vertical com o centro da mão
+            //Arrumando a posi??o vertical com o centro da m?o
             float normalizedPosition = (2f * i / (cardCount - 1) - 1f);
             float verticalSpread = VerticalSpacing * (1 - normalizedPosition * normalizedPosition);
 
-            //Aplicando as posições
+            //Aplicando as posi??es
             cardsInHand[i].transform.localPosition = new Vector3(horizontalSpread, verticalSpread, 0f);
         }
     }
