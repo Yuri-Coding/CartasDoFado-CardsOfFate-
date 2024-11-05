@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text roundText;
 
+	public bool canDraw;
+
+	//Var para verificar se carta está sendo jogada
+	public bool inPlay;
+
     public static GameManager Instance { get; private set; }
 	void Awake()
 	{
@@ -39,6 +44,8 @@ public class GameManager : MonoBehaviour
 		mainPlayerIndex = 1;
 		popup.PopupMessage("Bem vindo ao cartas do fado");
 		SetState(GameState.InitGame);
+		canDraw = true;
+		inPlay = false;
 	}
 
 	void Update() { /*HandleState();*/ }
@@ -79,6 +86,7 @@ public class GameManager : MonoBehaviour
 
             case GameState.EndPhase:
 				EndPhase();
+				canDraw = true;
 				break;
 
 			case GameState.Win:
@@ -159,7 +167,7 @@ public class GameManager : MonoBehaviour
 	public void OnInitPopdown()
 	{
 		Player p1 = new Player(0, "Matias", Roles.Corrupt, false, true );
-		Player p2 = new Player(1, "Cassis", Roles.Honest,  true , false);
+		Player p2 = new Player(1, "Cassis", Roles.Medic,  true , false);
 		Player p3 = new Player(2, "Yuras" , Roles.Medic,   false, true );
 		Player p4 = new Player(3, "Sales" , Roles.Honest,  false, true );
 		Player p5 = new Player(4, "Robson", Roles.Honest,  false, true );
