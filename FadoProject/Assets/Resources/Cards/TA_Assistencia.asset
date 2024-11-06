@@ -21,8 +21,11 @@ MonoBehaviour:
   cardLore: "V\xE1rios habitantes est\xE3o adoecendo rapidamente. Voc\xEA se voluntaria
     para cuidar dos enfermos, mesmo correndo risco?"
   canTarget: 0
+  targetType: 0
   choice1: 'Ajudar os doentes. '
   choice2: Proteger-se e evitar contato.
+  moraleCost: 0
+  influenceCost: 0
   targetEffects: []
   selfEffects: []
   choice1Effects:

@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
-  m_Name: ME_Tratamento
+  m_Name: ME_SoroRevitalizante
   m_EditorClassIdentifier: 
-  cardName: Tratamento
+  cardName: Soro Revitalizante
   cardSprite: {fileID: 1308830767022127242, guid: 5d5f365de0a3f9440b818a5601617831, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: -4 veneno para o alvo\nSe Silencia por 2 turnos
-  cardLore: "N\xE3o piore as coisas."
+  cardEffect: Remove 2 marcadores de veneno de um jogador e concede imunidade ao
+    veneno por 1 turno. \n+5 Moralidade
+  cardLore: "Um t\xF4nico energ\xE9tico que recupera a vitalidade e imunidade tempor\xE1ria."
   canTarget: 1
   targetType: 1
   choice1: 
@@ -26,9 +27,11 @@ MonoBehaviour:
   influenceCost: 0
   targetEffects:
   - Type: 5
-    Value: -4
+    Value: -2
+  - Type: 1
+    Value: 1
   selfEffects:
-  - Type: 0
-    Value: 2
+  - Type: 2
+    Value: 5
   choice1Effects: []
   choice2Effects: []

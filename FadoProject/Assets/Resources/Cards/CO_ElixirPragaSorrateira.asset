@@ -16,18 +16,20 @@ MonoBehaviour:
   cardSprite: {fileID: -7959052698411436611, guid: 3fe6b3abd7cc1a5449fdea1a624bb96c, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 1
-  cardEffect: "Envenena um jogador, adicionando +1 marcadores de veneno.\\n+15 Influ\xEAncia"
+  cardEffect: Envenena um jogador, adicionando +1 marcador de veneno.\n+15 Moralidade
   cardLore: "Extra\xEDda do cora\xE7\xE3o de uma flor venenosa, esta po\xE7\xE3o
     induz febres discretas e mortais que corroem lentamente a vitalidade."
   canTarget: 1
   targetType: 1
   choice1: 
   choice2: 
+  moraleCost: 0
+  influenceCost: 0
   targetEffects:
   - Type: 5
     Value: 1
   selfEffects:
-  - Type: 4
+  - Type: 2
     Value: 15
   choice1Effects: []
   choice2Effects: []

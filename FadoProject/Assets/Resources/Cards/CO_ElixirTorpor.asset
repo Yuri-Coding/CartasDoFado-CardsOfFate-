@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
-  m_Name: ME_Tratamento
+  m_Name: CO_ElixirTorpor
   m_EditorClassIdentifier: 
-  cardName: Tratamento
-  cardSprite: {fileID: 1308830767022127242, guid: 5d5f365de0a3f9440b818a5601617831, type: 3}
+  cardName: Elixir do Torpor
+  cardSprite: {fileID: -7959052698411436611, guid: 3fe6b3abd7cc1a5449fdea1a624bb96c, type: 3}
   zoomedSprite: {fileID: 0}
-  cardType: 2
-  cardEffect: -4 veneno para o alvo\nSe Silencia por 2 turnos
-  cardLore: "N\xE3o piore as coisas."
+  cardType: 1
+  cardEffect: "O alvo n\xE3o pode votar na pr\xF3xima rodada.\\n+10 Moralidade"
+  cardLore: "Feito com ervas que induzem sonol\xEAncia, este elixir faz com que o
+    alvo perca a pr\xF3xima vota\xE7\xE3o, ficando incapaz de votar."
   canTarget: 1
   targetType: 1
   choice1: 
@@ -25,10 +26,10 @@ MonoBehaviour:
   moraleCost: 0
   influenceCost: 0
   targetEffects:
-  - Type: 5
-    Value: -4
+  - Type: 6
+    Value: 0
   selfEffects:
-  - Type: 0
-    Value: 2
+  - Type: 2
+    Value: 10
   choice1Effects: []
   choice2Effects: []

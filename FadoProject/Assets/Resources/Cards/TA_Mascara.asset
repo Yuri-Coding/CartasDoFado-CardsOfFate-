@@ -21,8 +21,11 @@ MonoBehaviour:
   cardLore: "Voc\xEA conseguiu uma m\xE1scara que protege contra a infec\xE7\xE3o.
     Um amigo sem m\xE1scara est\xE1 ficando cada vez mais doente."
   canTarget: 0
+  targetType: 0
   choice1: "Dar sua m\xE1scara ao amigo. "
   choice2: "Usar a m\xE1scara e se proteger. "
+  moraleCost: 0
+  influenceCost: 0
   targetEffects: []
   selfEffects: []
   choice1Effects:

@@ -10,25 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
-  m_Name: ME_Tratamento
+  m_Name: CO_BrumaDiscordia
   m_EditorClassIdentifier: 
-  cardName: Tratamento
-  cardSprite: {fileID: 1308830767022127242, guid: 5d5f365de0a3f9440b818a5601617831, type: 3}
+  cardName: Bruma da Discordia
+  cardSprite: {fileID: -7959052698411436611, guid: 3fe6b3abd7cc1a5449fdea1a624bb96c, type: 3}
   zoomedSprite: {fileID: 0}
-  cardType: 2
-  cardEffect: -4 veneno para o alvo\nSe Silencia por 2 turnos
-  cardLore: "N\xE3o piore as coisas."
+  cardType: 1
+  cardEffect: "Reduz a moralidade de todos os jogadores em 10 pontos.\\n+5 Moralidade\\n+1
+    Corrup\xE7\xE3o para todos os jogadores"
+  cardLore: "Uma po\xE7\xE3o que, ao ser dispersada, causa confus\xE3o e desconfian\xE7a
+    entre os jogadores, enfraquecendo suas alian\xE7as."
   canTarget: 1
-  targetType: 1
+  targetType: 5
   choice1: 
   choice2: 
   moraleCost: 0
   influenceCost: 0
   targetEffects:
-  - Type: 5
-    Value: -4
+  - Type: 2
+    Value: -10
+  - Type: 3
+    Value: 1
   selfEffects:
-  - Type: 0
-    Value: 2
+  - Type: 2
+    Value: 5
   choice1Effects: []
   choice2Effects: []

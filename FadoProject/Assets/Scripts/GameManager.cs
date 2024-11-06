@@ -147,6 +147,7 @@ public class GameManager : MonoBehaviour
 	void HandleShowResults()
 	{
 		//Debug.Log("Fase de Mostrar Resultados (Jornal)");
+		//TOMAS SE PÁ É MELHOR N MOSTRA NADA QUANDO A NOTIFICAÇÃO ESTIVER VAZIA, VULGO SEM NOTIFICAÇÃO, TO CORINGANDO AQ COM ESSE PAPEL VAZIO KKKKKK
 		
 		mainPlayer.CheckoutAllNotifications();
 

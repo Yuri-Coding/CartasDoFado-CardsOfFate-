@@ -16,18 +16,20 @@ MonoBehaviour:
   cardSprite: {fileID: -7959052698411436611, guid: 3fe6b3abd7cc1a5449fdea1a624bb96c, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 1
-  cardEffect: "Silencia um jogador neste turno\\n+10 Influ\xEAncia"
+  cardEffect: Silencia um jogador neste turno\n+10 Moralidade
   cardLore: "Criada a partir de esporos de um cogumelo encontrado no oriente, atinge
     principalmente a garganta e o sistema respirat\xF3rio."
   canTarget: 1
   targetType: 1
   choice1: 
   choice2: 
+  moraleCost: 0
+  influenceCost: 0
   targetEffects:
   - Type: 0
     Value: 1
   selfEffects:
-  - Type: 4
+  - Type: 2
     Value: 10
   choice1Effects: []
   choice2Effects: []

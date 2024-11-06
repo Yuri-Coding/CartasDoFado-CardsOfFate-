@@ -10,34 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
-  m_Name: TA_ParenteInfectado
+  m_Name: TA_LivroDaPraga
   m_EditorClassIdentifier: 
-  cardName: Visita a parente infectado
+  cardName: Livro de Conhecimento da Praga
   cardSprite: {fileID: 6184597330533857579, guid: a378c64da994ad84b9fd193f9066778d, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 0
-  cardEffect: "Op\xE7\xE3o 1: +10 Influ\xEAncia +5 Moralidade +2 Veneno\\nOp\xE7\xE3o
-    2: +5 Influ\xEAncia +15 Moralidade"
-  cardLore: "Um parente pr\xF3ximo foi infectado pela peste e est\xE1 isolado. Voc\xEA
-    tem a escolha de visit\xE1-lo, correndo o risco de se infectar, ou se proteger
-    e evitar o contato."
+  cardEffect: "Op\xE7\xE3o 1: +10 Influ\xEAncia +1 Corrup\xE7\xE3o\\nOp\xE7\xE3o
+    2: +15 Moralidade -1 Corrup\xE7\xE3o"
+  cardLore: "Voc\xEA encontra um livro com informa\xE7\xF5es importantes sobre a
+    praga. Pode estud\xE1-lo sozinho ou compartilh\xE1-lo com outras pessoas."
   canTarget: 0
   targetType: 0
-  choice1: "Visitar o parente e confort\xE1-lo. "
-  choice2: 'Ficar seguro e evitar o contato. '
+  choice1: Manter o conhecimento para si.
+  choice2: 'Compartilhar o conhecimento com os outros. '
   moraleCost: 0
   influenceCost: 0
   targetEffects: []
   selfEffects: []
   choice1Effects:
-  - Type: 2
+  - Type: 4
     Value: 10
-  - Type: 4
-    Value: 5
-  - Type: 5
-    Value: 2
+  - Type: 3
+    Value: 1
   choice2Effects:
-  - Type: 4
-    Value: 5
   - Type: 2
     Value: 15
+  - Type: 3
+    Value: -1

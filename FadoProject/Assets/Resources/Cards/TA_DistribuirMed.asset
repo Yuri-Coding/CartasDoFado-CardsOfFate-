@@ -21,8 +21,11 @@ MonoBehaviour:
   cardLore: "Voc\xEA possui uma quantidade limitada de rem\xE9dios contra a peste.
     Poderia distribu\xED-los de forma justa entre os necessitados."
   canTarget: 0
+  targetType: 0
   choice1: Distribuir igualmente entre os necessitados.
   choice2: "Guardar uma por\xE7\xE3o maior para si mesmo."
+  moraleCost: 0
+  influenceCost: 0
   targetEffects: []
   selfEffects: []
   choice1Effects:

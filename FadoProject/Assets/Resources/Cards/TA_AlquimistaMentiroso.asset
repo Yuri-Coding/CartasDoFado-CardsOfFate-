@@ -16,31 +16,26 @@ MonoBehaviour:
   cardSprite: {fileID: 6184597330533857579, guid: a378c64da994ad84b9fd193f9066778d, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 0
-  cardEffect: "Op\xE7\xE3o 1:+75 Moralidade +2 Influ\xEAncia +1 Corrup\xE7\xE3o\\nOp\xE7\xE3o
-    2: +5 Moralidade +25 Influ\xEAncia -1 Corrup\xE7\xE3o"
-  cardLore: "O famoso alquimista da cidade Arvid, te fez uma oferta de venda de po\xE7\xF5es
-    afrodis\xEDacas falsas. Arvid lhe oferece muito dinheiro, fama e liberdade de
-    vida para voc\xEA vender e prometer falsas ofertas para os moradores locais."
+  cardEffect: "Op\xE7\xE3o 1: +20 Influ\xEAncia +1 Corrup\xE7\xE3o\\nOp\xE7\xE3o
+    2: +15 Moralidade -1 Corrup\xE7\xE3o"
+  cardLore: " O famoso alquimista Arvid lhe oferece uma oportunidade lucrativa para
+    vender po\xE7\xF5es falsas aos moradores. A oferta \xE9 tentadora, mas implica
+    enganar a comunidade."
   canTarget: 0
-  choice1: "Aceitar a oferta sozinho, aplicar o golpe em seus companheiros e nos
-    moradores locais e ganhar todo o dinheiro e fama oferecida. Grande parte n\xE3o
-    gostam nem um pouco do produto falso, enquanto os adoradores de Arvid, defendem
-    voc\xEA e o famoso alquimista."
-  choice2: "N\xE3o aceitar, denunciar aos seus colegas e os moradores, sobre a falsidade
-    de Arvid. Alguns moradores acreditam, outros defendem Arvid com sangue nos olhos."
+  targetType: 0
+  choice1: "Aceitar a oferta de Arvid e vender as po\xE7\xF5es falsas."
+  choice2: Recusar a oferta e denunciar Arvid aos moradores.
+  moraleCost: 0
+  influenceCost: 0
   targetEffects: []
   selfEffects: []
   choice1Effects:
-  - Type: 2
-    Value: 75
   - Type: 4
-    Value: 2
+    Value: 20
   - Type: 3
     Value: 1
   choice2Effects:
   - Type: 2
-    Value: 5
-  - Type: 4
-    Value: 25
+    Value: 15
   - Type: 3
     Value: -1

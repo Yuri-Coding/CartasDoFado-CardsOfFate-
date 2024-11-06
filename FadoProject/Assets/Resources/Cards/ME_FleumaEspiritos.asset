@@ -24,6 +24,8 @@ MonoBehaviour:
   targetType: 5
   choice1: 
   choice2: 
+  moraleCost: 0
+  influenceCost: 0
   targetEffects:
   - Type: 5
     Value: -1

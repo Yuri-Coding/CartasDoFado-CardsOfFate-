@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
-  m_Name: ME_Tratamento
+  m_Name: ME_TonicoResistencia
   m_EditorClassIdentifier: 
-  cardName: Tratamento
+  cardName: "T\xF4nico de Resist\xEAncia"
   cardSprite: {fileID: 1308830767022127242, guid: 5d5f365de0a3f9440b818a5601617831, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: -4 veneno para o alvo\nSe Silencia por 2 turnos
-  cardLore: "N\xE3o piore as coisas."
+  cardEffect: "Reduz o efeito de venenos e debuffs em um jogador pela metade nos
+    pr\xF3ximos 2 turnos.\\n-5 Moralidade"
+  cardLore: "Um t\xF4nico raro que reduz os efeitos do veneno e maleficios para ajudar
+    os aliados a resistir \xE0 praga."
   canTarget: 1
   targetType: 1
   choice1: 
@@ -25,10 +27,10 @@ MonoBehaviour:
   moraleCost: 0
   influenceCost: 0
   targetEffects:
-  - Type: 5
-    Value: -4
-  selfEffects:
-  - Type: 0
+  - Type: 1
     Value: 2
+  selfEffects:
+  - Type: 2
+    Value: -5
   choice1Effects: []
   choice2Effects: []
