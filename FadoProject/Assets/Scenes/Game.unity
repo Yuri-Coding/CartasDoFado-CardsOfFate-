@@ -222,8 +222,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckManager: {fileID: 763798870}
-  effectHandler: {fileID: 0}
+  effectHandler: {fileID: 1574919424}
   currentPlayerIndex: 0
 --- !u!4 &117878854
 Transform:
@@ -1363,6 +1363,8 @@ MonoBehaviour:
   corruptionText: {fileID: 1317862877}
   moraleText: {fileID: 931497094}
   influenceText: {fileID: 48256753}
+  bigRoundText: {fileID: 987654343}
+  bigTextPanelAnimation: {fileID: 875580810}
   effectHandler: {fileID: 1574919424}
 --- !u!1 &709904871
 GameObject:
@@ -1509,8 +1511,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Esse \xE9 um texto extremamente InteliGente!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1638,7 +1640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.7607843}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1740,8 +1742,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Eu sou InteliGente!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1876,8 +1878,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2046,15 +2048,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: RODADA 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2281701375
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2583,8 +2585,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Eu sou InteliGente!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2719,8 +2721,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Rodada
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2890,8 +2892,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3260,7 +3262,6 @@ MonoBehaviour:
   mainPlayerIndex: 0
   roundText: {fileID: 1233391584}
   round: 0
-  roundText: {fileID: 0}
   canDraw: 0
   inPlay: 0
   currentState: 0
@@ -3532,8 +3533,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3668,8 +3669,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Bom dia\nEste \xE9 um texto exemplo apenas para saber se t\xE1 tudo ok"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

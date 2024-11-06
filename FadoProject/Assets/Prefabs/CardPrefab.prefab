@@ -68,7 +68,7 @@ MonoBehaviour:
   m_text: "Extra\xEDda do cora\xE7\xE3o de uma flor venenosa, esta po\xE7\xE3o induz
     febres discretas e mortais que corroem lentamente a vitalidade."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_margin: {x: 0.014910817, y: 0, z: 0.02536869, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1138472033066703390
@@ -366,7 +366,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Envenena um jogador, adicionando +1 marcadores de veneno.\\n+15 Influ\xEAncia"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &4193522330842965812
@@ -567,6 +567,7 @@ MonoBehaviour:
   textName: {fileID: 6592527922219250163}
   textEffect: {fileID: 5327879534214103500}
   textLore: {fileID: 5930673841671731905}
+  popup: {fileID: 0}
 --- !u!61 &5044032561072463309
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -625,6 +626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a42b8377227ac4a9b6640de2cd8e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCard: {fileID: 0}
+  currentCardDisplay: {fileID: 0}
   selectScale: 1.1
   cardPlay: {x: 0, y: 350, z: 0}
   playPosition: {x: 0, y: 550, z: 0}
@@ -701,15 +704,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Card Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4291282922
-  m_fontColor: {r: 0.9169811, g: 0.78029895, b: 0.78029895, a: 1}
+    rgba: 4281874488
+  m_fontColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

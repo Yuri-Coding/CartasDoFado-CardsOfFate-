@@ -197,7 +197,7 @@ public class GameManager : MonoBehaviour
 	public void OnInitPopdown()
 	{
 		Player p1 = new Player(0, "Matias", Roles.Corrupt, false, true );
-		Player p2 = new Player(1, "Cassis", Roles.Medic,  true , false);
+		Player p2 = new Player(1, "Cassis", Roles.Honest,  true , false);
 		Player p3 = new Player(2, "Yuras" , Roles.Medic,   false, true );
 		Player p4 = new Player(3, "Sales" , Roles.Honest,  false, true );
 		Player p5 = new Player(4, "Robson", Roles.Honest,  false, true );

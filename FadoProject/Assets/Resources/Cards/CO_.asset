@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
+  m_Name: CO_
+  m_EditorClassIdentifier: 
+  cardName: 
+  cardSprite: {fileID: 0}
+  zoomedSprite: {fileID: 0}
+  cardType: 0
+  cardEffect: 
+  cardLore: 
+  canTarget: 0
+  targetType: 0
+  choice1: 
+  choice2: 
+  moraleCost: 0
+  influenceCost: 
+  targetEffects: []
+  selfEffects: []
+  choice1Effects: []
+  choice2Effects: []

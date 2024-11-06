@@ -83,6 +83,8 @@ public class PlayerManager : MonoBehaviour
 					botTarget = new List<Player>();
 					botEligibleTarget = new List<Player>();
 
+					Debug.Log(botCard);
+					Debug.Log(effectHandler);
 					if (botCard.selfEffects.Count != 0) { effectHandler.ApplySelf(bot, botCard.selfEffects); }
 					if (botCard.targetEffects.Count != 0) {
 						
