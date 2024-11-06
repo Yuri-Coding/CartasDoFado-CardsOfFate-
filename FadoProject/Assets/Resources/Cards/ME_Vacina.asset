@@ -20,6 +20,7 @@ MonoBehaviour:
   cardLore: "Ao injetar a praga no corpo das pessoas elas criam defesa contra a mesma,
     o pre\xE7o a se pagar \xE9 correr o risco de contrair a pr\xF3pria praga."
   canTarget: 1
+  targetType: 1
   choice1: 
   choice2: 
   targetEffects:

@@ -16,6 +16,8 @@ namespace FadoProject {
         public string cardLore;
 
         public bool canTarget;
+        public TargetType targetType;
+
         public string choice1;
         public string choice2;
 

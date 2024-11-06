@@ -16,6 +16,7 @@ public enum GameState
 	ProcessVoteResults,	// Processar resultados da votação.
 
 	// Fase Única
+	StartPhase,			// Início de Fase, animações.
 	EndPhase,			// Verifica condições finalização de jogo.
 
 	// Finalização

@@ -35,7 +35,6 @@ public class DeckManager : MonoBehaviour
 			return;
 		}
 
-		
 		List<Card> eligibleCards = allCards.FindAll(card => card.cardType == GameManager.Instance.mainPlayer.PlayerCardType);
 		currentIndex = Random.Range(0,eligibleCards.Count);
 		Card nextCard = eligibleCards[currentIndex];

@@ -21,6 +21,7 @@ MonoBehaviour:
   cardLore: "Uma po\xE7\xE3o feita de ervas raras e escuras que, quando inalada,
     deixa os sentidos embotados e os movimentos pesados."
   canTarget: 1
+  targetType: 2
   choice1: 
   choice2: 
   targetEffects:

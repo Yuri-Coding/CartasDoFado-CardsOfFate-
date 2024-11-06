@@ -21,6 +21,7 @@ MonoBehaviour:
     de casamento e lua de mel, faz com que o alvo se enfatue por voc\xEA e concorde
     com tudo que \xE9 dito por seu amante."
   canTarget: 1
+  targetType: 1
   choice1: 
   choice2: 
   targetEffects:

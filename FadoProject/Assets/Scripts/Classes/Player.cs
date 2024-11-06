@@ -16,6 +16,11 @@ public class Player
 	public int		ImmunityTurn { get; private set; }
 	public bool		IsMainPlayer { get; set; }
     public bool		IsBot { get; set; }
+	public Player	vote { get; private set; }
+
+
+
+	public List<Notification> notifications;
 
 
     public event Action OnPlayerAction;
@@ -49,28 +54,37 @@ public class Player
 		{
 			case "Morale":
 				Morale += amount;
-				break;
+                //notifications.Add(new Notification(FadoProject.EffectType.AddMorale, amount));
+                break;
 
 			case "Influence":
 				Influence += amount;
-				break;
+                //notifications.Add(new Notification(FadoProject.EffectType.AddInfluence, amount));
+                break;
 
 			case "Corruption":
-				Corruption += amount;
-				break;
+                Corruption += amount;
+                //notifications.Add(new Notification(FadoProject.EffectType.AddCorruption, amount));
+                break;
 		}
-	}
+    }
 
 
 	// Silenciar o jogador
 	public void ApplySilence(int duration)
 	{
+		notifications.Add(new Notification(FadoProject.EffectType.Silence, duration));
 		SilenceTurn = duration;
 	}
 
 	public void ApplyImmunity(int duration)
 	{
 		ImmunityTurn = duration;
+	}
+
+	public void ApplyForceVote()
+	{
+
 	}
 
 	// End the turn
@@ -92,10 +106,12 @@ public class Player
 		Influence = 0;
 		Corruption = 0;
 		SilenceTurn = 0;
+
+		notifications = new List<Notification>();
 	}
 	public void PerformAction()
 	{
-		Debug.Log($"{PlayerName} realizou uma ação para Player.cs.");
+		//Debug.Log($"{PlayerName} realizou uma ação para Player.cs.");
 		OnPlayerAction?.Invoke();
 	}
 
@@ -115,4 +131,18 @@ public class Player
 		Debug.LogError("Não foi selecionado.");
 		return CardType.Medic;
     }
+
+	public void CheckoutAllNotifications()
+	{
+		foreach(Notification notification in notifications)
+		{
+			notification.CheckoutNotification();
+		}
+	}
+
+	public void CleanNotification()
+	{
+		Debug.Log($"CleanNotification() para {PlayerName}");
+		notifications = new List<Notification>();
+	}
 }

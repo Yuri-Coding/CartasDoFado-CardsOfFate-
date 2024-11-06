@@ -20,6 +20,7 @@ MonoBehaviour:
   cardLore: "Extra\xEDda do cora\xE7\xE3o de uma flor venenosa, esta po\xE7\xE3o
     induz febres discretas e mortais que corroem lentamente a vitalidade."
   canTarget: 1
+  targetType: 1
   choice1: 
   choice2: 
   targetEffects:

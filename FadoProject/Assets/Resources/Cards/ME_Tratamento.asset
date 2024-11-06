@@ -19,6 +19,7 @@ MonoBehaviour:
   cardEffect: -4 veneno para o alvo\nSe Silencia por 2 turnos
   cardLore: "N\xE3o piore as coisas."
   canTarget: 1
+  targetType: 1
   choice1: 
   choice2: 
   targetEffects:

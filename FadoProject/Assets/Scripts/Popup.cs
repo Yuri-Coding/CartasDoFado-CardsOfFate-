@@ -13,11 +13,14 @@ using Unity.VisualScripting;
 
 public class Popup : MonoBehaviour
 {
+    // Componentes de Popup Simples
 	public Animation singleAnim;
 
 	public TMP_Text contentObject;
     private bool isWaitingForInput = true;
 
+
+    // Componentes de Popup de Escolha
     public TMP_Text choiceContext;
     public TMP_Text choiceText1;
     public TMP_Text choiceText2;
@@ -28,10 +31,14 @@ public class Popup : MonoBehaviour
     public Animation choiceAnim;
 
 
+    // Texto Debug de Par√¢metro
     public TMP_Text corruptionText;
     public TMP_Text moraleText;
     public TMP_Text influenceText;
 
+    // Texto Grande que Aparece no In√≠cio dos Rounds
+    public TMP_Text bigRoundText;
+    public Animation bigTextPanelAnimation;
 
     private Card currentCard;
 	public EffectHandler effectHandler;
@@ -58,22 +65,36 @@ public class Popup : MonoBehaviour
 		}
 	}
 
-	public void PopupMessage(string content)
-	{
-		singleAnim.Play("fadein");
-		contentObject.text = content;
+    // ===============================================================
+    //                        GENERAL POPUP
+    // ===============================================================
 
-        StartCoroutine(AutoHidePopup(7f));
+    public void PopupMessage(string content)
+    {
+        singleAnim.Play("fadein");
+        contentObject.text = content;
+
+        StartCoroutine(AutoHidePopup(7f, "normal"));
     }
 
-	void Popdown()
-	{
-		singleAnim.Play("fadeout");
+    void Popdown()
+    {
+        singleAnim.Play("fadeout");
         isWaitingForInput = true;
-        GameManager.Instance.OnInitPopdown();
-	}
+    }
 
-	private IEnumerator AutoHidePopup(float duration)
+    // ===============================================================
+    //                         FIRST POPUP
+    // ===============================================================
+    public void InitPopupMessage(string content)
+    {
+        singleAnim.Play("fadein");
+        contentObject.text = content;
+
+        StartCoroutine(AutoHidePopup(7f, "init"));
+    }
+
+    private IEnumerator AutoHidePopup(float duration, string option)
 	{
 		float elapsedTime = 0f;
 
@@ -87,9 +108,13 @@ public class Popup : MonoBehaviour
 		}
 
 		Popdown();
+        if (option == "init") GameManager.Instance.OnInitPopdown();
 	}
 
-	public void PopupChoice(Card cardData)
+    // ===============================================================
+    //                        CHOICE POPUP
+    // ===============================================================
+    public void PopupChoice(Card cardData)
 	{
 		currentCard = cardData;
         choiceAnim.Play("fadein");
@@ -114,23 +139,54 @@ public class Popup : MonoBehaviour
         switch (choice)
 		{
 			case 1:
-                effectHandler.ApplySelf(currentCard.choice1Effects);
+                effectHandler.ApplyMain(currentCard.choice1Effects);
 				break;
 			case 2:
-                effectHandler.ApplySelf(currentCard.choice2Effects);                
+                effectHandler.ApplyMain(currentCard.choice2Effects);                
                 break;
 
         }
         PopdownChoice();
-		//Chama todas as funÁıes que ficam registradas na aÁ„o(ouvindo)
+		//Chama todas as fun√ß√µes que ficam registradas na a√ß√£o(ouvindo)
 		actionRemoveCard?.Invoke();
 	}
 
-	public void UpdatePanel()
+    // ===============================================================
+    //                         UPDATE PANEL
+    // ===============================================================
+    public void UpdatePanel()
 	{
 		
         corruptionText.text = GameManager.Instance.mainPlayer.Corruption.ToString();
         moraleText.text		= GameManager.Instance.mainPlayer.Morale.ToString();
         influenceText.text	= GameManager.Instance.mainPlayer.Influence.ToString();
 	}
+
+    // ===============================================================
+    //                          
+    // ===============================================================
+    public void BigTextPopup(int round)
+    {
+        bigRoundText.text = "RODADA " + round.ToString();
+        bigTextPanelAnimation.Play("bigtext_fadein");
+        StartCoroutine(AutoHideBigText(3f));
+    }
+    
+    public void BigTextPopdown()
+    {
+        bigTextPanelAnimation.Play("bigtext_fadeout");
+    }
+
+    private IEnumerator AutoHideBigText(float duration)
+    {
+        float elapsedTime = 0f;
+
+        while (isWaitingForInput && elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        BigTextPopdown();
+    }
+
 }

@@ -20,6 +20,7 @@ MonoBehaviour:
   cardLore: "O melhor m\xE9todo de n\xE3o ficar doente \xE9 prevenir a infec\xE7\xE3o
     de acontecer."
   canTarget: 1
+  targetType: 5
   choice1: 
   choice2: 
   targetEffects:

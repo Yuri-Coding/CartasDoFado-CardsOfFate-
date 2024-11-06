@@ -21,6 +21,7 @@ MonoBehaviour:
   cardLore: Um frasco de cor negra que, ao ser ingerido, desencadeia dores intensas
     e paralisantes.
   canTarget: 1
+  targetType: 1
   choice1: 
   choice2: 
   targetEffects:

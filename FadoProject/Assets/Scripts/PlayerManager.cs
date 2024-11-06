@@ -1,7 +1,9 @@
 ﻿using FadoProject;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -12,7 +14,12 @@ public class PlayerManager : MonoBehaviour
 	
 	public int currentPlayerIndex = 0;
 
-	public void AddPlayer(Player newPlayer) {
+	List<Player> botEligibleTarget = new List<Player>();
+
+	List<Player> botTarget = new List<Player>();
+
+
+    public void AddPlayer(Player newPlayer) {
 		players.Add(newPlayer);
 	}
 
@@ -44,18 +51,26 @@ public class PlayerManager : MonoBehaviour
 
 	public void DebugAction()
 	{
-        players[currentPlayerIndex].PerformAction();
+		players[currentPlayerIndex].PerformAction();
 		Debug.Log("Ação acionada em Player.");
 	}
 
+	public void ResetNotification()
+	{
+		foreach(Player player in players)
+		{
+			player.CleanNotification();
+		}
+	}
+	// Código para Ações de NPC
 	public void HandleBotAction()
 	{
 		foreach (Player bot in bots)
 		{
 			List<Card> eligibleCards = deckManager.FilterCardsByType(bot.PlayerCardType);
-            int currentIndex = Random.Range(0, eligibleCards.Count);
+            int currentIndex = UnityEngine.Random.Range(0, eligibleCards.Count);
             Card botCard = eligibleCards[currentIndex];
-
+			
 			Debug.Log($"O {bot.PlayerName} usou a carta {botCard.cardName}.");
 			switch (bot.PlayerRole)
 			{
@@ -65,17 +80,58 @@ public class PlayerManager : MonoBehaviour
 
 				case Roles.Corrupt:
                 case Roles.Medic:
-					List<Player> eligibleTarget = players.FindAll(player => player.PlayerId != bot.PlayerId);
-					Player randomTarget;
+					botTarget = new List<Player>();
+					botEligibleTarget = new List<Player>();
 
-                    int index = Random.Range(0, eligibleTarget.Count);
-                    randomTarget = eligibleTarget[index];
+					if (botCard.selfEffects.Count != 0) { effectHandler.ApplySelf(bot, botCard.selfEffects); }
+					if (botCard.targetEffects.Count != 0) {
+						
+                        botEligibleTarget = players.FindAll(player => player.PlayerId != bot.PlayerId);
+                        int index = UnityEngine.Random.Range(0, botEligibleTarget.Count);
 
-					if (botCard.selfEffects.Count != 0) { effectHandler.ApplySelf(botCard.selfEffects); }
-					if (botCard.targetEffects.Count != 0) { effectHandler.ApplySelf(botCard.selfEffects); }
-				
+                        switch (botCard.targetType)
+                        {
+                            // Alvo Duplo
+                            case TargetType.Double:
+                                botTarget.Add(botEligibleTarget[UnityEngine.Random.Range(0, botEligibleTarget.Count)]);
+                                botTarget.Add(botEligibleTarget[UnityEngine.Random.Range(0, botEligibleTarget.Count)]);
+                                break;
 
-					break;
+                            // Algo Single
+                            case TargetType.Single:
+                            case TargetType.Random:
+                                // Obter um Player Aleatório e Eligível
+                                botTarget.Add(botEligibleTarget[UnityEngine.Random.Range(0, botEligibleTarget.Count)]);
+                                break;
+
+                            // Obtém Metade dos Elegíveis
+                            case TargetType.Half:
+                                int countToSelect = botEligibleTarget.Count / 2;
+                                List<Player> shuffledList = botEligibleTarget.OrderBy(x => Guid.NewGuid()).ToList();
+                                botTarget = shuffledList.Take(countToSelect).ToList();
+                                break;
+
+							// Considera todos os elegíveis como alvo
+                            case TargetType.All:
+                                botTarget = botEligibleTarget;
+                                break;
+
+                        }
+
+                        effectHandler.ApplyAllTargetted(botTarget, botCard.targetEffects);
+					}
+
+					/*foreach (Player target in botTarget)
+					{
+                        foreach (Effect bf in botCard.targetEffects)
+                        {
+                            Debug.Log($"[BOT] Ação de {bot.PlayerName} gerou efeito do tipo {bf.Type} para {target.PlayerName}.");
+                        }
+                    }*/
+                    
+
+
+                    break;
 			}
 		}
 	}

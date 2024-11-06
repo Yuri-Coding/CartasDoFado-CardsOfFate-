@@ -20,6 +20,7 @@ MonoBehaviour:
   cardLore: "Criada a partir de esporos de um cogumelo encontrado no oriente, atinge
     principalmente a garganta e o sistema respirat\xF3rio."
   canTarget: 1
+  targetType: 1
   choice1: 
   choice2: 
   targetEffects:
