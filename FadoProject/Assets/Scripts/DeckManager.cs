@@ -31,20 +31,24 @@ public class DeckManager : MonoBehaviour
 
 	public void DrawCard(HandManager handManager)
 	{
-		if (allCards.Count == 0) {
-			return;
+		if (GameManager.Instance.canDraw)
+		{
+			if (allCards.Count == 0) {
+				return;
+			}
+
+
+			List<Card> eligibleCards = allCards.FindAll(card => card.cardType == GameManager.Instance.mainPlayer.PlayerCardType);
+			currentIndex = Random.Range(0, eligibleCards.Count);
+			Card nextCard = eligibleCards[currentIndex];
+			handManager.addCardToHand(nextCard);
+
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.CardDrew, gameObject.transform.localPosition);
+			GameManager.Instance.canDraw = false;
+			//Da um loop no deck caso as cartas acabem
+			//currentIndex = (currentIndex + 1) % allCards.Count;
 		}
-
-		List<Card> eligibleCards = allCards.FindAll(card => card.cardType == GameManager.Instance.mainPlayer.PlayerCardType);
-		currentIndex = Random.Range(0,eligibleCards.Count);
-		Card nextCard = eligibleCards[currentIndex];
-		handManager.addCardToHand(nextCard);
-
-		AudioManager.Instance.PlayOneShot(FMODEvents.Instance.CardDrew, gameObject.transform.localPosition);
-		//Da um loop no deck caso as cartas acabem
-		//currentIndex = (currentIndex + 1) % allCards.Count;
 	}
-
 
 	//Implementar a compra de cartas de item na loja
 	public void BuyCard(HandManager handManager)

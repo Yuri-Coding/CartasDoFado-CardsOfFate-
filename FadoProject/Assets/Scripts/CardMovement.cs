@@ -19,7 +19,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 	private Quaternion originalRotation;
 	private Vector3 originalPosition;
 
-	// Importar informa鈬o do Card
+	// Importar informação do Card
 	public Card currentCard;
 	public CardDisplay currentCardDisplay;
 
@@ -43,6 +43,8 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 	//Var para encontrar o popUp
 	private Popup popup;
 
+	//Var para encontrar a detecção do clique no Dummy
+	private ClickDummyDetect clickDummy;
 
 
 	void Awake() 
@@ -52,6 +54,8 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 		//newCanvas.anchoredPosition = new Vector3(1000,1000,1); Da uma testadinha aqui
 		//Pegando o script "Popup.cs" dentro do Popup manager
 		popup = GameObject.Find("PopupManager").GetComponent<Popup>();
+		//VAI TER QUE REFATORAR, FUNCIONA SÓ PRO DUMMY E PRA APENAS 1 DUMMY
+		clickDummy = GameObject.Find("Dummy").GetComponent<ClickDummyDetect>();
 
 		rectTransform = GetComponent<RectTransform>();
 		canvas = GetComponentInParent<Canvas>();
@@ -130,7 +134,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 		}
 	}
 
-	// Fun鈬o de Mudança de Estado
+	// Função de Mudança de Estado
 	// (o switch case será executado uma vez quando alterar o estado)
 	void ChangeCurrentState(int newState)
 	{
@@ -154,10 +158,21 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 		}
 	}
 
+	//Destroi a carta de task depois que foi jogada
 	private void removeCard()
 	{
 		popup.actionRemoveCard -= removeCard;
 		HandManager handManager = FindAnyObjectByType<HandManager>();
+        handManager.cardsInHand.Remove(gameObject);
+        Destroy(gameObject);
+        handManager.updateHandVisuals();
+    }
+
+	//Destroi as cartas com efeito de target depois de ser jogada
+	private void removeTargetCard()
+	{
+		clickDummy.usedCardAction -= removeTargetCard;
+        HandManager handManager = FindAnyObjectByType<HandManager>();
         handManager.cardsInHand.Remove(gameObject);
         Destroy(gameObject);
         handManager.updateHandVisuals();
@@ -216,12 +231,21 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 		//Debug.Log(currentCard.cardName);
         rectTransform.localPosition = playPosition;
 		rectTransform.localRotation = Quaternion.identity;
+		if (currentCard.canTarget)
+		{
+			//Verificando se a carta pode targetar um alvo e destruindo ela após seu uso
+            GameManager.Instance.inPlay = true;
+			clickDummy.usedCardAction += removeTargetCard;
+        }
+		
 
 		
 
 		if(Input.mousePosition.y < cardPlay.y)
 		{
-			ChangeCurrentState(2);
+            GameManager.Instance.inPlay = false;
+			clickDummy.usedCardAction -= removeTargetCard;
+            ChangeCurrentState(2);
 			playArrow.SetActive(false);
 		}
 	}
