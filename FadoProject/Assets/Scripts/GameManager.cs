@@ -5,20 +5,27 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+	// Managers
 	public PlayerManager playerManager;
 	public DeckManager deckManager;
 	public HandManager handManager;
 	public Popup popup;
 
+	// Identificação do Player principal (o que está jogando na máquina)
     public Player mainPlayer;
 	public Roles mainRole;
-
     public int mainPlayerIndex;
-	public int currentIndex = 0;
 
-	public int round = 1;
-
+	// Elemento de Round
     public TMP_Text roundText;
+    public int round;
+
+
+    // Texto de Notificação que aparece em toda ShowResults
+    string notificationText;
+
+    
+
 
     public static GameManager Instance { get; private set; }
 	void Awake()
@@ -37,7 +44,7 @@ public class GameManager : MonoBehaviour
 	void Start()
 	{
 		mainPlayerIndex = 1;
-		popup.PopupMessage("Bem vindo ao cartas do fado");
+		popup.InitPopupMessage("Bem vindo ao cartas do fado");
 		SetState(GameState.InitGame);
 	}
 
@@ -45,7 +52,7 @@ public class GameManager : MonoBehaviour
 
 	void SetState(GameState newState) {
 		currentState = newState;
-		Debug.Log($"O estado mudou para {currentState}.");
+		//Debug.Log($"O estado mudou para {currentState}.");
 		HandleState();
 	}
 
@@ -55,6 +62,10 @@ public class GameManager : MonoBehaviour
 		{
 			case GameState.InitGame:
 				InitGame();
+				break;
+
+			case GameState.StartPhase:
+				StartPhase();
 				break;
 
 			case GameState.AwaitAction:
@@ -93,23 +104,28 @@ public class GameManager : MonoBehaviour
 	}
 
 	void InitGame() {
-		
+		round = 1;
+	}
 
+	void StartPhase()
+	{
+		popup.BigTextPopup(round);
+
+		SetState(GameState.AwaitAction);
 	}
 
 	void AwaitAction()
 	{
-
 		// Inscreve-se no evento de ação do jogador
 		mainPlayer.OnPlayerAction += OnPlayerActionCompleted;
-		Debug.Log("Await Player: Modo espera ativado.");
+		Debug.LogWarning($"[FASE{round}] Await Player: Modo espera ativado.");
 
 	}
 
 	private void OnPlayerActionCompleted()
 	{
 		mainPlayer.OnPlayerAction -= OnPlayerActionCompleted;
-		Debug.Log("GameManager detectou ação");
+		//Debug.Log("GameManager detectou ação");
 
 		SetState(GameState.HandleActions);
 	}
@@ -122,26 +138,40 @@ public class GameManager : MonoBehaviour
 
 	void HandleShowResults()
 	{
-		Debug.Log("Fase de Mostrar Resultados (Jornal)");
+		//Debug.Log("Fase de Mostrar Resultados (Jornal)");
+		
+		mainPlayer.CheckoutAllNotifications();
+
+		foreach(Notification notification in mainPlayer.notifications)
+		{
+			notificationText += (notification.FinalText);
+			notificationText += "\n";
+		}
+		//Debug.Log(notificationText);
+		popup.PopupMessage(notificationText);
+		playerManager.ResetNotification();
+
+		notificationText = "";
+
 		SetState(GameState.VotingPhase);
 	}
 
 	void HandleVotingPhase()
 	{
-		Debug.Log("Fase de Votação");
+		//Debug.Log("Fase de Votação");
 		SetState(GameState.ProcessVoteResults);
 	}
 
 	void HandleProcessVoteResults()
 	{
-		Debug.Log("Fase de Contagem de Votos");
+		//Debug.Log("Fase de Contagem de Votos");
 		SetState(GameState.EndPhase);
 	}
 
 	void EndPhase() {
 		round++;
-		Debug.Log("Fase de Finalização de Turno");
-		SetState(GameState.AwaitAction);
+		//Debug.Log("Fase de Finalização de Turno");
+		SetState(GameState.StartPhase);
 
 		// Condições de Vitória e Derrota
 	}
@@ -176,8 +206,8 @@ public class GameManager : MonoBehaviour
 		mainRole = mainPlayer.PlayerRole;
 		
 
-		Debug.Log("Init Finalizado.");
-		SetState(GameState.AwaitAction);
+		//Debug.Log("Init Finalizado.");
+		SetState(GameState.StartPhase);
 
 	}
 
