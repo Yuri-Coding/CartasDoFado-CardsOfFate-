@@ -118,6 +118,9 @@ public class PlayerManager : MonoBehaviour
 	{
 		foreach (Player bot in bots)
 		{
+			// Só tomar ação quando vivo
+			if (!bot.IsAlive) continue;
+			
 			List<Card> eligibleCards = deckManager.FilterCardsByType(bot.PlayerCardType);
             int currentIndex = UnityEngine.Random.Range(0, eligibleCards.Count);
             Card botCard = eligibleCards[currentIndex];

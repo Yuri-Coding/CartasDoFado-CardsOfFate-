@@ -115,10 +115,21 @@ public class Popup : MonoBehaviour
     // ===============================================================
     //                         FIRST POPUP
     // ===============================================================
-    public void InitPopupMessage(string content)
+    public void InitPopupMessage()
     {
+        List<string> introductionTexts = new List<string>()
+        {
+            "Bem vindo ao Cartas do Fado. A Mesa está preenchida, os olhares, desconfiantes, observam uns aos outros, em busca de encontrar o nocivo, achar um grão de ouro em auto-mar.",
+            "A mesa está completa. Cada olhar carrega uma sombra de dúvida e desconfiança, enquanto os jogadores, ocultos por segredos, preparam suas cartas. A noite promete revelar verdades - ou esconder mentiras.",
+            "Bem-vindo ao Cartas do Fado, onde cada movimento pode mudar o eterno destino da cidade. À mesa, risos e suspeitas se entrelaçam, mas apenas um saberá a verdade antes de todos os outros. Quem será o primeiro a cair?",
+            "As cartas estão postas e as intenções, veladas. Em um jogo de sorte e manipulação, você está cercado por aliados ou inimigos disfarçados. Restará ao destino revelar quem realmente merece confiança.",
+            "Hoje, a mesa é palco de um jogo de segredos e conspirações. As cartas sussurram promessas de poder, mas apenas quem conhece os próprios limites escapará ileso.",
+        };
+
+        int index = UnityEngine.Random.Range(0, introductionTexts.Count);
+
         singleAnim.Play("fadein");
-        contentObject.text = content;
+        contentObject.text = introductionTexts[index];
 
         StartCoroutine(AutoHidePopup(7f, "init"));
     }
@@ -232,7 +243,7 @@ public class Popup : MonoBehaviour
         {
             case (EndCondition.HonestWin, Roles.Honest):
                 endGameString = "VOCÊ VENCEU";
-                endGameDescriptionString = "A honestidade venceu. Todos tinham a oportunidade de desviar-se do bom caminho, mas ao fim, todos trabalharam em prol a paz.";
+                endGameDescriptionString = "A honestidade venceu. Todos tinham a oportunidade de desviar-se do bom caminho, mas ao fim, todos trabalharam em prol da paz.";
                 break;
             case (EndCondition.HonestWin, Roles.Medic):
                 endGameString = "VOCÊ VENCEU";

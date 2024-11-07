@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -62,7 +63,7 @@ public class GameManager : MonoBehaviour
 	void Start()
 	{
 		mainPlayerIndex = 1;
-		popup.InitPopupMessage("Bem vindo ao cartas do fado");
+		popup.InitPopupMessage();
 		SetState(GameState.InitGame);
 		canDraw = true;
 		inPlay = false;
@@ -328,11 +329,13 @@ public class GameManager : MonoBehaviour
 
     public void OnInitPopdown()
 	{
-		Player p1 = new Player(0, "Matias", Roles.Honest,  false, true , true);
-		Player p2 = new Player(1, "Cassis", Roles.Corrupt, true , false, true);
-		Player p3 = new Player(2, "Yuras" , Roles.Medic,   false, true , true);
-		Player p4 = new Player(3, "Sales" , Roles.Honest,  false, true , true);
-		Player p5 = new Player(4, "Robson", Roles.Honest,  false, true , true);
+		List<Roles> rawRoles = new List<Roles>() { Roles.Corrupt, Roles.Medic, Roles.Honest, Roles.Honest, Roles.Honest };
+		List<Roles> shuffledRoles = rawRoles.OrderBy(x => Guid.NewGuid()).ToList();
+        Player p1 = new Player(0, "Matias", shuffledRoles[0], false, true , true);
+		Player p2 = new Player(1, "Cassis", shuffledRoles[1], true , false, true);
+		Player p3 = new Player(2, "Yuras" , shuffledRoles[2], false, true , true);
+		Player p4 = new Player(3, "Sales" , shuffledRoles[3], false, true , true);
+		Player p5 = new Player(4, "Robson", shuffledRoles[4], false, true , true);
 
 		playerManager.AddPlayer(p1);
 		playerManager.AddPlayer(p2);
