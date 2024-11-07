@@ -69,7 +69,7 @@ public class Popup : MonoBehaviour
         choiceText2 = GameObject.Find("Choice2Text").GetComponent<TMP_Text>();
 		choiceAnim = GameObject.Find("ChoicePopup").GetComponent<Animation>();
         // Desativando os botões inicialmente
-        for (int i=0; i<=PButton.Count; i++)
+        for (int i=0; i<PButton.Count; i++)
         {
             PButton[i].gameObject.SetActive(false);
         }
