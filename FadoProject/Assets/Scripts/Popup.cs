@@ -43,6 +43,36 @@ public class Popup : MonoBehaviour
     private Card currentCard;
 	public EffectHandler effectHandler;
 
+    //Popup de votação
+    public Animation voteAnim;
+    //Texto para colocar o nome dos player no botão
+    public TMP_Text P1Text;
+    public TMP_Text P2Text;
+    public TMP_Text P3Text;
+    public TMP_Text P4Text;
+    public TMP_Text P5Text;
+    public TMP_Text P6Text;
+    public TMP_Text P7Text;
+    public TMP_Text P8Text;
+    public TMP_Text P9Text;
+    public TMP_Text P10Text;
+    public TMP_Text P11Text;
+    public TMP_Text P12Text;
+    //Pegando os botões
+    public Button P1Button;
+    public Button P2Button;
+    public Button P3Button;
+    public Button P4Button;
+    public Button P5Button;
+    public Button P6Button;
+    public Button P7Button;
+    public Button P8Button;
+    public Button P9Button;
+    public Button P10Button;
+    public Button P11Button;
+    public Button P12Button;
+
+
 	//Criando um evento para ser ouvido
 	public event Action actionRemoveCard;
 
@@ -189,4 +219,16 @@ public class Popup : MonoBehaviour
         BigTextPopdown();
     }
 
+    // ===============================================================
+    //                          VOTE POPUP
+    // ===============================================================
+    public void UpdateVotePanel()
+    {
+        P1Text.text="Matias";
+    }
+
+    public void VotePanelPopup()
+    {
+
+    }
 }
