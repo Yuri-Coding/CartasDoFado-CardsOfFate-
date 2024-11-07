@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      card_deck_hover_0: 8535740302194589529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
