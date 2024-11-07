@@ -90,3 +90,9 @@ fmod_editor.log
 
 # Don't Ignore Build folder
 !/FadoProject/[Aa]ssets/Audio/fado/*
+
+# Ignore Game Scene, this is causing really nasty headaches, believe me
+Game.unity
+# Also ignore this, like wth 
+GlifoVitoriano-Regular SDF.asset
+
