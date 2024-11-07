@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      woman_0: 7156064963727093473
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
