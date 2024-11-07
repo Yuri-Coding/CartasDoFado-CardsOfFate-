@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +33,12 @@ public class GameManager : MonoBehaviour
 	//Var para verificar se carta está sendo jogada
 	public bool inPlay;
 
+    //Var para verificar se o jogador já votou.
+    public bool alreadyVoted;
+
+	//Lista de jogadores
+	private List<Player> playerList;
+
     public static GameManager Instance { get; private set; }
 	void Awake()
 	{
@@ -53,9 +60,24 @@ public class GameManager : MonoBehaviour
 		SetState(GameState.InitGame);
 		canDraw = true;
 		inPlay = false;
+		alreadyVoted = false;
+		playerList = playerManager.GetAllPlayers();
 	}
 
-	void Update() { /*HandleState();*/ }
+	void Update()
+	{
+		switch (currentState)
+		{
+			case GameState.VotingPhase:
+                if (alreadyVoted)
+                {
+                    popup.VotePanelPopout();
+                    alreadyVoted = false;
+                    SetState(GameState.ProcessVoteResults);
+                }
+				break;
+        }
+	}
 
 	void SetState(GameState newState) {
 		currentState = newState;
@@ -168,19 +190,23 @@ public class GameManager : MonoBehaviour
 	void HandleVotingPhase()
 	{
 		//Debug.Log("Fase de Votação");
-		SetState(GameState.ProcessVoteResults);
+		popup.UpdateVotePanel();
+		popup.VotePanelPopup();
 	}
 
 	void HandleProcessVoteResults()
 	{
 		//Debug.Log("Fase de Contagem de Votos");
+		showVoteResults();
+		//Eliminar jogador com mais votos
 		SetState(GameState.EndPhase);
 	}
 
-	void EndPhase() {
+    void EndPhase() {
 		round++;
 		//Debug.Log("Fase de Finalização de Turno");
-		SetState(GameState.StartPhase);
+		roundResetVote();
+        SetState(GameState.StartPhase);
 
 		// Condições de Vitória e Derrota
 	}
@@ -195,7 +221,30 @@ public class GameManager : MonoBehaviour
 
 	}
 
-	public void OnInitPopdown()
+	//Função pra resetar os votos que cada player recebeu
+    public void roundResetVote()
+    {
+        foreach (Player jugador in playerList)
+        {
+            jugador.votesReceived = 0;
+        }
+    }
+
+	//Função para mostrar os votos que cada player recebeu no popup
+    private void showVoteResults()
+    {
+		string voteCount;
+		voteCount = "";
+		foreach(Player jugador in playerList)
+		{
+			voteCount = voteCount + $"{jugador.PlayerName} recebeu {jugador.votesReceived} voto(s)\n";
+		}
+		popup.PopupMessage(voteCount);
+
+		voteCount = "";
+    }
+
+    public void OnInitPopdown()
 	{
 		Player p1 = new Player(0, "Matias", Roles.Corrupt, false, true );
 		Player p2 = new Player(1, "Cassis", Roles.Honest,  true , false);

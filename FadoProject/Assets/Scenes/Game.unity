@@ -676,7 +676,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 55843540}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1730470869}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &55843540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1617,7 +1629,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 426225147}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1730470869}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &426225147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2183,7 +2207,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 603752256}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1730470869}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &603752256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2573,7 +2609,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 660296452}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1730470869}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &660296452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2671,30 +2719,33 @@ MonoBehaviour:
   bigTextPanelAnimation: {fileID: 875580810}
   effectHandler: {fileID: 1574919424}
   voteAnim: {fileID: 421600078}
-  P1Text: {fileID: 1983815067}
-  P2Text: {fileID: 55130617}
-  P3Text: {fileID: 2044130222}
-  P4Text: {fileID: 904757591}
-  P5Text: {fileID: 2129300824}
-  P6Text: {fileID: 1890108668}
-  P7Text: {fileID: 1993956205}
-  P8Text: {fileID: 534323129}
-  P9Text: {fileID: 382735021}
-  P10Text: {fileID: 1948984426}
-  P11Text: {fileID: 1775866027}
-  P12Text: {fileID: 632886041}
-  P1Button: {fileID: 1369715443}
-  P2Button: {fileID: 849441844}
-  P3Button: {fileID: 1526197463}
-  P4Button: {fileID: 1400652970}
-  P5Button: {fileID: 55843539}
-  P6Button: {fileID: 1112839286}
-  P7Button: {fileID: 660296451}
-  P8Button: {fileID: 1611286669}
-  P9Button: {fileID: 855406054}
-  P10Button: {fileID: 858357953}
-  P11Button: {fileID: 426225146}
-  P12Button: {fileID: 603752255}
+  PText:
+  - {fileID: 1983815067}
+  - {fileID: 55130617}
+  - {fileID: 2044130222}
+  - {fileID: 904757591}
+  - {fileID: 2129300824}
+  - {fileID: 1890108668}
+  - {fileID: 1993956205}
+  - {fileID: 534323129}
+  - {fileID: 382735021}
+  - {fileID: 1948984426}
+  - {fileID: 1775866027}
+  - {fileID: 632886041}
+  PButton:
+  - {fileID: 1369715443}
+  - {fileID: 849441844}
+  - {fileID: 1526197463}
+  - {fileID: 1400652970}
+  - {fileID: 55843539}
+  - {fileID: 1112839286}
+  - {fileID: 660296451}
+  - {fileID: 1611286669}
+  - {fileID: 855406054}
+  - {fileID: 858357953}
+  - {fileID: 426225146}
+  - {fileID: 603752255}
+  playerManager: {fileID: 117878853}
 --- !u!1 &709904871
 GameObject:
   m_ObjectHideFlags: 0
@@ -2729,6 +2780,7 @@ Transform:
   - {fileID: 1574919423}
   - {fileID: 670056276}
   - {fileID: 1145531161}
+  - {fileID: 1730470870}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &763798868
@@ -2863,7 +2915,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 849441845}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1730470869}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &849441845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2984,7 +3048,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 855406055}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1730470869}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &855406055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3105,7 +3181,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 858357954}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1730470869}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &858357954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4256,7 +4344,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1112839287}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1730470869}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1112839287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5068,7 +5168,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1369715444}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1730470869}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1369715444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5189,7 +5301,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1400652971}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1730470869}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1400652971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5375,7 +5499,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1526197464}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1730470869}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1526197464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5576,6 +5712,7 @@ MonoBehaviour:
   round: 0
   canDraw: 0
   inPlay: 0
+  alreadyVoted: 0
   currentState: 0
 --- !u!4 &1580234352
 Transform:
@@ -5747,7 +5884,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1611286670}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1730470869}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1611286670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6362,6 +6511,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b37b700a62d198419184712ff1724c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1730470868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1730470870}
+  - component: {fileID: 1730470869}
+  m_Layer: 0
+  m_Name: VoteHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1730470869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730470868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f8299701642e844ace50290c1251f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popup: {fileID: 670056277}
+  playerManager: {fileID: 117878853}
+--- !u!4 &1730470870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730470868}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 709904872}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1775866025
 GameObject:
   m_ObjectHideFlags: 0

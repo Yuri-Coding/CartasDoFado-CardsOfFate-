@@ -46,31 +46,14 @@ public class Popup : MonoBehaviour
     //Popup de votação
     public Animation voteAnim;
     //Texto para colocar o nome dos player no botão
-    public TMP_Text P1Text;
-    public TMP_Text P2Text;
-    public TMP_Text P3Text;
-    public TMP_Text P4Text;
-    public TMP_Text P5Text;
-    public TMP_Text P6Text;
-    public TMP_Text P7Text;
-    public TMP_Text P8Text;
-    public TMP_Text P9Text;
-    public TMP_Text P10Text;
-    public TMP_Text P11Text;
-    public TMP_Text P12Text;
+    public List<TMP_Text> PText;
     //Pegando os botões
-    public Button P1Button;
-    public Button P2Button;
-    public Button P3Button;
-    public Button P4Button;
-    public Button P5Button;
-    public Button P6Button;
-    public Button P7Button;
-    public Button P8Button;
-    public Button P9Button;
-    public Button P10Button;
-    public Button P11Button;
-    public Button P12Button;
+    public List<Button> PButton;
+
+    //Importando PlayerManager
+    public PlayerManager playerManager;
+    //Criando uma lista para armazenar a lista de player
+    private List<Player> playerList;
 
 
 	//Criando um evento para ser ouvido
@@ -85,6 +68,11 @@ public class Popup : MonoBehaviour
         choiceText1 = GameObject.Find("Choice1Text").GetComponent<TMP_Text>();
         choiceText2 = GameObject.Find("Choice2Text").GetComponent<TMP_Text>();
 		choiceAnim = GameObject.Find("ChoicePopup").GetComponent<Animation>();
+        // Desativando os botões inicialmente
+        for (int i=0; i<=PButton.Count; i++)
+        {
+            PButton[i].gameObject.SetActive(false);
+        }
     }
 
 	void Update()
@@ -224,11 +212,25 @@ public class Popup : MonoBehaviour
     // ===============================================================
     public void UpdateVotePanel()
     {
-        P1Text.text="Matias";
+        int index=0;
+        playerList = playerManager.GetAllPlayers();
+        foreach (Player jugador in playerList)
+        {
+            if (jugador.PlayerName != "")
+            {
+                PButton[index].gameObject.SetActive(true) ;
+                PText[index].text = jugador.PlayerName;
+            }
+            index++;
+        }
     }
 
     public void VotePanelPopup()
     {
-
+        voteAnim.Play("fadeIn");
+    }
+    public void VotePanelPopout()
+    {
+        voteAnim.Play("fadeOut");
     }
 }

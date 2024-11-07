@@ -16,6 +16,7 @@ public class Player
 	public int		ImmunityTurn { get; private set; }
 	public bool		IsMainPlayer { get; set; }
     public bool		IsBot { get; set; }
+	public int		votesReceived { get; set; }
 	public Player	vote { get; private set; }
 
 
@@ -106,6 +107,7 @@ public class Player
 		Influence = 0;
 		Corruption = 0;
 		SilenceTurn = 0;
+		votesReceived = 0;
 
 		notifications = new List<Notification>();
 	}
