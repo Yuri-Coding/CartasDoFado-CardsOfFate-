@@ -39,6 +39,9 @@ public class GameManager : MonoBehaviour
 	//Lista de jogadores
 	private List<Player> playerList;
 
+	//Indice do jogador mais votado na rodada
+	private int mostVotedIndex;
+
     public static GameManager Instance { get; private set; }
 	void Awake()
 	{
@@ -201,8 +204,15 @@ public class GameManager : MonoBehaviour
 	void HandleProcessVoteResults()
 	{
 		//Debug.Log("Fase de Contagem de Votos");
+		//Mostra os resultados dos votos
 		showVoteResults();
 		//Eliminar jogador com mais votos
+		mostVoted();
+		if (mostVotedIndex >=0)
+		{
+			playerList[mostVotedIndex].IsAlive = false;
+			showElimination();
+		}
 		SetState(GameState.EndPhase);
 	}
 
@@ -248,13 +258,39 @@ public class GameManager : MonoBehaviour
 		voteCount = "";
     }
 
+	//Função para verificar qual jogador teve mais votos
+	private void mostVoted()
+	{
+		mostVotedIndex=-1;
+		//Armazena o número de votos da pessoa que mais recebeu votos na rodada
+		int voteCount = 0;
+
+		for(int i=0; i < playerList.Count; i++)
+		{
+			if (playerList[i].votesReceived > voteCount)
+			{
+				mostVotedIndex = i;
+				voteCount = playerList[i].votesReceived;
+			}
+		}
+	}
+
+    //Popup mostrando quem foi eliminado
+    private void showElimination()
+    {
+		string eliminationMessage;
+		eliminationMessage = $"{playerList[mostVotedIndex].PlayerName} foi eliminado da mesa de negociações.";
+		popup.PopupMessage(eliminationMessage);
+		eliminationMessage = "";
+    }
+
     public void OnInitPopdown()
 	{
-		Player p1 = new Player(0, "Matias", Roles.Honest,  false, true );
-		Player p2 = new Player(1, "Cassis", Roles.Corrupt, true , false);
-		Player p3 = new Player(2, "Yuras" , Roles.Medic,   false, true );
-		Player p4 = new Player(3, "Sales" , Roles.Honest,  false, true );
-		Player p5 = new Player(4, "Robson", Roles.Honest,  false, true );
+		Player p1 = new Player(0, "Matias", Roles.Honest,  false, true , true);
+		Player p2 = new Player(1, "Cassis", Roles.Corrupt, true , false, true);
+		Player p3 = new Player(2, "Yuras" , Roles.Medic,   false, true , true);
+		Player p4 = new Player(3, "Sales" , Roles.Honest,  false, true , true);
+		Player p5 = new Player(4, "Robson", Roles.Honest,  false, true , true);
 
 		playerManager.AddPlayer(p1);
 		playerManager.AddPlayer(p2);

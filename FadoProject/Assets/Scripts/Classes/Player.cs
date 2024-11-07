@@ -17,6 +17,7 @@ public class Player
 	public bool		IsMainPlayer { get; set; }
     public bool		IsBot { get; set; }
 	public int		votesReceived { get; set; }
+	public bool		IsAlive { get; set; }
 	public Player	vote { get; private set; }
 
 
@@ -33,7 +34,8 @@ public class Player
 		string	playerName,
 		Roles	playerRole,
 		bool	isMainPlayer,
-		bool	isBot)
+		bool	isBot,
+		bool	isAlive)
 	{
 		PlayerId =			playerId;
 		PlayerName =		playerName;
@@ -41,6 +43,7 @@ public class Player
 		PlayerCardType =	GetCardType(PlayerRole);
 		IsMainPlayer =		isMainPlayer;
 		IsBot =				isBot;
+		IsAlive =			isAlive;
 	}
 	public void PlayCard(int handIndex)
 	{

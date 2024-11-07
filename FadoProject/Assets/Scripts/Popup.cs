@@ -49,6 +49,10 @@ public class Popup : MonoBehaviour
     public List<TMP_Text> PText;
     //Pegando os botões
     public List<Button> PButton;
+    //Pegando o texto substituto
+    public List<TMP_Text> PSubText;
+    //Pegando os objetos em baixo que são os textos com risco
+    public List<GameObject> PSub;
 
     //Importando PlayerManager
     public PlayerManager playerManager;
@@ -218,8 +222,18 @@ public class Popup : MonoBehaviour
         {
             if (jugador.PlayerName != "")
             {
-                PButton[index].gameObject.SetActive(true) ;
-                PText[index].text = jugador.PlayerName;
+                if (jugador.IsAlive)
+                {
+                    PButton[index].gameObject.SetActive(true);
+                    PText[index].text = jugador.PlayerName;
+                }
+                else
+                {
+                    PButton[index].gameObject.SetActive(false);
+                    PSub[index].gameObject.SetActive(true);
+                    PSubText[index].text=jugador.PlayerName;
+                }
+                
             }
             index++;
         }
