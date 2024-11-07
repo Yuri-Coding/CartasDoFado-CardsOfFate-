@@ -43,6 +43,13 @@ public class Popup : MonoBehaviour
     private Card currentCard;
 	public EffectHandler effectHandler;
 
+    // Texto de EndGame
+    public TMP_Text endGameText;
+    public TMP_Text endGameDescriptionText;
+
+
+
+
     //Popup de votação
     public Animation voteAnim;
     //Texto para colocar o nome dos player no botão
@@ -185,7 +192,7 @@ public class Popup : MonoBehaviour
 	}
 
     // ===============================================================
-    //                          
+    //                          BIG TEXT
     // ===============================================================
     public void BigTextPopup(int round)
     {
@@ -210,6 +217,54 @@ public class Popup : MonoBehaviour
         }
         BigTextPopdown();
     }
+
+
+    // ===============================================================
+    //                            END GAME 
+    // ===============================================================
+
+    public void EndGamePopup(EndCondition endCondition)
+    {
+        string endGameString = "";
+        string endGameDescriptionString = "";
+
+        switch((endCondition, GameManager.Instance.mainRole))
+        {
+            case (EndCondition.HonestWin, Roles.Honest):
+                endGameString = "VOCÊ VENCEU";
+                endGameDescriptionString = "A honestidade venceu. Todos tinham a oportunidade de desviar-se do bom caminho, mas ao fim, todos trabalharam em prol a paz.";
+                break;
+            case (EndCondition.HonestWin, Roles.Medic):
+                endGameString = "VOCÊ VENCEU";
+                endGameDescriptionString = "Você teve um papel essencial nesta grande vitória. Mesmo o trabalho não recompensando-o por reputação, você seguiu a justiça.";
+                break;
+            case (EndCondition.HonestWin, Roles.Corrupt):
+                endGameString = "VOCÊ FOI DERROTADO";
+                endGameDescriptionString = "O poder do veneno não foi suficiente para corromper uma sociedade. Um bom trabalho, mas infelizmente, você falhou.";
+                break;
+
+            case (EndCondition.CorruptWin, Roles.Honest):
+                endGameString = "VOCÊ FOI DERROTADO";
+                endGameDescriptionString = "Os esforços, nem mesmo pelo poder da honestidade, foi capaz de dar frutos para combater a corrupção. A corrupção dominou a cidade, e a destruiu.";
+                break;
+            case (EndCondition.CorruptWin, Roles.Medic):
+                endGameString = "VOCÊ FOI DERROTADO";
+                endGameDescriptionString = "Como médico, você buscou curar ao máximo as pessoas. Mas o veneno letal da corrupção espalhou mais rápido, resultando no obscuro futuro sem fim da cidade.";
+                break;
+            case (EndCondition.CorruptWin, Roles.Corrupt):
+                endGameString = "VOCÊ VENCEU";
+                endGameDescriptionString = "A estratégia miticulosa de corrupção geraram frutos em forma de destruição. Tudo que restou na cidade foram as memórias de bons tempos, destruição e desesperança.";
+                break;
+        }
+        
+
+        endGameText.text = endGameString;
+        endGameDescriptionText.text = endGameDescriptionString;
+
+        bigTextPanelAnimation.Play("endgame_fadein");
+    }
+
+
 
     // ===============================================================
     //                          VOTE POPUP

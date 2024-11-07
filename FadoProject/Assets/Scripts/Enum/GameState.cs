@@ -20,6 +20,7 @@ public enum GameState
 	EndPhase,			// Verifica condições finalização de jogo.
 
 	// Finalização
+	EndGame,			// Quando alguma condição de finalização do jogo for alcançado
 	Win,				// Vitória
 	Lose				// Derrota
 }

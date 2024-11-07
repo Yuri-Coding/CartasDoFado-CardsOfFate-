@@ -39,7 +39,7 @@ public class ArcRenderer : MonoBehaviour
 
     void PositionAndRotateArrow(Vector3 mousePos)
     {
-        arrowInstance.transform.position = mousePos;
+        arrowInstance.transform.position = mousePos + new Vector3(0, 3, 0);
         Vector3 direction = arrowDirection - mousePos;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         angle = angle + arrowHeadAdjustment;

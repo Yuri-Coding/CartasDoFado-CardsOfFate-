@@ -42,6 +42,9 @@ public class GameManager : MonoBehaviour
 	//Indice do jogador mais votado na rodada
 	private int mostVotedIndex;
 
+	// Condição de Vitória / Perda para Player.
+	public EndCondition endCondition;
+
     public static GameManager Instance { get; private set; }
 	void Awake()
 	{
@@ -124,7 +127,9 @@ public class GameManager : MonoBehaviour
 				EndPhase();
 				canDraw = true;
 				break;
-
+			case GameState.EndGame:
+				EndGame();
+				break;
 			case GameState.Win:
 				Win();
 				break;
@@ -218,22 +223,59 @@ public class GameManager : MonoBehaviour
 
     void EndPhase() {
 		round++;
-		//Debug.Log("Fase de Finalização de Turno");
-		roundResetVote();
+
+        // Condições de Vitória e Derrota
+        if (playerManager.NoCorruptAlive())
+        {
+			endCondition = EndCondition.HonestWin;
+			SetState(GameState.EndGame);
+			return;
+        }
+
+        if (playerManager.IsMostHonestEliminated())
+        {
+			endCondition = EndCondition.CorruptWin;
+			SetState(GameState.EndGame);
+			return;
+        }
+
+		
+
+        //Debug.Log("Fase de Finalização de Turno");
+        roundResetVote();
         SetState(GameState.StartPhase);
 
-		// Condições de Vitória e Derrota
+
+        
+	}
+
+	void EndGame()
+	{
+		switch(mainPlayer.PlayerRole)
+		{
+			case Roles.Honest:
+			case Roles.Medic:
+				if (endCondition == EndCondition.HonestWin) SetState(GameState.Win);
+                if (endCondition == EndCondition.CorruptWin) SetState(GameState.Lose);
+                break;
+
+
+			case Roles.Corrupt:
+                if (endCondition == EndCondition.HonestWin) SetState(GameState.Lose);
+                if (endCondition == EndCondition.CorruptWin) SetState(GameState.Win);
+                break;
+        }
 	}
 
 	void Win()
 	{
-
+		popup.EndGamePopup(endCondition);
 	}
 
 	void Lose()
 	{
-
-	}
+        popup.EndGamePopup(endCondition);
+    }
 
 	//Função pra resetar os votos que cada player recebeu
     public void roundResetVote()

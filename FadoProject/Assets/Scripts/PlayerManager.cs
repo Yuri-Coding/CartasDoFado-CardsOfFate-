@@ -13,18 +13,21 @@ public class PlayerManager : MonoBehaviour
 
 	// Criar lista de Players / Bots
 	public List<Player> players = new List<Player>();
-    public List<Player> bots = new List<Player>();
+	public List<Player> bots = new List<Player>();
+
+    public List<Player> honests = new List<Player>();
+    public List<Player> corrupts = new List<Player>();
 
 	// Criar lista de targets eligíveis (tudo menos próprio player)
-    public List<Player> eligibleTarget = new List<Player>();
+	public List<Player> eligibleTarget = new List<Player>();
 
-    public int currentPlayerIndex = 0;
+	public int currentPlayerIndex = 0;
 
 	List<Player> botEligibleTarget = new List<Player>();
 	List<Player> botTarget = new List<Player>();
 
 
-    public void AddPlayer(Player newPlayer) {
+	public void AddPlayer(Player newPlayer) {
 		players.Add(newPlayer);
 	}
 
@@ -47,6 +50,18 @@ public class PlayerManager : MonoBehaviour
 			// Adiciona na lista BOT se é BOT
 			if (player.IsBot == true) bots.Add(player);
 
+			// Adicionar na lista de respectivos roles
+			switch (player.PlayerRole)
+			{
+				case Roles.Honest:
+				case Roles.Medic:
+                    honests.Add(player);
+                    break;
+				case Roles.Corrupt:
+                    corrupts.Add(player);
+                    break;
+			}
+
 			// Adiciona no eligibleTarget se não é o próprio player
 			if (player != GameManager.Instance.mainPlayer) eligibleTarget.Add(player);
 			player.InitializePlayer();
@@ -68,11 +83,36 @@ public class PlayerManager : MonoBehaviour
 
 	public void ResetNotification()
 	{
-		foreach(Player player in players)
+		foreach (Player player in players)
 		{
 			player.CleanNotification();
 		}
 	}
+
+	// Se nenhum corrupto estiver vivo, true
+	public bool NoCorruptAlive()
+	{
+		foreach (Player corrupt in corrupts)
+		{
+			if (corrupt.IsAlive) return false;
+		}
+		return true;
+	}
+
+	// Se maioria dos Honestos estiverem eliminados, true
+	public bool IsMostHonestEliminated()
+	{
+		int total = honests.Count;
+
+		int eliminated = 0;
+        foreach (Player honest in honests)
+        {
+            if (honest.IsAlive == false) eliminated++;
+        }
+		if (eliminated > total / 2) return true;
+		return false;
+    }
+
 	// Código para Ações de NPC
 	public void HandleBotAction()
 	{
