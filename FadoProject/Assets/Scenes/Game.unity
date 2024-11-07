@@ -3245,6 +3245,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670664423}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &709904871
 GameObject:
@@ -3281,7 +3284,11 @@ Transform:
   - {fileID: 670056276}
   - {fileID: 1145531161}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - {fileID: 1730470870}
+=======
+  - {fileID: 1468230776}
+>>>>>>> Stashed changes
 =======
   - {fileID: 1468230776}
 >>>>>>> Stashed changes
