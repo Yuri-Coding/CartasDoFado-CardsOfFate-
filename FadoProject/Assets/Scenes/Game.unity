@@ -3246,6 +3246,9 @@ CanvasRenderer:
   m_GameObject: {fileID: 670664423}
   m_CullTransparentMesh: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -3285,7 +3288,11 @@ Transform:
   - {fileID: 1145531161}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - {fileID: 1730470870}
+=======
+  - {fileID: 1468230776}
+>>>>>>> Stashed changes
 =======
   - {fileID: 1468230776}
 >>>>>>> Stashed changes
