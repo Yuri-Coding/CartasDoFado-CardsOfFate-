@@ -93,6 +93,4 @@ fmod_editor.log
 
 # Ignore Game Scene, this is causing really nasty headaches, believe me
 Game.unity
-# Also ignore this, like wth 
-GlifoVitoriano-Regular SDF.asset
 
