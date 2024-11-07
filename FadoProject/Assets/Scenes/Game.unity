@@ -223,7 +223,7 @@ MonoBehaviour:
   m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -298,6 +298,142 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48256751}
+  m_CullTransparentMesh: 1
+--- !u!1 &53393435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 53393436}
+  - component: {fileID: 53393438}
+  - component: {fileID: 53393437}
+  m_Layer: 5
+  m_Name: SkipText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &53393436
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53393435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 837848202}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &53393437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53393435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Abster
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 50
+  m_fontSizeBase: 50
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &53393438
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53393435}
   m_CullTransparentMesh: 1
 --- !u!1 &53875032
 GameObject:
@@ -518,7 +654,7 @@ MonoBehaviour:
   m_text: Player Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -676,7 +812,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 55843540}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 570664245}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &55843540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -961,6 +1109,7 @@ RectTransform:
   - {fileID: 426225145}
   - {fileID: 603752254}
   - {fileID: 511614086}
+  - {fileID: 837848202}
   m_Father: {fileID: 421600077}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1549,7 +1698,7 @@ MonoBehaviour:
   m_text: Player Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1762,7 +1911,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 426225147}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 570664245}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &426225147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1861,7 +2022,7 @@ MonoBehaviour:
   m_text: Vote em quem deseja enviar para cadeia...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2095,7 +2256,7 @@ MonoBehaviour:
   m_text: Player Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2209,6 +2370,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &570664244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 570664246}
+  - component: {fileID: 570664245}
+  m_Layer: 0
+  m_Name: VoteHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &570664245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570664244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f8299701642e844ace50290c1251f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popup: {fileID: 670056277}
+  playerManager: {fileID: 117878853}
+--- !u!4 &570664246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570664244}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 709904872}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &584030921
 GameObject:
   m_ObjectHideFlags: 0
@@ -2366,7 +2573,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 603752256}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 570664245}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &603752256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2610,7 +2829,7 @@ MonoBehaviour:
   m_text: Player Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2901,7 +3120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 660296452}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 570664245}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &660296452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2999,30 +3230,33 @@ MonoBehaviour:
   bigTextPanelAnimation: {fileID: 875580810}
   effectHandler: {fileID: 1574919424}
   voteAnim: {fileID: 421600078}
-  P1Text: {fileID: 1983815067}
-  P2Text: {fileID: 55130617}
-  P3Text: {fileID: 2044130222}
-  P4Text: {fileID: 904757591}
-  P5Text: {fileID: 2129300824}
-  P6Text: {fileID: 1890108668}
-  P7Text: {fileID: 1993956205}
-  P8Text: {fileID: 534323129}
-  P9Text: {fileID: 382735021}
-  P10Text: {fileID: 1948984426}
-  P11Text: {fileID: 1775866027}
-  P12Text: {fileID: 632886041}
-  P1Button: {fileID: 1369715443}
-  P2Button: {fileID: 849441844}
-  P3Button: {fileID: 1526197463}
-  P4Button: {fileID: 1400652970}
-  P5Button: {fileID: 55843539}
-  P6Button: {fileID: 1112839286}
-  P7Button: {fileID: 660296451}
-  P8Button: {fileID: 1611286669}
-  P9Button: {fileID: 855406054}
-  P10Button: {fileID: 858357953}
-  P11Button: {fileID: 426225146}
-  P12Button: {fileID: 603752255}
+  PText:
+  - {fileID: 1983815067}
+  - {fileID: 55130617}
+  - {fileID: 2044130222}
+  - {fileID: 904757591}
+  - {fileID: 2129300824}
+  - {fileID: 1890108668}
+  - {fileID: 1993956205}
+  - {fileID: 534323129}
+  - {fileID: 382735021}
+  - {fileID: 1948984426}
+  - {fileID: 1775866027}
+  - {fileID: 632886041}
+  PButton:
+  - {fileID: 1369715443}
+  - {fileID: 849441844}
+  - {fileID: 1526197463}
+  - {fileID: 1400652970}
+  - {fileID: 55843539}
+  - {fileID: 1112839286}
+  - {fileID: 660296451}
+  - {fileID: 1611286669}
+  - {fileID: 855406054}
+  - {fileID: 858357953}
+  - {fileID: 426225146}
+  - {fileID: 603752255}
+  playerManager: {fileID: 117878853}
 --- !u!1 &670664423
 GameObject:
   m_ObjectHideFlags: 0
@@ -3203,6 +3437,7 @@ Transform:
   - {fileID: 670056276}
   - {fileID: 1145531161}
   - {fileID: 1468230776}
+  - {fileID: 570664246}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &763798868
@@ -3255,6 +3490,139 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allCards: []
   currentIndex: 0
+--- !u!1 &837848201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 837848202}
+  - component: {fileID: 837848205}
+  - component: {fileID: 837848204}
+  - component: {fileID: 837848203}
+  m_Layer: 5
+  m_Name: SkipButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &837848202
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837848201}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 53393436}
+  m_Father: {fileID: 161018042}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 770, y: -350}
+  m_SizeDelta: {x: 250, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &837848203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837848201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 837848204}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 570664245}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: SkipVote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &837848204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837848201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1469909079130451432, guid: 2509cd5a3bef9e043a3fa67f1098d7c4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &837848205
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837848201}
+  m_CullTransparentMesh: 1
 --- !u!1 &849441842
 GameObject:
   m_ObjectHideFlags: 0
@@ -3337,7 +3705,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 849441845}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 570664245}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &849441845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3458,7 +3838,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 855406055}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 570664245}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &855406055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3579,7 +3971,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 858357954}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 570664245}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &858357954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3678,7 +4082,7 @@ MonoBehaviour:
   m_text: "Esse \xE9 um texto extremamente InteliGente!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3909,7 +4313,7 @@ MonoBehaviour:
   m_text: Eu sou InteliGente!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4045,7 +4449,7 @@ MonoBehaviour:
   m_text: Player Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4181,7 +4585,7 @@ MonoBehaviour:
   m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4351,7 +4755,7 @@ MonoBehaviour:
   m_text: RODADA 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4730,7 +5134,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1112839287}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 570664245}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1112839287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5009,7 +5425,7 @@ MonoBehaviour:
   m_text: Eu sou InteliGente!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5145,7 +5561,7 @@ MonoBehaviour:
   m_text: Rodada
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5316,7 +5732,7 @@ MonoBehaviour:
   m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5542,7 +5958,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1369715444}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 570664245}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1369715444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5663,7 +6091,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1400652971}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 570664245}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1400652971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5895,7 +6335,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1526197464}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 570664245}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1526197464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6096,6 +6548,7 @@ MonoBehaviour:
   round: 0
   canDraw: 0
   inPlay: 0
+  alreadyVoted: 0
   currentState: 0
 --- !u!4 &1580234352
 Transform:
@@ -6267,7 +6720,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1611286670}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 570664245}
+        m_TargetAssemblyTypeName: VoteHandler, Assembly-CSharp
+        m_MethodName: castVote
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1611286670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6487,7 +6952,7 @@ MonoBehaviour:
   m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6623,7 +7088,7 @@ MonoBehaviour:
   m_text: "Bom dia\nEste \xE9 um texto exemplo apenas para saber se t\xE1 tudo ok"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6943,7 +7408,7 @@ MonoBehaviour:
   m_text: Player Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7079,7 +7544,7 @@ MonoBehaviour:
   m_text: Player Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7246,7 +7711,7 @@ MonoBehaviour:
   m_text: Player Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7382,7 +7847,7 @@ MonoBehaviour:
   m_text: Player Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7518,7 +7983,7 @@ MonoBehaviour:
   m_text: Player Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7654,7 +8119,7 @@ MonoBehaviour:
   m_text: Player Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7862,7 +8327,7 @@ MonoBehaviour:
   m_text: Player Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
-  m_sharedMaterial: {fileID: 8552086477184009033, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
+  m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -22,4 +22,9 @@ public class VoteHandler : MonoBehaviour
         Debug.Log($"Voto feito em: {playerList[index].PlayerName}");
         GameManager.Instance.alreadyVoted = true;
     }
+
+    public void SkipVote()
+    {
+        GameManager.Instance.alreadyVoted = true;
+    }
 }
