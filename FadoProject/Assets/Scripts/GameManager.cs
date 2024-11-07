@@ -178,11 +178,15 @@ public class GameManager : MonoBehaviour
 			notificationText += (notification.FinalText);
 			notificationText += "\n";
 		}
-		//Debug.Log(notificationText);
-		popup.PopupMessage(notificationText);
+
+		if (!string.IsNullOrWhiteSpace(notificationText))
+		{
+			popup.PopupMessage(notificationText);
+		}
+
 		playerManager.ResetNotification();
 
-		notificationText = "";
+		notificationText = null;
 
 		SetState(GameState.VotingPhase);
 	}
@@ -246,8 +250,8 @@ public class GameManager : MonoBehaviour
 
     public void OnInitPopdown()
 	{
-		Player p1 = new Player(0, "Matias", Roles.Corrupt, false, true );
-		Player p2 = new Player(1, "Cassis", Roles.Honest,  true , false);
+		Player p1 = new Player(0, "Matias", Roles.Honest,  false, true );
+		Player p2 = new Player(1, "Cassis", Roles.Corrupt, true , false);
 		Player p3 = new Player(2, "Yuras" , Roles.Medic,   false, true );
 		Player p4 = new Player(3, "Sales" , Roles.Honest,  false, true );
 		Player p5 = new Player(4, "Robson", Roles.Honest,  false, true );
@@ -258,10 +262,12 @@ public class GameManager : MonoBehaviour
 		playerManager.AddPlayer(p4);
 		playerManager.AddPlayer(p5);
 
-		playerManager.InitializePlayers();
+        mainPlayer = p2;
+        mainRole = mainPlayer.PlayerRole;
 
-		mainPlayer = p2;
-		mainRole = mainPlayer.PlayerRole;
+        playerManager.InitializePlayers();
+
+		
 		
 
 		//Debug.Log("Init Finalizado.");

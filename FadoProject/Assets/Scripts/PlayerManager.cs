@@ -7,15 +7,20 @@ using System.Linq;
 
 public class PlayerManager : MonoBehaviour
 {
+	// Importar Handlers
 	public DeckManager deckManager;
 	public EffectHandler effectHandler;
+
+	// Criar lista de Players / Bots
 	public List<Player> players = new List<Player>();
-	public List<Player> bots = new List<Player>();
-	
-	public int currentPlayerIndex = 0;
+    public List<Player> bots = new List<Player>();
+
+	// Criar lista de targets eligíveis (tudo menos próprio player)
+    public List<Player> eligibleTarget = new List<Player>();
+
+    public int currentPlayerIndex = 0;
 
 	List<Player> botEligibleTarget = new List<Player>();
-
 	List<Player> botTarget = new List<Player>();
 
 
@@ -39,9 +44,15 @@ public class PlayerManager : MonoBehaviour
 	{
 		foreach (Player player in players)
 		{
-			if (player.IsBot == true) { bots.Add(player); }
+			// Adiciona na lista BOT se é BOT
+			if (player.IsBot == true) bots.Add(player);
+
+			// Adiciona no eligibleTarget se não é o próprio player
+			if (player != GameManager.Instance.mainPlayer) eligibleTarget.Add(player);
 			player.InitializePlayer();
 		}
+
+
 	}
 
 	public bool IsMainPlayer(Player player)

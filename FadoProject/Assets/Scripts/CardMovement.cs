@@ -43,19 +43,12 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 	//Var para encontrar o popUp
 	private Popup popup;
 
-	//Var para encontrar a detecção do clique no Dummy
-	private ClickDummyDetect clickDummy;
-
-
 	void Awake() 
 	{
 		newCanvasObject = GameObject.Find("HandPos");
 		newCanvas = newCanvasObject.GetComponent<RectTransform>();
-		//newCanvas.anchoredPosition = new Vector3(1000,1000,1); Da uma testadinha aqui
-		//Pegando o script "Popup.cs" dentro do Popup manager
+
 		popup = GameObject.Find("PopupManager").GetComponent<Popup>();
-		//VAI TER QUE REFATORAR, FUNCIONA SÓ PRO DUMMY E PRA APENAS 1 DUMMY
-		clickDummy = GameObject.Find("Dummy").GetComponent<ClickDummyDetect>();
 
 		rectTransform = GetComponent<RectTransform>();
 		canvas = GetComponentInParent<Canvas>();
@@ -72,38 +65,46 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 	{
 		switch (currentState)
 		{
-			case 1:
+            // CASE 1: Está na mão, o jogador passa o mouse na carta
+            case 1:
 				HandleHoverState();
 				break;
-			case 2:
+
+            // CASE 2: Clica na carta, arrastando na tela
+            case 2:
 				HandleDragState();
-				if (!Input.GetMouseButton(0)) 
-				{
+				if (!Input.GetMouseButton(0)) {
+					// Se soltar o mouse, a carta volta na mão
 					TransitionToState0();
 				}
 				break;
+
+
+			// CASE 3: A carta trava na mesa e a seta aparece
 			case 3:
 				HandlePlayState();
-				/*if (!Input.GetMouseButton(0))
-				{
-					TransitionToState0();
-				}*/
 				break;
+
+			// CASE 4: Entrando em Zoom (click direito)
 			case 4:
 				if (isZoomed == true) return;
 				StartCoroutine(ZoomIn());
 				break;
+
+			// CASE 5: Saindo do Zoom (clicar na carta novamente com botão direito)
 			case 5:
 				if (isZoomed == false) return;
 				StartCoroutine(ZoomOut());
 				break;
+
+			// CASE 6: Estado entre Zoom In e Zoom Out
 			case 6:
 				//Idle Zoom
 				break;
 		}
 	}
 
-	//Volta a carta pro estado original dela (em rota鈬o, escala e posi鈬o)
+	//Volta a carta pro estado original dela (em rotação, escala e posição)
 	private void TransitionToState0()
 	{
 		currentState = 0;
@@ -141,19 +142,33 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 		currentState = newState;
 		switch (currentState)
 		{
-			case 2:
+            // CASE 2: Clica na carta, arrastando na tela
+            case 2:
 				if (currentCard.cardType == 0)
 				{
                     currentCardDisplay.closeTaskUI();
 					popup.actionRemoveCard -= removeCard;
                 }
 				break;
-			case 3:
-				if (currentCard.cardType == 0)
+
+            // CASE 3: A carta trava na mesa e a seta aparece
+            case 3:
+				switch (currentCard.cardType)
 				{
-                    currentCardDisplay.updateTaskUI();
-					popup.actionRemoveCard += removeCard;
-                }
+					case CardType.Task:
+                        currentCardDisplay.updateTaskUI();
+                        popup.actionRemoveCard += removeCard;
+                        break;
+
+					case CardType.Medic:
+					case CardType.Poison:
+                        //Verificando se a carta pode targetar um alvo e destruindo ela após seu uso
+                        GameManager.Instance.inPlay = true;
+                        TargetHandler.Instance.usedCardAction += removeTargetCard;
+
+                        TargetHandler.Instance.SetTargetConfig(currentCard);
+						break;
+				}
                 break;
 		}
 	}
@@ -171,7 +186,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 	//Destroi as cartas com efeito de target depois de ser jogada
 	private void removeTargetCard()
 	{
-		clickDummy.usedCardAction -= removeTargetCard;
+        TargetHandler.Instance.usedCardAction -= removeTargetCard;
         HandManager handManager = FindAnyObjectByType<HandManager>();
         handManager.cardsInHand.Remove(gameObject);
         Destroy(gameObject);
@@ -231,20 +246,11 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 		//Debug.Log(currentCard.cardName);
         rectTransform.localPosition = playPosition;
 		rectTransform.localRotation = Quaternion.identity;
-		if (currentCard.canTarget)
-		{
-			//Verificando se a carta pode targetar um alvo e destruindo ela após seu uso
-            GameManager.Instance.inPlay = true;
-			clickDummy.usedCardAction += removeTargetCard;
-        }
-		
-
-		
 
 		if(Input.mousePosition.y < cardPlay.y)
 		{
             GameManager.Instance.inPlay = false;
-			clickDummy.usedCardAction -= removeTargetCard;
+			TargetHandler.Instance.usedCardAction -= removeTargetCard;
             ChangeCurrentState(2);
 			playArrow.SetActive(false);
 		}
