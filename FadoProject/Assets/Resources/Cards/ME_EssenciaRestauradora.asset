@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
-  m_Name: "ME_Infus\xE3oEnergia"
+  m_Name: ME_EssenciaRestauradora
   m_EditorClassIdentifier: 
-  cardName: "Infus\xE3o de Energia"
+  cardName: "Ess\xEAncia Restauradora"
   cardSprite: {fileID: 1308830767022127242, guid: 5d5f365de0a3f9440b818a5601617831, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: "Anula todos os debuffs no alvo para o pr\xF3ximo turno.\\n-1 Corrup\xE7\xE3o"
-  cardLore: "Um raro elixir que remove efeitos negativos tempor\xE1rios, restaurando
-    a clareza."
+  cardEffect: Remove 2 marcadores de Veneno de um jogador e concede imunidade ao
+    veneno por 1 turno.\n+10 Moralidade
+  cardLore: "Um t\xF4nico valioso que restaura a vitalidade e imuniza temporariamente
+    contra a praga."
   canTarget: 1
   targetType: 1
   choice1: 
@@ -26,10 +27,12 @@ MonoBehaviour:
   moraleCost: 0
   influenceCost: 0
   targetEffects:
+  - Type: 5
+    Value: -2
   - Type: 1
     Value: 1
-  - Type: 3
-    Value: -1
-  selfEffects: []
+  selfEffects:
+  - Type: 2
+    Value: 10
   choice1Effects: []
   choice2Effects: []

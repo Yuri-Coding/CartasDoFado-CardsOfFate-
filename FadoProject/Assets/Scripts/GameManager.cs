@@ -244,6 +244,7 @@ public class GameManager : MonoBehaviour
 
         //Debug.Log("Fase de Finalização de Turno");
         roundResetVote();
+		UpdateUI();
         SetState(GameState.StartPhase);
 
 
@@ -318,13 +319,22 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-    //Popup mostrando quem foi eliminado
-    private void showElimination()
-    {
-		string eliminationMessage;
-		eliminationMessage = $"{playerList[mostVotedIndex].PlayerName} foi eliminado da mesa de negociações.";
-		popup.PopupMessage(eliminationMessage);
-		eliminationMessage = "";
+	//Popup mostrando quem foi eliminado
+	private void showElimination()
+	{
+		List<string> eliminationMessage;
+		int index = 0;
+		eliminationMessage = new List<string> {
+            $"{playerList[mostVotedIndex].PlayerName} foi eliminado da mesa de negociações.",
+			$"{playerList[mostVotedIndex].PlayerName} foi enviado ao oblívio, deixando para trás apenas arrependimentos.",
+			$"{playerList[mostVotedIndex].PlayerName} alcançou um destino infeliz.",
+			$"{playerList[mostVotedIndex].PlayerName} teve seus gritos de desespero abafados na prisão, em meio ao fim doloroso e sofrido que encontrou, como muitos outros antes e depois dele.",
+			$"{playerList[mostVotedIndex].PlayerName} teve um fim prematuro dado a seus sonhos e esperanças.",
+			$"Neste teatro cruel, {playerList[mostVotedIndex].PlayerName} assumiu o papel de vítima em uma conspiração fatal.",
+			$"{playerList[mostVotedIndex].PlayerName} foi enviado para o além, restando apenas as memórias deixadas para trás."
+	};
+		index = UnityEngine.Random.Range(0, eliminationMessage.Count);
+		popup.PopupMessage(eliminationMessage[index]);
     }
 
     public void OnInitPopdown()

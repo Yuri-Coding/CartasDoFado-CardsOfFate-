@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
-  m_Name: ME_Vacina
+  m_Name: ME_CarvaoAtivado
   m_EditorClassIdentifier: 
-  cardName: Vacina
+  cardName: "P\xF3 de Carv\xE3o Ativado"
   cardSprite: {fileID: 1308830767022127242, guid: 5d5f365de0a3f9440b818a5601617831, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: +1 Veneno para o alvo nesta rodada\nImunidade ao veneno por 2 rodadas
-  cardLore: "Ao injetar a praga no corpo das pessoas elas criam defesa contra a mesma,
-    o pre\xE7o a se pagar \xE9 correr o risco de contrair a pr\xF3pria praga."
+  cardEffect: "Remove todos os marcadores de Veneno de um jogador e aumenta 5 pontos
+    de Moralidade do alvo.\\n-10 Influ\xEAncia\\n+10 Moralidade"
+  cardLore: "Um rem\xE9dio popular usado para purgar venenos e toxinas do corpo de
+    maneira r\xE1pida, mas custosa."
   canTarget: 1
   targetType: 1
   choice1: 
@@ -27,9 +28,13 @@ MonoBehaviour:
   influenceCost: 0
   targetEffects:
   - Type: 5
-    Value: 1
-  - Type: 1
-    Value: 2
-  selfEffects: []
+    Value: -99
+  - Type: 2
+    Value: 5
+  selfEffects:
+  - Type: 4
+    Value: -10
+  - Type: 2
+    Value: 10
   choice1Effects: []
   choice2Effects: []

@@ -17,7 +17,7 @@ MonoBehaviour:
   zoomedSprite: {fileID: 0}
   cardType: 1
   cardEffect: "Reduz a moralidade de um jogador em 15 pontos.\\n+5 Moralidade\\n+1
-    Corrup\xE7\xE3o para o alvo"
+    Corrup\xE7\xE3o para o alvo\\n+1 veneno para o alvo"
   cardLore: "Uma subst\xE2ncia que causa profunda tristeza e perda de esperan\xE7a."
   canTarget: 1
   targetType: 1
@@ -29,6 +29,8 @@ MonoBehaviour:
   - Type: 2
     Value: -15
   - Type: 3
+    Value: 1
+  - Type: 5
     Value: 1
   selfEffects:
   - Type: 2

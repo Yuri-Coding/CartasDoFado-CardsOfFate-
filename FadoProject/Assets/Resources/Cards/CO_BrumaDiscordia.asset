@@ -17,7 +17,7 @@ MonoBehaviour:
   zoomedSprite: {fileID: 0}
   cardType: 1
   cardEffect: "Reduz a moralidade de todos os jogadores em 10 pontos.\\n+5 Moralidade\\n+1
-    Corrup\xE7\xE3o para todos os jogadores"
+    Corrup\xE7\xE3o para todos os jogadores\\n+1 veneno para todos os jogadores"
   cardLore: "Uma po\xE7\xE3o que, ao ser dispersada, causa confus\xE3o e desconfian\xE7a
     entre os jogadores, enfraquecendo suas alian\xE7as."
   canTarget: 1
@@ -30,6 +30,8 @@ MonoBehaviour:
   - Type: 2
     Value: -10
   - Type: 3
+    Value: 1
+  - Type: 5
     Value: 1
   selfEffects:
   - Type: 2

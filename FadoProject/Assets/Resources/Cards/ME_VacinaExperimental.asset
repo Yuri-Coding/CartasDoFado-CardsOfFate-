@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
-  m_Name: ME_FleumaEspiritos
+  m_Name: ME_VacinaExperimental
   m_EditorClassIdentifier: 
-  cardName: "Fleuma dos esp\xEDritos"
+  cardName: Vacina Experimental
   cardSprite: {fileID: 1308830767022127242, guid: 5d5f365de0a3f9440b818a5601617831, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: "-1 Veneno para todos os jogadores\\nO jogador perde o direito de falar
-    na vota\xE7\xE3o por 1 turno e sua Moralidade cai em 5 pontos."
-  cardLore: "Remover a peste te aproxima da raz\xE3o. No entanto a um pre\xE7o a
-    se pagar."
+  cardEffect: "Remove 1 marcador de Veneno do alvo e concede imunidade ao veneno
+    por 2 turnos.\\n+1 Corrup\xE7\xE3o ao alvo\\n+5 Influ\xEAncia"
+  cardLore: "Uma inje\xE7\xE3o ousada e arriscada que promete imunidade tempor\xE1ria,
+    mas com poss\xEDveis efeitos adversos."
   canTarget: 1
-  targetType: 5
+  targetType: 1
   choice1: 
   choice2: 
   moraleCost: 0
@@ -29,10 +29,12 @@ MonoBehaviour:
   targetEffects:
   - Type: 5
     Value: -1
-  selfEffects:
-  - Type: 0
+  - Type: 1
+    Value: 2
+  - Type: 3
     Value: 1
-  - Type: 2
-    Value: -5
+  selfEffects:
+  - Type: 4
+    Value: 5
   choice1Effects: []
   choice2Effects: []

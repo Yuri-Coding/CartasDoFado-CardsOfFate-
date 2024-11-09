@@ -11,6 +11,7 @@ public class Player
 	public CardType PlayerCardType { get; set; }
 	public int		Morale { get; private set; }
 	public int		Influence { get; private set; }
+	public int		Poison { get; set; }
 	public int		Corruption { get; private set; }
 	public int		SilenceTurn { get; private set; }
 	public int		ImmunityTurn { get; private set; }
@@ -70,6 +71,9 @@ public class Player
                 Corruption += amount;
                 //notifications.Add(new Notification(FadoProject.EffectType.AddCorruption, amount));
                 break;
+			case "Poison":
+				Poison += amount;
+				break;
 		}
     }
 
@@ -109,7 +113,8 @@ public class Player
 		Morale = 0;
 		Influence = 0;
 		Corruption = 0;
-		SilenceTurn = 0;
+        Poison = 0;
+        SilenceTurn = 0;
 		votesReceived = 0;
 
 		notifications = new List<Notification>();

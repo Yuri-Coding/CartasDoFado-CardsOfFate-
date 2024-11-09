@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cab8e466304b0de4bb8c1d4b9b9aa528
+guid: 0a614beca7a247b49ba9e61d8f423405
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -928023278318776479
-    second: noblewoman_0
+      213: 1181572697556129649
+    second: poison2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: noblewoman_0
+      name: poison2_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 8
         y: 0
-        width: 512
-        height: 680
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 16f0488cebffe13f0800000000000000
-      internalID: -928023278318776479
+      spriteID: 1771222bb1ac56010800000000000000
+      internalID: 1181572697556129649
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      noblewoman_0: -928023278318776479
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

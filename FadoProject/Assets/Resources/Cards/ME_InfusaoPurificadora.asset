@@ -10,29 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
-  m_Name: ME_ErvasCalmantes
+  m_Name: ME_InfusaoPurificadora
   m_EditorClassIdentifier: 
-  cardName: Mistura de Ervas Calmantes
+  cardName: "Infus\xE3o Purificado"
   cardSprite: {fileID: 1308830767022127242, guid: 5d5f365de0a3f9440b818a5601617831, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: Aumenta a moralidade do alvo em 10 pontos e remove 1 ponto de veneno.\nSe
-    silencia por 1 turno
-  cardLore: "Um ch\xE1 arom\xE1tico de ervas curativas que restaura o bem-estar e
-    reduz o veneno."
+  cardEffect: "Remove 1 marcador de Veneno de todos os jogadores e aumenta 5 pontos
+    de Moralidade de todos.\\n-5 Moralidade\\n+10 Influ\xEAncia"
+  cardLore: Uma mistura de ervas purificadoras preparada para expurgar impurezas
+    do corpo e restaurar a paz.
   canTarget: 1
-  targetType: 1
+  targetType: 5
   choice1: 
   choice2: 
   moraleCost: 0
   influenceCost: 0
   targetEffects:
-  - Type: 2
-    Value: 10
   - Type: 5
-    Value: -1
-  selfEffects:
-  - Type: 0
     Value: 1
+  - Type: 2
+    Value: 5
+  selfEffects:
+  - Type: 2
+    Value: -5
+  - Type: 4
+    Value: 10
   choice1Effects: []
   choice2Effects: []

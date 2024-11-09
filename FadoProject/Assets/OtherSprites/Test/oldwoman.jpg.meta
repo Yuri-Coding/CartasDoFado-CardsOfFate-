@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      oldwoman_0: 7321284200103707871
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

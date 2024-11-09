@@ -16,7 +16,8 @@ MonoBehaviour:
   cardSprite: {fileID: -7959052698411436611, guid: 3fe6b3abd7cc1a5449fdea1a624bb96c, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 1
-  cardEffect: "Adiciona +1 Corrup\xE7\xE3o para todos os jogadores.\\n+10 Moralidade"
+  cardEffect: "Adiciona +1 Corrup\xE7\xE3o para todos os jogadores.\\n+10 Moralidade\\n+1
+    veneno para todos os jogadores"
   cardLore: "Uma subst\xE2ncia que causa uma mudan\xE7a sutil na percep\xE7\xE3o
     dos jogadores, tornando-os mais propensos a se corromperem."
   canTarget: 1
@@ -27,6 +28,8 @@ MonoBehaviour:
   influenceCost: 0
   targetEffects:
   - Type: 3
+    Value: 1
+  - Type: 5
     Value: 1
   selfEffects:
   - Type: 2

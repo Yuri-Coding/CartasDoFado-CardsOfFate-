@@ -10,25 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
-  m_Name: ME_Tratamento
+  m_Name: ME_TonicoSaude
   m_EditorClassIdentifier: 
-  cardName: Tratamento
+  cardName: "T\xF4nico da Sa\xFAde P\xFAblica"
   cardSprite: {fileID: 1308830767022127242, guid: 5d5f365de0a3f9440b818a5601617831, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: -4 veneno para o alvo\nSe Silencia por 2 turnos
-  cardLore: "N\xE3o piore as coisas."
+  cardEffect: "Reduz 1 marcador de Veneno de todos os jogadores.\\nSe silencia no
+    pr\xF3ximo turno\\n+5 Moralidade"
+  cardLore: "Um elixir revitalizante que os m\xE9dicos vitorianos usam para fortalecer
+    o corpo contra as doen\xE7as."
   canTarget: 1
-  targetType: 1
+  targetType: 5
   choice1: 
   choice2: 
   moraleCost: 0
   influenceCost: 0
   targetEffects:
   - Type: 5
-    Value: -4
+    Value: -1
   selfEffects:
   - Type: 0
-    Value: 2
+    Value: 1
+  - Type: 2
+    Value: 5
   choice1Effects: []
   choice2Effects: []

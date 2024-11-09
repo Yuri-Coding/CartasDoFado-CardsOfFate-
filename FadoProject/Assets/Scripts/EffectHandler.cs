@@ -54,6 +54,7 @@ public class EffectHandler : MonoBehaviour
                     case EffectType.AddMorale:
                     case EffectType.AddCorruption:
                     case EffectType.AddInfluence:
+					case EffectType.AddPoison:
                         ApplyValue(tplayer, teffect.Type, teffect.Value);
                         break;
 
@@ -80,6 +81,9 @@ public class EffectHandler : MonoBehaviour
 
 			case EffectType.AddCorruption:
 				target.Add("Corruption", amount);
+				break;
+			case EffectType.AddPoison:
+				target.Add("Poison", amount);
 				break;
 		}
 	}

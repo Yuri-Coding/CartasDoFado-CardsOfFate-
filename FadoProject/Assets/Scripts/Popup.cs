@@ -35,6 +35,7 @@ public class Popup : MonoBehaviour
     public TMP_Text corruptionText;
     public TMP_Text moraleText;
     public TMP_Text influenceText;
+    public TMP_Text poisonText;
 
     // Texto Grande que Aparece no Início dos Rounds
     public TMP_Text bigRoundText;
@@ -200,6 +201,7 @@ public class Popup : MonoBehaviour
         corruptionText.text = GameManager.Instance.mainPlayer.Corruption.ToString();
         moraleText.text		= GameManager.Instance.mainPlayer.Morale.ToString();
         influenceText.text	= GameManager.Instance.mainPlayer.Influence.ToString();
+        poisonText.text = GameManager.Instance.mainPlayer.Poison.ToString();
 	}
 
     // ===============================================================

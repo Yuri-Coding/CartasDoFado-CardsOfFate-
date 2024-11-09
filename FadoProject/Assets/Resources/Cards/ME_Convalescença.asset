@@ -10,29 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
-  m_Name: ME_EssenciaPurificacao
+  m_Name: "ME_Convalescen\xE7a"
   m_EditorClassIdentifier: 
-  cardName: "Ess\xEAncia de Purifica\xE7\xE3o"
+  cardName: "Sala de Convalescen\xE7a"
   cardSprite: {fileID: 1308830767022127242, guid: 5d5f365de0a3f9440b818a5601617831, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: "Remove todos os marcadores de veneno de um jogador e restaura 5 pontos
-    de Moralidade.\\n-10 Influ\xEAncia"
-  cardLore: "Uma ess\xEAncia destilada que remove completamente o veneno, mas a um
-    custo pessoal para o M\xE9dico."
+  cardEffect: "Pula a vota\xE7\xE3o nesta rodada e reduz 1 marcador de Veneno de
+    todos os jogadores.\\n-10 Influ\xEAncia\\n+10 Moralidade"
+  cardLore: "Uma sala isolada onde os doentes podem repousar, evitando a contamina\xE7\xE3o
+    dos demais."
   canTarget: 1
-  targetType: 1
+  targetType: 5
   choice1: 
   choice2: 
   moraleCost: 0
   influenceCost: 0
   targetEffects:
-  - Type: 5
-    Value: 10
-  - Type: 2
-    Value: 5
+  - Type: 0
+    Value: 0
   selfEffects:
   - Type: 4
     Value: -10
+  - Type: 2
+    Value: 10
   choice1Effects: []
   choice2Effects: []
