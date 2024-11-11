@@ -203,8 +203,14 @@ public class GameManager : MonoBehaviour
 	void HandleVotingPhase()
 	{
 		//Debug.Log("Fase de Votação");
-		popup.UpdateVotePanel();
-		popup.VotePanelPopup();
+		if (round>1)
+		{
+            //Mostra e alimenta o popup de votação
+            popup.UpdateVotePanel();
+            popup.VotePanelPopup();
+        }else if (round==1) {
+			SetState(GameState.EndPhase);
+		}
 	}
 
 	void HandleProcessVoteResults()
