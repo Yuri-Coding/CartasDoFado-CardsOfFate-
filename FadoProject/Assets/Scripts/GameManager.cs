@@ -5,6 +5,7 @@ using TMPro;
 using System;
 using System.Linq;
 using System.Reflection;
+using UnityEngine.XR;
 
 public class GameManager : MonoBehaviour
 {
@@ -186,6 +187,14 @@ public class GameManager : MonoBehaviour
         mainRole = mainPlayer.PlayerRole;
 
         playerManager.InitializePlayers();
+		playerManager.InitializeGlobalParameters();
+
+        for (int i = 0; i < 2; i++)
+        {
+			canDraw = true;
+            deckManager.DrawCard(handManager);
+        }
+		canDraw = true;
 
     }
 
@@ -219,10 +228,12 @@ public class GameManager : MonoBehaviour
 
 	void HandleShowResults()
 	{
+        playerManager.VerifyPoisonForAllPlayers();
 		VerifyEndGameCondition();
+        UpdateUI();
 
-		//Debug.Log("Fase de Mostrar Resultados (Jornal)");
-		mainPlayer.CheckoutAllNotifications();
+        //Debug.Log("Fase de Mostrar Resultados (Jornal)");
+        mainPlayer.CheckoutAllNotifications();
 
 		foreach(Notification notification in mainPlayer.notifications)
 		{
@@ -243,8 +254,8 @@ public class GameManager : MonoBehaviour
             notificationText = null;
 
             SetState(GameState.VotingPhase);
-        }	
-	}
+        }
+    }
 
 	void HandleVotingPhase()
 	{
@@ -273,8 +284,13 @@ public class GameManager : MonoBehaviour
         if (mostVotedIndex >= 0)
         {
             playerList[mostVotedIndex].IsAlive = false;
-            showElimination();
+            VerifyEndGameCondition();
+			if (mainPlayer.IsAlive) showElimination();
         }
+        else if(mostVotedIndex == -1)
+		{
+			SetState(GameState.EndPhase);		
+		}
     }
 
     void EndPhase() {
@@ -282,6 +298,7 @@ public class GameManager : MonoBehaviour
 
         //Debug.Log("Fase de Finalização de Turno");
         roundResetVote();
+        Debug.Log(mainPlayer.IsAlive);
         VerifyEndGameCondition();
         UpdateUI();
         SetState(GameState.StartPhase);
@@ -306,10 +323,16 @@ public class GameManager : MonoBehaviour
             SetState(GameState.EndGame);
             return;
         }
+		if (mainPlayer.IsAlive == false && mainPlayer.PlayerRole != Roles.Corrupt)
+        {
+            popup.EndGamePopup(EndCondition.SP_PlayerDead);
+			SetState(GameState.EndGame);
+        }
     }
 
 	void EndGame()
 	{
+		if (mainPlayer.IsAlive == false && mainPlayer.PlayerRole != Roles.Corrupt) return;
 		switch(mainPlayer.PlayerRole)
 		{
 			case Roles.Honest:

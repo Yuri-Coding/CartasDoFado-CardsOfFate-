@@ -30,6 +30,8 @@ public class Popup : MonoBehaviour
 
     public Animation choiceAnim;
 
+    //Flag para controlar o PopUp que muda state
+    public bool isProcessingPopup;
 
     // Texto Debug de Parâmetro
     public TMP_Text poisonText;
@@ -90,6 +92,7 @@ public class Popup : MonoBehaviour
         {
             PButton[i].gameObject.SetActive(false);
         }
+        isProcessingPopup = false;
     }
 
 	void Update()
@@ -141,9 +144,10 @@ public class Popup : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        PopupClosed?.Invoke(state);
+        elapsedTime = 0f;
         Popdown();
+        while (elapsedTime < 1.5f) { elapsedTime+=Time.deltaTime; yield return null; }
+        PopupClosed?.Invoke(state);
     }
 
     // ===============================================================
@@ -231,7 +235,7 @@ public class Popup : MonoBehaviour
     public void UpdatePanel()
 	{
 		
-        poisonText.text = GameManager.Instance.mainPlayer.Poison.ToString();
+        poisonText.text     = GameManager.Instance.mainPlayer.Poison.ToString();
         moraleText.text		= GameManager.Instance.mainPlayer.Morale.ToString();
         influenceText.text	= GameManager.Instance.mainPlayer.Influence.ToString();
 	}
@@ -284,9 +288,32 @@ public class Popup : MonoBehaviour
 
     public void EndGamePopup(EndCondition endCondition)
     {
+        int coinToss;
         string endGameString = "";
         string endGameDescriptionString = "";
-
+        if (endCondition == EndCondition.SP_PlayerDead)
+        {
+            coinToss = UnityEngine.Random.Range(0, 2);
+            switch ((coinToss, GameManager.Instance.mainRole))
+            {
+                case (0, Roles.Honest):
+                    endGameString = "VOCÊ VENCEU";
+                    endGameDescriptionString = "Apesar de seu destino ter sido cruel, os habitantes da cidade sobreviveram ao grande desafio que encararam.";
+                    break;
+                case (0, Roles.Medic):
+                    endGameString = "VOCÊ VENCEU";
+                    endGameDescriptionString = "Seus esforços foram recompensados. A cidade prevaleceu e sobreviveu ao ataque do cruel corrupto.";
+                    break;
+                case (1, Roles.Honest):
+                    endGameString = "VOCÊ FOI DERROTADO";
+                    endGameDescriptionString = "Mesmo sendo uma pessoa honesta e esforçada o corrupto ceifou sua vida e de toda a cidade.";
+                    break;
+                case (1, Roles.Medic):
+                    endGameString = "VOCÊ FOI DERROTADO";
+                    endGameDescriptionString = "Você foi o último raio de esperança da cidade, no entanto o corrupto teve sucesso em apagar essa luz.";
+                    break;
+            }
+        }
         switch((endCondition, GameManager.Instance.mainRole))
         {
             case (EndCondition.HonestWin, Roles.Honest):

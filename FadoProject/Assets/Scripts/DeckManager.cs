@@ -17,10 +17,6 @@ public class DeckManager : MonoBehaviour
 		allCards.AddRange(cards);
 
 		HandManager hand = FindFirstObjectByType<HandManager>();
-		for(int i=0; i<1; i++)
-		{
-			//DrawCard(hand);
-		}
 	}
 
 	public List<Card> FilterCardsByType(CardType type)

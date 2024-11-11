@@ -76,21 +76,25 @@ public class Player
 		{
 			case "Morale":
 				Morale += amount;
+				if (Morale < 0) Morale = 0;
                 //notifications.Add(new Notification(FadoProject.EffectType.AddMorale, amount));
                 break;
 
 			case "Influence":
 				Influence += amount;
+				if(Influence < 0) Influence = 0;
                 //notifications.Add(new Notification(FadoProject.EffectType.AddInfluence, amount));
                 break;
 
 			case "Corruption":
                 Corruption += amount;
+				if(Corruption < 0) Corruption = 0;
                 notifications.Add(new Notification(FadoProject.EffectType.AddCorruption, amount));
                 break;
 			case "Poison":
 				if (ImmunityTurn > 0) return;
-				Poison += amount;
+                Poison += amount;
+                if (Poison < 0) Poison = 0;
                 notifications.Add(new Notification(FadoProject.EffectType.AddPoison, amount));
                 break;
 		}

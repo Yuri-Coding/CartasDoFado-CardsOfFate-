@@ -27,7 +27,7 @@ MonoBehaviour:
   moraleCost: 0
   influenceCost: 0
   targetEffects:
-  - Type: 1
+  - Type: 8
     Value: 0
   - Type: 3
     Value: -1
