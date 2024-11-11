@@ -14,6 +14,7 @@ public enum GameState
 	// Fases de Votação
 	VotingPhase,		// Fase de Votação para eliminar um jogador.
 	ProcessVoteResults,	// Processar resultados da votação.
+	ShowElimination,    // Mostrar quem foi eliminado
 
 	// Fase Única
 	StartPhase,			// Início de Fase, animações.

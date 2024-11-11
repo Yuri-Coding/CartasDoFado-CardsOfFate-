@@ -12,8 +12,10 @@ namespace FadoProject
         AddCorruption,
         AddInfluence,
         AddPoison,
+        Paralyze,
         ForceVote,
-        ActionReduction
+        ClearDebuff,
+        SkipVote
     }
 
     [System.Serializable]

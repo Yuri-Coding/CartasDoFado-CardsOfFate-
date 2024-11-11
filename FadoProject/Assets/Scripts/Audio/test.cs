@@ -26,7 +26,7 @@ public class TestTracks : MonoBehaviour
             //Debug.Log($"Playing track: {track}");
 
             // Aguarda 6 segundos antes de reproduzir o próximo track
-            yield return new WaitForSeconds(6f);
+            yield return new WaitForSeconds(15f);
         }
 
         Debug.Log("All tracks tested.");

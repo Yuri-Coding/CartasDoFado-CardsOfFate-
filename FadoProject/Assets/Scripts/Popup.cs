@@ -32,10 +32,10 @@ public class Popup : MonoBehaviour
 
 
     // Texto Debug de Parâmetro
-    public TMP_Text corruptionText;
+    public TMP_Text poisonText;
     public TMP_Text moraleText;
     public TMP_Text influenceText;
-    public TMP_Text poisonText;
+
 
     // Texto Grande que Aparece no Início dos Rounds
     public TMP_Text bigRoundText;
@@ -44,10 +44,15 @@ public class Popup : MonoBehaviour
     private Card currentCard;
 	public EffectHandler effectHandler;
 
+    // Texto Grande de notificação de Kill
+    public TMP_Text bigKillNotificationText;
+
+
     // Texto de EndGame
     public TMP_Text endGameText;
     public TMP_Text endGameDescriptionText;
 
+    public event Action<GameState> PopupClosed;
 
 
 
@@ -99,18 +104,46 @@ public class Popup : MonoBehaviour
     //                        GENERAL POPUP
     // ===============================================================
 
-    public void PopupMessage(string content)
+    public void PopupMessage(string content, float duration)
     {
         singleAnim.Play("fadein");
         contentObject.text = content;
 
-        StartCoroutine(AutoHidePopup(7f, "normal"));
+        StartCoroutine(AutoHidePopup(duration, "normal"));
+    }
+
+    // Popup and Change State
+    public void SetStateAfterPopup(string content, float duration, GameState state)
+    {
+        singleAnim.Play("fadein");
+        contentObject.text = content;
+
+        StartCoroutine(AutoHideAndChangeState(duration, state));
     }
 
     void Popdown()
     {
         singleAnim.Play("fadeout");
         isWaitingForInput = true;
+    }
+
+    private IEnumerator AutoHideAndChangeState(float duration, GameState state)
+    {
+        float elapsedTime = 0f;
+
+        while (isWaitingForInput && elapsedTime < duration)
+        {
+            if (Input.anyKeyDown)
+            {
+                isWaitingForInput = false;
+                break;
+            }
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        PopupClosed?.Invoke(state);
+        Popdown();
     }
 
     // ===============================================================
@@ -149,7 +182,7 @@ public class Popup : MonoBehaviour
 		}
 
 		Popdown();
-        if (option == "init") GameManager.Instance.OnInitPopdown();
+        //if (option == "init") GameManager.Instance.OnInitPopdown();
 	}
 
     // ===============================================================
@@ -198,10 +231,9 @@ public class Popup : MonoBehaviour
     public void UpdatePanel()
 	{
 		
-        corruptionText.text = GameManager.Instance.mainPlayer.Corruption.ToString();
+        poisonText.text = GameManager.Instance.mainPlayer.Poison.ToString();
         moraleText.text		= GameManager.Instance.mainPlayer.Morale.ToString();
         influenceText.text	= GameManager.Instance.mainPlayer.Influence.ToString();
-        poisonText.text = GameManager.Instance.mainPlayer.Poison.ToString();
 	}
 
     // ===============================================================
@@ -229,6 +261,20 @@ public class Popup : MonoBehaviour
             yield return null;
         }
         BigTextPopdown();
+    }
+
+    // =
+
+    public void BigKillNotificationPopup(int round)
+    {
+        bigRoundText.text = "RODADA " + round.ToString();
+        bigTextPanelAnimation.Play("bigtext_fadein");
+        StartCoroutine(AutoHideBigText(3f));
+    }
+
+    public void BigKillNotificationPopdown()
+    {
+        bigTextPanelAnimation.Play("bigtext_fadeout");
     }
 
 

@@ -5,19 +5,36 @@ using UnityEngine;
 
 public class Player
 {
+
+	// Informação do Jogador
 	public int		PlayerId { get; private set; }
 	public string	PlayerName { get; set; }
 	public Roles	PlayerRole { get; set; }
 	public CardType PlayerCardType { get; set; }
-	public int		Morale { get; private set; }
-	public int		Influence { get; private set; }
-	public int		Poison { get; set; }
-	public int		Corruption { get; private set; }
-	public int		SilenceTurn { get; private set; }
-	public int		ImmunityTurn { get; private set; }
+
+
+
+	// Parâmetros
+	public int		Morale        { get; private set; }
+	public int		Influence     { get; private set; }
+	public int		Poison        { get; set; }
+	public int		Corruption    { get; private set; }
+    public int		votesReceived { get; set; }
+
+
+
+    // Efeitos
+    public int		SilenceTurn   { get; private set; }
+	public int		ImmunityTurn  { get; private set; }
+    public int		ForceVoteTurn { get; private set; }
+    public int		ParalyzeTurn  { get; private set; }
+	public int		SkipVoteTurn  { get; private set; }
+
+
+
+	// Indicadores
 	public bool		IsMainPlayer { get; set; }
     public bool		IsBot { get; set; }
-	public int		votesReceived { get; set; }
 	public bool		IsAlive { get; set; }
 	public Player	vote { get; private set; }
 
@@ -69,11 +86,13 @@ public class Player
 
 			case "Corruption":
                 Corruption += amount;
-                //notifications.Add(new Notification(FadoProject.EffectType.AddCorruption, amount));
+                notifications.Add(new Notification(FadoProject.EffectType.AddCorruption, amount));
                 break;
 			case "Poison":
+				if (ImmunityTurn > 0) return;
 				Poison += amount;
-				break;
+                notifications.Add(new Notification(FadoProject.EffectType.AddPoison, amount));
+                break;
 		}
     }
 
@@ -81,26 +100,47 @@ public class Player
 	// Silenciar o jogador
 	public void ApplySilence(int duration)
 	{
-		notifications.Add(new Notification(FadoProject.EffectType.Silence, duration));
-		SilenceTurn = duration;
+		if (ImmunityTurn > 0) return;
+
+        notifications.Add(new Notification(FadoProject.EffectType.Silence, duration));
+		SilenceTurn += duration;
 	}
 
 	public void ApplyImmunity(int duration)
 	{
-		ImmunityTurn = duration;
+		ImmunityTurn += duration;
 	}
 
-	public void ApplyForceVote()
+	public void ApplyParalyze(int duration)
 	{
+        if (ImmunityTurn > 0) return;
 
+        notifications.Add(new Notification(FadoProject.EffectType.Paralyze, duration));
+        ParalyzeTurn += duration;
+    }
+
+	public void ApplyForceVote(int duration)
+	{
+        if (ImmunityTurn > 0) return;
+
+        notifications.Add(new Notification(FadoProject.EffectType.ForceVote, duration));
+        ForceVoteTurn += duration;
+    }
+
+	public void ApplyClearDebuff()
+	{
+		SilenceTurn  = 0;
+		ParalyzeTurn = 0;
+		SkipVoteTurn = 0;
 	}
 
 	// End the turn
 	public void EndTurn()
 	{
-		SilenceTurn -= 1;
-		ImmunityTurn -= 1;
-		Debug.Log($"O turno de {PlayerId} finalizou.");
+		if (SilenceTurn  > 0) SilenceTurn  -= 1;
+        if (ImmunityTurn > 0) ImmunityTurn -= 1;
+        if (ParalyzeTurn > 0) ParalyzeTurn -= 1;
+        if (SkipVoteTurn > 0) SkipVoteTurn -= 1;
 	}
 
 	public void DebugPlayer()

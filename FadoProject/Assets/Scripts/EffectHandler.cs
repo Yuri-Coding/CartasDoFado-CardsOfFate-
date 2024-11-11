@@ -47,10 +47,6 @@ public class EffectHandler : MonoBehaviour
                         tplayer.ApplyImmunity(teffect.Value);
                         break;
 
-                    case EffectType.ForceVote:
-                        tplayer.ApplyForceVote();
-                        break;
-
                     case EffectType.AddMorale:
                     case EffectType.AddCorruption:
                     case EffectType.AddInfluence:
@@ -58,9 +54,17 @@ public class EffectHandler : MonoBehaviour
                         ApplyValue(tplayer, teffect.Type, teffect.Value);
                         break;
 
-                    case EffectType.ActionReduction:
+					case EffectType.ForceVote:
 
-                        break;
+						break;
+
+					case EffectType.Paralyze:
+
+						break;
+
+					case EffectType.ClearDebuff:
+
+						break;
                 }
             }
 		}
@@ -102,5 +106,10 @@ public class EffectHandler : MonoBehaviour
 	public void ApplyImmunity (Player target, int duration)
 	{
 		target.ApplyImmunity(duration);
+	}
+
+	public void ApplyClearDebuff(Player target)
+	{
+		
 	}
 }

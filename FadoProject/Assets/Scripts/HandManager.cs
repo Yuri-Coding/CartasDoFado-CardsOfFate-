@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FadoProject;
@@ -10,26 +10,21 @@ public class HandManager : MonoBehaviour
 
     public GameObject cardPrefab; //Serve pra colocar o prefab de carta criado, usa o inspector
 
-    public Transform handTransform; //Define uma "?ncora" pra posi??o da m?o
+    public Transform handTransform; //Define uma "âncora" pra posição da mão
 
-    public float HandSpread = -5f;//Vai servir pra angular as cartas na m?o
+    public float HandSpread = -5f;//Vai servir pra angular as cartas na mão
 
     public List<GameObject> cardsInHand = new List<GameObject>(); //Lista de cartas(o objeto) que est?o na m?o
 
     public float HorizontalSpacing = 175f;
     public float VerticalSpacing = 50f;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     private void Update()
     {
         //updateHandVisuals();
     }
 
-    //Adiciona uma carta na m�o(apenas os dados)
+    //Adiciona uma carta na mão(apenas os dados)
     public void addCardToHand(Card cardData)
     {
         //Instanciando a carta
@@ -43,7 +38,7 @@ public class HandManager : MonoBehaviour
         updateHandVisuals();
     }
     
-    //Adiciona uma carta na m�o(visualmente)
+    //Adiciona uma carta na mão (visualmente)
     public void updateHandVisuals()
     {
         int cardCount = cardsInHand.Count;
@@ -61,10 +56,10 @@ public class HandManager : MonoBehaviour
             float cardAngle = (HandSpread * (i - (cardCount - 1) / 2f));
             cardsInHand[i].transform.localRotation = Quaternion.Euler(0f, 0f, cardAngle);
             
-            //Arrumando a posi??o horizontal com o centro da m?o
+            //Arrumando a posi??o horizontal com o centro da mão
             float horizontalSpread = (HorizontalSpacing * (i - (cardCount - 1) / 2f));
 
-            //Arrumando a posi??o vertical com o centro da m?o
+            //Arrumando a posi??o vertical com o centro da mão
             float normalizedPosition = (2f * i / (cardCount - 1) - 1f);
             float verticalSpread = VerticalSpacing * (1 - normalizedPosition * normalizedPosition);
 

@@ -37,15 +37,27 @@ public class Notification
 				break;
 
 			case EffectType.AddCorruption:
-				FinalText = AddText("corrupção", Amount);
+				FinalText = AddCorruptText(Amount);
+				break;
+
+			case EffectType.AddPoison:
+				FinalText = AddPoisonText(Amount);
 				break;
 
 			case EffectType.AddInfluence:
 				FinalText = AddText("influência", Amount);
 				break;
 
-			case EffectType.ActionReduction:
+			case EffectType.Paralyze:
+				FinalText = ParalyzeText(Amount);
+                break;
 
+			case EffectType.SkipVote:
+                FinalText = SkipVoteText(Amount);
+                break;
+
+			case EffectType.ClearDebuff:
+				FinalText = ClearDebuffText();
 				break;
 		}
 	}
@@ -115,7 +127,36 @@ public class Notification
 		return String.Format(possibleText[index], amount, parameter);
 	}
 
-	private string AddCorruptText(int amount)
+    private string AddPoisonText(int amount)
+	{
+        List<string> possibleText;
+        if (amount > 0)
+        {
+            possibleText = new List<string>
+			{
+				"Infelizmente, nem todas as pessoas gostam de você, e aplicou {0} de veneno...",
+				"Você acordou com uma sensação estranha, o que fez perceber que alguém o envenenou. {0} de veneno.",
+				"Você percebe que sua visão está turva, e então você descobre que foi envenenado por {0} de veneno.",
+				"As mãos malígnas do corrupto deixou claros rastros de destruição. Foi envenenado por {0} de veneno."
+            };
+        }
+        else
+        {
+            possibleText = new List<string>
+            {
+                "O médico fez um ótimo trabalho e conseguiu desintoxicar {0} de veneno de você.",
+				"O médico mostrou a sua habilidade surpreendente, e retirou do seu corpo {0} de veneno. "
+            };
+        }
+
+
+
+        int index = UnityEngine.Random.Range(0, possibleText.Count);
+
+        return String.Format(possibleText[index], amount);
+    }
+
+    private string AddCorruptText(int amount)
     {
         List<string> possibleText;
         if (amount > 0)
@@ -138,5 +179,49 @@ public class Notification
         int index = UnityEngine.Random.Range(0, possibleText.Count);
 
         return String.Format(possibleText[index], amount);
+    }
+
+	private string ParalyzeText(int turn)
+	{
+        List<string> possibleText = new List<string>
+        {
+            "O poder maligno da corrupção impossibilitou de você tomar ações por {0} turno{1}.",
+			"A manhã foi aterrorizante, marcado por movimentações limitados do seu corpo. Você foi impossibilitado em tomar ações por {0} turno{1}.",
+			"o seu corpo não está obedecendo as suas vontades. Parece que alguém o paralizou por {0} turno{1}."
+        };
+        int index = UnityEngine.Random.Range(0, possibleText.Count);
+
+        string suffix = "";
+        if (turn > 1) suffix = "s";
+
+        return String.Format(possibleText[index], turn, suffix);
+    }
+
+	private string SkipVoteText(int turn)
+	{
+        List<string> possibleText = new List<string>
+        {
+            "Alguém não está gostando das suas escolhas e impossibilitou de você votar por {0} turno{1}.",
+			"Infelizmente, alguém retirou o seu direito de votar por {0} turno{1}."
+        };
+        int index = UnityEngine.Random.Range(0, possibleText.Count);
+
+        string suffix = "";
+        if (turn > 1) suffix = "s";
+
+        return String.Format(possibleText[index], turn, suffix);
+    }
+
+    private string ClearDebuffText()
+    {
+        List<string> possibleText = new List<string>
+        {
+            "Uma purificação sublime percorreu pelo seu corpo, anulando todos os efeitos malignos da corrupção.",
+			"O poder dos espíritos mostrou o seu poder imensurável e anulou todos os efeitos malignos da corrupção."
+        };
+        int index = UnityEngine.Random.Range(0, possibleText.Count);
+
+
+        return possibleText[index];
     }
 }

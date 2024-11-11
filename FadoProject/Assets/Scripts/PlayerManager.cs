@@ -15,8 +15,8 @@ public class PlayerManager : MonoBehaviour
 	public List<Player> players = new List<Player>();
 	public List<Player> bots = new List<Player>();
 
-    public List<Player> honests = new List<Player>();
-    public List<Player> corrupts = new List<Player>();
+	public List<Player> honests = new List<Player>();
+	public List<Player> corrupts = new List<Player>();
 
 	// Criar lista de targets eligíveis (tudo menos próprio player)
 	public List<Player> eligibleTarget = new List<Player>();
@@ -25,6 +25,8 @@ public class PlayerManager : MonoBehaviour
 
 	List<Player> botEligibleTarget = new List<Player>();
 	List<Player> botTarget = new List<Player>();
+
+	public int poisonLimit;
 
 
 	public void AddPlayer(Player newPlayer) {
@@ -55,11 +57,11 @@ public class PlayerManager : MonoBehaviour
 			{
 				case Roles.Honest:
 				case Roles.Medic:
-                    honests.Add(player);
-                    break;
+					honests.Add(player);
+					break;
 				case Roles.Corrupt:
-                    corrupts.Add(player);
-                    break;
+					corrupts.Add(player);
+					break;
 			}
 
 			// Adiciona no eligibleTarget se não é o próprio player
@@ -68,6 +70,15 @@ public class PlayerManager : MonoBehaviour
 		}
 
 
+	}
+
+	public void InitializeGlobalParameters()
+	{
+		// Veneno limite flexível para incapacitar jogador
+		if		(players.Count >= 8)	{ poisonLimit = 8; }
+		else if (players.Count >= 7)	{ poisonLimit = players.Count + 1; }
+		else if (players.Count <= 5)	{ poisonLimit = players.Count + 2; }
+		
 	}
 
 	public bool IsMainPlayer(Player player)
@@ -87,6 +98,23 @@ public class PlayerManager : MonoBehaviour
 		{
 			player.CleanNotification();
 		}
+	}
+
+	public void VerifyPoisonForAllPlayers()
+	{
+		foreach (Player player in players)
+		{
+			if (player.Poison >= poisonLimit && player.IsAlive)
+			{
+				KillPlayer(player);
+			}
+		}
+	}
+
+	public void KillPlayer(Player player)
+	{
+		player.IsAlive = false;
+
 	}
 
 	// Se nenhum corrupto estiver vivo, true

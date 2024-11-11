@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using System.Linq;
+using System.Reflection;
 
 public class GameManager : MonoBehaviour
 {
@@ -63,8 +64,8 @@ public class GameManager : MonoBehaviour
 	void Start()
 	{
 		mainPlayerIndex = 1;
-		popup.InitPopupMessage();
-		SetState(GameState.InitGame);
+		
+        SetState(GameState.InitGame);
 		canDraw = true;
 		inPlay = false;
 		alreadyVoted = false;
@@ -87,8 +88,10 @@ public class GameManager : MonoBehaviour
 	}
 
 	void SetState(GameState newState) {
-		currentState = newState;
-		//Debug.Log($"O estado mudou para {currentState}.");
+        popup.PopupClosed -= SetState;
+
+        currentState = newState;
+		Debug.Log($"O estado mudou para {currentState}.");
 		HandleState();
 	}
 
@@ -124,6 +127,10 @@ public class GameManager : MonoBehaviour
 				HandleProcessVoteResults();
 				break;
 
+			case GameState.ShowElimination:
+				HandleShowElimination();
+				break;
+
             case GameState.EndPhase:
 				EndPhase();
 				canDraw = true;
@@ -144,12 +151,47 @@ public class GameManager : MonoBehaviour
 
 	void InitGame() {
 		round = 1;
-	}
 
-	void StartPhase()
+        // Selecionar um texto Lore de entrada
+        List<string> introductionTexts = new List<string>()
+        {
+            "Bem vindo ao Cartas do Fado. A Mesa está preenchida, os olhares, desconfiantes, observam uns aos outros, em busca de encontrar o nocivo, achar um grão de ouro em auto-mar.",
+            "A mesa está completa. Cada olhar carrega uma sombra de dúvida e desconfiança, enquanto os jogadores, ocultos por segredos, preparam suas cartas. A noite promete revelar verdades - ou esconder mentiras.",
+            "Bem-vindo ao Cartas do Fado, onde cada movimento pode mudar o eterno destino da cidade. À mesa, risos e suspeitas se entrelaçam, mas apenas um saberá a verdade antes de todos os outros. Quem será o primeiro a cair?",
+            "As cartas estão postas e as intenções, veladas. Em um jogo de sorte e manipulação, você está cercado por aliados ou inimigos disfarçados. Restará ao destino revelar quem realmente merece confiança.",
+            "Hoje, a mesa é palco de um jogo de segredos e conspirações. As cartas sussurram promessas de poder, mas apenas quem conhece os próprios limites escapará ileso.",
+        };
+
+        int index = UnityEngine.Random.Range(0, introductionTexts.Count);
+
+		popup.SetStateAfterPopup(introductionTexts[index], 20f, GameState.AwaitAction);
+        popup.PopupClosed += SetState;
+
+        List<Roles> rawRoles = new List<Roles>() { Roles.Corrupt, Roles.Medic, Roles.Honest, Roles.Honest, Roles.Honest };
+        List<Roles> shuffledRoles = rawRoles.OrderBy(x => Guid.NewGuid()).ToList();
+
+        Player p1 = new Player(0, "Matias", shuffledRoles[0], false, true, true);
+        Player p2 = new Player(1, "Cassis", shuffledRoles[1], true, false, true);
+        Player p3 = new Player(2, "Yuras", shuffledRoles[2], false, true, true);
+        Player p4 = new Player(3, "Sales", shuffledRoles[3], false, true, true);
+        Player p5 = new Player(4, "Robson", shuffledRoles[4], false, true, true);
+
+        playerManager.AddPlayer(p1);
+        playerManager.AddPlayer(p2);
+        playerManager.AddPlayer(p3);
+        playerManager.AddPlayer(p4);
+        playerManager.AddPlayer(p5);
+
+        mainPlayer = p2;
+        mainRole = mainPlayer.PlayerRole;
+
+        playerManager.InitializePlayers();
+
+    }
+
+    void StartPhase()
 	{
 		popup.BigTextPopup(round);
-
 		SetState(GameState.AwaitAction);
 	}
 
@@ -177,9 +219,9 @@ public class GameManager : MonoBehaviour
 
 	void HandleShowResults()
 	{
+		VerifyEndGameCondition();
+
 		//Debug.Log("Fase de Mostrar Resultados (Jornal)");
-		//TOMAS SE PÁ É MELHOR N MOSTRA NADA QUANDO A NOTIFICAÇÃO ESTIVER VAZIA, VULGO SEM NOTIFICAÇÃO, TO CORINGANDO AQ COM ESSE PAPEL VAZIO KKKKKK
-		
 		mainPlayer.CheckoutAllNotifications();
 
 		foreach(Notification notification in mainPlayer.notifications)
@@ -190,14 +232,18 @@ public class GameManager : MonoBehaviour
 
 		if (!string.IsNullOrWhiteSpace(notificationText))
 		{
-			popup.PopupMessage(notificationText);
-		}
+            popup.SetStateAfterPopup(notificationText, 7f, GameState.VotingPhase);
+            popup.PopupClosed += SetState;
 
-		playerManager.ResetNotification();
+            playerManager.ResetNotification();
+            notificationText = null;
 
-		notificationText = null;
+        } else {
+            playerManager.ResetNotification();
+            notificationText = null;
 
-		SetState(GameState.VotingPhase);
+            SetState(GameState.VotingPhase);
+        }	
 	}
 
 	void HandleVotingPhase()
@@ -218,44 +264,49 @@ public class GameManager : MonoBehaviour
 		//Debug.Log("Fase de Contagem de Votos");
 		//Mostra os resultados dos votos
 		showVoteResults();
-		//Eliminar jogador com mais votos
-		mostVoted();
-		if (mostVotedIndex >=0)
-		{
-			playerList[mostVotedIndex].IsAlive = false;
-			showElimination();
-		}
-		SetState(GameState.EndPhase);
 	}
+
+	void HandleShowElimination()
+	{
+        //Eliminar jogador com mais votos
+        mostVoted();
+        if (mostVotedIndex >= 0)
+        {
+            playerList[mostVotedIndex].IsAlive = false;
+            showElimination();
+        }
+    }
 
     void EndPhase() {
 		round++;
 
-        // Condições de Vitória e Derrota
-        if (playerManager.NoCorruptAlive())
-        {
-			endCondition = EndCondition.HonestWin;
-			SetState(GameState.EndGame);
-			return;
-        }
-
-        if (playerManager.IsMostHonestEliminated())
-        {
-			endCondition = EndCondition.CorruptWin;
-			SetState(GameState.EndGame);
-			return;
-        }
-
-		
-
         //Debug.Log("Fase de Finalização de Turno");
         roundResetVote();
-		UpdateUI();
+        VerifyEndGameCondition();
+        UpdateUI();
         SetState(GameState.StartPhase);
 
 
         
 	}
+
+	void VerifyEndGameCondition()
+	{
+        // Condições de Vitória e Derrota
+        if (playerManager.NoCorruptAlive())
+        {
+            endCondition = EndCondition.HonestWin;
+            SetState(GameState.EndGame);
+            return;
+        }
+
+        if (playerManager.IsMostHonestEliminated())
+        {
+            endCondition = EndCondition.CorruptWin;
+            SetState(GameState.EndGame);
+            return;
+        }
+    }
 
 	void EndGame()
 	{
@@ -303,7 +354,8 @@ public class GameManager : MonoBehaviour
 		{
 			voteCount = voteCount + $"{jugador.PlayerName} recebeu {jugador.votesReceived} voto(s)\n";
 		}
-		popup.PopupMessage(voteCount);
+        popup.SetStateAfterPopup(voteCount, 120f, GameState.ShowElimination);
+        popup.PopupClosed += SetState;
 
 		voteCount = "";
     }
@@ -330,6 +382,7 @@ public class GameManager : MonoBehaviour
 	{
 		List<string> eliminationMessage;
 		int index = 0;
+
 		eliminationMessage = new List<string> {
             $"{playerList[mostVotedIndex].PlayerName} foi eliminado da mesa de negociações.",
 			$"{playerList[mostVotedIndex].PlayerName} foi enviado ao oblívio, deixando para trás apenas arrependimentos.",
@@ -338,39 +391,12 @@ public class GameManager : MonoBehaviour
 			$"{playerList[mostVotedIndex].PlayerName} teve um fim prematuro dado a seus sonhos e esperanças.",
 			$"Neste teatro cruel, {playerList[mostVotedIndex].PlayerName} assumiu o papel de vítima em uma conspiração fatal.",
 			$"{playerList[mostVotedIndex].PlayerName} foi enviado para o além, restando apenas as memórias deixadas para trás."
-	};
+		};
+
 		index = UnityEngine.Random.Range(0, eliminationMessage.Count);
-		popup.PopupMessage(eliminationMessage[index]);
+		popup.SetStateAfterPopup(eliminationMessage[index], 120f, GameState.EndPhase);
+        popup.PopupClosed += SetState;
     }
-
-    public void OnInitPopdown()
-	{
-		List<Roles> rawRoles = new List<Roles>() { Roles.Corrupt, Roles.Medic, Roles.Honest, Roles.Honest, Roles.Honest };
-		List<Roles> shuffledRoles = rawRoles.OrderBy(x => Guid.NewGuid()).ToList();
-        Player p1 = new Player(0, "Matias", shuffledRoles[0], false, true , true);
-		Player p2 = new Player(1, "Cassis", shuffledRoles[1], true , false, true);
-		Player p3 = new Player(2, "Yuras" , shuffledRoles[2], false, true , true);
-		Player p4 = new Player(3, "Sales" , shuffledRoles[3], false, true , true);
-		Player p5 = new Player(4, "Robson", shuffledRoles[4], false, true , true);
-
-		playerManager.AddPlayer(p1);
-		playerManager.AddPlayer(p2);
-		playerManager.AddPlayer(p3);
-		playerManager.AddPlayer(p4);
-		playerManager.AddPlayer(p5);
-
-        mainPlayer = p2;
-        mainRole = mainPlayer.PlayerRole;
-
-        playerManager.InitializePlayers();
-
-		
-		
-
-		//Debug.Log("Init Finalizado.");
-		SetState(GameState.StartPhase);
-
-	}
 
 	public void UpdateUI()
 	{
