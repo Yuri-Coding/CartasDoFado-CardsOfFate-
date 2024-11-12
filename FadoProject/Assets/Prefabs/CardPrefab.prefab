@@ -290,7 +290,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1851272643080257426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4563ace1ab75e074c99ce951f6ce47ea, type: 3}
+  m_Script: {fileID: 11500000, guid: cfb0528d0c624e24887423ad95e5fd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 1221290891228364535, guid: adb12f7e6d0e2ba4eb96c2164f05e903, type: 3}
@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 7535781901490648658}
   - component: {fileID: 5380376018200313988}
   - component: {fileID: 5044032561072463309}
-  - component: {fileID: 8521999092456506562}
+  - component: {fileID: -2015527279321692484}
   m_Layer: 0
   m_Name: CardPrefab
   m_TagString: Untagged
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4915832737089120008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62b196e09ed8f404a9b776b35b8d1124, type: 3}
+  m_Script: {fileID: 11500000, guid: 25e2908096fa4bb4eb7f6da310c1c7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cardData: {fileID: 0}
@@ -616,7 +616,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.5, y: 3.5}
   m_EdgeRadius: 0
---- !u!114 &8521999092456506562
+--- !u!114 &-2015527279321692484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4915832737089120008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae1f782e6530b54f8504cb03952cc1a, type: 3}
+  m_Script: {fileID: 11500000, guid: e2a42b8377227ac4a9b6640de2cd8e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentCard: {fileID: 0}
