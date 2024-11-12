@@ -631,8 +631,8 @@ MonoBehaviour:
   currentCard: {fileID: 0}
   currentCardDisplay: {fileID: 0}
   selectScale: 1.1
-  cardPlay: {x: 0, y: 0, z: 0}
-  playPosition: {x: 0, y: 0, z: 0}
+  cardPlay: {x: 0, y: 350, z: 0}
+  playPosition: {x: 0, y: 550, z: 0}
   glowEffect: {fileID: 7272144759410383559}
   playArrow: {fileID: 1851272643080257426}
   lerpFactor: 0.1
