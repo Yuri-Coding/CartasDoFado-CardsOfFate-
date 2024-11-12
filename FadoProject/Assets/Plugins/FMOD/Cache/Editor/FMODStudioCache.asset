@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/Audio/fado/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638663433274962073
+  lastModified: 638669447689369149
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -114,10 +114,10 @@ MonoBehaviour:
   Path: Assets/Audio/fado/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638663433275082085
+  lastModified: 638669447694176966
   FileSizes:
   - Name: Desktop
-    Value: 7776
+    Value: 93376
   Exists: 1
 --- !u!114 &-6329275520882487512
 MonoBehaviour:
@@ -151,6 +151,33 @@ MonoBehaviour:
   - BrilhoDeTorbernita
   - Postuma
   Exists: 1
+--- !u!114 &-6202884922057581549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Clap
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Clap
+  Guid:
+    Data1: -737630342
+    Data2: 1272123987
+    Data3: 290673069
+    Data4: -328594112
+  Banks:
+  - {fileID: -6456035231469515575}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4779471886630056716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,11 +193,38 @@ MonoBehaviour:
   Path: Assets/Audio/fado/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638663433275022077
+  lastModified: 638669447689609008
   FileSizes:
   - Name: Desktop
-    Value: 942
+    Value: 1124
   Exists: 1
+--- !u!114 &-3148045286406161807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Snap
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Snap
+  Guid:
+    Data1: -531426342
+    Data2: 1268853469
+    Data3: 1940604293
+    Data4: 642081466
+  Banks:
+  - {fileID: -6456035231469515575}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3140630347324746605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +332,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-727097258369530022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/PoisonVapor
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/PoisonVapor
+  Guid:
+    Data1: 1935231173
+    Data2: 1278549627
+    Data3: -1681852032
+    Data4: -17286085
+  Banks:
+  - {fileID: -6456035231469515575}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,12 +379,16 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 3501263504838488823}
   - {fileID: 7507044781574568850}
+  - {fileID: 5625715766071478711}
+  - {fileID: -6202884922057581549}
+  - {fileID: -727097258369530022}
+  - {fileID: -3148045286406161807}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8428560930459928864}
   StringsBanks:
   - {fileID: -4779471886630056716}
-  cacheTime: 638663433275082085
+  cacheTime: 638669447694176966
   cacheVersion: 131620
 --- !u!114 &401004084593317093
 MonoBehaviour:
@@ -381,6 +466,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &5625715766071478711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Slide
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Slide
+  Guid:
+    Data1: -875441081
+    Data2: 1095591308
+    Data3: 1099534525
+    Data4: 34578602
+  Banks:
+  - {fileID: -6456035231469515575}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6064623868039173933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,7 +555,7 @@ MonoBehaviour:
   Path: Assets/Audio/fado/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638663433274902096
+  lastModified: 638660045195663948
   FileSizes:
   - Name: Desktop
     Value: 5924992

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ae84a568-2c2d-4499-8325-f304c8a8d2e3}">
+		<property name="assetPath">
+			<value>sfx/poison_vapor.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.3636507936507938</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{89757b69-adbe-4930-a686-b54a389845a1}</destination>
+		</relationship>
+	</object>
+</objects>
