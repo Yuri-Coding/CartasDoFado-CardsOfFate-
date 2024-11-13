@@ -8,14 +8,22 @@ public class DeckManager : MonoBehaviour
 	public List<Card> allCards = new List<Card>();
 
 	public int currentIndex = 0;
+    public static DeckManager Instance { get; private set; }
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Se deseja que o GameManager persista entre cenas
+        }
+        else
+        {
+            Destroy(gameObject); // Destruir duplicatas, se houver
+        }
 
-	void Start()
-	{
 		//Preenchendo o vetor
 		Card[] cards = Resources.LoadAll<Card>("Cards");
-
 		allCards.AddRange(cards);
-
 		HandManager hand = FindFirstObjectByType<HandManager>();
 	}
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "ME_Convalescen\xE7a"
   m_EditorClassIdentifier: 
   cardName: "Sala de Convalescen\xE7a"
-  cardSprite: {fileID: 1308830767022127242, guid: 5d5f365de0a3f9440b818a5601617831, type: 3}
+  cardSprite: {fileID: -4136251949656251382, guid: 635c5083d26feea45954eee8fb63faf8, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
   cardEffect: "Pula a vota\xE7\xE3o nesta rodada e reduz 1 marcador de Veneno de

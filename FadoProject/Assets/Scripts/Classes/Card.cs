@@ -28,6 +28,5 @@ namespace FadoProject {
         public List<Effect> selfEffects;
         public List<Effect> choice1Effects;
         public List<Effect> choice2Effects;
-
     }
 }

@@ -116,6 +116,10 @@ public class PlayerManager : MonoBehaviour
 		player.IsAlive = false;
 
 	}
+	public void KillPlayerByIndex(int index)
+	{
+		players[index].IsAlive = false;
+    }
 
 	// Se nenhum corrupto estiver vivo, true
 	public bool NoCorruptAlive()

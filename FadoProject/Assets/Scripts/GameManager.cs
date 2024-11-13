@@ -30,23 +30,29 @@ public class GameManager : MonoBehaviour
 
     
 
-
+	// Booleanas de Verificação
 	public bool canDraw;
-
-	//Var para verificar se carta está sendo jogada
 	public bool inPlay;
-
-    //Var para verificar se o jogador já votou.
     public bool alreadyVoted;
 
-	//Lista de jogadores
+	// Lista de jogadores
 	private List<Player> playerList;
 
-	//Indice do jogador mais votado na rodada
+	// Relacionado a Votação
 	private int mostVotedIndex;
 
-	// Condição de Vitória / Perda para Player.
-	public EndCondition endCondition;
+	private int votingGap = 3;     // Frequência de Votação (votação / 3 rodadas)
+	private int votingModular = 2; // mod3(currentRound)
+	// 0 - Primeira votação acontece no round 3
+	// 1 - Primeira votação acontece no round 1
+	// 2 - Primeira votação acontece no round 2
+
+	private int shopGap = 3;      // Frequência de Votação (votação / 3 rodadas)
+    private int shopModular = 2;  // mod3(currentRound)
+
+
+    // Condição de Vitória / Perda para Player.
+    public EndCondition endCondition;
 
 
 	// Relacionado a Áudio
@@ -118,6 +124,10 @@ public class GameManager : MonoBehaviour
 
 			case GameState.HandleActions:
 				HandleActions();
+				break;
+
+			case GameState.ShopPhase:
+				HandleShopPhase();
 				break;
 
             case GameState.ShowResults:
@@ -249,7 +259,7 @@ public class GameManager : MonoBehaviour
 
 		if (!string.IsNullOrWhiteSpace(notificationText))
 		{
-            popup.SetStateAfterPopup(notificationText, 7f, GameState.VotingPhase);
+            popup.SetStateAfterPopup(notificationText, 7f, GameState.ShopPhase);
             popup.PopupClosed += SetState;
 
             playerManager.ResetNotification();
@@ -259,19 +269,35 @@ public class GameManager : MonoBehaviour
             playerManager.ResetNotification();
             notificationText = null;
 
-            SetState(GameState.VotingPhase);
+            SetState(GameState.ShopPhase);
         }
     }
+	void HandleShopPhase()
+	{
+		if (currentRound%shopGap == shopModular)
+		{
+			ShopManager.Instance.OpenShop();
+            ShopManager.Instance.closeShopAction += OnShopClosed;
+        } else {
+			SetState(GameState.VotingPhase);
+		}
+	}
+	void OnShopClosed()
+	{
+		SetState(GameState.VotingPhase);
+	}
 
 	void HandleVotingPhase()
 	{
 		//Debug.Log("Fase de Votação");
-		if (currentRound>1)
+		if (currentRound%votingGap == votingModular)
 		{
             //Mostra e alimenta o popup de votação
             popup.UpdateVotePanel();
             popup.VotePanelPopup();
-        }else if (currentRound==1) {
+
+		} else {
+			// Skipar fase de votação
 			SetState(GameState.EndPhase);
 		}
 	}
@@ -289,7 +315,7 @@ public class GameManager : MonoBehaviour
         mostVoted();
         if (mostVotedIndex >= 0)
         {
-            playerList[mostVotedIndex].IsAlive = false;
+			playerManager.KillPlayerByIndex(mostVotedIndex);
             VerifyEndGameCondition();
 			if (mainPlayer.IsAlive) showElimination();
         }
@@ -433,7 +459,7 @@ public class GameManager : MonoBehaviour
 
 	public void UpdateUI()
 	{
-        roundText.text = currentRound.ToString();
+        roundText.text = $"Rodada {currentRound.ToString()}";
     }
 
 	public void UpdateTensionIndicator()

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3fe6b3abd7cc1a5449fdea1a624bb96c
+guid: c859e81962b469b4196dd3a94f2012e9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7959052698411436611
-    second: corrupto_carta_0
+      213: 7513095154642528818
+    second: corrupto_carta 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: corrupto_carta_0
+      name: corrupto_carta 1_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 27
         y: 0
-        width: 52
-        height: 64
+        width: 202
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db5729a5db3cb8190800000000000000
-      internalID: -7959052698411436611
+      spriteID: 23a2d20bc30e34860800000000000000
+      internalID: 7513095154642528818
       vertices: []
       indices: 
       edges: []
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      corrupto_carta_0: -7959052698411436611
+      corrupto_carta 1_0: 7513095154642528818
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

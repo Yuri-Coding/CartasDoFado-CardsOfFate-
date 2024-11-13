@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5d5f365de0a3f9440b818a5601617831
+guid: 635c5083d26feea45954eee8fb63faf8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1308830767022127242
-    second: medico_carta_0
+      213: -4136251949656251382
+    second: medico_carta 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: medico_carta_0
+      name: medico_carta 1_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 27
         y: 0
-        width: 52
-        height: 64
+        width: 202
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a88b47be5a6e92210800000000000000
-      internalID: 1308830767022127242
+      spriteID: a04e83f34c41996c0800000000000000
+      internalID: -4136251949656251382
       vertices: []
       indices: 
       edges: []
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      medico_carta_0: 1308830767022127242
+      medico_carta 1_0: -4136251949656251382
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

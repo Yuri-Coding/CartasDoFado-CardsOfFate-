@@ -39,6 +39,11 @@ public class Popup : MonoBehaviour
     public TMP_Text influenceText;
     public TMP_Text corruptionText;
 
+    // Poison Indicator
+    public GameObject poisonIndicator;
+    private List<Image> poisonImage = new List<Image>();
+    public Sprite poisonActive;
+    public Sprite poisonInactive;
 
     // Texto Grande que Aparece no Início dos Rounds
     public TMP_Text bigRoundText;
@@ -88,6 +93,14 @@ public class Popup : MonoBehaviour
         choiceText1 = GameObject.Find("Choice1Text").GetComponent<TMP_Text>();
         choiceText2 = GameObject.Find("Choice2Text").GetComponent<TMP_Text>();
 		choiceAnim = GameObject.Find("ChoicePopup").GetComponent<Animation>();
+
+        // Obter todas as Images de Poison Indicator
+        for (int i = 0; i < 8; i++)
+        {
+            poisonImage.Add(poisonIndicator.transform.GetChild(i).GetComponent<Image>());
+        }
+        
+
         // Desativando os botões inicialmente
         for (int i=0; i<PButton.Count; i++)
         {
@@ -228,18 +241,6 @@ public class Popup : MonoBehaviour
         PopdownChoice();
 		//Chama todas as funções que ficam registradas na ação(ouvindo)
 		actionRemoveCard?.Invoke();
-	}
-
-    // ===============================================================
-    //                         UPDATE PANEL
-    // ===============================================================
-    public void UpdatePanel()
-	{
-        corruptionText.text = GameManager.Instance.mainPlayer.Corruption.ToString();
-        poisonText.text     = GameManager.Instance.mainPlayer.Poison.ToString();
-        moraleText.text		= GameManager.Instance.mainPlayer.Morale.ToString();
-        influenceText.text	= GameManager.Instance.mainPlayer.Influence.ToString();
-        
 	}
 
     // ===============================================================
@@ -389,5 +390,36 @@ public class Popup : MonoBehaviour
     public void VotePanelPopout()
     {
         voteAnim.Play("fadeOut");
+    }
+
+    // ===============================================================
+    //                         UPDATE PANEL
+    // ===============================================================
+    public void UpdateSidePanel()
+    {
+        corruptionText.text = GameManager.Instance.mainPlayer.Corruption.ToString();
+        poisonText.text = GameManager.Instance.mainPlayer.Poison.ToString();
+        moraleText.text = GameManager.Instance.mainPlayer.Morale.ToString();
+        influenceText.text = GameManager.Instance.mainPlayer.Influence.ToString();
+
+    }
+
+    public void UpdatePoisonIndicator()
+    {
+        int poison = GameManager.Instance.mainPlayer.Poison;
+        for (int i = 0; i < 8; i++)
+        {
+            if (i > playerManager.poisonLimit)
+            {
+                poisonImage[i].gameObject.SetActive(false);
+                continue;
+            }
+            if (i < poison) {
+                poisonImage[i].sprite = poisonActive;
+            } else {
+                poisonImage[i].sprite = poisonInactive;
+            }
+
+        }
     }
 }

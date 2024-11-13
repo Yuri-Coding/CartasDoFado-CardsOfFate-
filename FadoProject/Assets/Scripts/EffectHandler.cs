@@ -15,7 +15,8 @@ public class EffectHandler : MonoBehaviour
 			ApplyValue(player, ef.Type, ef.Value);
 		}
 
-		popup.UpdatePanel();
+		popup.UpdateSidePanel();
+		popup.UpdatePoisonIndicator();
 	}
 
     public void ApplyMain(List<Effect> effects)
@@ -27,7 +28,8 @@ public class EffectHandler : MonoBehaviour
             ApplyValue(mainPlayer, ef.Type, ef.Value);
         }
 
-        popup.UpdatePanel();
+        popup.UpdateSidePanel();
+        popup.UpdatePoisonIndicator();
         PlayerActionDone();
     }
 

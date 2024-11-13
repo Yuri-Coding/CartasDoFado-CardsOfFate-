@@ -11,6 +11,9 @@ public enum GameState
 	HandleActions,		// Processar efeitos de cartas.
 	ShowResults,		// Exibir resultados das ações.
 
+	// Loja
+	ShopPhase,			// Fase de Loja
+
 	// Fases de Votação
 	VotingPhase,		// Fase de Votação para eliminar um jogador.
 	ProcessVoteResults,	// Processar resultados da votação.

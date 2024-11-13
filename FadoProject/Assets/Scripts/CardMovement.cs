@@ -24,9 +24,15 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 	public CardDisplay currentCardDisplay;
 
 	[SerializeField] private float selectScale = 1.1f;
-	[SerializeField] private Vector3 cardPlay;
-	[SerializeField] private Vector3 playPosition;
-	[SerializeField] private GameObject glowEffect;
+
+
+	private Vector3 cardPlay     = new Vector3 (0, 0.7f, 0);
+    private Vector3 cancelPlay   = new Vector3 (0, 0.2f, 0);
+    private Vector3 playPosition = new Vector3 (0, 550f, 0);
+
+	private Vector3 viewportPoint;
+
+    [SerializeField] private GameObject glowEffect;
 	[SerializeField] private GameObject playArrow;
 	[SerializeField] private float lerpFactor = 0.1f;
 
@@ -63,7 +69,9 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
 	void Update()
 	{
-		switch (currentState)
+        viewportPoint = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+		
+        switch (currentState)
 		{
             // CASE 1: Está na mão, o jogador passa o mouse na carta
             case 1:
@@ -221,10 +229,10 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 			{
 				rectTransform.position = Vector3.Lerp(rectTransform.position,Input.mousePosition, lerpFactor);
 
-				if (rectTransform.localPosition.y > cardPlay.y)
+				if (viewportPoint.y > cardPlay.y)
 				{
 					ChangeCurrentState(3);
-					playArrow.SetActive(true);
+					if (currentCard.canTarget) playArrow.SetActive(true);
 					rectTransform.localPosition = Vector3.Lerp(rectTransform.localPosition,playPosition,lerpFactor);
 				}
 			}
@@ -248,7 +256,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
         rectTransform.localPosition = playPosition;
 		rectTransform.localRotation = Quaternion.identity;
 
-		if(Input.mousePosition.y < cardPlay.y)
+		if(viewportPoint.y < cancelPlay.y)
 		{
             GameManager.Instance.inPlay = false;
 			TargetHandler.Instance.usedCardAction -= removeTargetCard;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CO_BrumaDiscordia
   m_EditorClassIdentifier: 
   cardName: Bruma da Discordia
-  cardSprite: {fileID: -7959052698411436611, guid: 3fe6b3abd7cc1a5449fdea1a624bb96c, type: 3}
+  cardSprite: {fileID: 7513095154642528818, guid: c859e81962b469b4196dd3a94f2012e9, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 1
   cardEffect: "Reduz a moralidade de todos os jogadores em 10 pontos.\\n+5 Moralidade\\n+1

@@ -6,8 +6,6 @@ using System;
 
 public class HandManager : MonoBehaviour
 {
-    public DeckManager DeckManager;
-
     public GameObject cardPrefab; //Serve pra colocar o prefab de carta criado, usa o inspector
 
     public Transform handTransform; //Define uma "âncora" pra posição da mão
