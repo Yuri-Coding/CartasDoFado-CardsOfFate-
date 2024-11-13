@@ -11588,7 +11588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeckManager: {fileID: 763798870}
-  cardPrefab: {fileID: 4915832737089120008, guid: 0e8bd99156c83af4db210386847a8b31, type: 3}
+  cardPrefab: {fileID: 4915832737089120008, guid: 173a9047b530cb3488ce5902b7d6fd22, type: 3}
   handTransform: {fileID: 104903814}
   HandSpread: -5
   cardsInHand: []

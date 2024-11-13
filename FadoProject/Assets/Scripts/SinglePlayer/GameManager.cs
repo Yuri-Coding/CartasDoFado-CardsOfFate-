@@ -6,15 +6,14 @@ using System;
 using System.Linq;
 using System.Reflection;
 using UnityEngine.XR;
-using Unity.Netcode;
 
-public class GameManagerMP : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
 	// Managers
-	public PlayerManagerMP playerManager;
-	public DeckManagerMP deckManager;
-	public HandManagerMP handManager;
-	public PopupMP popup;
+	public PlayerManager playerManager;
+	public DeckManager deckManager;
+	public HandManager handManager;
+	public Popup popup;
 
 	// Identificação do Player principal (o que está jogando na máquina)
     public Player mainPlayer;
@@ -53,7 +52,7 @@ public class GameManagerMP : MonoBehaviour
 	// Relacionado a Áudio
 	public int tensionIndicator = 0;
 
-    public static GameManagerMP Instance { get; private set; }
+    public static GameManager Instance { get; private set; }
 	void Awake()
 	{
 		if (Instance == null) {
@@ -76,12 +75,9 @@ public class GameManagerMP : MonoBehaviour
 		inPlay = false;
 		alreadyVoted = false;
 		playerList = playerManager.GetAllPlayers();
-        InitGame();
-        StartPhase();
-        AwaitAction();
-    }
+	}
 
-    void Update()
+	void Update()
 	{
 		switch (currentState)
 		{
@@ -95,95 +91,70 @@ public class GameManagerMP : MonoBehaviour
 				break;
         }
 		HandleState();
+        AwaitAction();
     }
 
-    void SetState(GameState newState) {
+	void SetState(GameState newState) {
         popup.PopupClosed -= SetState;
 
         currentState = newState;
 		Debug.Log($"O estado mudou para {currentState}.");
-		HandleState();
+		//HandleState();
 	}
-
 
 	void HandleState()
 	{
-		if (!NetworkManager.Singleton.IsHost)
+		switch (currentState)
 		{
-            Debug.Log("HandleState");
-            return;
-		}
-		PlayerVariables.PlayerStats tempList;
-		if (PlayerVariables.Instance.playersList.Count(tempList => tempList.hasDoneAction == 1) == PlayerVariables.Instance.playersList.Count())
-		{
-			Debug.Log("vou mudar");
-			SwapStateClientRpc();
-            PlayerVariables.Instance.UpdatePlayerStatServerRpc(NetworkManager.Singleton.LocalClientId,10,-99,MainMenuUI.nameString);
-        }
-        //if (PlayerVariables.Instance.playersList[0].hasDoneAction == 1)
-        //{
-        //	Debug.Log("vou mudar");
-        //          SwapStateClientRpc();
-        //	PlayerVariables.Instance.UpdatePlayerStatServerRpc(NetworkManager.Singleton.LocalClientId,10,-1,MainMenuUI.nameString);
-        //      }
-    }
+			case GameState.InitGame:
+				InitGame();
+				break;
 
-    [ClientRpc]
-	public void SwapStateClientRpc()
-	{
-        switch (currentState)
-        {
-            case GameState.InitGame:
-                //InitGame();
-                break;
+			case GameState.StartPhase:
+				StartPhase();
+				break;
 
-            case GameState.StartPhase:
-                StartPhase();
-                break;
+			case GameState.AwaitAction:
+				//AwaitAction();
+				break;
 
-            case GameState.AwaitAction:
-                AwaitAction();
-                break;
-
-            case GameState.HandleActions:
-                HandleActions();
-                break;
+			case GameState.HandleActions:
+				HandleActions();
+				break;
 
             case GameState.ShowResults:
                 HandleShowResults();
                 break;
 
-            case GameState.VotingPhase:
-                HandleVotingPhase();
-                break;
+			case GameState.VotingPhase:
+				HandleVotingPhase();
+				break;
 
-            case GameState.ProcessVoteResults:
-                HandleProcessVoteResults();
-                break;
+			case GameState.ProcessVoteResults:
+				HandleProcessVoteResults();
+				break;
 
-            case GameState.ShowElimination:
-                HandleShowElimination();
-                break;
+			case GameState.ShowElimination:
+				HandleShowElimination();
+				break;
 
             case GameState.EndPhase:
-                EndPhase();
-                canDraw = true;
-                break;
+				EndPhase();
+				canDraw = true;
+				break;
+			case GameState.EndGame:
+				EndGame();
+				break;
+			case GameState.Win:
+				Win();
+				break;
 
-            case GameState.EndGame:
-                EndGame();
-                break;
+			case GameState.Lose:
+				Lose();
+				break;
 
-            case GameState.Win:
-                Win();
-                break;
-
-            case GameState.Lose:
-                Lose();
-                break;
-
-        }
-    }
+		}
+	}
 
 	void InitGame() {
 		currentRound = 1;
@@ -249,37 +220,18 @@ public class GameManagerMP : MonoBehaviour
 
 	}
 
-	public int hasDoneAction = 0;
-
 	private void OnPlayerActionCompleted()
 	{
 		mainPlayer.OnPlayerAction -= OnPlayerActionCompleted;
 		//Debug.Log("GameManager detectou ação");
-		hasDoneAction = 1;
-		if (NetworkManager.Singleton.IsHost)
-		{
-            PlayerVariables.Instance.UpdatePlayerStatServerRpc(0, 10, 1, MainMenuUI.nameString);
 
-		}
-		else
-		{
-            PlayerVariables.Instance.UpdatePlayerStatServerRpc(1, 10, 1, MainMenuUI.nameString);
-        }
-        SetState(GameState.HandleActions);
+		SetState(GameState.HandleActions);
 	}
 
 	void HandleActions()
 	{
-		Debug.Log("estou no handleActions, não sou capaz de sair dessa função normalmente");
 		playerManager.HandleBotAction();
 		SetState(GameState.ShowResults);
-		debugServerRpc(NetworkManager.Singleton.LocalClientId);
-    }
-
-	[ServerRpc(RequireOwnership = false)]
-	void debugServerRpc(ulong client)
-	{
-		Debug.Log(client + " Esta em HandleActions");
 	}
 
 	void HandleShowResults()

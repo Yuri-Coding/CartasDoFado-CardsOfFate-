@@ -170,7 +170,7 @@ public class PlayerNetworkManager : MonoBehaviour
                     //    //playerController.SetSpriteServerRpc(spriteIndex);
                     //}
 
-                    PlayerVariables.PlayerStats newPlayer = new(0, 0, 0, 0, 0, 0, 0, 0, clientId, 0, MainMenuUI.nameString);//cria nova struct pra ser adicionada na playersList
+                    PlayerVariables.PlayerStats newPlayer = new(0, 0, 0, 0, 0, 0, 0, 0, clientId, 0, MainMenuUI.nameString,0);//cria nova struct pra ser adicionada na playersList
                     PlayerVariables.Instance.playersList.Add(newPlayer);//adiciona struct nova a playersList
                     localStats = newPlayer;//Pega os stats da nova struct na lista local
                     NetworkManagerUI.Instance.UpdateStatsField();//atualiza os campos visuais

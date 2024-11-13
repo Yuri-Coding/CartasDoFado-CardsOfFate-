@@ -33,8 +33,9 @@ public class PlayerVariables : NetworkBehaviour
         public int role;//0: innocent, 1: medic, 2: impostor, 3: corrupt
         public int currentVotes;
         public string playerName;
+        public int hasDoneAction;
 
-        public PlayerStats(int moralityValue, int influenceValue, int corruptionValue, int poisonValue, int muteValue, int imuneValue, int paralyzedValue, int roleValue, ulong playerValue, int currentVotesValue, string playerNameValue)
+        public PlayerStats(int moralityValue, int influenceValue, int corruptionValue, int poisonValue, int muteValue, int imuneValue, int paralyzedValue, int roleValue, ulong playerValue, int currentVotesValue, string playerNameValue, int hasDoneActionsValue)
         {
             morale = moralityValue;
             influence = influenceValue;
@@ -47,10 +48,12 @@ public class PlayerVariables : NetworkBehaviour
             role = roleValue;//0: innocent, 1: medic, 2: impostor, 3: corrupt
             currentVotes = currentVotesValue;
             playerName = playerNameValue;
+            hasDoneAction = hasDoneActionsValue;
 
-        }
 
-        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    }
+
+    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
         {
             serializer.SerializeValue(ref morale);
             serializer.SerializeValue(ref influence);
@@ -63,6 +66,7 @@ public class PlayerVariables : NetworkBehaviour
             serializer.SerializeValue(ref role);
             serializer.SerializeValue(ref currentVotes);
             serializer.SerializeValue(ref playerName);
+            serializer.SerializeValue(ref hasDoneAction);
         }
     }
 
@@ -148,6 +152,9 @@ public class PlayerVariables : NetworkBehaviour
                 break;
             case 9:
                 playerVariables.playerName = playerName;
+                break;
+            case 10:
+                playerVariables.hasDoneAction += newStat;
                 break;
         }
 
