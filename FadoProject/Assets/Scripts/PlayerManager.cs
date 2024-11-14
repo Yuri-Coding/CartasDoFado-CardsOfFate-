@@ -78,8 +78,7 @@ public class PlayerManager : MonoBehaviour
 		if		(players.Count >= 8)	{ poisonLimit = 8; }
 		else if (players.Count <= 7)	{ poisonLimit = players.Count + 1; }
 		else if (players.Count <= 5)	{ poisonLimit = players.Count + 2; }
-		
-	}
+    }
 
 	public bool IsMainPlayer(Player player)
 	{

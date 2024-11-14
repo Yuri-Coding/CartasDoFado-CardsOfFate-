@@ -15,10 +15,10 @@ public class Player
 
 
 	// Parâmetros
-	public int		Morale        { get; private set; }
-	public int		Influence     { get; private set; }
+	public int		Morale        { get; set; }
+	public int		Influence     { get; set; }
 	public int		Poison        { get; set; }
-	public int		Corruption    { get; private set; }
+	public int		Corruption    { get; set; }
     public int		votesReceived { get; set; }
 
 

@@ -40,10 +40,10 @@ public class Popup : MonoBehaviour
     public TMP_Text corruptionText;
 
     // Poison Indicator
-    public GameObject poisonIndicator;
     private List<Image> poisonImage = new List<Image>();
-    public Sprite poisonActive;
-    public Sprite poisonInactive;
+    public  GameObject poisonIndicator;
+    public  Sprite poisonActive;
+    public  Sprite poisonInactive;
 
     // Texto Grande que Aparece no Início dos Rounds
     public TMP_Text bigRoundText;

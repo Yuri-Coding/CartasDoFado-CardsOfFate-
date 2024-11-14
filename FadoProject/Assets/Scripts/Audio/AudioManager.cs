@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     private List<EventInstance> eventInstances;
     private EventInstance musicEventInstance;
 
-    private Musics playingNow;
+    public Musics playingNow;
 
     //Configura uma Instância para tornar acessível por todo projeto.
     private void Awake()
@@ -57,6 +57,7 @@ public class AudioManager : MonoBehaviour
         if (musicEventInstance.isValid())
         {
             FMOD.RESULT result = musicEventInstance.setParameterByName("track", (float)music);
+            playingNow = music;
             if (result != FMOD.RESULT.OK)
             {
                 Debug.LogError($"Failed to set parameter 'track': {result}");

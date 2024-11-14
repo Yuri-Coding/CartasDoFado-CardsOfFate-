@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 using UnityEngine.XR;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -215,7 +216,9 @@ public class GameManager : MonoBehaviour
     void StartPhase()
 	{
 		popup.BigTextPopup(currentRound);
-		SetState(GameState.AwaitAction);
+        popup.UpdatePoisonIndicator();
+
+        SetState(GameState.AwaitAction);
         UpdateTensionIndicator();
         AudioManager.Instance.ChangeMusicByTensionIndicator(tensionIndicator);
 	}
@@ -494,4 +497,9 @@ public class GameManager : MonoBehaviour
 		Debug.Log($"currentRound: {currentRound}");
 		Debug.Log($"RoundIndicator: {RoundIndicator}, AliveIndicator: {AliveIndicator}, PoisonIndicator = {PoisonIndicator}");
 	}
+
+    public void SwapScene(int nextScene)
+    {
+        SceneManager.LoadScene(nextScene);
+    }
 }

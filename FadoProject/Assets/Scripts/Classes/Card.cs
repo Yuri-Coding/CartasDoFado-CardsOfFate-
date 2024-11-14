@@ -22,7 +22,7 @@ namespace FadoProject {
         public string choice2;
 
         public int moraleCost;
-        public string influenceCost;
+        public int influenceCost;
 
         public List<Effect> targetEffects;
         public List<Effect> selfEffects;

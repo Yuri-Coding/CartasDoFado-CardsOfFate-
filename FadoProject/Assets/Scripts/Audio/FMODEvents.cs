@@ -13,6 +13,11 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference Snap { get; private set; }
     [field: SerializeField] public EventReference PoisonVapor { get; private set; }
     [field: SerializeField] public EventReference Slide { get; private set; }
+    [field: SerializeField] public EventReference Attack { get; private set; }
+    [field: SerializeField] public EventReference Error { get; private set; }
+    [field: SerializeField] public EventReference Moving { get; private set; }
+    [field: SerializeField] public EventReference Positioning { get; private set; }
+    [field: SerializeField] public EventReference Typewriter { get; private set; }
 
 
     [field: Header("Ambience")]
