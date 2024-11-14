@@ -45,6 +45,10 @@ public class TargetHandler: MonoBehaviour
 		isRandom = true;
 		switch(card.targetType)
 		{
+			case TargetType.None:
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Magic, gameObject.transform.localPosition);
+                ApplyAll();
+				break;
             case TargetType.Single:
 				amount = 1;
 				isRandom = false;
@@ -129,7 +133,7 @@ public class TargetHandler: MonoBehaviour
     {
 		Debug.Log("DEU APPLY!!!");
 		if (currentCard.selfEffects.Count != 0) effectHandler.ApplySelf(GameManager.Instance.mainPlayer, currentCard.selfEffects);
-        effectHandler.ApplyAllTargetted(allTarget, currentCard.targetEffects);
+        if (currentCard.targetEffects.Count != 0) effectHandler.ApplyAllTargetted(allTarget, currentCard.targetEffects);
 		Debug.Log($"Os efeitos de {currentCard.cardName} foram aplicados.");
 
 		GameManager.Instance.mainPlayer.PerformAction();

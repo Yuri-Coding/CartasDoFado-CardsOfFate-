@@ -54,7 +54,10 @@ public class ShopManager : MonoBehaviour
     public void OpenShop()
     {
         musicBeforeShop = AudioManager.Instance.playingNow;
+
         AudioManager.Instance.SetMusic(Musics.BrilhoDeTorbernita);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Suzu, gameObject.transform.localPosition);
+
 
         itemCards = deckManager.FilterCardsByType(CardType.Item);
 
@@ -101,7 +104,7 @@ public class ShopManager : MonoBehaviour
         }
         GameManager.Instance.mainPlayer.Influence -= productCards[index].influenceCost;
         GameManager.Instance.mainPlayer.Morale    -= productCards[index].moraleCost;
-
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Typewriter, gameObject.transform.localPosition);
         Debug.Log($"{productCards[index].cardName} comprada.");
         handManager.addCardToHand(productCards[index]);
         popup.UpdateSidePanel();
@@ -109,6 +112,11 @@ public class ShopManager : MonoBehaviour
         CloseShop();
     }
 
+    public void HandleCloseShopButton()
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Positioning, gameObject.transform.localPosition);
+        CloseShop();
+    }
     public void CloseShop()
     {
         AudioManager.Instance.SetMusic(musicBeforeShop);

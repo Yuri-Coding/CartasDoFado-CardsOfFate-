@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
     {
         musicEventInstance = CreateInstance(musicEventReference);
         musicEventInstance.start();
-        //musicEventInstance.setParameterByName("track", 1f);
+        musicEventInstance.setParameterByName("track", 4f);
 
 
     }

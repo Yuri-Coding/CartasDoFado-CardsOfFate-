@@ -28,7 +28,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
 	private Vector3 cardPlay     = new Vector3 (0, 0.7f, 0);
     private Vector3 cancelPlay   = new Vector3 (0, 0.2f, 0);
-    private Vector3 playPosition = new Vector3 (0, 550f, 0);
+    private Vector3 playPosition = new Vector3 (100f, 550f, 0);
 
 	private Vector3 viewportPoint;
 
@@ -41,13 +41,16 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 	[SerializeField] private GameObject loreBox;
 
 	//Vars para dar zoom
-	[SerializeField] private float zoomFactor = 2.0f;
+	private float zoomFactor = 1.3f;
 	private Vector3 zoomedPosition;
 	private float zoomDuration = 0.2f;
 	private bool isZoomed = false;
 
 	//Var para encontrar o popUp
 	private Popup popup;
+
+	//Animação de Sombras de Fundo
+	private Animation background;
 
 	void Awake() 
 	{
@@ -65,6 +68,8 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 		playArrow.SetActive(false);
 
 		currentCardDisplay = gameObject.GetComponent<CardDisplay>();
+
+		background = GameObject.Find("GameCanvas/Background").GetComponent<Animation>();
 	}
 
 	void Update()
@@ -107,8 +112,13 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
 			// CASE 6: Estado entre Zoom In e Zoom Out
 			case 6:
-				//Idle Zoom
-				break;
+                //Idle Zoom
+                if (Input.anyKeyDown)
+                {
+					if (isZoomed == false) return;
+                    StartCoroutine(ZoomOut());
+                }
+                break;
 		}
 	}
 
@@ -171,6 +181,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
 					case CardType.Medic:
 					case CardType.Poison:
+                    case CardType.Item:
                         //Verificando se a carta pode targetar um alvo e destruindo ela após seu uso
                         GameManager.Instance.inPlay = true;
                         TargetHandler.Instance.usedCardAction += removeTargetCard;
@@ -179,7 +190,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 						break;
 				}
                 break;
-		}
+        }
 	}
 
 	//Destroi a carta de task depois que foi jogada
@@ -212,11 +223,11 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 		}
 		if(currentState == 1 && eventData.button == PointerEventData.InputButton.Right)
 		{
-			currentState = 4;
+			ChangeCurrentState(4);
 		}
 		if(currentState == 6 && eventData.button == PointerEventData.InputButton.Right)
 		{
-			currentState = 5;
+            ChangeCurrentState(5);
 		}
 	}
 
@@ -283,10 +294,13 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
 	private System.Collections.IEnumerator ZoomIn()
 	{
-		isZoomed = true;
+        background.Play("shadow_fadein");
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Slide2, gameObject.transform.localPosition);
+
+        isZoomed = true;
 		float elapsedTime = 0f;
 		zoomedPosition = GetScreenCenterPosition();
-		zoomedPosition.x += -250;
+		//zoomedPosition.x += -250;
 		zoomedPosition.y += 700;
 		glowEffect.SetActive(false);
 
@@ -311,7 +325,10 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
 	private System.Collections.IEnumerator ZoomOut()
 	{
-		isZoomed = false;
+        background.Play("shadow_fadeout");
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Slide, gameObject.transform.localPosition);
+
+        isZoomed = false;
 		float elapsedTime = 0f;
 		zoomedPosition = GetScreenCenterPosition();
 		glowEffect.SetActive(false);

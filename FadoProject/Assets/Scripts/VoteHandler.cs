@@ -20,11 +20,18 @@ public class VoteHandler : MonoBehaviour
     {
         playerList[index].votesReceived += 1;
         Debug.Log($"Voto feito em: {playerList[index].PlayerName}");
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Attack, gameObject.transform.localPosition);
         GameManager.Instance.alreadyVoted = true;
+    }
+
+    public void castBotVote(int index)
+    {
+        playerList[index].votesReceived += 1;
     }
 
     public void SkipVote()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Positioning, gameObject.transform.localPosition);
         GameManager.Instance.alreadyVoted = true;
     }
 }

@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
 	// Importar Handlers
 	public DeckManager deckManager;
 	public EffectHandler effectHandler;
+	public VoteHandler voteHandler;
 
 	// Criar lista de Players / Bots
 	public List<Player> players = new List<Player>();
@@ -230,5 +231,22 @@ public class PlayerManager : MonoBehaviour
                     break;
 			}
 		}
+	}
+
+	public void HandleBotVote()
+	{
+		foreach (Player bot in bots)
+		{
+
+			int d100 = UnityEngine.Random.Range(0, 100);
+			if (d100 < 80) continue;
+
+			List<Player> eligibleVoteTargets = players.FindAll(player => player.PlayerId != bot.PlayerId);
+			int d3 = UnityEngine.Random.Range(0, 4);
+
+            List<Player> corruptionOrderedList = eligibleVoteTargets.OrderBy(player => player.Corruption).ToList();
+
+			voteHandler.castBotVote(corruptionOrderedList[d3].PlayerId);
+        }
 	}
 }

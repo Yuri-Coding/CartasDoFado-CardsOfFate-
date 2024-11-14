@@ -18,6 +18,10 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference Moving { get; private set; }
     [field: SerializeField] public EventReference Positioning { get; private set; }
     [field: SerializeField] public EventReference Typewriter { get; private set; }
+    [field: SerializeField] public EventReference Suzu { get; private set; }
+    [field: SerializeField] public EventReference Slide2 { get; private set; }
+    [field: SerializeField] public EventReference Magic { get; private set; }
+    [field: SerializeField] public EventReference Boom { get; private set; }
 
 
     [field: Header("Ambience")]

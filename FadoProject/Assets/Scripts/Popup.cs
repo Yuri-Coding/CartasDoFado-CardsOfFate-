@@ -141,6 +141,7 @@ public class Popup : MonoBehaviour
     void Popdown()
     {
         singleAnim.Play("fadeout");
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Moving, gameObject.transform.localPosition);
         isWaitingForInput = true;
     }
 
@@ -222,6 +223,8 @@ public class Popup : MonoBehaviour
     {
         choice1Button.onClick.RemoveAllListeners();
 		choice2Button.onClick.RemoveAllListeners();
+
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Moving, gameObject.transform.localPosition);
         choiceAnim.Play("fadeout");
     }
 
@@ -248,6 +251,7 @@ public class Popup : MonoBehaviour
     // ===============================================================
     public void BigTextPopup(int round)
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Boom, gameObject.transform.localPosition);
         bigRoundText.text = "RODADA " + round.ToString();
         bigTextPanelAnimation.Play("bigtext_fadein");
         StartCoroutine(AutoHideBigText(3f));
@@ -421,5 +425,14 @@ public class Popup : MonoBehaviour
             }
 
         }
+    }
+
+    // ===============================================================
+    //             TEMP EFFECT FUNCTION FOR ITEM
+    // ===============================================================
+
+    public void ApplyItemEffect()
+    {
+        effectHandler.ApplyMain(currentCard.choice1Effects);
     }
 }

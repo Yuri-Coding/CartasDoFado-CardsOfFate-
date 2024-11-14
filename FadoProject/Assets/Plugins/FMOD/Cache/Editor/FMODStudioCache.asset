@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/Audio/fado/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638671324701276139
+  lastModified: 638671947956328724
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -114,10 +114,10 @@ MonoBehaviour:
   Path: Assets/Audio/fado/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638671307092000899
+  lastModified: 638671947962012779
   FileSizes:
   - Name: Desktop
-    Value: 139680
+    Value: 257824
   Exists: 1
 --- !u!114 &-6202884922057581549
 MonoBehaviour:
@@ -188,11 +188,38 @@ MonoBehaviour:
   Path: Assets/Audio/fado/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638671324701326105
+  lastModified: 638671947956525010
   FileSizes:
   - Name: Desktop
-    Value: 1468
+    Value: 1626
   Exists: 1
+--- !u!114 &-4770794396594044822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Magic
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Magic
+  Guid:
+    Data1: 1739997826
+    Data2: 1186855920
+    Data3: 1704737953
+    Data4: 330538870
+  Banks:
+  - {fileID: -6456035231469515575}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4174860409987097193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,12 +522,16 @@ MonoBehaviour:
   - {fileID: -429062848915101233}
   - {fileID: 8527370290516296334}
   - {fileID: -2869630142894402357}
+  - {fileID: 2746619340358148420}
+  - {fileID: 2390279966623970012}
+  - {fileID: -4770794396594044822}
+  - {fileID: 7009217969059334902}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8428560930459928864}
   StringsBanks:
   - {fileID: -4779471886630056716}
-  cacheTime: 638671324701326105
+  cacheTime: 638671947962012779
   cacheVersion: 131620
 --- !u!114 &401004084593317093
 MonoBehaviour:
@@ -557,6 +588,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2390279966623970012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Slide2
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Slide2
+  Guid:
+    Data1: 923447750
+    Data2: 1150114114
+    Data3: -2067226690
+    Data4: -389624157
+  Banks:
+  - {fileID: -6456035231469515575}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2746619340358148420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Suzu
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Suzu
+  Guid:
+    Data1: 1737212363
+    Data2: 1210518364
+    Data3: -825324388
+    Data4: -958131566
+  Banks:
+  - {fileID: -6456035231469515575}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3374192962247589992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,7 +663,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 8029682279033317798}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
@@ -710,6 +795,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 5924992
   Exists: 1
+--- !u!114 &7009217969059334902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Boom
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Boom
+  Guid:
+    Data1: -697795121
+    Data2: 1256373624
+    Data3: -808669024
+    Data4: -1795826454
+  Banks:
+  - {fileID: -6456035231469515575}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7507044781574568850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,10 +864,10 @@ MonoBehaviour:
   Path: Assets/Audio/fado/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638671324701106245
+  lastModified: 638671899231583191
   FileSizes:
   - Name: Desktop
-    Value: 8605152
+    Value: 8604768
   Exists: 1
 --- !u!114 &8527370290516296334
 MonoBehaviour:

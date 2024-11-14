@@ -26,7 +26,7 @@ public class CardDisplay : MonoBehaviour
             {CardType.Medic, new Color(0.0f, 0.561f, 0.196f) },
             {CardType.Poison, new Color(0.957f, 0.263f, 0.212f) },
             {CardType.Task, new Color(0.0f, 0.286f, 0.541f) },
-            {CardType.Item, new Color(0,0,0) }//Definir ainda
+            {CardType.Item, new Color(0.862f,0.815f,0.329f) }//Definir ainda
         };
     }
 

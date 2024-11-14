@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IT_Amuleto_da_Pureza
   m_EditorClassIdentifier: 
   cardName: Amuleto da Pureza
-  cardSprite: {fileID: 3008048712614416305, guid: 909f9697d69364549ac5275ae12bc86d, type: 3}
+  cardSprite: {fileID: 521728796410935857, guid: 6079e39da75da284c972a6bf9506276b, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 3
   cardEffect: "Remove 2 marcadores de Corrup\xE7\xE3o."

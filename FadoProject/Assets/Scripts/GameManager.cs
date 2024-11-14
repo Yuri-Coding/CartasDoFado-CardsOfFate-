@@ -29,7 +29,10 @@ public class GameManager : MonoBehaviour
     // Texto de Notificação que aparece em toda ShowResults
     string notificationText;
 
-    
+	// Animação de Quadros
+	public Animation paintingAnimation;
+	public List<TMP_Text> playerNameText;
+
 
 	// Booleanas de Verificação
 	public bool canDraw;
@@ -183,14 +186,46 @@ public class GameManager : MonoBehaviour
 		popup.SetStateAfterPopup(introductionTexts[index], 20f, GameState.AwaitAction);
         popup.PopupClosed += SetState;
 
+		AudioManager.Instance.SetMusic(Musics.CantoDaVila);
+
         List<Roles> rawRoles = new List<Roles>() { Roles.Corrupt, Roles.Medic, Roles.Honest, Roles.Honest, Roles.Honest };
         List<Roles> shuffledRoles = rawRoles.OrderBy(x => Guid.NewGuid()).ToList();
 
-        Player p1 = new Player(0, "Matias", shuffledRoles[0], false, true, true);
-        Player p2 = new Player(1, "Cassis", shuffledRoles[1], true, false, true);
-        Player p3 = new Player(2, "Yuras", shuffledRoles[2], false, true, true);
-        Player p4 = new Player(3, "Sales", shuffledRoles[3], false, true, true);
-        Player p5 = new Player(4, "Robson", shuffledRoles[4], false, true, true);
+		List<string> rawBotFemaleNames = new List<string>
+		{
+            "Charlotte",
+			"Victoria",
+			"Eleanor",
+			"Margaret",
+			"Florence",
+        };
+
+        List<string> rawBotMaleNames = new List<string>
+        {
+			"Edward",
+			"Arthur",
+			"Henry",
+            "Alfred",
+            "Charles",
+        };
+       
+
+        List<string> shuffledMaleName   = rawBotMaleNames.OrderBy(x => Guid.NewGuid()).ToList();
+        List<string> shuffledFemaleName = rawBotFemaleNames.OrderBy(x => Guid.NewGuid()).ToList();
+
+		string playerName = "Jogador";
+
+
+        Player p1 = new Player(0, shuffledFemaleName[0], shuffledRoles[0], false, true, true);
+        Player p2 = new Player(1, playerName,            shuffledRoles[1], true, false, true);
+        Player p3 = new Player(2, shuffledMaleName[0],   shuffledRoles[2], false, true, true);
+        Player p4 = new Player(3, shuffledMaleName[1],   shuffledRoles[3], false, true, true);
+        Player p5 = new Player(4, shuffledFemaleName[1], shuffledRoles[4], false, true, true);
+
+		playerNameText[0].text = shuffledFemaleName[0];
+		playerNameText[1].text = shuffledMaleName[0];
+		playerNameText[2].text = shuffledMaleName[1];
+        playerNameText[3].text = shuffledFemaleName[1];
 
         playerManager.AddPlayer(p1);
         playerManager.AddPlayer(p2);
@@ -226,6 +261,7 @@ public class GameManager : MonoBehaviour
 	void AwaitAction()
 	{
 		// Inscreve-se no evento de ação do jogador
+		paintingAnimation.Play("painting_fadein");
 		mainPlayer.OnPlayerAction += OnPlayerActionCompleted;
 		Debug.LogWarning($"[FASE{currentRound}] Await Player: Modo espera ativado.");
 
@@ -233,7 +269,7 @@ public class GameManager : MonoBehaviour
 
 	private void OnPlayerActionCompleted()
 	{
-		mainPlayer.OnPlayerAction -= OnPlayerActionCompleted;
+        mainPlayer.OnPlayerAction -= OnPlayerActionCompleted;
 		//Debug.Log("GameManager detectou ação");
 
 		SetState(GameState.HandleActions);
@@ -241,7 +277,8 @@ public class GameManager : MonoBehaviour
 
 	void HandleActions()
 	{
-		playerManager.HandleBotAction();
+        paintingAnimation.Play("painting_fadeout");
+        playerManager.HandleBotAction();
 		SetState(GameState.ShowResults);
 	}
 
@@ -277,7 +314,7 @@ public class GameManager : MonoBehaviour
     }
 	void HandleShopPhase()
 	{
-		if (currentRound%shopGap == shopModular)
+		if (currentRound%shopGap == shopModular && mainPlayer.PlayerRole != Roles.Corrupt)
 		{
 			ShopManager.Instance.OpenShop();
             ShopManager.Instance.closeShopAction += OnShopClosed;
@@ -295,7 +332,8 @@ public class GameManager : MonoBehaviour
 		//Debug.Log("Fase de Votação");
 		if (currentRound%votingGap == votingModular)
 		{
-            //Mostra e alimenta o popup de votação
+			//Mostra e alimenta o popup de votação
+			playerManager.HandleBotVote();
             popup.UpdateVotePanel();
             popup.VotePanelPopup();
 
