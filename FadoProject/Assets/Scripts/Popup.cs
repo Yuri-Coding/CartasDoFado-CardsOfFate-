@@ -10,13 +10,18 @@ using TMPro;
 using FadoProject;
 using Unity.VisualScripting;
 
+using UnityEngine.Localization;
+using UnityEngine.Localization.Tables;
+using UnityEngine.Localization.Settings;
+using System.Linq;
+
 
 public class Popup : MonoBehaviour
 {
     // Componentes de Popup Simples
-	public Animation singleAnim;
+    public Animation singleAnim;
 
-	public TMP_Text contentObject;
+    public TMP_Text contentObject;
     private bool isWaitingForInput = true;
 
 
@@ -25,8 +30,8 @@ public class Popup : MonoBehaviour
     public TMP_Text choiceText1;
     public TMP_Text choiceText2;
 
-	public Button choice1Button;
-	public Button choice2Button;
+    public Button choice1Button;
+    public Button choice2Button;
 
     public Animation choiceAnim;
 
@@ -41,16 +46,16 @@ public class Popup : MonoBehaviour
 
     // Poison Indicator
     private List<Image> poisonImage = new List<Image>();
-    public  GameObject poisonIndicator;
-    public  Sprite poisonActive;
-    public  Sprite poisonInactive;
+    public GameObject poisonIndicator;
+    public Sprite poisonActive;
+    public Sprite poisonInactive;
 
     // Texto Grande que Aparece no Início dos Rounds
     public TMP_Text bigRoundText;
     public Animation bigTextPanelAnimation;
 
     private Card currentCard;
-	public EffectHandler effectHandler;
+    public EffectHandler effectHandler;
 
     // Texto Grande de notificação de Kill
     public TMP_Text bigKillNotificationText;
@@ -59,6 +64,10 @@ public class Popup : MonoBehaviour
     // Texto de EndGame
     public TMP_Text endGameText;
     public TMP_Text endGameDescriptionText;
+
+    //tabelas de localização
+    public LocalizedStringTable EndingTable;
+	public LocalizedStringTable NotificationTable;
 
     public event Action<GameState> PopupClosed;
 
@@ -81,41 +90,41 @@ public class Popup : MonoBehaviour
     private List<Player> playerList;
 
 
-	//Criando um evento para ser ouvido
-	public event Action actionRemoveCard;
+    //Criando um evento para ser ouvido
+    public event Action actionRemoveCard;
 
     void Start()
-	{
+    {
 
 
-		// Buscar objetos Choice Screen na cena
+        // Buscar objetos Choice Screen na cena
         choiceContext = GameObject.Find("ChoiceContext").GetComponent<TMP_Text>();
         choiceText1 = GameObject.Find("Choice1Text").GetComponent<TMP_Text>();
         choiceText2 = GameObject.Find("Choice2Text").GetComponent<TMP_Text>();
-		choiceAnim = GameObject.Find("ChoicePopup").GetComponent<Animation>();
+        choiceAnim = GameObject.Find("ChoicePopup").GetComponent<Animation>();
 
         // Obter todas as Images de Poison Indicator
         for (int i = 0; i < 8; i++)
         {
             poisonImage.Add(poisonIndicator.transform.GetChild(i).GetComponent<Image>());
         }
-        
+
 
         // Desativando os botões inicialmente
-        for (int i=0; i<PButton.Count; i++)
+        for (int i = 0; i < PButton.Count; i++)
         {
             PButton[i].gameObject.SetActive(false);
         }
         isProcessingPopup = false;
     }
 
-	void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.D))
-		{
-			Popdown();
-		}
-	}
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Popdown();
+        }
+    }
 
     // ===============================================================
     //                        GENERAL POPUP
@@ -161,7 +170,7 @@ public class Popup : MonoBehaviour
         }
         elapsedTime = 0f;
         Popdown();
-        while (elapsedTime < 1.5f) { elapsedTime+=Time.deltaTime; yield return null; }
+        while (elapsedTime < 1.5f) { elapsedTime += Time.deltaTime; yield return null; }
         PopupClosed?.Invoke(state);
     }
 
@@ -170,6 +179,7 @@ public class Popup : MonoBehaviour
     // ===============================================================
     public void InitPopupMessage()
     {
+
         List<string> introductionTexts = new List<string>()
         {
             "Bem vindo ao Cartas do Fado. A Mesa está preenchida, os olhares, desconfiantes, observam uns aos outros, em busca de encontrar o nocivo, achar um grão de ouro em auto-mar.",
@@ -188,28 +198,30 @@ public class Popup : MonoBehaviour
     }
 
     private IEnumerator AutoHidePopup(float duration, string option)
-	{
-		float elapsedTime = 0f;
+    {
+        float elapsedTime = 0f;
 
-		while (isWaitingForInput && elapsedTime < duration) {
-			if (Input.anyKeyDown) {
-				isWaitingForInput = false;
-				break;
-			}
-			elapsedTime += Time.deltaTime;
-			yield return null;
-		}
+        while (isWaitingForInput && elapsedTime < duration)
+        {
+            if (Input.anyKeyDown)
+            {
+                isWaitingForInput = false;
+                break;
+            }
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
 
-		Popdown();
+        Popdown();
         //if (option == "init") GameManager.Instance.OnInitPopdown();
-	}
+    }
 
     // ===============================================================
     //                        CHOICE POPUP
     // ===============================================================
     public void PopupChoice(Card cardData)
-	{
-		currentCard = cardData;
+    {
+        currentCard = cardData;
         choiceAnim.Play("fadein");
         choiceContext.text = currentCard.cardLore;
         choiceText1.text = currentCard.choice1;
@@ -222,41 +234,42 @@ public class Popup : MonoBehaviour
     public void PopdownChoice()
     {
         choice1Button.onClick.RemoveAllListeners();
-		choice2Button.onClick.RemoveAllListeners();
+        choice2Button.onClick.RemoveAllListeners();
 
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Moving, gameObject.transform.localPosition);
         choiceAnim.Play("fadeout");
     }
 
-	public void OnChoiceMade(int choice)
-	{
-		Debug.Log($"Escolha {choice} selecionada");
+    public void OnChoiceMade(int choice)
+    {
+        Debug.Log($"Escolha {choice} selecionada");
         switch (choice)
-		{
-			case 1:
+        {
+            case 1:
                 effectHandler.ApplyMain(currentCard.choice1Effects);
-				break;
-			case 2:
-                effectHandler.ApplyMain(currentCard.choice2Effects);                
+                break;
+            case 2:
+                effectHandler.ApplyMain(currentCard.choice2Effects);
                 break;
 
         }
         PopdownChoice();
-		//Chama todas as funções que ficam registradas na ação(ouvindo)
-		actionRemoveCard?.Invoke();
-	}
+        //Chama todas as funções que ficam registradas na ação(ouvindo)
+        actionRemoveCard?.Invoke();
+    }
 
     // ===============================================================
     //                          BIG TEXT
     // ===============================================================
     public void BigTextPopup(int round)
     {
+		string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("NotificationsTable", "round_counter");
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.Boom, gameObject.transform.localPosition);
-        bigRoundText.text = "RODADA " + round.ToString();
+        bigRoundText.text = localizedText + " " + round.ToString();
         bigTextPanelAnimation.Play("bigtext_fadein");
         StartCoroutine(AutoHideBigText(3f));
     }
-    
+
     public void BigTextPopdown()
     {
         bigTextPanelAnimation.Play("bigtext_fadeout");
@@ -278,7 +291,8 @@ public class Popup : MonoBehaviour
 
     public void BigKillNotificationPopup(int round)
     {
-        bigRoundText.text = "RODADA " + round.ToString();
+		string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("NotificationsTable", "round_counter");
+        bigRoundText.text = localizedText + " " + round.ToString();
         bigTextPanelAnimation.Play("bigtext_fadein");
         StartCoroutine(AutoHideBigText(3f));
     }
@@ -295,64 +309,123 @@ public class Popup : MonoBehaviour
 
     public void EndGamePopup(EndCondition endCondition)
     {
+        // int coinToss;
+        // string endGameString = "";
+        // string endGameDescriptionString = "";
+        // if (endCondition == EndCondition.SP_PlayerDead)
+        // {
+        //     coinToss = UnityEngine.Random.Range(0, 2);
+        //     switch ((coinToss, GameManager.Instance.mainRole))
+        //     {
+        //         case (0, Roles.Honest):
+        //             endGameString = "VOCÊ VENCEU";
+        //             endGameDescriptionString = "Apesar de seu destino ter sido cruel, os habitantes da cidade sobreviveram ao grande desafio que encararam.";
+        //             break;
+        //         case (0, Roles.Medic):
+        //             endGameString = "VOCÊ VENCEU";
+        //             endGameDescriptionString = "Seus esforços foram recompensados. A cidade prevaleceu e sobreviveu ao ataque do cruel corrupto.";
+        //             break;
+        //         case (1, Roles.Honest):
+        //             endGameString = "VOCÊ FOI DERROTADO";
+        //             endGameDescriptionString = "Mesmo sendo uma pessoa honesta e esforçada o corrupto ceifou sua vida e de toda a cidade.";
+        //             break;
+        //         case (1, Roles.Medic):
+        //             endGameString = "VOCÊ FOI DERROTADO";
+        //             endGameDescriptionString = "Você foi o último raio de esperança da cidade, no entanto o corrupto teve sucesso em apagar essa luz.";
+        //             break;
+        //     }
+        // }
+        // switch ((endCondition, GameManager.Instance.mainRole))
+        // {
+        //     case (EndCondition.HonestWin, Roles.Honest):
+        //         endGameString = "VOCÊ VENCEU";
+        //         endGameDescriptionString = "A honestidade venceu. Todos tinham a oportunidade de desviar-se do bom caminho, mas ao fim, todos trabalharam em prol da paz.";
+        //         break;
+        //     case (EndCondition.HonestWin, Roles.Medic):
+        //         endGameString = "VOCÊ VENCEU";
+        //         endGameDescriptionString = "Você teve um papel essencial nesta grande vitória. Mesmo o trabalho não recompensando-o por reputação, você seguiu a justiça.";
+        //         break;
+        //     case (EndCondition.HonestWin, Roles.Corrupt):
+        //         endGameString = "VOCÊ FOI DERROTADO";
+        //         endGameDescriptionString = "O poder do veneno não foi suficiente para corromper uma sociedade. Um bom trabalho, mas infelizmente, você falhou.";
+        //         break;
+
+        //     case (EndCondition.CorruptWin, Roles.Honest):
+        //         endGameString = "VOCÊ FOI DERROTADO";
+        //         endGameDescriptionString = "Os esforços, nem mesmo pelo poder da honestidade, foi capaz de dar frutos para combater a corrupção. A corrupção dominou a cidade, e a destruiu.";
+        //         break;
+        //     case (EndCondition.CorruptWin, Roles.Medic):
+        //         endGameString = "VOCÊ FOI DERROTADO";
+        //         endGameDescriptionString = "Como médico, você buscou curar ao máximo as pessoas. Mas o veneno letal da corrupção espalhou mais rápido, resultando no obscuro futuro sem fim da cidade.";
+        //         break;
+        //     case (EndCondition.CorruptWin, Roles.Corrupt):
+        //         endGameString = "VOCÊ VENCEU";
+        //         endGameDescriptionString = "A estratégia miticulosa de corrupção geraram frutos em forma de destruição. Tudo que restou na cidade foram as memórias de bons tempos, destruição e desesperança.";
+        //         break;
+        // }
+
+        // endGameText.text = endGameString;
+        // endGameDescriptionText.text = endGameDescriptionString;
+
+        string keyTitle = "";
+        string keyDescription = "";
+
         int coinToss;
-        string endGameString = "";
-        string endGameDescriptionString = "";
         if (endCondition == EndCondition.SP_PlayerDead)
         {
             coinToss = UnityEngine.Random.Range(0, 2);
             switch ((coinToss, GameManager.Instance.mainRole))
             {
                 case (0, Roles.Honest):
-                    endGameString = "VOCÊ VENCEU";
-                    endGameDescriptionString = "Apesar de seu destino ter sido cruel, os habitantes da cidade sobreviveram ao grande desafio que encararam.";
+                    keyTitle = "you_win_1";
+                    keyDescription = "win_honest_2";
                     break;
                 case (0, Roles.Medic):
-                    endGameString = "VOCÊ VENCEU";
-                    endGameDescriptionString = "Seus esforços foram recompensados. A cidade prevaleceu e sobreviveu ao ataque do cruel corrupto.";
+                    keyTitle = "you_win_1";
+                    keyDescription = "win_medic_1";
                     break;
                 case (1, Roles.Honest):
-                    endGameString = "VOCÊ FOI DERROTADO";
-                    endGameDescriptionString = "Mesmo sendo uma pessoa honesta e esforçada o corrupto ceifou sua vida e de toda a cidade.";
+                    keyTitle = "you_lose_1";
+                    keyDescription = "loss_honest_2";
                     break;
                 case (1, Roles.Medic):
-                    endGameString = "VOCÊ FOI DERROTADO";
-                    endGameDescriptionString = "Você foi o último raio de esperança da cidade, no entanto o corrupto teve sucesso em apagar essa luz.";
+                    keyTitle = "you_lose_1";
+                    keyDescription = "loss_medic_2";
                     break;
             }
         }
-        switch((endCondition, GameManager.Instance.mainRole))
+
+        switch ((endCondition, GameManager.Instance.mainRole))
         {
             case (EndCondition.HonestWin, Roles.Honest):
-                endGameString = "VOCÊ VENCEU";
-                endGameDescriptionString = "A honestidade venceu. Todos tinham a oportunidade de desviar-se do bom caminho, mas ao fim, todos trabalharam em prol da paz.";
+                keyTitle = "you_win_1";
+                keyDescription = "win_honest_1";
                 break;
             case (EndCondition.HonestWin, Roles.Medic):
-                endGameString = "VOCÊ VENCEU";
-                endGameDescriptionString = "Você teve um papel essencial nesta grande vitória. Mesmo o trabalho não recompensando-o por reputação, você seguiu a justiça.";
+                keyTitle = "you_win_1";
+                keyDescription = "win_medic_1";
                 break;
             case (EndCondition.HonestWin, Roles.Corrupt):
-                endGameString = "VOCÊ FOI DERROTADO";
-                endGameDescriptionString = "O poder do veneno não foi suficiente para corromper uma sociedade. Um bom trabalho, mas infelizmente, você falhou.";
+                keyTitle = "you_lose_1";
+                keyDescription = "loss_corrupt_1";
                 break;
-
             case (EndCondition.CorruptWin, Roles.Honest):
-                endGameString = "VOCÊ FOI DERROTADO";
-                endGameDescriptionString = "Os esforços, nem mesmo pelo poder da honestidade, foi capaz de dar frutos para combater a corrupção. A corrupção dominou a cidade, e a destruiu.";
+                keyTitle = "you_lose_1";
+                keyDescription = "loss_honest_1";
                 break;
             case (EndCondition.CorruptWin, Roles.Medic):
-                endGameString = "VOCÊ FOI DERROTADO";
-                endGameDescriptionString = "Como médico, você buscou curar ao máximo as pessoas. Mas o veneno letal da corrupção espalhou mais rápido, resultando no obscuro futuro sem fim da cidade.";
+                keyTitle = "you_lose_1";
+                keyDescription = "loss_medic_1";
                 break;
             case (EndCondition.CorruptWin, Roles.Corrupt):
-                endGameString = "VOCÊ VENCEU";
-                endGameDescriptionString = "A estratégia miticulosa de corrupção geraram frutos em forma de destruição. Tudo que restou na cidade foram as memórias de bons tempos, destruição e desesperança.";
+                keyTitle = "you_win_1";
+                keyDescription = "win_corrupt_1";
                 break;
         }
-        
 
-        endGameText.text = endGameString;
-        endGameDescriptionText.text = endGameDescriptionString;
+        // Obtém os textos traduzidos da tabela
+        endGameText.text = LocalizationSettings.StringDatabase.GetLocalizedString("EndingTable", keyTitle);
+        endGameDescriptionText.text = LocalizationSettings.StringDatabase.GetLocalizedString("EndingTable", keyDescription);
 
         bigTextPanelAnimation.Play("endgame_fadein");
     }
@@ -364,7 +437,7 @@ public class Popup : MonoBehaviour
     // ===============================================================
     public void UpdateVotePanel()
     {
-        int index=0;
+        int index = 0;
         playerList = playerManager.GetAllPlayers();
         foreach (Player jugador in playerList)
         {
@@ -379,9 +452,9 @@ public class Popup : MonoBehaviour
                 {
                     PButton[index].gameObject.SetActive(false);
                     PSub[index].gameObject.SetActive(true);
-                    PSubText[index].text=jugador.PlayerName;
+                    PSubText[index].text = jugador.PlayerName;
                 }
-                
+
             }
             index++;
         }
@@ -418,9 +491,12 @@ public class Popup : MonoBehaviour
                 poisonImage[i].gameObject.SetActive(false);
                 continue;
             }
-            if (i < poison) {
+            if (i < poison)
+            {
                 poisonImage[i].sprite = poisonActive;
-            } else {
+            }
+            else
+            {
                 poisonImage[i].sprite = poisonInactive;
             }
 

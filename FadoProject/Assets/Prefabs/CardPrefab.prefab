@@ -859,6 +859,7 @@ GameObject:
   - component: {fileID: 3896140116782587600}
   - component: {fileID: 3834940933677558159}
   - component: {fileID: 5668859903629843991}
+  - component: {fileID: 9088849932724853987}
   m_Layer: 0
   m_Name: CardImage
   m_TagString: Untagged
@@ -923,6 +924,66 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9088849932724853987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001102996163734031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjects:
+  - rid: 5928588970850779407
+  references:
+    version: 2
+    RefIds:
+    - rid: 5928588970850779407
+      type: {class: TrackedUGuiGraphic, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 5668859903629843991}
+        m_TrackedProperties:
+          items:
+          - rid: 5928588970850779408
+          - rid: 5928588970850779409
+          - rid: 5928588970850779410
+        m_UpdateType: 0
+    - rid: 5928588970850779408
+      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_PropertyPath: m_Color.r
+        m_VariantData:
+        - localeIdentifier:
+            m_Code: pt-BR
+          value: 1
+        - localeIdentifier:
+            m_Code: en
+          value: 1
+    - rid: 5928588970850779409
+      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_PropertyPath: m_Color.g
+        m_VariantData:
+        - localeIdentifier:
+            m_Code: pt-BR
+          value: 1
+        - localeIdentifier:
+            m_Code: en
+          value: 1
+    - rid: 5928588970850779410
+      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_PropertyPath: m_Color.b
+        m_VariantData:
+        - localeIdentifier:
+            m_Code: pt-BR
+          value: 1
+        - localeIdentifier:
+            m_Code: en
+          value: 1
 --- !u!1 &7272144759410383559
 GameObject:
   m_ObjectHideFlags: 0

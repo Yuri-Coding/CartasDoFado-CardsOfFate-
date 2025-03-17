@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: IntroTable_pt-BR
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 02e7282b7b8d5e641b0ace9dfffc25cb, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: "Bem vindo ao Cartas do Fado. A Mesa est\xE1 preenchida, os olhares,
+      desconfiantes, observam uns aos outros, em busca de encontrar o nocivo, achar
+      um gr\xE3o de ouro em auto-mar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: "A mesa est\xE1 completa. Cada olhar carrega uma sombra de d\xFAvida
+      e desconfian\xE7a, enquanto os jogadores, ocultos por segredos, preparam suas
+      cartas. A noite promete revelar verdades - ou esconder mentiras."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: "Bem-vindo ao Cartas do Fado, onde cada movimento pode mudar o eterno
+      destino da cidade. \xC0 mesa, risos e suspeitas se entrela\xE7am, mas apenas
+      um saber\xE1 a verdade antes de todos os outros. Quem ser\xE1 o primeiro a
+      cair?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "As cartas est\xE3o postas e as inten\xE7\xF5es, veladas. Em um
+      jogo de sorte e manipula\xE7\xE3o, voc\xEA est\xE1 cercado por aliados ou inimigos
+      disfar\xE7ados. Restar\xE1 ao destino revelar quem realmente merece confian\xE7a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Hoje, a mesa \xE9 palco de um jogo de segredos e conspira\xE7\xF5es.
+      As cartas sussurram promessas de poder, mas apenas quem conhece os pr\xF3prios
+      limites escapar\xE1 ileso."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

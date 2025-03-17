@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StaticTextTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 5228016de1d0a4449aa128af001981c3, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 9948726185984
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8757862617088
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10595735326720
+    m_Localized: Abstain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10656624037888
+    m_Localized: Don't Buy Anything
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10710814445568
+    m_Localized: Return to Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11020433772544
+    m_Localized: Vote for who you want to send to jail...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17879827894272
+    m_Localized: <color=purple>Morale</color> is a parameter that defines how selfishly
+      you behave.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18058471690240
+    m_Localized: <color=purple>Morale</color> is a parameter that defines how selfishly
+      you behave.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20121314283520
+    m_Localized: "SHOP\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20586907193344
+    m_Localized: <color=red>Corruption</color> is a way to measure how willing you
+      are to sacrifice your honesty in exchange for something.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20614526685184
+    m_Localized: <color=blue>Influence</color> is a parameter that measures how altruistic
+      you are, influencing the people around you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20635095552000
+    m_Localized: <color=blue>Influence</color> is a parameter that measures how altruistic
+      you are, influencing the people around you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1885326314246144
+    m_Localized: Round 1
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: EndingTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: ba7fab4d9ec19fc45983f53740492b9f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Honesty has won. Even tho everyone could have strayed from the righteous
+      path, everything works out for peace in the end.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Tho your fate was cruel, the honest citizens survived the great
+      hardship in the end.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: You had an essential role in this victory. Your hardship was not
+      compensated with fame or fortune, but with justice.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Your efforts were compensated. The city remains and has survived
+      the villain's cruelty.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: The fruits of your meticulous labor come in the form of destruction.
+      The only thing that remains of this city is memories, destruction and despair.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: Your honest efforts were not enough to stop the corruption. The
+      city is now destroyed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Even tho you were honest, the corrupt villain has reaped your life
+      and city.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: As a medic, you tried to heal as many citizens as possible, but
+      the corrupt poison spread faster than you could act, resulting in a bleak future
+      for the city.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: You were a shining beacon of hope, but the corrupt has snuffed your
+      flame.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Your poison was not enough to corrupt this society. Tho a good effort,
+      you failed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: YOU WON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: YOU WERE DEFEATED
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

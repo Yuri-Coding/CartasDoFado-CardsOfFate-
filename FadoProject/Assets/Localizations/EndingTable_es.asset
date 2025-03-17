@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: EndingTable_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: ba7fab4d9ec19fc45983f53740492b9f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: "La honestidad ha ganado. Aunque todos podr\xEDan haberse desviado
+      del camino correcto, al final todo result\xF3 en paz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: "Aunque tu destino fue cruel, los ciudadanos honestos sobrevivieron
+      al gran desaf\xEDo que enfrentaron."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Tuviste un papel esencial en esta gran victoria. Aunque tu trabajo
+      no fue recompensado con fama o fortuna, seguiste la justicia.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "Tus esfuerzos fueron recompensados. La ciudad prevaleci\xF3 y sobrevivi\xF3
+      al ataque del cruel corrupto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Los frutos de tu meticuloso trabajo llegaron en forma de destrucci\xF3n.
+      Lo \xFAnico que queda de esta ciudad son recuerdos, destrucci\xF3n y desesperanza."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Tus esfuerzos honestos no fueron suficientes para detener la corrupci\xF3n.
+      La ciudad ahora est\xE1 destruida."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Even though you were honest, the corrupt villain has reaped your
+      life and the city.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Como m\xE9dico, intentaste curar a tantas personas como pudiste,
+      pero el veneno letal de la corrupci\xF3n se extendi\xF3 m\xE1s r\xE1pido de
+      lo que pod\xEDas actuar, resultando en un futuro oscuro para la ciudad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: "Fuiste el \xFAltimo rayo de esperanza de la ciudad, sin embargo,
+      el corrupto logr\xF3 apagar esa luz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: El poder del veneno no fue suficiente para corromper a la sociedad.
+      Un buen esfuerzo, pero desafortunadamente, fracasaste.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: GANASTE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: HAS SIDO DERROTADO
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -8,6 +8,11 @@ using UnityEngine.UI;
 using TMPro;
 using FadoProject;
 
+using UnityEngine.Localization;
+using UnityEngine.Localization.Tables;
+using UnityEngine.Localization.Settings;
+using System.Linq;
+
 public class ShopManager : MonoBehaviour
 {
     // Managers
@@ -38,6 +43,10 @@ public class ShopManager : MonoBehaviour
     public event Action closeShopAction;
 
     public static ShopManager Instance { get; private set; }
+
+    //tabela de localização
+	public LocalizedStringTable OthersTable;
+
     void Awake()
     {
         if (Instance == null)
@@ -71,6 +80,10 @@ public class ShopManager : MonoBehaviour
 
     public void UpdateShop()
     {
+
+        string localizeMorality = LocalizationSettings.StringDatabase.GetLocalizedString("OthersTable", "moral_store");
+        string localizeInfluence = LocalizationSettings.StringDatabase.GetLocalizedString("OthersTable", "influence_store");
+
         for (int i = 0; i < 3; i++)
         {
             Card randomItemCard;
@@ -87,8 +100,8 @@ public class ShopManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             productText[i].text = productCards[i].cardName;
-            productMoralePrice[i].text = $"{productCards[i].moraleCost.ToString()} Moralidade";
-            productInfluencePrice[i].text = $"{productCards[i].influenceCost.ToString()} Influência";
+            productMoralePrice[i].text = $"{productCards[i].moraleCost.ToString()} {localizeMorality}";
+            productInfluencePrice[i].text = $"{productCards[i].influenceCost.ToString()} {localizeInfluence}";
         }
     }
 

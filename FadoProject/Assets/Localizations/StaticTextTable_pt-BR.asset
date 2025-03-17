@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StaticTextTable_pt-BR
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 5228016de1d0a4449aa128af001981c3, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 9948726185984
+    m_Localized: Sair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8757862617088
+    m_Localized: Iniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10595735326720
+    m_Localized: Abster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10656624037888
+    m_Localized: "N\xE3o Comprar Nada"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10710814445568
+    m_Localized: Voltar para Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11020433772544
+    m_Localized: Vote em quem deseja enviar para cadeia...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17879827894272
+    m_Localized: "<color=purple>Moral</color> \xE9 um par\xE2metro que define o qu\xE3o
+      ego\xEDsta voc\xEA se comporta."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18058471690240
+    m_Localized: "<color=purple>Moral</color> \xE9 um par\xE2metro que define o qu\xE3o
+      ego\xEDsta voc\xEA se comporta."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20121314283520
+    m_Localized: LOJA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20586907193344
+    m_Localized: "<color=red>Corrup\xE7\xE3o</color> \xE9 a forma de mensurar o qu\xE3o
+      voc\xEA est\xE1 disposto a sacrificar sua honestidade em troco de algo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20614526685184
+    m_Localized: "<color=blue>Influ\xEAncia</color> \xE9 um par\xE2metro que mede
+      o qu\xE3o altru\xEDsta voc\xEA \xE9, influenciando as pessoas ao seu redor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20635095552000
+    m_Localized: "<color=blue>Influ\xEAncia</color> \xE9 um par\xE2metro que mede
+      o qu\xE3o altru\xEDsta voc\xEA \xE9, influenciando as pessoas ao seu redor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1885326314246144
+    m_Localized: Rodada 1
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

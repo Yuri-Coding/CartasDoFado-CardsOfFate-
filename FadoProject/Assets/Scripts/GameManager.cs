@@ -7,6 +7,9 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Tables;
+using UnityEngine.Localization.Settings;
 
 public class GameManager : MonoBehaviour
 {
@@ -57,6 +60,9 @@ public class GameManager : MonoBehaviour
 
     // Condição de Vitória / Perda para Player.
     public EndCondition endCondition;
+
+	//tabela de localização
+	public LocalizedStringTable NotificationTable;
 
 
 	// Relacionado a Áudio
@@ -171,6 +177,23 @@ public class GameManager : MonoBehaviour
 	void InitGame() {
 		currentRound = 1;
 
+        StringTable table = LocalizationSettings.StringDatabase.GetTable("IntroTable");
+        if (table != null)
+        {
+            // Pegar todas as chaves disponíveis
+            List<string> keys = new List<string>(table.SharedData.Entries.Select(entry => entry.Key));
+
+            if (keys.Count > 0)
+            {
+                int indexString = UnityEngine.Random.Range(0, keys.Count);
+                string randomKey = keys[indexString];
+
+                // Buscar e exibir o texto localizado
+			popup.SetStateAfterPopup(LocalizationSettings.StringDatabase.GetLocalizedString("IntroTable", randomKey), 20f, GameState.AwaitAction);
+
+            }
+        }
+
         // Selecionar um texto Lore de entrada
         List<string> introductionTexts = new List<string>()
         {
@@ -181,9 +204,11 @@ public class GameManager : MonoBehaviour
             "Hoje, a mesa é palco de um jogo de segredos e conspirações. As cartas sussurram promessas de poder, mas apenas quem conhece os próprios limites escapará ileso.",
         };
 
+
+
         int index = UnityEngine.Random.Range(0, introductionTexts.Count);
 
-		popup.SetStateAfterPopup(introductionTexts[index], 20f, GameState.AwaitAction);
+		// popup.SetStateAfterPopup(introductionTexts[index], 20f, GameState.AwaitAction);
         popup.PopupClosed += SetState;
 
 		AudioManager.Instance.SetMusic(Musics.CantoDaVila);
@@ -450,9 +475,10 @@ public class GameManager : MonoBehaviour
     {
 		string voteCount;
 		voteCount = "";
+		string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("NotificationsTable", "notification_vote_count");
 		foreach(Player jugador in playerList)
 		{
-			voteCount = voteCount + $"{jugador.PlayerName} recebeu {jugador.votesReceived} voto(s)\n";
+			voteCount += string.Format(localizedText, jugador.PlayerName, jugador.votesReceived);
 		}
         popup.SetStateAfterPopup(voteCount, 120f, GameState.ShowElimination);
         popup.PopupClosed += SetState;
@@ -480,27 +506,43 @@ public class GameManager : MonoBehaviour
 	//Popup mostrando quem foi eliminado
 	private void showElimination()
 	{
-		List<string> eliminationMessage;
+		// List<string> eliminationMessage;
 		int index = 0;
 
-		eliminationMessage = new List<string> {
-            $"{playerList[mostVotedIndex].PlayerName} foi eliminado da mesa de negociações.",
-			$"{playerList[mostVotedIndex].PlayerName} foi enviado ao oblívio, deixando para trás apenas arrependimentos.",
-			$"{playerList[mostVotedIndex].PlayerName} alcançou um destino infeliz.",
-			$"{playerList[mostVotedIndex].PlayerName} teve seus gritos de desespero abafados na prisão, em meio ao fim doloroso e sofrido que encontrou, como muitos outros antes e depois dele.",
-			$"{playerList[mostVotedIndex].PlayerName} teve um fim prematuro dado a seus sonhos e esperanças.",
-			$"Neste teatro cruel, {playerList[mostVotedIndex].PlayerName} assumiu o papel de vítima em uma conspiração fatal.",
-			$"{playerList[mostVotedIndex].PlayerName} foi enviado para o além, restando apenas as memórias deixadas para trás."
+		// eliminationMessage = new List<string> {
+        //     $"{playerList[mostVotedIndex].PlayerName} foi eliminado da mesa de negociações.",
+		// 	$"{playerList[mostVotedIndex].PlayerName} foi enviado ao oblívio, deixando para trás apenas arrependimentos.",
+		// 	$"{playerList[mostVotedIndex].PlayerName} alcançou um destino infeliz.",
+		// 	$"{playerList[mostVotedIndex].PlayerName} teve seus gritos de desespero abafados na prisão, em meio ao fim doloroso e sofrido que encontrou, como muitos outros antes e depois dele.",
+		// 	$"{playerList[mostVotedIndex].PlayerName} teve um fim prematuro dado a seus sonhos e esperanças.",
+		// 	$"Neste teatro cruel, {playerList[mostVotedIndex].PlayerName} assumiu o papel de vítima em uma conspiração fatal.",
+		// 	$"{playerList[mostVotedIndex].PlayerName} foi enviado para o além, restando apenas as memórias deixadas para trás."
+		// };
+		List<string> possibleKeys = new List<string>
+		{
+			"notification_elimination_1",
+			"notification_elimination_2",
+			"notification_elimination_3",
+			"notification_elimination_4",
+			"notification_elimination_5",
+			"notification_elimination_6",
+			"notification_elimination_7",
 		};
 
-		index = UnityEngine.Random.Range(0, eliminationMessage.Count);
-		popup.SetStateAfterPopup(eliminationMessage[index], 120f, GameState.EndPhase);
+		// index = UnityEngine.Random.Range(0, eliminationMessage.Count);
+		index = UnityEngine.Random.Range(0, possibleKeys.Count);
+		string selectedKey = possibleKeys[index];
+		string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("NotificationsTable", selectedKey);
+
+		popup.SetStateAfterPopup(string.Format(localizedText, playerList[mostVotedIndex].PlayerName), 120f, GameState.EndPhase);
+		// popup.SetStateAfterPopup(eliminationMessage[index], 120f, GameState.EndPhase);
         popup.PopupClosed += SetState;
     }
 
 	public void UpdateUI()
 	{
-        roundText.text = $"Rodada {currentRound.ToString()}";
+		string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("NotificationsTable", "round_counter");
+        roundText.text = $"{localizedText} {currentRound.ToString()}";
     }
 
 	public void UpdateTensionIndicator()

@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: EndingTable_pt-BR
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: ba7fab4d9ec19fc45983f53740492b9f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: A honestidade venceu. Todos tinham a oportunidade de desviar-se
+      do bom caminho, mas ao fim, todos trabalharam em prol da paz.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Apesar de seu destino ter sido cruel, os habitantes da cidade sobreviveram
+      ao grande desafio que encararam.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: "Voc\xEA teve um papel essencial nesta grande vit\xF3ria. Mesmo
+      o trabalho n\xE3o recompensando-o por reputa\xE7\xE3o, voc\xEA seguiu a justi\xE7a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "Seus esfor\xE7os foram recompensados. A cidade prevaleceu e sobreviveu
+      ao ataque do cruel corrupto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "A estrat\xE9gia miticulosa de corrup\xE7\xE3o geraram frutos em
+      forma de destrui\xE7\xE3o. Tudo que restou na cidade foram as mem\xF3rias de
+      bons tempos, destrui\xE7\xE3o e desesperan\xE7a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Os esfor\xE7os, nem mesmo pelo poder da honestidade, foi capaz
+      de dar frutos para combater a corrup\xE7\xE3o. A corrup\xE7\xE3o dominou a
+      cidade, e a destruiu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: "Mesmo sendo uma pessoa honesta e esfor\xE7ada o corrupto ceifou
+      sua vida e de toda a cidade."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Como m\xE9dico, voc\xEA buscou curar ao m\xE1ximo as pessoas. Mas
+      o veneno letal da corrup\xE7\xE3o espalhou mais r\xE1pido, resultando no obscuro
+      futuro sem fim da cidade."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: "Voc\xEA foi o \xFAltimo raio de esperan\xE7a da cidade, no entanto
+      o corrupto teve sucesso em apagar essa luz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: "O poder do veneno n\xE3o foi suficiente para corromper uma sociedade.
+      Um bom trabalho, mas infelizmente, voc\xEA falhou."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: "VOC\xCA VENCEU"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: "VOC\xCA FOI DERROTADO"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

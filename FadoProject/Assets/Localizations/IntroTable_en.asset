@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: IntroTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 02e7282b7b8d5e641b0ace9dfffc25cb, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Welcome to Cartas do Fado. The table is set, suspicious glances
+      observe each other, seeking to find the harmful, to find a grain of gold in
+      self-sea.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: The table is set. Each glance carries a shadow of doubt and distrust,
+      while the players, hidden by secrets, prepare their cards. The night promises
+      to reveal truths - or hide lies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Welcome to Cartas do Fado, where every move can change the eternal
+      fate of the city. At the table, laughter and suspicion intertwine, but only
+      one will know the truth before everyone else. Who will be the first to fall?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: The cards are on the table, and the intentions are veiled. In a
+      game of luck and manipulation, you are surrounded by allies or disguised enemies.
+      It will be up to fate to reveal who truly deserves trust.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: Today, the table is the stage for a game of secrets and conspiracies.
+      The cards whisper promises of power, but only those who know their own limits
+      will escape unscathed.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

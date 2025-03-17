@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StaticTextTable_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 5228016de1d0a4449aa128af001981c3, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 8757862617088
+    m_Localized: Comenzar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9948726185984
+    m_Localized: Salir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10595735326720
+    m_Localized: Abstenerse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10656624037888
+    m_Localized: No Comprar Nada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10710814445568
+    m_Localized: "Volver al Men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11020433772544
+    m_Localized: "Vota a quien quieres enviar a la c\xE1rcel..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17879827894272
+    m_Localized: "<color=purple>Moral</color> es un par\xE1metro que define cu\xE1n
+      ego\xEDsta te comportas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18058471690240
+    m_Localized: "<color=purple>Moral</color> es un par\xE1metro que define cu\xE1n
+      ego\xEDsta te comportas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20121314283520
+    m_Localized: TIENDA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20586907193344
+    m_Localized: "<color=red>Corrupci\xF3n</color> es una forma de medir cu\xE1n
+      dispuesto est\xE1s a sacrificar tu honestidad a cambio de algo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20614526685184
+    m_Localized: "<color=blue>Influencia</color> es un par\xE1metro que mide cu\xE1n
+      altruista eres, influenciando a las personas a tu alrededor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20635095552000
+    m_Localized: "<color=blue>Influencia</color> es un par\xE1metro que mide cu\xE1n
+      altruista eres, influenciando a las personas a tu alrededor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1885326314246144
+    m_Localized: Ronda 1
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
