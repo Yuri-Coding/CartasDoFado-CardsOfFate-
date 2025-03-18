@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: CO_BrumaDiscordia
   m_EditorClassIdentifier: 
-  cardName: Bruma da Discordia
+  cardName: CO_BrumaDiscordia_name
   cardSprite: {fileID: 7513095154642528818, guid: c859e81962b469b4196dd3a94f2012e9, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 1
-  cardEffect: "Reduz a moralidade de todos os jogadores em 10 pontos.\\n+5 Moralidade\\n+1
-    Corrup\xE7\xE3o para todos os jogadores\\n+1 veneno para todos os jogadores"
-  cardLore: "Uma po\xE7\xE3o que, ao ser dispersada, causa confus\xE3o e desconfian\xE7a
-    entre os jogadores, enfraquecendo suas alian\xE7as."
+  cardEffect: CO_BrumaDiscordia_effect
+  cardLore: CO_BrumaDiscordia_lore
   canTarget: 1
   targetType: 5
   choice1: 

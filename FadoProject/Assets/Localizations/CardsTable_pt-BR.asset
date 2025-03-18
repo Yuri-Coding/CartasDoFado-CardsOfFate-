@@ -1,0 +1,564 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: CardsTable_pt-BR
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 65980428336df104795a2bb8c8d1aacf, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Bruma da Discordia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: "Elixir da Confus\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Elixir da praga sorrateira
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Elixir do Torpor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Ess\xEAncia da Agonia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Ess\xEAncia do Desespero"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: "\xD3leo da Devassid\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "po\xE7\xE3o da N\xE9voa Let\xE1rgica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: "po\xE7\xE3o dos amantes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: "po\xE7\xE3o do sil\xEAncio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: Amuleto da Pureza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: "Ess\xEAncia Revitalizante"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: "T\xF4nico de Vigor"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: "B\xE1lsamo de Cura Profunda"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: "P\xF3 de Carv\xE3o Ativado"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: "Ch\xE1 de Cal\xEAndula"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: "Sala de Convalescen\xE7a"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Elixir da Pureza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: "Ess\xEAncia Restauradora"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: "Infus\xE3o Purificado"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: "\xD3leo de Lavanda"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: "T\xF4nico da Sa\xFAde P\xFAblica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: Vacina Experimental
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: "Doa\xE7\xE3o de \xE1gua Pot\xE1vel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: Encontrou alimento Escasso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: Alquimista mentiroso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: Amuleto de Cura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: Assistencia aos doentes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: "Distribui\xE7\xE3o de medicamentos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: Livro de Conhecimento da Praga
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: "M\xE1scara de prote\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: Visita a parente infectado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: Soro da Calma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: "Reduz a moralidade de todos os jogadores em 10 pontos.\\n+5 Moralidade\\n+1
+      Corrup\xE7\xE3o para todos os jogadores\\n+1 veneno para todos os jogadores"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: O alvo perde a capacidade de votar por 1 turno.\n+10 Moralidade\n+1
+      veneno para o alvo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: Envenena um jogador, adicionando +3 marcadores de veneno.\n+15 Moralidade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: "O alvo n\xE3o pode votar na pr\xF3xima rodada.\\n+10 Moralidade"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: "Paralisa um jogador por 1 turno, incapaz de realizar qualquer a\xE7\xE3o.\\n+5
+      Moralidade"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: "Reduz a moralidade de um jogador em 15 pontos.\\n+5 Moralidade\\n+1
+      Corrup\xE7\xE3o para o alvo\\n+1 veneno para o alvo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: "Adiciona +1 Corrup\xE7\xE3o para todos os jogadores.\\n+10 Moralidade\\n+1
+      veneno para todos os jogadores"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: "Paralisa dois jogadores no pr\xF3ximo turno.\\n+10 Moralidade\\n+1
+      Corrup\xE7\xE3o para o alvo\\n+1 veneno para os alvos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: "For\xE7a o voto do alvo a ser o mesmo que o seu.\\n+5 Moralidade\\n+1
+      veneno para o alvo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: Silencia um jogador neste turno\n+10 Moralidade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: "Remove 2 marcadores de Corrup\xE7\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: Remove 1 marcador de Veneno de todos os jogadores.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: Concede imunidade ao veneno para o jogador que utilizar, por 2 turnos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: "Remove 3 marcadores de Veneno de um jogador alvo.\\n-5 Influ\xEAncia\\n+10
+      Moralidade"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: "Remove todos os marcadores de Veneno de um jogador e aumenta 5
+      pontos de Moralidade do alvo.\\n-10 Influ\xEAncia\\n+10 Moralidade"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: "Remove 1 marcador de Veneno e aumenta 10 pontos de Moralidade ao
+      alvo.\\nSe silencia por 1 turno\\n+5 Influ\xEAncia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: "Pula a vota\xE7\xE3o nesta rodada e reduz 1 marcador de Veneno
+      de todos os jogadores.\\n-10 Influ\xEAncia\\n+10 Moralidade"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: "Anula todos os debuffs no alvo e reduz 1 Corrup\xE7\xE3o do alvo.\\n+5
+      Moralidade"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52
+    m_Localized: Remove 2 marcadores de Veneno de um jogador e concede imunidade
+      ao veneno por 1 turno.\n+10 Moralidade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: "Remove 1 marcador de Veneno de todos os jogadores e aumenta 5 pontos
+      de Moralidade de todos.\\n-5 Moralidade\\n+10 Influ\xEAncia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: "Reduz em 4 os marcadores de veneno e concede imunidade a um jogador
+      pelos pr\xF3ximos 2 turnos.\\n-5 Moralidade\\n+10 Influ\xEAncia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: "Reduz 1 marcador de Veneno de todos os jogadores.\\nSe silencia
+      no pr\xF3ximo turno\\n+5 Moralidade"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: "Remove 1 marcador de Veneno do alvo e concede imunidade ao veneno
+      por 2 turnos.\\n+1 Corrup\xE7\xE3o ao alvo\\n+5 Influ\xEAncia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: "Op\xE7\xE3o 1: +10 Influ\xEAncia +10 Moralidade -1 Corrup\xE7\xE3o\\nOp\xE7\xE3o
+      2: +5 Influ\xEAncia, +15 Moralidade, +1 Corrup\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58
+    m_Localized: "Op\xE7\xE3o 1:+10 Moralidade  +5 Influ\xEAncia\\nOp\xE7\xE3o 2:+5
+      Influ\xEAncia +15 Moralidade +1 Corrup\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59
+    m_Localized: "Op\xE7\xE3o 1: +20 Influ\xEAncia +1 Corrup\xE7\xE3o\\nOp\xE7\xE3o
+      2: +15 Moralidade -1 Corrup\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60
+    m_Localized: "Op\xE7\xE3o 1: +5 Influ\xEAncia -2 Veneno\\nOp\xE7\xE3o 2: +10
+      Moralidade -1 Corrup\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: "Op\xE7\xE3o 1: +10 Influ\xEAncia +15 Moralidade\\nOp\xE7\xE3o 2:
+      +5 Influ\xEAncia +20 Moralidade +1 Corrup\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: "Op\xE7\xE3o 1: +15 Influ\xEAncia +5 Moralidade -1 Corrup\xE7\xE3o\\nOp\xE7\xE3o
+      2: +5 Influ\xEAncia +25 Moralidade +1 Corrup\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: "Op\xE7\xE3o 1: +10 Influ\xEAncia +1 Corrup\xE7\xE3o\\nOp\xE7\xE3o
+      2: +15 Moralidade -1 Corrup\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64
+    m_Localized: "Op\xE7\xE3o 1: +15 Moralidade +5 Influ\xEAncia +1 Veneno para voc\xEA\\nOp\xE7\xE3o
+      2: +10 Moralidade +5 Influ\xEAncia +1 Corrup\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: "Op\xE7\xE3o 1: +10 Influ\xEAncia +5 Moralidade +2 Veneno\\nOp\xE7\xE3o
+      2: +5 Influ\xEAncia +15 Moralidade"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: "Op\xE7\xE3o 1: +5 Moralidade -2 Veneno\\nOp\xE7\xE3o2: +10 Moralidade
+      -1 Corrup\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: "Uma po\xE7\xE3o que, ao ser dispersada, causa confus\xE3o e desconfian\xE7a
+      entre os jogadores, enfraquecendo suas alian\xE7as."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68
+    m_Localized: "Feito com cogumelos raros, esta po\xE7\xE3o nubla a mente e deixa
+      o alvo vulner\xE1vel, incapaz de distinguir verdade de mentira."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69
+    m_Localized: "Extra\xEDda do cora\xE7\xE3o de uma flor venenosa, esta po\xE7\xE3o
+      induz febres discretas e mortais que corroem lentamente a vitalidade."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70
+    m_Localized: "Feito com ervas que induzem sonol\xEAncia, este elixir faz com
+      que o alvo perca a pr\xF3xima vota\xE7\xE3o, ficando incapaz de votar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71
+    m_Localized: Um frasco de cor negra que, ao ser ingerido, desencadeia dores intensas
+      e paralisantes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72
+    m_Localized: "Uma subst\xE2ncia que causa profunda tristeza e perda de esperan\xE7a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73
+    m_Localized: "Uma subst\xE2ncia que causa uma mudan\xE7a sutil na percep\xE7\xE3o
+      dos jogadores, tornando-os mais propensos a se corromperem."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74
+    m_Localized: "Uma po\xE7\xE3o feita de ervas raras e escuras que, quando inalada,
+      deixa os sentidos embotados e os movimentos pesados."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75
+    m_Localized: "Criado com ervas alucin\xF3genas do novo continente, usadas em
+      rituais de casamento e lua de mel, faz com que o alvo se enfatue por voc\xEA
+      e concorde com tudo que \xE9 dito por seu \\amante\\\".\""
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76
+    m_Localized: "Criada a partir de esporos de um cogumelo encontrado no oriente,
+      atinge principalmente a garganta e o sistema respirat\xF3rio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77
+    m_Localized: "Um amuleto encantado, criado por antigos curandeiros, que protege
+      contra a Corrup\xE7\xE3o. Sua luz brilha intensamente ao absorver os males
+      do cora\xE7\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78
+    m_Localized: "Um frasco contendo uma solu\xE7\xE3o cristalina, criada a partir
+      de ervas raras e \xE1guas puras. Quando utilizada, revitaliza o esp\xEDrito
+      e remove as toxinas do corpo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79
+    m_Localized: "Uma po\xE7\xE3o vibrante que fortalece o corpo e a mente, criando
+      uma barreira tempor\xE1ria contra os efeitos nocivos do veneno."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80
+    m_Localized: "Um b\xE1lsamo raro e caro que alivia significativamente o sofrimento
+      de um paciente espec\xEDfico."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81
+    m_Localized: "Um rem\xE9dio popular usado para purgar venenos e toxinas do corpo
+      de maneira r\xE1pida, mas custosa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82
+    m_Localized: "Um ch\xE1 calmante, preparado com ervas raras, que purifica a mente
+      e o corpo, restaurando a paz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83
+    m_Localized: "Uma sala isolada onde os doentes podem repousar, evitando a contamina\xE7\xE3o
+      dos demais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84
+    m_Localized: "Uma mistura rara, composta por ra\xEDzes e folhas purificadoras,
+      que clarifica a mente e o corpo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85
+    m_Localized: "Um t\xF4nico valioso que restaura a vitalidade e imuniza temporariamente
+      contra a praga."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86
+    m_Localized: Uma mistura de ervas purificadoras preparada para expurgar impurezas
+      do corpo e restaurar a paz.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87
+    m_Localized: "Um \xF3leo calmante, aplicado na pele para reduzir o impacto de
+      venenos e dar resist\xEAncia ao paciente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88
+    m_Localized: "Um elixir revitalizante que os m\xE9dicos vitorianos usam para
+      fortalecer o corpo contra as doen\xE7as."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89
+    m_Localized: "Uma inje\xE7\xE3o ousada e arriscada que promete imunidade tempor\xE1ria,
+      mas com poss\xEDveis efeitos adversos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90
+    m_Localized: "Voc\xEA tem acesso a uma pequena reserva de \xE1gua pot\xE1vel.
+      Muitos moradores precisam dela para sobreviver."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 91
+    m_Localized: "Em meio \xE0 escassez de alimentos, voc\xEA encontrou um pequeno
+      suprimento que poderia alimentar sua fam\xEDlia por alguns dias. No entanto,
+      seu vizinho est\xE1 \xE0 beira da fome."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 92
+    m_Localized: "O famoso alquimista Arvid lhe oferece uma oportunidade lucrativa
+      para vender po\xE7\xF5es falsas aos moradores. A oferta \xE9 tentadora, mas
+      implica enganar a comunidade."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93
+    m_Localized: "Voc\xEA encontra um amuleto raro que acalma a praga. Pode us\xE1-lo
+      para se curar ou oferec\xEA-lo a um aliado."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94
+    m_Localized: "V\xE1rios habitantes est\xE3o adoecendo rapidamente. Voc\xEA se
+      voluntaria para cuidar dos enfermos, mesmo correndo risco?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95
+    m_Localized: "Voc\xEA possui uma quantidade limitada de rem\xE9dios contra a
+      peste. Poderia distribu\xED-los de forma justa entre os necessitados."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96
+    m_Localized: "Voc\xEA encontra um livro com informa\xE7\xF5es importantes sobre
+      a praga. Pode estud\xE1-lo sozinho ou compartilh\xE1-lo com outras pessoas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97
+    m_Localized: "Voc\xEA conseguiu uma m\xE1scara que protege contra a infec\xE7\xE3o.
+      Um amigo sem m\xE1scara est\xE1 ficando cada vez mais doente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98
+    m_Localized: "Um parente pr\xF3ximo foi infectado pela peste e est\xE1 isolado.
+      Voc\xEA tem a escolha de visit\xE1-lo, correndo o risco de se infectar, ou
+      se proteger e evitar o contato."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99
+    m_Localized: "Um soro que reduz o veneno e a Corrup\xE7\xE3o. Voc\xEA pode se
+      beneficiar dele ou do\xE1-lo para que um aliado possa se proteger."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100
+    m_Localized: "Distribuir a \xE1gua para a comunidade."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101
+    m_Localized: Dividir o alimento com seu vizinho.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102
+    m_Localized: "Aceitar a oferta de Arvid e vender as po\xE7\xF5es falsas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103
+    m_Localized: Usar o amuleto para se curar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104
+    m_Localized: Ajudar os doentes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105
+    m_Localized: Distribuir igualmente entre os necessitados.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106
+    m_Localized: Manter o conhecimento para si.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107
+    m_Localized: "Dar sua m\xE1scara ao amigo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108
+    m_Localized: "Visitar o parente e confort\xE1-lo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109
+    m_Localized: Usar o soro.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110
+    m_Localized: "Guardar a \xE1gua para voc\xEA e sua fam\xEDlia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 111
+    m_Localized: "Guardar tudo para voc\xEA."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112
+    m_Localized: Recusar a oferta e denunciar Arvid aos moradores.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 113
+    m_Localized: Oferecer o amuleto a um aliado mais doente.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 114
+    m_Localized: Proteger-se e evitar contato.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 115
+    m_Localized: "Guardar uma por\xE7\xE3o maior para si mesmo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 116
+    m_Localized: Compartilhar o conhecimento com os outros.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 117
+    m_Localized: "Usar a m\xE1scara e se proteger."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 118
+    m_Localized: Ficar seguro e evitar o contato.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 119
+    m_Localized: Oferecer a um aliado.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

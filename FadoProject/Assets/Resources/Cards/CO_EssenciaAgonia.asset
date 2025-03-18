@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: CO_EssenciaAgonia
   m_EditorClassIdentifier: 
-  cardName: "Ess\xEAncia da Agonia"
+  cardName: CO_EssenciaAgonia_name
   cardSprite: {fileID: 7513095154642528818, guid: c859e81962b469b4196dd3a94f2012e9, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 1
-  cardEffect: "Paralisa um jogador por 1 turno, incapaz de realizar qualquer a\xE7\xE3o.\\n+5
-    Moralidade"
-  cardLore: Um frasco de cor negra que, ao ser ingerido, desencadeia dores intensas
-    e paralisantes.
+  cardEffect: CO_EssenciaAgonia_effect
+  cardLore: CO_EssenciaAgonia_lore
   canTarget: 1
   targetType: 1
   choice1: 

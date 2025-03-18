@@ -46,6 +46,8 @@ public class ShopManager : MonoBehaviour
 
     //tabela de localização
 	public LocalizedStringTable OthersTable;
+    public LocalizedStringTable CardsTable;
+
 
     void Awake()
     {
@@ -83,7 +85,7 @@ public class ShopManager : MonoBehaviour
 
         string localizeMorality = LocalizationSettings.StringDatabase.GetLocalizedString("OthersTable", "moral_store");
         string localizeInfluence = LocalizationSettings.StringDatabase.GetLocalizedString("OthersTable", "influence_store");
-
+        string localizedCardName = "";
         for (int i = 0; i < 3; i++)
         {
             Card randomItemCard;
@@ -99,7 +101,8 @@ public class ShopManager : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            productText[i].text = productCards[i].cardName;
+            localizedCardName = LocalizationSettings.StringDatabase.GetLocalizedString("CardsTable", productCards[i].cardName);
+            productText[i].text = localizedCardName;
             productMoralePrice[i].text = $"{productCards[i].moraleCost.ToString()} {localizeMorality}";
             productInfluencePrice[i].text = $"{productCards[i].influenceCost.ToString()} {localizeInfluence}";
         }
@@ -139,6 +142,8 @@ public class ShopManager : MonoBehaviour
 
     public string GetCardInfo(int index)
     {
-        return productCards[index].cardEffect;
+        string localizeEffect = LocalizationSettings.StringDatabase.GetLocalizedString("CardsTable", productCards[index].cardEffect);
+
+        return localizeEffect;
     }
 }

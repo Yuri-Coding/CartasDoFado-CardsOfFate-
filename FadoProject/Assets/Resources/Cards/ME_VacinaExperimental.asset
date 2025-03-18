@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: ME_VacinaExperimental
   m_EditorClassIdentifier: 
-  cardName: Vacina Experimental
+  cardName: ME_VacinaExperiemental_name
   cardSprite: {fileID: -4136251949656251382, guid: 635c5083d26feea45954eee8fb63faf8, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: "Remove 1 marcador de Veneno do alvo e concede imunidade ao veneno
-    por 2 turnos.\\n+1 Corrup\xE7\xE3o ao alvo\\n+5 Influ\xEAncia"
-  cardLore: "Uma inje\xE7\xE3o ousada e arriscada que promete imunidade tempor\xE1ria,
-    mas com poss\xEDveis efeitos adversos."
+  cardEffect: ME_VacinaExperiemental_effect
+  cardLore: ME_VacinaExperiemental_lore
   canTarget: 1
   targetType: 1
   choice1: 

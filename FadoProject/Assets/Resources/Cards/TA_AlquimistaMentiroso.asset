@@ -12,19 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: TA_AlquimistaMentiroso
   m_EditorClassIdentifier: 
-  cardName: Alquimista mentiroso
+  cardName: TA_AlquimistaMentiroso_name
   cardSprite: {fileID: 3008048712614416305, guid: 909f9697d69364549ac5275ae12bc86d, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 0
-  cardEffect: "Op\xE7\xE3o 1: +20 Influ\xEAncia +1 Corrup\xE7\xE3o\\nOp\xE7\xE3o
-    2: +15 Moralidade -1 Corrup\xE7\xE3o"
-  cardLore: " O famoso alquimista Arvid lhe oferece uma oportunidade lucrativa para
-    vender po\xE7\xF5es falsas aos moradores. A oferta \xE9 tentadora, mas implica
-    enganar a comunidade."
+  cardEffect: TA_AlquimistaMentiroso_effect
+  cardLore: TA_AlquimistaMentiroso_lore
   canTarget: 0
   targetType: 0
-  choice1: "Aceitar a oferta de Arvid e vender as po\xE7\xF5es falsas."
-  choice2: Recusar a oferta e denunciar Arvid aos moradores.
+  choice1: TA_AlquimistaMentiroso_choice_1
+  choice2: TA_AlquimistaMentiroso_choice_2
   moraleCost: 0
   influenceCost: 0
   targetEffects: []

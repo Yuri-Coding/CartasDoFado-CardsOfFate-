@@ -12,18 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: TA_LivroDaPraga
   m_EditorClassIdentifier: 
-  cardName: Livro de Conhecimento da Praga
+  cardName: TA_LivroDaPraga_name
   cardSprite: {fileID: 3008048712614416305, guid: 909f9697d69364549ac5275ae12bc86d, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 0
-  cardEffect: "Op\xE7\xE3o 1: +10 Influ\xEAncia +1 Corrup\xE7\xE3o\\nOp\xE7\xE3o
-    2: +15 Moralidade -1 Corrup\xE7\xE3o"
-  cardLore: "Voc\xEA encontra um livro com informa\xE7\xF5es importantes sobre a
-    praga. Pode estud\xE1-lo sozinho ou compartilh\xE1-lo com outras pessoas."
+  cardEffect: TA_LivroDaPraga_effect
+  cardLore: TA_LivroDaPraga_lore
   canTarget: 0
   targetType: 0
-  choice1: Manter o conhecimento para si.
-  choice2: 'Compartilhar o conhecimento com os outros. '
+  choice1: TA_LivroDaPraga_choice_1
+  choice2: TA_LivroDaPraga_choice_2
   moraleCost: 0
   influenceCost: 0
   targetEffects: []

@@ -68,6 +68,8 @@ public class Popup : MonoBehaviour
     //tabelas de localização
     public LocalizedStringTable EndingTable;
 	public LocalizedStringTable NotificationTable;
+    public LocalizedStringTable CardsTable;
+
 
     public event Action<GameState> PopupClosed;
 
@@ -221,11 +223,15 @@ public class Popup : MonoBehaviour
     // ===============================================================
     public void PopupChoice(Card cardData)
     {
+        string localizedChoice1 = LocalizationSettings.StringDatabase.GetLocalizedString("CardsTable", cardData.choice1);
+        string localizedChoice2 = LocalizationSettings.StringDatabase.GetLocalizedString("CardsTable", cardData.choice2);
+        string localizedLore = LocalizationSettings.StringDatabase.GetLocalizedString("CardsTable", cardData.cardLore);
+
         currentCard = cardData;
         choiceAnim.Play("fadein");
-        choiceContext.text = currentCard.cardLore;
-        choiceText1.text = currentCard.choice1;
-        choiceText2.text = currentCard.choice2;
+        choiceContext.text = localizedLore;
+        choiceText1.text = localizedChoice1;
+        choiceText2.text = localizedChoice2;
 
         choice1Button.onClick.AddListener(() => OnChoiceMade(1));
         choice2Button.onClick.AddListener(() => OnChoiceMade(2));

@@ -12,18 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: TA_AguaPotavel
   m_EditorClassIdentifier: 
-  cardName: "Doa\xE7\xE3o de \xC1gua Pot\xE1vel"
+  cardName: TA_AguaPotavel_name
   cardSprite: {fileID: 3008048712614416305, guid: 909f9697d69364549ac5275ae12bc86d, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 0
-  cardEffect: "Op\xE7\xE3o 1: +10 Influ\xEAncia +10 Moralidade -1 Corrup\xE7\xE3o\\nOp\xE7\xE3o
-    2: +5 Influ\xEAncia, +15 Moralidade, +1 Corrup\xE7\xE3o"
-  cardLore: "Voc\xEA tem acesso a uma pequena reserva de \xE1gua pot\xE1vel. Muitos
-    moradores precisam dela para sobreviver."
+  cardEffect: TA_AguaPotavel_effect
+  cardLore: TA_AguaPotavel_lore
   canTarget: 0
   targetType: 0
-  choice1: "Distribuir a \xE1gua para a comunidade."
-  choice2: "Guardar a \xE1gua para voc\xEA e sua fam\xEDlia."
+  choice1: TA_AguaPotavel_choice_1
+  choice2: TA_AguaPotavel_choice_2
   moraleCost: 0
   influenceCost: 0
   targetEffects: []

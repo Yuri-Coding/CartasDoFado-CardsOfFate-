@@ -12,18 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: TA_Amuleto
   m_EditorClassIdentifier: 
-  cardName: Amuleto de Cura
+  cardName: TA_Amuleto_name
   cardSprite: {fileID: 3008048712614416305, guid: 909f9697d69364549ac5275ae12bc86d, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 0
-  cardEffect: "Op\xE7\xE3o 1: +5 Influ\xEAncia -2 Veneno/nOp\xE7\xE3o 2: +10 Moralidade
-    -1 Corrup\xE7\xE3o"
-  cardLore: "Voc\xEA encontra um amuleto raro que acalma a praga. Pode us\xE1-lo
-    para se curar ou oferec\xEA-lo a um aliado."
+  cardEffect: TA_Amuleto_effect
+  cardLore: TA_Amuleto_lore
   canTarget: 0
   targetType: 0
-  choice1: Usar o amuleto para se curar.
-  choice2: Oferecer o amuleto a um aliado mais doente.
+  choice1: TA_Amuleto_choice_1
+  choice2: TA_Amuleto_choice_2
   moraleCost: 0
   influenceCost: 0
   targetEffects: []

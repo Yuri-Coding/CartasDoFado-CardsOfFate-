@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: ME_ChaCalendula
   m_EditorClassIdentifier: 
-  cardName: "Ch\xE1 de Cal\xEAndula"
+  cardName: ME_ChaDeCalendula_name
   cardSprite: {fileID: -4136251949656251382, guid: 635c5083d26feea45954eee8fb63faf8, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: "Remove 1 marcador de Veneno e aumenta 10 pontos de Moralidade ao alvo.\\nSe
-    silencia por 1 turno\\n+5 Influ\xEAncia"
-  cardLore: "Um ch\xE1 calmante, preparado com ervas raras, que purifica a mente
-    e o corpo, restaurando a paz."
+  cardEffect: ME_ChaDeCalendula_effect
+  cardLore: ME_ChaDeCalendula_lore
   canTarget: 1
   targetType: 1
   choice1: 

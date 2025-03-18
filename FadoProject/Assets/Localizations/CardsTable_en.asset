@@ -1,0 +1,560 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: CardsTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 65980428336df104795a2bb8c8d1aacf, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Mist of Discord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Elixir of Confusion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Elixir of the Sneaky Plague
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Elixir of Torpor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: Essence of Agony
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: Essence of Despair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Oil of Debauchery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Potion of Lethargic Mist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Potion of Lovers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Potion of Silence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: Amulet of Purity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: Revitalizing Essence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: Tonic of Vigor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: Balm of Deep Healing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Activated Charcoal Powder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Calendula Tea
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Convalescence Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Elixir of Purity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: Restorative Essence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: Purifying Infusion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: Lavender Oil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: Public Health Tonic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: Experimental Vaccine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: Donation of Potable Water
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: Found Scarce Food
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: Liar Alchemist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: Healing Amulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: Assistance to the Sick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: Distribution of Medicines
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: Book of Plague Knowledge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: Protective Mask
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: Visit to an Infected Relative
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: Serum of Calm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: Reduces the morality of all players by 10 points.\n+5 Morale\n+1
+      Corruption for all players\n+1 poison for all players
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: The target loses the ability to vote for 1 turn.\n+10 Morale\n+1
+      poison for the target
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: Poisons a player, adding +3 poison markers.\n+15 Morale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: The target cannot vote in the next round.\n+10 Morale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: Paralyzes a player for 1 turn, unable to perform any action.\n+5
+      Morale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: Reduces a player's morality by 15 points.\n+5 Morale\n+1 Corruption
+      for the target\n+1 poison for the target
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: Adds +1 Corruption to all players.\n+10 Morale\n+1 poison for all
+      players
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: Paralyzes two players in the next turn.\n+10 Morale\n+1 Corruption
+      for the target\n+1 poison for the targets
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: Forces the target's vote to be the same as yours.\n+5 Morale\n+1
+      poison for the target
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: Silences a player this turn.\n+10 Morale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: Removes 2 Corruption markers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: Removes 1 poison marker from all players.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: Grants immunity to poison for the player who uses it, for 2 turns.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: Removes 3 poison markers from a target player.\n-5 Influence\n+10
+      Morale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: Removes all poison markers from a player and increases the target's
+      Morale by 5 points.\n-10 Influence\n+10 Morale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: Removes 1 poison marker and increases the target's Morale by 10
+      points.\nSilences for 1 turn\n+5 Influence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: Skips the vote this round and reduces 1 poison marker from all players.\n-10
+      Influence\n+10 Morale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: Nullifies all debuffs on the target and reduces 1 Corruption from
+      the target.\n+5 Morale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52
+    m_Localized: Removes 2 poison markers from a player and grants immunity to poison
+      for 1 turn.\n+10 Morale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: Removes 1 poison marker from all players and increases everyone's
+      Morale by 5 points.\n-5 Morale\n+10 Influence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Reduces 4 poison markers and grants immunity to a player for the
+      next 2 turns.\n-5 Morale\n+10 Influence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: Reduces 1 poison marker from all players.\nSilences in the next
+      turn\n+5 Morale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 56
+    m_Localized: Removes 1 poison marker from the target and grants immunity to poison
+      for 2 turns.\n+1 Corruption to the target\n+5 Influence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: 'Option 1: +10 Influence +10 Morale -1 Corruption\nOption 2: +5
+      Influence, +15 Morale, +1 Corruption'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 58
+    m_Localized: 'Option 1: +10 Morale +5 Influence\nOption 2: +5 Influence +15 Morale
+      +1 Corruption'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59
+    m_Localized: 'Option 1: +20 Influence +1 Corruption\nOption 2: +15 Morale -1
+      Corruption'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60
+    m_Localized: 'Option 1: +5 Influence -2 Poison\nOption 2: +10 Morale -1 Corruption'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 61
+    m_Localized: 'Option 1: +10 Influence +15 Morale\nOption 2: +5 Influence +20
+      Morale +1 Corruption'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62
+    m_Localized: 'Option 1: +15 Influence +5 Morale -1 Corruption\nOption 2: +5 Influence
+      +25 Morale +1 Corruption'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63
+    m_Localized: 'Option 1: +10 Influence +1 Corruption\nOption 2: +15 Morale -1
+      Corruption'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64
+    m_Localized: 'Option 1: +15 Morale +5 Influence +1 Poison for you\nOption 2:
+      +10 Morale +5 Influence +1 Corruption'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 65
+    m_Localized: 'Option 1: +10 Influence +5 Morale +2 Poison\nOption 2: +5 Influence
+      +15 Morale'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 66
+    m_Localized: 'Option 1: +5 Morale -2 Poison\nOption 2: +10 Morale -1 Corruption'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67
+    m_Localized: A potion that, when dispersed, causes confusion and distrust among
+      players, weakening their alliances.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68
+    m_Localized: Made with rare mushrooms, this potion clouds the mind and leaves
+      the target vulnerable, unable to distinguish truth from lies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69
+    m_Localized: Extracted from the heart of a poisonous flower, this potion induces
+      subtle and deadly fevers that slowly corrode vitality.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 70
+    m_Localized: Made with herbs that induce drowsiness, this elixir causes the target
+      to miss the next vote, rendering them unable to vote.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71
+    m_Localized: A black vial that, when ingested, triggers intense and paralyzing
+      pain.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72
+    m_Localized: A substance that causes deep sadness and loss of hope.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73
+    m_Localized: A substance that causes a subtle shift in players' perception, making
+      them more prone to corruption.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74
+    m_Localized: A potion made from rare and dark herbs that, when inhaled, dulls
+      the senses and makes movements heavy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 75
+    m_Localized: Created with hallucinogenic herbs from the new continent, used in
+      wedding and honeymoon rituals, it makes the target infatuated with you and
+      agree with everything said by their \lover\"."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76
+    m_Localized: Created from spores of a mushroom found in the east, it primarily
+      affects the throat and respiratory system.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77
+    m_Localized: An enchanted amulet, created by ancient healers, that protects against
+      Corruption. Its light shines brightly as it absorbs the evils of the heart.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78
+    m_Localized: A vial containing a crystalline solution, created from rare herbs
+      and pure waters. When used, it revitalizes the spirit and removes toxins from
+      the body.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79
+    m_Localized: A vibrant potion that strengthens the body and mind, creating a
+      temporary barrier against the harmful effects of poison.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 80
+    m_Localized: A rare and expensive balm that significantly alleviates the suffering
+      of a specific patient.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81
+    m_Localized: A popular remedy used to quickly purge poisons and toxins from the
+      body, but at a cost.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 82
+    m_Localized: A calming tea, prepared with rare herbs, that purifies the mind
+      and body, restoring peace.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83
+    m_Localized: An isolated room where the sick can rest, avoiding contamination
+      of others.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84
+    m_Localized: A rare mixture, composed of purifying roots and leaves, that clarifies
+      the mind and body.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85
+    m_Localized: A valuable tonic that restores vitality and temporarily immunizes
+      against the plague.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86
+    m_Localized: A mixture of purifying herbs prepared to expel impurities from the
+      body and restore peace.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87
+    m_Localized: A calming oil, applied to the skin to reduce the impact of poisons
+      and give resistance to the patient.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88
+    m_Localized: A revitalizing elixir that Victorian doctors use to strengthen the
+      body against diseases.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89
+    m_Localized: A bold and risky injection that promises temporary immunity, but
+      with possible side effects.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90
+    m_Localized: You have access to a small reserve of potable water. Many residents
+      need it to survive.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 91
+    m_Localized: Amid food scarcity, you found a small supply that could feed your
+      family for a few days. However, your neighbor is on the brink of starvation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 92
+    m_Localized: The famous alchemist Arvid offers you a lucrative opportunity to
+      sell fake potions to the residents. The offer is tempting, but it involves
+      deceiving the community.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93
+    m_Localized: You find a rare amulet that soothes the plague. You can use it to
+      heal yourself or offer it to an ally.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94
+    m_Localized: Several inhabitants are falling ill rapidly. You volunteer to care
+      for the sick, even at risk?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95
+    m_Localized: You have a limited amount of plague remedies. You could distribute
+      them fairly among those in need.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96
+    m_Localized: You find a book with important information about the plague. You
+      can study it alone or share it with others.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97
+    m_Localized: You obtained a mask that protects against infection. A friend without
+      a mask is getting sicker.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98
+    m_Localized: A close relative has been infected by the plague and is isolated.
+      You have the choice to visit them, risking infection, or protect yourself and
+      avoid contact.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99
+    m_Localized: A serum that reduces poison and Corruption. You can benefit from
+      it or donate it so an ally can protect themselves.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100
+    m_Localized: Distribute the water to the community.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101
+    m_Localized: Share the food with your neighbor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102
+    m_Localized: Accept Arvid's offer and sell the fake potions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103
+    m_Localized: Use the amulet to heal yourself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104
+    m_Localized: Help the sick.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105
+    m_Localized: Distribute equally among the needy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106
+    m_Localized: Keep the knowledge to yourself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107
+    m_Localized: Give your mask to the friend.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 108
+    m_Localized: Visit the relative and comfort them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109
+    m_Localized: Use the serum.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110
+    m_Localized: Keep the water for yourself and your family.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 111
+    m_Localized: Keep everything for yourself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 112
+    m_Localized: Refuse the offer and denounce Arvid to the residents.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 113
+    m_Localized: Offer the amulet to a sicker ally.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 114
+    m_Localized: Protect yourself and avoid contact.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 115
+    m_Localized: Keep a larger portion for yourself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 116
+    m_Localized: Share the knowledge with others.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 117
+    m_Localized: Use the mask and protect yourself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 118
+    m_Localized: Stay safe and avoid contact.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 119
+    m_Localized: Offer it to an ally.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

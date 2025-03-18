@@ -12,13 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: IT_Amuleto_da_Pureza
   m_EditorClassIdentifier: 
-  cardName: Amuleto da Pureza
+  cardName: IT_AmuletoDaPureza_name
   cardSprite: {fileID: 521728796410935857, guid: 6079e39da75da284c972a6bf9506276b, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 3
-  cardEffect: "Remove 2 marcadores de Corrup\xE7\xE3o."
-  cardLore: "Um amuleto encantado, criado por antigos curandeiros, que protege contra
-    a corrup\xE7\xE3o. Sua luz brilha intensamente ao absorver os males do cora\xE7\xE3o."
+  cardEffect: IT_AmuletoDaPureza_effect
+  cardLore: IT_AmuletoDaPureza_lore
   canTarget: 0
   targetType: 0
   choice1: 

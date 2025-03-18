@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: ME_TonicoSaude
   m_EditorClassIdentifier: 
-  cardName: "T\xF4nico da Sa\xFAde P\xFAblica"
+  cardName: ME_TonicoSaude_name
   cardSprite: {fileID: -4136251949656251382, guid: 635c5083d26feea45954eee8fb63faf8, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: "Reduz 1 marcador de Veneno de todos os jogadores.\\nSe silencia no
-    pr\xF3ximo turno\\n+5 Moralidade"
-  cardLore: "Um elixir revitalizante que os m\xE9dicos vitorianos usam para fortalecer
-    o corpo contra as doen\xE7as."
+  cardEffect: ME_TonicoSaude_effect
+  cardLore: ME_TonicoSaude_lore
   canTarget: 1
   targetType: 5
   choice1: 

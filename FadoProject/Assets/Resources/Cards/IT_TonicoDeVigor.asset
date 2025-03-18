@@ -12,13 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: IT_TonicoDeVigor
   m_EditorClassIdentifier: 
-  cardName: "T\xF4nico de Vigor"
+  cardName: IT_TonicoDeVigor_name
   cardSprite: {fileID: 521728796410935857, guid: 6079e39da75da284c972a6bf9506276b, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 3
-  cardEffect: Concede imunidade ao veneno para o jogador que utilizar, por 2 turnos.
-  cardLore: "Uma po\xE7\xE3o vibrante que fortalece o corpo e a mente, criando uma
-    barreira tempor\xE1ria contra os efeitos nocivos do veneno. "
+  cardEffect: IT_TonicoDeVigor_effect
+  cardLore: IT_TonicoDeVigor_lore
   canTarget: 0
   targetType: 0
   choice1: 

@@ -12,19 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: TA_AlimentoEscasso
   m_EditorClassIdentifier: 
-  cardName: Encontrou alimento Escasso
+  cardName: TA_AlimentoEscasso_name
   cardSprite: {fileID: 3008048712614416305, guid: 909f9697d69364549ac5275ae12bc86d, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 0
-  cardEffect: "Op\xE7\xE3o 1:+10 Moralidade  +5 Influ\xEAncia\\nOp\xE7\xE3o 2:+5
-    Influ\xEAncia +15 Moralidade +1 Corrup\xE7\xE3o"
-  cardLore: "Em meio \xE0 escassez de alimentos, voc\xEA encontrou um pequeno suprimento
-    que poderia alimentar sua fam\xEDlia por alguns dias. No entanto, seu vizinho
-    est\xE1 \xE0 beira da fome."
+  cardEffect: TA_AlimentoEscasso_effect
+  cardLore: TA_AlimentoEscasso_lore
   canTarget: 0
   targetType: 0
-  choice1: 'Dividir o alimento com seu vizinho. '
-  choice2: "Guardar tudo para voc\xEA."
+  choice1: TA_AlimentoEscasso_choice_1
+  choice2: TA_AlimentoEscasso_choice_2
   moraleCost: 0
   influenceCost: 0
   targetEffects: []

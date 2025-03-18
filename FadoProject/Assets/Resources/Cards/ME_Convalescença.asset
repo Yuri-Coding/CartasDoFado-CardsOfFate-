@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: "ME_Convalescen\xE7a"
   m_EditorClassIdentifier: 
-  cardName: "Sala de Convalescen\xE7a"
+  cardName: ME_Convalescencia_name
   cardSprite: {fileID: -4136251949656251382, guid: 635c5083d26feea45954eee8fb63faf8, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: "Pula a vota\xE7\xE3o nesta rodada e reduz 1 marcador de Veneno de
-    todos os jogadores.\\n-10 Influ\xEAncia\\n+10 Moralidade"
-  cardLore: "Uma sala isolada onde os doentes podem repousar, evitando a contamina\xE7\xE3o
-    dos demais."
+  cardEffect: ME_Convalescencia_effect
+  cardLore: ME_Convalescencia_lore
   canTarget: 1
   targetType: 5
   choice1: 

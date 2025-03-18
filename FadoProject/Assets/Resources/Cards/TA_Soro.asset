@@ -12,18 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: TA_Soro
   m_EditorClassIdentifier: 
-  cardName: Soro da Calma
+  cardName: TA_Soro_name
   cardSprite: {fileID: 3008048712614416305, guid: 909f9697d69364549ac5275ae12bc86d, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 0
-  cardEffect: "Op\xE7\xE3o 1: +5 Moralidade -2 Veneno\\nOp\xE7\xE3o2: +10 Moralidade
-    -1 Corrup\xE7\xE3o"
-  cardLore: "Um soro que reduz o veneno e a corrup\xE7\xE3o. Voc\xEA pode se beneficiar
-    dele ou do\xE1-lo para que um aliado possa se proteger."
+  cardEffect: TA_Soro_effect
+  cardLore: TA_Soro_lore
   canTarget: 0
   targetType: 0
-  choice1: Usar o soro.
-  choice2: Oferecer a um aliado.
+  choice1: TA_Soro_choice_1
+  choice2: TA_Soro_choice_2
   moraleCost: 0
   influenceCost: 0
   targetEffects: []

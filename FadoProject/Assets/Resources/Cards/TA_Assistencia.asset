@@ -12,18 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: TA_Assistencia
   m_EditorClassIdentifier: 
-  cardName: Assistencia aos doentes
+  cardName: TA_Assistencia_name
   cardSprite: {fileID: 3008048712614416305, guid: 909f9697d69364549ac5275ae12bc86d, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 0
-  cardEffect: "Op\xE7\xE3o 1: +10 Influ\xEAncia +15 Moralidade\\nOp\xE7\xE3o 2: +5
-    Influ\xEAncia +20 Moralidade +1 Corrup\xE7\xE3o"
-  cardLore: "V\xE1rios habitantes est\xE3o adoecendo rapidamente. Voc\xEA se voluntaria
-    para cuidar dos enfermos, mesmo correndo risco?"
+  cardEffect: TA_Assistencia_effect
+  cardLore: TA_Assistencia_lore
   canTarget: 0
   targetType: 0
-  choice1: 'Ajudar os doentes. '
-  choice2: Proteger-se e evitar contato.
+  choice1: TA_Assistencia_choice_1
+  choice2: TA_Assistencia_choice_2
   moraleCost: 0
   influenceCost: 0
   targetEffects: []

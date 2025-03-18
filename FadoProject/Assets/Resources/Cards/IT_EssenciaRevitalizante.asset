@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: IT_EssenciaRevitalizante
   m_EditorClassIdentifier: 
-  cardName: "Ess\xEAncia Revitalizante"
+  cardName: IT_EssenciaRevitalizante_name
   cardSprite: {fileID: 521728796410935857, guid: 6079e39da75da284c972a6bf9506276b, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 3
-  cardEffect: Remove 1 marcador de Veneno de todos os jogadores.
-  cardLore: "Um frasco contendo uma solu\xE7\xE3o cristalina, criada a partir de
-    ervas raras e \xE1guas puras. Quando utilizada, revitaliza o esp\xEDrito e remove
-    as toxinas do corpo."
+  cardEffect: IT_EssenciaRevitalizante_effect
+  cardLore: IT_EssenciaRevitalizante_lore
   canTarget: 0
   targetType: 0
   choice1: 

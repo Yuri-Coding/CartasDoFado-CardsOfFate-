@@ -12,13 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: CO_EssenciaDesespero
   m_EditorClassIdentifier: 
-  cardName: "Ess\xEAncia do Desespero"
+  cardName: CO_EssenciaDesespero_name
   cardSprite: {fileID: 7513095154642528818, guid: c859e81962b469b4196dd3a94f2012e9, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 1
-  cardEffect: "Reduz a moralidade de um jogador em 15 pontos.\\n+5 Moralidade\\n+1
-    Corrup\xE7\xE3o para o alvo\\n+1 veneno para o alvo"
-  cardLore: "Uma subst\xE2ncia que causa profunda tristeza e perda de esperan\xE7a."
+  cardEffect: CO_EssenciaDesespero_effect
+  cardLore: CO_EssenciaDesespero_lore
   canTarget: 1
   targetType: 1
   choice1: 

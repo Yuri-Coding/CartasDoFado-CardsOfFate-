@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: ME_ElixirPureza
   m_EditorClassIdentifier: 
-  cardName: Elixir da Pureza
+  cardName: ME_ElixirPureza_name
   cardSprite: {fileID: -4136251949656251382, guid: 635c5083d26feea45954eee8fb63faf8, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: "Anula todos os debuffs no alvo e reduz 1 Corrup\xE7\xE3o do alvo.\\n+5
-    Moralidade"
-  cardLore: "Uma mistura rara, composta por ra\xEDzes e folhas purificadoras, que
-    clarifica a mente e o corpo."
+  cardEffect: ME_ElixirPureza_effect
+  cardLore: ME_ElixirPureza_lore
   canTarget: 1
   targetType: 1
   choice1: 

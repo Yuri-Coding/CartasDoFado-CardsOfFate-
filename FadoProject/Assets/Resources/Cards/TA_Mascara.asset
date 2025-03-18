@@ -12,18 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: TA_Mascara
   m_EditorClassIdentifier: 
-  cardName: "M\xE1scara de prote\xE7\xE3o"
+  cardName: TA_Mascara_name
   cardSprite: {fileID: 3008048712614416305, guid: 909f9697d69364549ac5275ae12bc86d, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 0
-  cardEffect: "Op\xE7\xE3o 1: +15 Moralidade +5 Influ\xEAncia +1 Veneno para voc\xEA\\nOp\xE7\xE3o
-    2: +10 Moralidade +5 Influ\xEAncia +1 Corrup\xE7\xE3o"
-  cardLore: "Voc\xEA conseguiu uma m\xE1scara que protege contra a infec\xE7\xE3o.
-    Um amigo sem m\xE1scara est\xE1 ficando cada vez mais doente."
+  cardEffect: TA_Mascara_effect
+  cardLore: TA_Mascara_lore
   canTarget: 0
   targetType: 0
-  choice1: "Dar sua m\xE1scara ao amigo. "
-  choice2: "Usar a m\xE1scara e se proteger. "
+  choice1: TA_Mascara_choice_1
+  choice2: TA_Mascara_choice_2
   moraleCost: 0
   influenceCost: 0
   targetEffects: []

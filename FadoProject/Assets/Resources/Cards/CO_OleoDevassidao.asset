@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: CO_OleoDevassidao
   m_EditorClassIdentifier: 
-  cardName: "\xD3leo da Devassid\xE3o"
+  cardName: CO_OleoDevassidao_name
   cardSprite: {fileID: 7513095154642528818, guid: c859e81962b469b4196dd3a94f2012e9, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 1
-  cardEffect: "Adiciona +1 Corrup\xE7\xE3o para todos os jogadores.\\n+10 Moralidade\\n+1
-    veneno para todos os jogadores"
-  cardLore: "Uma subst\xE2ncia que causa uma mudan\xE7a sutil na percep\xE7\xE3o
-    dos jogadores, tornando-os mais propensos a se corromperem."
+  cardEffect: CO_OleoDevassidao_effect
+  cardLore: CO_OleoDevassidao_lore
   canTarget: 1
   targetType: 5
   choice1: 

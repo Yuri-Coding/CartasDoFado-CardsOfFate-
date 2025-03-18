@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: ME_EssenciaRestauradora
   m_EditorClassIdentifier: 
-  cardName: "Ess\xEAncia Restauradora"
+  cardName: ME_EssenciaRestauradora_name
   cardSprite: {fileID: -4136251949656251382, guid: 635c5083d26feea45954eee8fb63faf8, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: Remove 2 marcadores de Veneno de um jogador e concede imunidade ao
-    veneno por 1 turno.\n+10 Moralidade
-  cardLore: "Um t\xF4nico valioso que restaura a vitalidade e imuniza temporariamente
-    contra a praga."
+  cardEffect: ME_EssenciaRestauradora_effect
+  cardLore: ME_EssenciaRestauradora_lore
   canTarget: 1
   targetType: 1
   choice1: 

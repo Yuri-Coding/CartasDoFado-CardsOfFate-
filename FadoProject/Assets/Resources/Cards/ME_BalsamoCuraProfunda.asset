@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8079728e4a24e7e41946f482feea79fa, type: 3}
   m_Name: ME_BalsamoCuraProfunda
   m_EditorClassIdentifier: 
-  cardName: "B\xE1lsamo de Cura Profunda"
+  cardName: ME_BalsamoDeCuraProfunda_name
   cardSprite: {fileID: -4136251949656251382, guid: 635c5083d26feea45954eee8fb63faf8, type: 3}
   zoomedSprite: {fileID: 0}
   cardType: 2
-  cardEffect: "Remove 3 marcadores de Veneno de um jogador alvo.\\n-5 Influ\xEAncia\\n+10
-    Moralidade"
-  cardLore: "Um b\xE1lsamo raro e caro que alivia significativamente o sofrimento
-    de um paciente espec\xEDfico."
+  cardEffect: ME_BalsamoDeCuraProfunda_effect
+  cardLore: ME_BalsamoDeCuraProfunda_lore
   canTarget: 1
   targetType: 1
   choice1: 

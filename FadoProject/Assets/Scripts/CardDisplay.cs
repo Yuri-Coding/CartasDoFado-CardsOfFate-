@@ -5,6 +5,10 @@ using UnityEngine.UI;
 using FadoProject;
 using TMPro;
 using System;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Tables;
+using UnityEngine.Localization.Settings;
+using System.Linq;
 
 public class CardDisplay : MonoBehaviour
 {
@@ -45,15 +49,20 @@ public class CardDisplay : MonoBehaviour
         }
         else
         {
-            Debug.Log("Categoria de cartas não tem cor definida");
+            Debug.Log("Categoria de cartas nï¿½o tem cor definida");
         }
     }
 
     public void updateCardDisplay() {
-        textName.text = cardData.cardName;
+        string localizedName = LocalizationSettings.StringDatabase.GetLocalizedString("CardsTable", cardData.cardName);
+        string localizedEffect = LocalizationSettings.StringDatabase.GetLocalizedString("CardsTable", cardData.cardEffect);
+        string localizedLore = LocalizationSettings.StringDatabase.GetLocalizedString("CardsTable", cardData.cardLore);
+
+        textName.text = localizedName;
+        textEffect.text = localizedEffect;
+        textLore.text = localizedLore;
+
         cardImage.sprite = cardData.cardSprite;
-        textEffect.text = cardData.cardEffect;
-        textLore.text = cardData.cardLore;
     }
 
     public void updateTaskUI()
