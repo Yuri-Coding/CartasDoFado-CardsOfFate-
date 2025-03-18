@@ -41,7 +41,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6
-    m_Localized: "Algu\xE9m te ajudou, e adicionou {0} de {1}"
+    m_Localized: "Algu\xE9m te ajudou, e adicionou {0} de {1}."
     m_Metadata:
       m_Items: []
   - m_Id: 7
@@ -66,12 +66,12 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 11
     m_Localized: "Voc\xEA acordou com uma sensa\xE7\xE3o estranha, o que fez perceber
-      que algu\xE9m o envenenou. {0} de veneno."
+      que algu\xE9m o envenenou. Recebe {0} de veneno."
     m_Metadata:
       m_Items: []
   - m_Id: 12
     m_Localized: "Voc\xEA percebe que sua vis\xE3o est\xE1 turva, e ent\xE3o voc\xEA
-      descobre que foi envenenado por {0} de veneno."
+      descobre que foi envenenado. Recebe {0} de veneno."
     m_Metadata:
       m_Items: []
   - m_Id: 13
@@ -143,25 +143,25 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 27
-    m_Localized: "{0} foi eliminado da mesa de negocia\xE7\xF5es.\""
+    m_Localized: "{0} foi eliminado da mesa de negocia\xE7\xF5es."
     m_Metadata:
       m_Items: []
   - m_Id: 28
-    m_Localized: "{0} foi enviado ao obl\xEDvio, deixando para tr\xE1s apenas arrependimentos.\""
+    m_Localized: "{0} foi enviado ao obl\xEDvio, deixando para tr\xE1s apenas arrependimentos."
     m_Metadata:
       m_Items: []
   - m_Id: 29
-    m_Localized: "{0} alcan\xE7ou um destino infeliz.\""
+    m_Localized: "{0} alcan\xE7ou um destino infeliz."
     m_Metadata:
       m_Items: []
   - m_Id: 30
     m_Localized: "{0} teve seus gritos de desespero abafados na pris\xE3o, em meio
       ao fim doloroso e sofrido que encontrou, como muitos outros antes e depois
-      dele.\""
+      dele."
     m_Metadata:
       m_Items: []
   - m_Id: 31
-    m_Localized: "{0} teve um fim prematuro dado a seus sonhos e esperan\xE7as.\""
+    m_Localized: "{0} teve um fim prematuro dado a seus sonhos e esperan\xE7as."
     m_Metadata:
       m_Items: []
   - m_Id: 32
@@ -171,7 +171,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 33
     m_Localized: "{0} foi enviado para o al\xE9m, restando apenas as mem\xF3rias
-      deixadas para tr\xE1s.\""
+      deixadas para tr\xE1s."
     m_Metadata:
       m_Items: []
   references:

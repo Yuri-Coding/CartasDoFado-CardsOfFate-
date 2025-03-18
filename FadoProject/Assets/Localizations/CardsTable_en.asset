@@ -115,11 +115,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 25
-    m_Localized: Found Scarce Food
+    m_Localized: Food Scarcity
     m_Metadata:
       m_Items: []
   - m_Id: 26
-    m_Localized: Liar Alchemist
+    m_Localized: Lying Alchemist
     m_Metadata:
       m_Items: []
   - m_Id: 27
@@ -127,7 +127,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 28
-    m_Localized: Assistance to the Sick
+    m_Localized: Help the Sick
     m_Metadata:
       m_Items: []
   - m_Id: 29
@@ -318,13 +318,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 69
-    m_Localized: Extracted from the heart of a poisonous flower, this potion induces
-      subtle and deadly fevers that slowly corrode vitality.
+    m_Localized: Extracted from a poisonous flower, this potion induces subtle and
+      deadly fevers that slowly corrode vitality.
     m_Metadata:
       m_Items: []
   - m_Id: 70
     m_Localized: Made with herbs that induce drowsiness, this elixir causes the target
-      to miss the next vote, rendering them unable to vote.
+      to miss the next voting round, rendering them unable to vote.
     m_Metadata:
       m_Items: []
   - m_Id: 71
@@ -434,9 +434,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 92
-    m_Localized: The famous alchemist Arvid offers you a lucrative opportunity to
-      sell fake potions to the residents. The offer is tempting, but it involves
-      deceiving the community.
+    m_Localized: The famous alchemist Arvid offers you the lucrative opportunity
+      to sell fake potions to the residents. The offer is tempting, but you'll have
+      to deceive the community.
     m_Metadata:
       m_Items: []
   - m_Id: 93
@@ -445,8 +445,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 94
-    m_Localized: Several inhabitants are falling ill rapidly. You volunteer to care
-      for the sick, even at risk?
+    m_Localized: Several inhabitants are rapidly falling ill. Would you volunteer
+      to care for the sick, even at risk?
     m_Metadata:
       m_Items: []
   - m_Id: 95

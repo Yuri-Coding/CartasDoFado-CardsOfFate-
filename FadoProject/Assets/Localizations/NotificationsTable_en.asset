@@ -23,7 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2
-    m_Localized: Symptoms arose, your voices were silenced for {0} turn{1}...
+    m_Localized: Symptoms arose, your voice were silenced for {0} turn{1}...
     m_Metadata:
       m_Items: []
   - m_Id: 3
@@ -36,12 +36,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5
-    m_Localized: Your vote is different from what you cast...? Someone manipulated
+    m_Localized: Your vote was different from what you casted...? Someone manipulated
       your votes!
     m_Metadata:
       m_Items: []
   - m_Id: 6
-    m_Localized: Someone helped you and added {0} of {1}
+    m_Localized: Someone helped you and added {0} of {1}.
     m_Metadata:
       m_Items: []
   - m_Id: 7
@@ -58,22 +58,22 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10
-    m_Localized: Unfortunately, not everyone likes you, and applied {0} of poison...
+    m_Localized: Unfortunately, not everyone likes you, and applied {0} poison...
     m_Metadata:
       m_Items: []
   - m_Id: 11
     m_Localized: You woke up with a strange feeling, which made you realize someone
-      poisoned you. {0} of poison.
+      poisoned you. Receive {0} poison.
     m_Metadata:
       m_Items: []
   - m_Id: 12
     m_Localized: You notice your vision is blurry, and then you discover you've been
-      poisoned by {0} of poison.
+      poisoned. Recebe {0} poison.
     m_Metadata:
       m_Items: []
   - m_Id: 13
     m_Localized: The corrupt's evil hands left clear traces of destruction. You've
-      been poisoned by {0} of poison.
+      been poisoned recieving {0} poison.
     m_Metadata:
       m_Items: []
   - m_Id: 14
@@ -82,12 +82,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 15
-    m_Localized: The doctor showed his surprising skill and removed {0} of poison
-      from your body.
+    m_Localized: The doctor used his surprising skill and removed {0} of poison from
+      your body.
     m_Metadata:
       m_Items: []
   - m_Id: 16
-    m_Localized: Oh no, someone corrupted you! Corruption has corrupted you by {0}...
+    m_Localized: Oh no, someone corrupted you! Corruption has increassed by {0}...
     m_Metadata:
       m_Items: []
   - m_Id: 17
@@ -137,24 +137,24 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 27
-    m_Localized: '{0} was eliminated from the negotiation table."'
+    m_Localized: '{0} was eliminated from the negotiation table.'
     m_Metadata:
       m_Items: []
   - m_Id: 28
-    m_Localized: '{0} was sent to oblivion, leaving behind only regrets."'
+    m_Localized: '{0} was sent to oblivion, leaving behind only regrets.'
     m_Metadata:
       m_Items: []
   - m_Id: 29
-    m_Localized: '{0} met an unfortunate fate."'
+    m_Localized: '{0} met an unfortunate fate.'
     m_Metadata:
       m_Items: []
   - m_Id: 30
     m_Localized: '{0} had their cries of despair muffled in prison, amidst the painful
-      and agonizing end they met, like many others before and after them."'
+      and agonizing end they met, like many others before and after them.'
     m_Metadata:
       m_Items: []
   - m_Id: 31
-    m_Localized: '{0} met a premature end to their dreams and hopes."'
+    m_Localized: '{0} met a premature end to their dreams and hopes.'
     m_Metadata:
       m_Items: []
   - m_Id: 32
@@ -163,7 +163,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 33
-    m_Localized: '{0} was sent to the afterlife, leaving behind only memories."'
+    m_Localized: '{0} was sent to the afterlife, leaving behind only memories.'
     m_Metadata:
       m_Items: []
   references:
