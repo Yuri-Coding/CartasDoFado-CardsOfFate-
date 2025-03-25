@@ -67,6 +67,18 @@ MonoBehaviour:
     m_Key: Game/GameCanvas/RoundText
     m_Metadata:
       m_Items: []
+  - m_Id: 4833459875323904
+    m_Key: MainMenu/Canvas/ConfigBtn/ConfigTxt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4833786020208640
+    m_Key: MainMenu/Canvas/ConfigPopUpContainer/ConfigPopUp/LanguageTxt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4833954182438912
+    m_Key: MainMenu/Canvas/ConfigPopUpContainer/ConfigPopUp/ReturnBtn/rtnTxt
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

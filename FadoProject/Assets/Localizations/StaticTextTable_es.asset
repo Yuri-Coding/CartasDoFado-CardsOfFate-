@@ -75,6 +75,18 @@ MonoBehaviour:
     m_Localized: Ronda 1
     m_Metadata:
       m_Items: []
+  - m_Id: 4833459875323904
+    m_Localized: Ajustes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4833786020208640
+    m_Localized: Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4833954182438912
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
