@@ -87,6 +87,14 @@ MonoBehaviour:
     m_Localized: Volver
     m_Metadata:
       m_Items: []
+  - m_Id: 5080239209148416
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5086973306826752
+    m_Localized: Pantalla completa
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

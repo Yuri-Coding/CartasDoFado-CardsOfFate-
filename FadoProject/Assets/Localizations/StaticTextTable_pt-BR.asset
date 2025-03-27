@@ -87,6 +87,14 @@ MonoBehaviour:
     m_Localized: Voltar
     m_Metadata:
       m_Items: []
+  - m_Id: 5080239209148416
+    m_Localized: "\xC1udio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5086973306826752
+    m_Localized: Tela cheia
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

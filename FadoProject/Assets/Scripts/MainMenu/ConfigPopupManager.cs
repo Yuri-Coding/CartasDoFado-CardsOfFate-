@@ -18,7 +18,7 @@ using System.Linq;
 public class ConfigPopupManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    //animação
+    //animaï¿½ï¿½o
     public Animation popAnim;
 
     public void HidePopup()
@@ -39,7 +39,7 @@ public class ConfigPopupManager : MonoBehaviour
 
     public void SetVolume(float value)
     {
-
+        Debug.Log(value);
     }
 
 }
