@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Tables;
 using UnityEngine.Localization.Settings;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -68,6 +69,14 @@ public class GameManager : MonoBehaviour
 	// Relacionado a Áudio
 	public int tensionIndicator = 0;
 
+	//Lista com os quadros para trocar para os quadros mortos
+	public List<Button> Portrait;
+	public List<Image> PortraitDead;
+
+	//Vars para controlar a pausa do jogo
+	public GameObject pauseMenu;
+	public bool isPaused = false;
+
     public static GameManager Instance { get; private set; }
 	void Awake()
 	{
@@ -95,7 +104,19 @@ public class GameManager : MonoBehaviour
 
 	void Update()
 	{
-		switch (currentState)
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			isPaused = true;
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+        /*if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
+        {
+			isPaused = false;
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+        }*/
+        switch (currentState)
 		{
 			case GameState.VotingPhase:
                 if (alreadyVoted)
@@ -286,6 +307,38 @@ public class GameManager : MonoBehaviour
 	void AwaitAction()
 	{
 		// Inscreve-se no evento de ação do jogador
+		int index = 0;
+		playerList = playerManager.GetAllPlayers();
+		foreach (Player jugador in  playerList)
+		{
+            if (jugador.IsAlive)
+				{
+					//Quadro activation
+					if(index == 0)
+					{
+						Portrait[index].gameObject.SetActive(true);
+						PortraitDead[index].gameObject.SetActive(false);
+					}else if (index > 1 && index < 5)
+					{
+						Portrait[index - 1].gameObject.SetActive(true);
+	                    PortraitDead[index - 1].gameObject.SetActive(false);
+                }
+            }
+				else
+				{
+					//Quadro deactivation
+					if(index == 0)
+					{
+						PortraitDead[index].gameObject.SetActive(true);
+						Portrait[index].gameObject.SetActive(false);
+					}else if(index >1 && index < 5)
+					{
+						PortraitDead[index - 1].gameObject.SetActive(true);
+						Portrait[index - 1].gameObject.SetActive(false);
+					}
+			}
+			index++;
+		}
 		paintingAnimation.Play("painting_fadein");
 		mainPlayer.OnPlayerAction += OnPlayerActionCompleted;
 		Debug.LogWarning($"[FASE{currentRound}] Await Player: Modo espera ativado.");
