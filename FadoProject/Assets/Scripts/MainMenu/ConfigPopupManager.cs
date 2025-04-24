@@ -15,12 +15,20 @@ using UnityEngine.Localization.Tables;
 using UnityEngine.Localization.Settings;
 using System.Linq;
 
+using FMODUnity;
+
 public class ConfigPopupManager : MonoBehaviour
 {
     // Start is called before the first frame update
     //anima��o
     public Animation popAnim;
 
+    private FMOD.Studio.VCA VcaController;
+
+    void Start()
+    {
+        VcaController = FMODUnity.RuntimeManager.GetVCA("vca:/Master");
+    }
     public void HidePopup()
     {
         popAnim.Play("fadeOut");
@@ -39,7 +47,7 @@ public class ConfigPopupManager : MonoBehaviour
 
     public void SetVolume(float value)
     {
-        Debug.Log(value);
+        VcaController.setVolume(value);
     }
 
 }

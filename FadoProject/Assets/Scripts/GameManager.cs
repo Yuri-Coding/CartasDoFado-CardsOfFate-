@@ -633,6 +633,7 @@ public class GameManager : MonoBehaviour
 
     public void SwapScene(int nextScene)
     {
+        AudioManager.Instance.SetMusic(Musics.TerraDoAmanha);
         SceneManager.LoadScene(nextScene);
     }
 }

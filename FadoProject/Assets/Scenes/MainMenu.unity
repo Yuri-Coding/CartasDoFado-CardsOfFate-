@@ -3437,6 +3437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1181443587}
   - component: {fileID: 1181443588}
+  - component: {fileID: 1181443589}
   m_Layer: 0
   m_Name: VolumeSlider
   m_TagString: Untagged
@@ -3529,6 +3530,69 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1181443589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181443586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjects:
+  - rid: 5257118578033295424
+  references:
+    version: 2
+    RefIds:
+    - rid: 5257118578033295424
+      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 1181443588}
+        m_TrackedProperties:
+          items:
+          - rid: 5257118578033295425
+          - rid: 5257118578033295426
+          - rid: 5257118578033295427
+        m_UpdateType: 0
+        m_Changed:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 5257118578033295425
+      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_PropertyPath: m_MaxValue
+        m_VariantData:
+        - localeIdentifier:
+            m_Code: pt-BR
+          value: 0
+        - localeIdentifier:
+            m_Code: en
+          value: 1
+    - rid: 5257118578033295426
+      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_PropertyPath: m_MinValue
+        m_VariantData:
+        - localeIdentifier:
+            m_Code: pt-BR
+          value: -88
+        - localeIdentifier:
+            m_Code: en
+          value: 0
+    - rid: 5257118578033295427
+      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_PropertyPath: m_Value
+        m_VariantData:
+        - localeIdentifier:
+            m_Code: pt-BR
+          value: 0
+        - localeIdentifier:
+            m_Code: en
+          value: 1
 --- !u!1 &1252873154
 GameObject:
   m_ObjectHideFlags: 0

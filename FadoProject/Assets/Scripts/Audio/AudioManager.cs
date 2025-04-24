@@ -41,8 +41,6 @@ public class AudioManager : MonoBehaviour
         musicEventInstance = CreateInstance(musicEventReference);
         musicEventInstance.start();
         musicEventInstance.setParameterByName("track", 4f);
-
-
     }
 
     public void PlayOneShot(EventReference sound, Vector3 worldPos)

@@ -16,7 +16,7 @@ public class PauseMenuManager : MonoBehaviour
     public void quitFunction()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        GameManager.Instance.SwapScene(0);
     }
 
     public void resumeFunction()
