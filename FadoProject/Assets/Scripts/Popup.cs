@@ -70,10 +70,7 @@ public class Popup : MonoBehaviour
 	public LocalizedStringTable NotificationTable;
     public LocalizedStringTable CardsTable;
 
-
     public event Action<GameState> PopupClosed;
-
-
 
     //Popup de votação
     public Animation voteAnim;
@@ -91,6 +88,12 @@ public class Popup : MonoBehaviour
     //Criando uma lista para armazenar a lista de player
     private List<Player> playerList;
 
+    //Popup de puzzle
+    public Animation puzzleAnim;
+    public List<TMP_Text> NobleName;
+    public List<TMP_Text> PuzzleSeq;
+
+    int pos = 0;
 
     //Criando um evento para ser ouvido
     public event Action actionRemoveCard;
@@ -474,6 +477,77 @@ public class Popup : MonoBehaviour
     public void VotePanelPopout()
     {
         voteAnim.Play("fadeOut");
+    }
+
+    // ===============================================================
+    //                         PUZZLE POPUP
+    // ===============================================================
+
+    public void UpdatePuzzleSidePanel()
+    {
+        int index = 0;
+        List <string> PuzzleSeqs = new List<string> { "E9 - F3N - PR - C4 - AA",
+                                                      "B18 - E9 - ZX",
+                                                      "C4 - ZX - PR - HN9",
+                                                      "7A4 - UK5 - ZX - 33 - HN9",
+                                                      "8D - S5H - 7A4", 
+                                                      "C4 - P2P - AA - YH",
+                                                      "33 - HN9 - C4 - S5H - 8D",
+                                                      "UK5 - YH - 7T",
+                                                      "PR - ZX - E9 - 33",
+                                                      "P2P - S5H - F3N - HN9 - PR",
+                                                      "AA - 33 - 7A4",
+                                                      "UK5 - ZX - B18 - P2P" } ;
+        List<List<string>> PuzzleSeqsTrue = new List<List<string>> {
+                                                       new List<string> { "E9", "F3N", "PR", "C4", "AA" },
+                                                       new List<string> { "B18", "E9", "ZX" },
+                                                       new List<string> { "C4", "ZX", "PR", "HN9" },
+                                                       new List<string> { "7A4", "UK5", "ZX", "33", "HN9" },
+                                                       new List<string> { "8D", "S5H", "7A4" },
+                                                       new List<string> { "C4", "P2P", "AA", "YH" },
+                                                       new List<string> { "33", "HN9", "C4", "S5H", "8D" },
+                                                       new List<string> { "UK5", "YH", "7T" },
+                                                       new List<string> { "PR", "ZX", "E9", "33" },
+                                                       new List<string> { "P2P", "S5H", "F3N", "HN9", "PR" },
+                                                       new List<string> { "AA", "33", "7A4" },
+                                                       new List<string> { "UK5", "ZX", "B18", "P2P" }
+};
+        playerList = playerManager.GetAllPlayers();
+        foreach (Player jugador in playerList)
+        {
+            pos = UnityEngine.Random.Range(0, PuzzleSeqsTrue.Count());
+            if (jugador.IsAlive && !jugador.IsMainPlayer)
+            {
+
+                NobleName[index].text = jugador.PlayerName;
+                PuzzleSeq[index].text = PuzzleSeqs[pos];
+
+                /*if (index == 0)
+                {
+                    NobleName[index].text = jugador.PlayerName;
+                    PuzzleSeq[index].text = PuzzleSeqs[pos];
+                }
+                else if (index > 1 && index < 5)
+                {
+                    NobleName[index - 1].text = jugador.PlayerName;
+                    PuzzleSeq[index - 1].text = PuzzleSeqs[pos];
+                }*/
+                index++;
+                GameManager.Instance.currentSeqs.Add(PuzzleSeqsTrue[pos]);
+                PuzzleSeqs.RemoveAt(pos);
+                PuzzleSeqsTrue.RemoveAt(pos);
+            }
+        }
+    }
+
+    public void PuzzlePopup()
+    {
+        puzzleAnim.Play("EnterAnim");
+    }
+
+    public void PuzzlePopout()
+    {
+        puzzleAnim.Play("ExitAnim");
     }
 
     // ===============================================================

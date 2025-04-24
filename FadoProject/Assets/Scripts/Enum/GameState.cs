@@ -14,6 +14,9 @@ public enum GameState
 	// Loja
 	ShopPhase,			// Fase de Loja
 
+	//Puzzle
+	PuzzlePhase,		//Fase de resolver o puzzle
+
 	// Fases de Votação
 	VotingPhase,		// Fase de Votação para eliminar um jogador.
 	ProcessVoteResults,	// Processar resultados da votação.

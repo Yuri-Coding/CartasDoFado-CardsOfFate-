@@ -39,7 +39,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 11020433772544
-    m_Localized: Vote em quem deseja enviar para cadeia...
+    m_Localized: "Escolha quem voc\xEA quer mandar para a cadeia..."
     m_Metadata:
       m_Items: []
   - m_Id: 17879827894272

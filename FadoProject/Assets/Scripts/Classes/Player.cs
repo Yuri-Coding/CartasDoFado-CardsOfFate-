@@ -48,12 +48,12 @@ public class Player
 
 	// Constructor
 	public Player(
-		int		playerId,
-		string	playerName,
-		Roles	playerRole,
-		bool	isMainPlayer,
-		bool	isBot,
-		bool	isAlive)
+		int playerId,
+		string playerName,
+		Roles playerRole,
+		bool isMainPlayer,
+		bool isBot,
+		bool isAlive)
 	{
 		PlayerId =			playerId;
 		PlayerName =		playerName;

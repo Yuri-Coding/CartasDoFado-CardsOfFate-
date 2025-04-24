@@ -11,6 +11,8 @@ using UnityEngine.Localization;
 using UnityEngine.Localization.Tables;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
+using JetBrains.Annotations;
+using NUnit.Framework;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,17 +23,17 @@ public class GameManager : MonoBehaviour
 	public Popup popup;
 
 	// Identificação do Player principal (o que está jogando na máquina)
-    public Player mainPlayer;
+	public Player mainPlayer;
 	public Roles mainRole;
-    public int mainPlayerIndex;
+	public int mainPlayerIndex;
 
 	// Elemento de Round
-    public TMP_Text roundText;
-    public int currentRound;
+	public TMP_Text roundText;
+	public int currentRound;
 
 
-    // Texto de Notificação que aparece em toda ShowResults
-    string notificationText;
+	// Texto de Notificação que aparece em toda ShowResults
+	string notificationText;
 
 	// Animação de Quadros
 	public Animation paintingAnimation;
@@ -41,7 +43,7 @@ public class GameManager : MonoBehaviour
 	// Booleanas de Verificação
 	public bool canDraw;
 	public bool inPlay;
-    public bool alreadyVoted;
+	public bool alreadyVoted;
 
 	// Lista de jogadores
 	private List<Player> playerList;
@@ -51,16 +53,16 @@ public class GameManager : MonoBehaviour
 
 	private int votingGap = 3;     // Frequência de Votação (votação / 3 rodadas)
 	private int votingModular = 2; // mod3(currentRound)
-	// 0 - Primeira votação acontece no round 3
-	// 1 - Primeira votação acontece no round 1
-	// 2 - Primeira votação acontece no round 2
+								   // 0 - Primeira votação acontece no round 3
+								   // 1 - Primeira votação acontece no round 1
+								   // 2 - Primeira votação acontece no round 2
 
 	private int shopGap = 3;      // Frequência de Votação (votação / 3 rodadas)
-    private int shopModular = 2;  // mod3(currentRound)
+	private int shopModular = 2;  // mod3(currentRound)
 
 
-    // Condição de Vitória / Perda para Player.
-    public EndCondition endCondition;
+	// Condição de Vitória / Perda para Player.
+	public EndCondition endCondition;
 
 	//tabela de localização
 	public LocalizedStringTable NotificationTable;
@@ -77,6 +79,12 @@ public class GameManager : MonoBehaviour
 	//Vars para controlar a pausa do jogo
 	public GameObject pauseMenu;
 	public bool isPaused = false;
+
+	//Vars para o puzzle
+	bool puzzleControl = false;
+	public List<List<string>> currentSeqs = new List<List<string>> {};
+	public List <string> inputSeq;
+	int NPCIndex = 0;
 
     public static GameManager Instance { get; private set; }
 	void Awake()
@@ -127,6 +135,15 @@ public class GameManager : MonoBehaviour
                     SetState(GameState.ProcessVoteResults);
                 }
 				break;
+			case GameState.PuzzlePhase:
+				if (puzzleControl)
+				{
+                    popup.PuzzlePopout();
+                    inputSeq = new List<string>();
+                    puzzleControl = false;
+                    OnPuzzleEnd();
+                }
+				break;
         }
 	}
 
@@ -160,6 +177,10 @@ public class GameManager : MonoBehaviour
 
 			case GameState.ShopPhase:
 				HandleShopPhase();
+				break;
+
+			case GameState.PuzzlePhase:
+				HandlePuzzlePhase();
 				break;
 
             case GameState.ShowResults:
@@ -403,8 +424,59 @@ public class GameManager : MonoBehaviour
 	}
 	void OnShopClosed()
 	{
+		SetState(GameState.PuzzlePhase);
+	}
+
+	void HandlePuzzlePhase()
+	{
+        if (currentRound % shopGap == shopModular && mainPlayer.PlayerRole != Roles.Corrupt)
+		{
+            currentSeqs = new List<List<string>> { };
+            popup.UpdatePuzzleSidePanel();
+            popup.PuzzlePopup();
+			Debug.Log("Passei aqui");
+			//Funções de como funfa o puzzle
+			//Resultado
+			
+		}
+        
+	}
+
+	void OnPuzzleEnd()
+	{
 		SetState(GameState.VotingPhase);
 	}
+
+	public void AppendSeq( string seq)
+	{
+		//Se mudar o player de lugar refatora isso por completo
+		//Lógica: Começa contando a partir de um, na versão de dev o jogador ocupa a posição 1, portanto torna ela 0 para pegar o primeiro NPC, o resto já vem certo pelo valor do index de npc automaticamente, ou seja o 2 pega o NPC no lugar 2, o 3 no lugar e assim por diante
+		NPCIndex = 0;
+		inputSeq.Add(seq);
+		if(inputSeq.Count >= 6)
+		{
+			puzzleControl = true;
+		}
+		foreach(List<string> NPCSeq in currentSeqs)
+		{
+            NPCIndex++;
+            if (NPCSeq.SequenceEqual(inputSeq))
+			{
+                //Debug.Log(playerList[NPCIndex].PlayerName + " é " + playerList[NPCIndex].PlayerRole + " e seu índice é: " + NPCIndex);
+                if (NPCIndex == 1)
+				{
+					Debug.Log(playerList[0].PlayerName + " é " + playerList[0].PlayerRole + " e seu índice é: 0");
+				}
+				else
+				{
+					//Debug.Log(NPCIndex + "dentro do if");
+                    Debug.Log(playerList[NPCIndex].PlayerName + " é " + playerList[NPCIndex].PlayerRole + " e seu índice é: " + (NPCIndex));
+                }
+                puzzleControl = true;
+            }
+            Debug.Log(NPCIndex);
+        }
+    }
 
 	void HandleVotingPhase()
 	{
