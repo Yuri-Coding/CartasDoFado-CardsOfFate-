@@ -3567,7 +3567,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: pt-BR
-          value: 0
+          value: 1
         - localeIdentifier:
             m_Code: en
           value: 1
@@ -3578,7 +3578,7 @@ MonoBehaviour:
         m_VariantData:
         - localeIdentifier:
             m_Code: pt-BR
-          value: -88
+          value: 0
         - localeIdentifier:
             m_Code: en
           value: 0
