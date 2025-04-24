@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
 
 	//tabela de localização
 	public LocalizedStringTable NotificationTable;
+	public LocalizedStringTable OtherTable;
 
 
 	// Relacionado a Áudio
@@ -259,7 +260,7 @@ public class GameManager : MonoBehaviour
         List<string> shuffledMaleName   = rawBotMaleNames.OrderBy(x => Guid.NewGuid()).ToList();
         List<string> shuffledFemaleName = rawBotFemaleNames.OrderBy(x => Guid.NewGuid()).ToList();
 
-		string playerName = "Jogador";
+		string playerName = LocalizationSettings.StringDatabase.GetLocalizedString("OthersTable", "player_name");
 
 
         Player p1 = new Player(0, shuffledFemaleName[0], shuffledRoles[0], false, true, true);

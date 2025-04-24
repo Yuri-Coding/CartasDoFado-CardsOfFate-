@@ -399,34 +399,35 @@ public class Popup : MonoBehaviour
                     keyDescription = "loss_medic_2";
                     break;
             }
-        }
+        }else{
 
-        switch ((endCondition, GameManager.Instance.mainRole))
-        {
-            case (EndCondition.HonestWin, Roles.Honest):
-                keyTitle = "you_win_1";
-                keyDescription = "win_honest_1";
-                break;
-            case (EndCondition.HonestWin, Roles.Medic):
-                keyTitle = "you_win_1";
-                keyDescription = "win_medic_1";
-                break;
-            case (EndCondition.HonestWin, Roles.Corrupt):
-                keyTitle = "you_lose_1";
-                keyDescription = "loss_corrupt_1";
-                break;
-            case (EndCondition.CorruptWin, Roles.Honest):
-                keyTitle = "you_lose_1";
-                keyDescription = "loss_honest_1";
-                break;
-            case (EndCondition.CorruptWin, Roles.Medic):
-                keyTitle = "you_lose_1";
-                keyDescription = "loss_medic_1";
-                break;
-            case (EndCondition.CorruptWin, Roles.Corrupt):
-                keyTitle = "you_win_1";
-                keyDescription = "win_corrupt_1";
-                break;
+            switch ((endCondition, GameManager.Instance.mainRole))
+            {
+                case (EndCondition.HonestWin, Roles.Honest):
+                    keyTitle = "you_win_1";
+                    keyDescription = "win_honest_1";
+                    break;
+                case (EndCondition.HonestWin, Roles.Medic):
+                    keyTitle = "you_win_1";
+                    keyDescription = "win_medic_1";
+                    break;
+                case (EndCondition.HonestWin, Roles.Corrupt):
+                    keyTitle = "you_lose_1";
+                    keyDescription = "loss_corrupt_1";
+                    break;
+                case (EndCondition.CorruptWin, Roles.Honest):
+                    keyTitle = "you_lose_1";
+                    keyDescription = "loss_honest_1";
+                    break;
+                case (EndCondition.CorruptWin, Roles.Medic):
+                    keyTitle = "you_lose_1";
+                    keyDescription = "loss_medic_1";
+                    break;
+                case (EndCondition.CorruptWin, Roles.Corrupt):
+                    keyTitle = "you_win_1";
+                    keyDescription = "win_corrupt_1";
+                    break;
+            }
         }
 
         // Obtém os textos traduzidos da tabela

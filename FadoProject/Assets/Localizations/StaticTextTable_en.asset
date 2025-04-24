@@ -95,6 +95,14 @@ MonoBehaviour:
     m_Localized: Fullscreen
     m_Metadata:
       m_Items: []
+  - m_Id: 15383424276951040
+    m_Localized: Back to menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15383997315346432
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

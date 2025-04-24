@@ -23,6 +23,10 @@ MonoBehaviour:
     m_Key: influence_store
     m_Metadata:
       m_Items: []
+  - m_Id: 13574730425888768
+    m_Key: player_name
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

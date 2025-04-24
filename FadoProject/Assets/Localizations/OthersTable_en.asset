@@ -26,6 +26,10 @@ MonoBehaviour:
     m_Localized: Influence
     m_Metadata:
       m_Items: []
+  - m_Id: 13574730425888768
+    m_Localized: Player
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
