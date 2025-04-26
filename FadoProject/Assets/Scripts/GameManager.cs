@@ -86,6 +86,10 @@ public class GameManager : MonoBehaviour
 	public List <string> inputSeq;
 	int NPCIndex = 0;
 
+	//timer do puzzle
+	[SerializeField] TextMeshProUGUI timerText;
+    public float remainingTime = 7.50F;
+
     public static GameManager Instance { get; private set; }
 	void Awake()
 	{
@@ -136,11 +140,13 @@ public class GameManager : MonoBehaviour
                 }
 				break;
 			case GameState.PuzzlePhase:
+				HandleTimer();
 				if (puzzleControl)
 				{
                     popup.PuzzlePopout();
                     inputSeq = new List<string>();
                     puzzleControl = false;
+					remainingTime = 7.50F;
                     OnPuzzleEnd();
                 }
 				break;
@@ -434,12 +440,13 @@ public class GameManager : MonoBehaviour
             currentSeqs = new List<List<string>> { };
             popup.UpdatePuzzleSidePanel();
             popup.PuzzlePopup();
+			if(mainPlayer.Corruption <= 0){
+				remainingTime += 3.00F;
+			}
 			Debug.Log("Passei aqui");
 			//Funções de como funfa o puzzle
 			//Resultado
-			
 		}
-        
 	}
 
 	void OnPuzzleEnd()
@@ -709,4 +716,16 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.SetMusic(Musics.TerraDoAmanha);
         SceneManager.LoadScene(nextScene);
     }
+
+	public void HandleTimer(){
+		if(remainingTime < 0){
+			puzzleControl = true;
+		}else{
+			remainingTime -= Time.deltaTime;
+			int seconds = Mathf.FloorToInt(remainingTime);
+			int milliseconds = Mathf.FloorToInt((remainingTime - seconds) * 100);
+			timerText.text = string.Format("{0}.{1:00}", seconds, milliseconds);
+		}
+
+	}
 }

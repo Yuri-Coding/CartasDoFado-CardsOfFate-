@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/Audio/fado/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638811123194522785
+  lastModified: 638810407297989397
   FileSizes:
   - Name: Desktop
     Value: 1166
@@ -188,7 +188,7 @@ MonoBehaviour:
   Path: Assets/Audio/fado/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638811123194632806
+  lastModified: 638810407297999429
   FileSizes:
   - Name: Desktop
     Value: 1668
@@ -531,7 +531,7 @@ MonoBehaviour:
   - {fileID: -8428560930459928864}
   StringsBanks:
   - {fileID: -4779471886630056716}
-  cacheTime: 638811123194632806
+  cacheTime: 638810407297999429
   cacheVersion: 131620
 --- !u!114 &401004084593317093
 MonoBehaviour:
