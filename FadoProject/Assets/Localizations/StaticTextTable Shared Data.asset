@@ -95,6 +95,10 @@ MonoBehaviour:
     m_Key: Game/GameCanvas/PauseMenu/ResumeBtn/ResumeTxt
     m_Metadata:
       m_Items: []
+  - m_Id: 16461560040218624
+    m_Key: Game/GameCanvas/PuzzleContainer/PuzzlePopUp/PuzzleTxt
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -3680,6 +3680,7 @@ GameObject:
   - component: {fileID: 305334222}
   - component: {fileID: 305334224}
   - component: {fileID: 305334223}
+  - component: {fileID: 305334225}
   m_Layer: 5
   m_Name: PuzzleTxt
   m_TagString: Untagged
@@ -3806,6 +3807,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305334221}
   m_CullTransparentMesh: 1
+--- !u!114 &305334225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305334221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjects:
+  - rid: 3887562564621303872
+  references:
+    version: 2
+    RefIds:
+    - rid: 3887562564621303872
+      type: {class: TrackedUGuiGraphic, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 305334223}
+        m_TrackedProperties:
+          items:
+          - rid: 3887562564621303873
+        m_UpdateType: 0
+    - rid: 3887562564621303873
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:5228016de1d0a4449aa128af001981c3
+          m_TableEntryReference:
+            m_KeyId: 16461560040218624
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
+        m_PropertyPath: m_text
 --- !u!1 &323739195
 GameObject:
   m_ObjectHideFlags: 0
@@ -6872,8 +6911,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 476, y: 300}
-  m_SizeDelta: {x: 142.1154, y: 50}
+  m_AnchoredPosition: {x: 438.57275, y: 324.76807}
+  m_SizeDelta: {x: 252.9699, y: 96.4641}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &527644355
 MonoBehaviour:
@@ -6895,7 +6934,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Timer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}
   m_sharedMaterial: {fileID: -6342195586979221759, guid: 2aeb1b391c7c4d24aaeee434af2c1d74, type: 2}

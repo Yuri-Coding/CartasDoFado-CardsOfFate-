@@ -30,6 +30,10 @@ MonoBehaviour:
     m_Localized: Player
     m_Metadata:
       m_Items: []
+  - m_Id: 14647593458294784
+    m_Localized: 'Remaining time: {0}.{1:00}s'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

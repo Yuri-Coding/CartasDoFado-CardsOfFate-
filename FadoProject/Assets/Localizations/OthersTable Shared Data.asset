@@ -27,6 +27,10 @@ MonoBehaviour:
     m_Key: player_name
     m_Metadata:
       m_Items: []
+  - m_Id: 14647593458294784
+    m_Key: timer_text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

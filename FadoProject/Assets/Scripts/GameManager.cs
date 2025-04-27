@@ -718,13 +718,14 @@ public class GameManager : MonoBehaviour
     }
 
 	public void HandleTimer(){
+		string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("OthersTable", "timer_text");  
 		if(remainingTime < 0){
 			puzzleControl = true;
 		}else{
 			remainingTime -= Time.deltaTime;
 			int seconds = Mathf.FloorToInt(remainingTime);
 			int milliseconds = Mathf.FloorToInt((remainingTime - seconds) * 100);
-			timerText.text = string.Format("{0}.{1:00}", seconds, milliseconds);
+			timerText.text = string.Format(localizedText, seconds, milliseconds);
 		}
 
 	}
