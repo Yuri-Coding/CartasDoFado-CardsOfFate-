@@ -174,6 +174,10 @@ MonoBehaviour:
       deixadas para tr\xE1s."
     m_Metadata:
       m_Items: []
+  - m_Id: 22205784718381056
+    m_Localized: "Voc\xEA revelou com sucesso o jogador {0}. A pessoa \xE9 {1}."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

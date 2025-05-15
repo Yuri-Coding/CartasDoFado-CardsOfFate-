@@ -86,9 +86,11 @@ public class GameManager : MonoBehaviour
 	public List <string> inputSeq;
 	int NPCIndex = 0;
 
+	private Player revealedPlayer;
+
 	//timer do puzzle
 	[SerializeField] TextMeshProUGUI timerText;
-    public float remainingTime = 7.50F;
+    public float remainingTime = 12F;
 
     public static GameManager Instance { get; private set; }
 	void Awake()
@@ -107,8 +109,8 @@ public class GameManager : MonoBehaviour
 	void Start()
 	{
 		mainPlayerIndex = 1;
-		
-        SetState(GameState.InitGame);
+
+		SetState(GameState.InitGame);
 		canDraw = true;
 		inPlay = false;
 		alreadyVoted = false;
@@ -120,24 +122,24 @@ public class GameManager : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			isPaused = true;
-            pauseMenu.SetActive(true);
-            Time.timeScale = 0;
-        }
-        /*if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
+			pauseMenu.SetActive(true);
+			Time.timeScale = 0;
+		}
+		/*if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
         {
 			isPaused = false;
             pauseMenu.SetActive(false);
             Time.timeScale = 1;
         }*/
-        switch (currentState)
+		switch (currentState)
 		{
 			case GameState.VotingPhase:
-                if (alreadyVoted)
-                {
-                    popup.VotePanelPopout();
-                    alreadyVoted = false;
-                    SetState(GameState.ProcessVoteResults);
-                }
+				if (alreadyVoted)
+				{
+					popup.VotePanelPopout();
+					alreadyVoted = false;
+					SetState(GameState.ProcessVoteResults);
+				}
 				break;
 			case GameState.PuzzlePhase:
 				HandleTimer();
@@ -146,7 +148,7 @@ public class GameManager : MonoBehaviour
                     popup.PuzzlePopout();
                     inputSeq = new List<string>();
                     puzzleControl = false;
-					remainingTime = 7.50F;
+					remainingTime = 12F;
                     OnPuzzleEnd();
                 }
 				break;
@@ -154,9 +156,9 @@ public class GameManager : MonoBehaviour
 	}
 
 	void SetState(GameState newState) {
-        popup.PopupClosed -= SetState;
+		popup.PopupClosed -= SetState;
 
-        currentState = newState;
+		currentState = newState;
 		Debug.Log($"O estado mudou para {currentState}.");
 		HandleState();
 	}
@@ -443,7 +445,7 @@ public class GameManager : MonoBehaviour
 			if(mainPlayer.Corruption <= 0){
 				remainingTime += 3.00F;
 			}
-			Debug.Log("Passei aqui");
+			//Debug.Log("Passei aqui");
 			//Funções de como funfa o puzzle
 			//Resultado
 		}
@@ -451,8 +453,12 @@ public class GameManager : MonoBehaviour
 
 	void OnPuzzleEnd()
 	{
-		SetState(GameState.VotingPhase);
-	}
+        string selectedKey = "notification_puzzle_result";
+        string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("NotificationsTable", selectedKey);
+
+		popup.SetStateAfterPopup(string.Format(localizedText, revealedPlayer.PlayerName, revealedPlayer.PlayerRole), 120f, GameState.VotingPhase);
+        popup.PopupClosed += SetState;
+    }
 
 	public void AppendSeq( string seq)
 	{
@@ -472,11 +478,13 @@ public class GameManager : MonoBehaviour
                 //Debug.Log(playerList[NPCIndex].PlayerName + " é " + playerList[NPCIndex].PlayerRole + " e seu índice é: " + NPCIndex);
                 if (NPCIndex == 1)
 				{
+					revealedPlayer = playerList[0];
 					Debug.Log(playerList[0].PlayerName + " é " + playerList[0].PlayerRole + " e seu índice é: 0");
 				}
 				else
 				{
-					//Debug.Log(NPCIndex + "dentro do if");
+                    //Debug.Log(NPCIndex + "dentro do if");
+                    revealedPlayer = playerList[NPCIndex];
                     Debug.Log(playerList[NPCIndex].PlayerName + " é " + playerList[NPCIndex].PlayerRole + " e seu índice é: " + (NPCIndex));
                 }
                 puzzleControl = true;
@@ -681,7 +689,7 @@ public class GameManager : MonoBehaviour
 	public void UpdateTensionIndicator()
 	{
 		// Variáveis de Balanceamento
-		int averageMaxRound = 8;
+		int averageMaxRound = 12;
 
 		int RoundIndicatorWeight  = 10;
 		int AliveIndicatorWeight  = 0;

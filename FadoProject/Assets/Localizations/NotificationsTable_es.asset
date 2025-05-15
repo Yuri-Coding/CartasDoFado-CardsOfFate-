@@ -173,6 +173,10 @@ MonoBehaviour:
     m_Localized: "{0} fue enviado al m\xE1s all\xE1, dejando atr\xE1s solo recuerdos."
     m_Metadata:
       m_Items: []
+  - m_Id: 22205784718381056
+    m_Localized: "Has revelado con \xE9xito al jugador {0}, la persona es {1}."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

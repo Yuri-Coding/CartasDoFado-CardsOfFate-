@@ -166,6 +166,10 @@ MonoBehaviour:
     m_Localized: '{0} was sent to the afterlife, leaving behind only memories.'
     m_Metadata:
       m_Items: []
+  - m_Id: 22205784718381056
+    m_Localized: You have successfully revealed player {0}, the person is {1}.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
