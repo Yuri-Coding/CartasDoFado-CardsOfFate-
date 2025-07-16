@@ -177,6 +177,11 @@ MonoBehaviour:
     m_Localized: "Has revelado con \xE9xito al jugador {0}, la persona es {1}."
     m_Metadata:
       m_Items: []
+  - m_Id: 44880959006191616
+    m_Localized: "No resolviste el rompecabezas lo suficientemente r\xE1pido, tal
+      vez la pr\xF3xima vez."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -151,6 +151,10 @@ MonoBehaviour:
     m_Key: notification_puzzle_result
     m_Metadata:
       m_Items: []
+  - m_Id: 44880959006191616
+    m_Key: notification_puzzle_fail
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

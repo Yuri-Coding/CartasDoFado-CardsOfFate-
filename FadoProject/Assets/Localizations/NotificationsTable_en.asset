@@ -170,6 +170,10 @@ MonoBehaviour:
     m_Localized: You have successfully revealed player {0}, the person is {1}.
     m_Metadata:
       m_Items: []
+  - m_Id: 44880959006191616
+    m_Localized: You didn't solve the puzzle quickly enough, maybe next time.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

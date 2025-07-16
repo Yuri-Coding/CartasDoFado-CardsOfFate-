@@ -178,6 +178,11 @@ MonoBehaviour:
     m_Localized: "Voc\xEA revelou com sucesso o jogador {0}. A pessoa \xE9 {1}."
     m_Metadata:
       m_Items: []
+  - m_Id: 44880959006191616
+    m_Localized: "Voc\xEA n\xE3o consegui resolver o puzzle a tempo, mais sorte na
+      proxima vez."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

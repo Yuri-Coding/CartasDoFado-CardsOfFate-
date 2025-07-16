@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
 	public EndCondition endCondition;
 
 	//tabela de localização
-	public LocalizedStringTable NotificationTable;
+	public LocalizedStringTable NotificationsTable;
 	public LocalizedStringTable OtherTable;
 
 
@@ -82,23 +82,26 @@ public class GameManager : MonoBehaviour
 
 	//Vars para o puzzle
 	bool puzzleControl = false;
-	public List<List<string>> currentSeqs = new List<List<string>> {};
-	public List <string> inputSeq;
+	public List<List<string>> currentSeqs = new List<List<string>> { };
+	public List<string> inputSeq;
 	int NPCIndex = 0;
 
 	private Player revealedPlayer;
 
 	//timer do puzzle
 	[SerializeField] TextMeshProUGUI timerText;
-    public float remainingTime = 12F;
+	public float remainingTime = 12F;
 
-    public static GameManager Instance { get; private set; }
+	public static GameManager Instance { get; private set; }
 	void Awake()
 	{
-		if (Instance == null) {
+		if (Instance == null)
+		{
 			Instance = this;
 			DontDestroyOnLoad(gameObject); // Se deseja que o GameManager persista entre cenas
-		} else {
+		}
+		else
+		{
 			Destroy(gameObject); // Destruir duplicatas, se houver
 		}
 	}
@@ -145,17 +148,18 @@ public class GameManager : MonoBehaviour
 				HandleTimer();
 				if (puzzleControl)
 				{
-                    popup.PuzzlePopout();
-                    inputSeq = new List<string>();
-                    puzzleControl = false;
+					popup.PuzzlePopout();
+					inputSeq = new List<string>();
+					puzzleControl = false;
 					remainingTime = 12F;
-                    OnPuzzleEnd();
-                }
+					OnPuzzleEnd();
+				}
 				break;
-        }
+		}
 	}
 
-	void SetState(GameState newState) {
+	void SetState(GameState newState)
+	{
 		popup.PopupClosed -= SetState;
 
 		currentState = newState;
@@ -191,9 +195,9 @@ public class GameManager : MonoBehaviour
 				HandlePuzzlePhase();
 				break;
 
-            case GameState.ShowResults:
-                HandleShowResults();
-                break;
+			case GameState.ShowResults:
+				HandleShowResults();
+				break;
 
 			case GameState.VotingPhase:
 				HandleVotingPhase();
@@ -207,7 +211,7 @@ public class GameManager : MonoBehaviour
 				HandleShowElimination();
 				break;
 
-            case GameState.EndPhase:
+			case GameState.EndPhase:
 				EndPhase();
 				canDraw = true;
 				break;
@@ -225,113 +229,114 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	void InitGame() {
+	void InitGame()
+	{
 		currentRound = 1;
 
-        StringTable table = LocalizationSettings.StringDatabase.GetTable("IntroTable");
-        if (table != null)
-        {
-            // Pegar todas as chaves disponíveis
-            List<string> keys = new List<string>(table.SharedData.Entries.Select(entry => entry.Key));
+		StringTable table = LocalizationSettings.StringDatabase.GetTable("IntroTable");
+		if (table != null)
+		{
+			// Pegar todas as chaves disponíveis
+			List<string> keys = new List<string>(table.SharedData.Entries.Select(entry => entry.Key));
 
-            if (keys.Count > 0)
-            {
-                int indexString = UnityEngine.Random.Range(0, keys.Count);
-                string randomKey = keys[indexString];
+			if (keys.Count > 0)
+			{
+				int indexString = UnityEngine.Random.Range(0, keys.Count);
+				string randomKey = keys[indexString];
 
-                // Buscar e exibir o texto localizado
-			popup.SetStateAfterPopup(LocalizationSettings.StringDatabase.GetLocalizedString("IntroTable", randomKey), 20f, GameState.AwaitAction);
+				// Buscar e exibir o texto localizado
+				popup.SetStateAfterPopup(LocalizationSettings.StringDatabase.GetLocalizedString("IntroTable", randomKey), 20f, GameState.AwaitAction);
 
-            }
-        }
+			}
+		}
 
-        // Selecionar um texto Lore de entrada
-        List<string> introductionTexts = new List<string>()
-        {
-            "Bem vindo ao Cartas do Fado. A Mesa está preenchida, os olhares, desconfiantes, observam uns aos outros, em busca de encontrar o nocivo, achar um grão de ouro em auto-mar.",
-            "A mesa está completa. Cada olhar carrega uma sombra de dúvida e desconfiança, enquanto os jogadores, ocultos por segredos, preparam suas cartas. A noite promete revelar verdades - ou esconder mentiras.",
-            "Bem-vindo ao Cartas do Fado, onde cada movimento pode mudar o eterno destino da cidade. À mesa, risos e suspeitas se entrelaçam, mas apenas um saberá a verdade antes de todos os outros. Quem será o primeiro a cair?",
-            "As cartas estão postas e as intenções, veladas. Em um jogo de sorte e manipulação, você está cercado por aliados ou inimigos disfarçados. Restará ao destino revelar quem realmente merece confiança.",
-            "Hoje, a mesa é palco de um jogo de segredos e conspirações. As cartas sussurram promessas de poder, mas apenas quem conhece os próprios limites escapará ileso.",
-        };
+		// Selecionar um texto Lore de entrada
+		List<string> introductionTexts = new List<string>()
+		{
+			"Bem vindo ao Cartas do Fado. A Mesa está preenchida, os olhares, desconfiantes, observam uns aos outros, em busca de encontrar o nocivo, achar um grão de ouro em auto-mar.",
+			"A mesa está completa. Cada olhar carrega uma sombra de dúvida e desconfiança, enquanto os jogadores, ocultos por segredos, preparam suas cartas. A noite promete revelar verdades - ou esconder mentiras.",
+			"Bem-vindo ao Cartas do Fado, onde cada movimento pode mudar o eterno destino da cidade. À mesa, risos e suspeitas se entrelaçam, mas apenas um saberá a verdade antes de todos os outros. Quem será o primeiro a cair?",
+			"As cartas estão postas e as intenções, veladas. Em um jogo de sorte e manipulação, você está cercado por aliados ou inimigos disfarçados. Restará ao destino revelar quem realmente merece confiança.",
+			"Hoje, a mesa é palco de um jogo de segredos e conspirações. As cartas sussurram promessas de poder, mas apenas quem conhece os próprios limites escapará ileso.",
+		};
 
 
 
-        int index = UnityEngine.Random.Range(0, introductionTexts.Count);
+		int index = UnityEngine.Random.Range(0, introductionTexts.Count);
 
 		// popup.SetStateAfterPopup(introductionTexts[index], 20f, GameState.AwaitAction);
-        popup.PopupClosed += SetState;
+		popup.PopupClosed += SetState;
 
 		AudioManager.Instance.SetMusic(Musics.CantoDaVila);
 
-        List<Roles> rawRoles = new List<Roles>() { Roles.Corrupt, Roles.Medic, Roles.Honest, Roles.Honest, Roles.Honest };
-        List<Roles> shuffledRoles = rawRoles.OrderBy(x => Guid.NewGuid()).ToList();
+		List<Roles> rawRoles = new List<Roles>() { Roles.Corrupt, Roles.Medic, Roles.Honest, Roles.Honest, Roles.Honest };
+		List<Roles> shuffledRoles = rawRoles.OrderBy(x => Guid.NewGuid()).ToList();
 
 		List<string> rawBotFemaleNames = new List<string>
 		{
-            "Charlotte",
+			"Charlotte",
 			"Victoria",
 			"Eleanor",
 			"Margaret",
 			"Florence",
-        };
+		};
 
-        List<string> rawBotMaleNames = new List<string>
-        {
+		List<string> rawBotMaleNames = new List<string>
+		{
 			"Edward",
 			"Arthur",
 			"Henry",
-            "Alfred",
-            "Charles",
-        };
-       
+			"Alfred",
+			"Charles",
+		};
 
-        List<string> shuffledMaleName   = rawBotMaleNames.OrderBy(x => Guid.NewGuid()).ToList();
-        List<string> shuffledFemaleName = rawBotFemaleNames.OrderBy(x => Guid.NewGuid()).ToList();
+
+		List<string> shuffledMaleName = rawBotMaleNames.OrderBy(x => Guid.NewGuid()).ToList();
+		List<string> shuffledFemaleName = rawBotFemaleNames.OrderBy(x => Guid.NewGuid()).ToList();
 
 		string playerName = LocalizationSettings.StringDatabase.GetLocalizedString("OthersTable", "player_name");
 
 
-        Player p1 = new Player(0, shuffledFemaleName[0], shuffledRoles[0], false, true, true);
-        Player p2 = new Player(1, playerName,            shuffledRoles[1], true, false, true);
-        Player p3 = new Player(2, shuffledMaleName[0],   shuffledRoles[2], false, true, true);
-        Player p4 = new Player(3, shuffledMaleName[1],   shuffledRoles[3], false, true, true);
-        Player p5 = new Player(4, shuffledFemaleName[1], shuffledRoles[4], false, true, true);
+		Player p1 = new Player(0, shuffledFemaleName[0], shuffledRoles[0], false, true, true);
+		Player p2 = new Player(1, playerName, shuffledRoles[1], true, false, true);
+		Player p3 = new Player(2, shuffledMaleName[0], shuffledRoles[2], false, true, true);
+		Player p4 = new Player(3, shuffledMaleName[1], shuffledRoles[3], false, true, true);
+		Player p5 = new Player(4, shuffledFemaleName[1], shuffledRoles[4], false, true, true);
 
 		playerNameText[0].text = shuffledFemaleName[0];
 		playerNameText[1].text = shuffledMaleName[0];
 		playerNameText[2].text = shuffledMaleName[1];
-        playerNameText[3].text = shuffledFemaleName[1];
+		playerNameText[3].text = shuffledFemaleName[1];
 
-        playerManager.AddPlayer(p1);
-        playerManager.AddPlayer(p2);
-        playerManager.AddPlayer(p3);
-        playerManager.AddPlayer(p4);
-        playerManager.AddPlayer(p5);
+		playerManager.AddPlayer(p1);
+		playerManager.AddPlayer(p2);
+		playerManager.AddPlayer(p3);
+		playerManager.AddPlayer(p4);
+		playerManager.AddPlayer(p5);
 
-        mainPlayer = p2;
-        mainRole = mainPlayer.PlayerRole;
+		mainPlayer = p2;
+		mainRole = mainPlayer.PlayerRole;
 
-        playerManager.InitializePlayers();
+		playerManager.InitializePlayers();
 		playerManager.InitializeGlobalParameters();
 
-        for (int i = 0; i < 2; i++)
-        {
+		for (int i = 0; i < 2; i++)
+		{
 			canDraw = true;
-            deckManager.DrawCard(handManager);
-        }
+			deckManager.DrawCard(handManager);
+		}
 		canDraw = true;
 
-    }
+	}
 
-    void StartPhase()
+	void StartPhase()
 	{
 		popup.BigTextPopup(currentRound);
-        popup.UpdatePoisonIndicator();
+		popup.UpdatePoisonIndicator();
 
-        SetState(GameState.AwaitAction);
-        UpdateTensionIndicator();
-        AudioManager.Instance.ChangeMusicByTensionIndicator(tensionIndicator);
+		SetState(GameState.AwaitAction);
+		UpdateTensionIndicator();
+		AudioManager.Instance.ChangeMusicByTensionIndicator(tensionIndicator);
 	}
 
 	void AwaitAction()
@@ -339,33 +344,35 @@ public class GameManager : MonoBehaviour
 		// Inscreve-se no evento de ação do jogador
 		int index = 0;
 		playerList = playerManager.GetAllPlayers();
-		foreach (Player jugador in  playerList)
+		foreach (Player jugador in playerList)
 		{
-            if (jugador.IsAlive)
+			if (jugador.IsAlive)
+			{
+				//Quadro activation
+				if (index == 0)
 				{
-					//Quadro activation
-					if(index == 0)
-					{
-						Portrait[index].gameObject.SetActive(true);
-						PortraitDead[index].gameObject.SetActive(false);
-					}else if (index > 1 && index < 5)
-					{
-						Portrait[index - 1].gameObject.SetActive(true);
-	                    PortraitDead[index - 1].gameObject.SetActive(false);
-                }
-            }
-				else
+					Portrait[index].gameObject.SetActive(true);
+					PortraitDead[index].gameObject.SetActive(false);
+				}
+				else if (index > 1 && index < 5)
 				{
-					//Quadro deactivation
-					if(index == 0)
-					{
-						PortraitDead[index].gameObject.SetActive(true);
-						Portrait[index].gameObject.SetActive(false);
-					}else if(index >1 && index < 5)
-					{
-						PortraitDead[index - 1].gameObject.SetActive(true);
-						Portrait[index - 1].gameObject.SetActive(false);
-					}
+					Portrait[index - 1].gameObject.SetActive(true);
+					PortraitDead[index - 1].gameObject.SetActive(false);
+				}
+			}
+			else
+			{
+				//Quadro deactivation
+				if (index == 0)
+				{
+					PortraitDead[index].gameObject.SetActive(true);
+					Portrait[index].gameObject.SetActive(false);
+				}
+				else if (index > 1 && index < 5)
+				{
+					PortraitDead[index - 1].gameObject.SetActive(true);
+					Portrait[index - 1].gameObject.SetActive(false);
+				}
 			}
 			index++;
 		}
@@ -377,7 +384,7 @@ public class GameManager : MonoBehaviour
 
 	private void OnPlayerActionCompleted()
 	{
-        mainPlayer.OnPlayerAction -= OnPlayerActionCompleted;
+		mainPlayer.OnPlayerAction -= OnPlayerActionCompleted;
 		//Debug.Log("GameManager detectou ação");
 
 		SetState(GameState.HandleActions);
@@ -385,21 +392,21 @@ public class GameManager : MonoBehaviour
 
 	void HandleActions()
 	{
-        paintingAnimation.Play("painting_fadeout");
-        playerManager.HandleBotAction();
+		paintingAnimation.Play("painting_fadeout");
+		playerManager.HandleBotAction();
 		SetState(GameState.ShowResults);
 	}
 
 	void HandleShowResults()
 	{
-        playerManager.VerifyPoisonForAllPlayers();
+		playerManager.VerifyPoisonForAllPlayers();
 		VerifyEndGameCondition();
-        UpdateUI();
+		UpdateUI();
 
-        //Debug.Log("Fase de Mostrar Resultados (Jornal)");
-        mainPlayer.CheckoutAllNotifications();
+		//Debug.Log("Fase de Mostrar Resultados (Jornal)");
+		mainPlayer.CheckoutAllNotifications();
 
-		foreach(Notification notification in mainPlayer.notifications)
+		foreach (Notification notification in mainPlayer.notifications)
 		{
 			notificationText += (notification.FinalText);
 			notificationText += "\n";
@@ -407,26 +414,30 @@ public class GameManager : MonoBehaviour
 
 		if (!string.IsNullOrWhiteSpace(notificationText))
 		{
-            popup.SetStateAfterPopup(notificationText, 7f, GameState.ShopPhase);
-            popup.PopupClosed += SetState;
+			popup.SetStateAfterPopup(notificationText, 7f, GameState.ShopPhase);
+			popup.PopupClosed += SetState;
 
-            playerManager.ResetNotification();
-            notificationText = null;
+			playerManager.ResetNotification();
+			notificationText = null;
 
-        } else {
-            playerManager.ResetNotification();
-            notificationText = null;
+		}
+		else
+		{
+			playerManager.ResetNotification();
+			notificationText = null;
 
-            SetState(GameState.ShopPhase);
-        }
-    }
+			SetState(GameState.ShopPhase);
+		}
+	}
 	void HandleShopPhase()
 	{
-		if (currentRound%shopGap == shopModular && mainPlayer.PlayerRole != Roles.Corrupt)
+		if (currentRound % shopGap == shopModular && mainPlayer.PlayerRole != Roles.Corrupt)
 		{
 			ShopManager.Instance.OpenShop();
-            ShopManager.Instance.closeShopAction += OnShopClosed;
-        } else {
+			ShopManager.Instance.closeShopAction += OnShopClosed;
+		}
+		else
+		{
 			SetState(GameState.VotingPhase);
 		}
 	}
@@ -437,12 +448,13 @@ public class GameManager : MonoBehaviour
 
 	void HandlePuzzlePhase()
 	{
-        if (currentRound % shopGap == shopModular && mainPlayer.PlayerRole != Roles.Corrupt)
+		if (currentRound % shopGap == shopModular && mainPlayer.PlayerRole != Roles.Corrupt)
 		{
-            currentSeqs = new List<List<string>> { };
-            popup.UpdatePuzzleSidePanel();
-            popup.PuzzlePopup();
-			if(mainPlayer.Corruption <= 0){
+			currentSeqs = new List<List<string>> { };
+			popup.UpdatePuzzleSidePanel();
+			popup.PuzzlePopup();
+			if (mainPlayer.Corruption <= 0)
+			{
 				remainingTime += 3.00F;
 			}
 			//Debug.Log("Passei aqui");
@@ -453,57 +465,72 @@ public class GameManager : MonoBehaviour
 
 	void OnPuzzleEnd()
 	{
-        string selectedKey = "notification_puzzle_result";
-        string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("NotificationsTable", selectedKey);
 
-		popup.SetStateAfterPopup(string.Format(localizedText, revealedPlayer.PlayerName, revealedPlayer.PlayerRole), 120f, GameState.VotingPhase);
-        popup.PopupClosed += SetState;
-    }
+		if (revealedPlayer == null)
+		{
+			string selectedKey = "notification_puzzle_fail";
+			string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("NotificationsTable", selectedKey);
+			popup.SetStateAfterPopup(localizedText, 120f, GameState.VotingPhase);
+		}
+		else
+		{
+			string selectedKey = "notification_puzzle_result";
+			string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("NotificationsTable", selectedKey);
+			popup.SetStateAfterPopup(string.Format(localizedText, revealedPlayer.PlayerName, revealedPlayer.PlayerRole), 120f, GameState.VotingPhase);
+		}
+		popup.PopupClosed += SetState;
+	}
 
-	public void AppendSeq( string seq)
+	public void AppendSeq(string seq)
 	{
 		//Se mudar o player de lugar refatora isso por completo
 		//Lógica: Começa contando a partir de um, na versão de dev o jogador ocupa a posição 1, portanto torna ela 0 para pegar o primeiro NPC, o resto já vem certo pelo valor do index de npc automaticamente, ou seja o 2 pega o NPC no lugar 2, o 3 no lugar e assim por diante
 		NPCIndex = 0;
 		inputSeq.Add(seq);
-		if(inputSeq.Count >= 6)
+		if (inputSeq.Count >= 6)
 		{
 			puzzleControl = true;
 		}
-		foreach(List<string> NPCSeq in currentSeqs)
+		foreach (List<string> NPCSeq in currentSeqs)
 		{
-            NPCIndex++;
-            if (NPCSeq.SequenceEqual(inputSeq))
+			NPCIndex++;
+			if (NPCSeq.SequenceEqual(inputSeq))
 			{
-                //Debug.Log(playerList[NPCIndex].PlayerName + " é " + playerList[NPCIndex].PlayerRole + " e seu índice é: " + NPCIndex);
-                if (NPCIndex == 1)
+				//Debug.Log(playerList[NPCIndex].PlayerName + " é " + playerList[NPCIndex].PlayerRole + " e seu índice é: " + NPCIndex);
+				if (NPCIndex == 1)
 				{
 					revealedPlayer = playerList[0];
 					Debug.Log(playerList[0].PlayerName + " é " + playerList[0].PlayerRole + " e seu índice é: 0");
 				}
 				else
 				{
-                    //Debug.Log(NPCIndex + "dentro do if");
-                    revealedPlayer = playerList[NPCIndex];
-                    Debug.Log(playerList[NPCIndex].PlayerName + " é " + playerList[NPCIndex].PlayerRole + " e seu índice é: " + (NPCIndex));
-                }
-                puzzleControl = true;
-            }
-            Debug.Log(NPCIndex);
-        }
-    }
+					//Debug.Log(NPCIndex + "dentro do if");
+					revealedPlayer = playerList[NPCIndex];
+					Debug.Log(playerList[NPCIndex].PlayerName + " é " + playerList[NPCIndex].PlayerRole + " e seu índice é: " + (NPCIndex));
+				}
+				puzzleControl = true;
+			}
+			else
+			{
+				revealedPlayer = null;
+			}
+			Debug.Log(NPCIndex);
+		}
+	}
 
 	void HandleVotingPhase()
 	{
 		//Debug.Log("Fase de Votação");
-		if (currentRound%votingGap == votingModular)
+		if (currentRound % votingGap == votingModular)
 		{
 			//Mostra e alimenta o popup de votação
 			playerManager.HandleBotVote();
-            popup.UpdateVotePanel();
-            popup.VotePanelPopup();
+			popup.UpdateVotePanel();
+			popup.VotePanelPopup();
 
-		} else {
+		}
+		else
+		{
 			// Skipar fase de votação
 			SetState(GameState.EndPhase);
 		}
@@ -518,78 +545,79 @@ public class GameManager : MonoBehaviour
 
 	void HandleShowElimination()
 	{
-        //Eliminar jogador com mais votos
-        mostVoted();
-        if (mostVotedIndex >= 0)
-        {
-			playerManager.KillPlayerByIndex(mostVotedIndex);
-            VerifyEndGameCondition();
-			if (mainPlayer.IsAlive) showElimination();
-        }
-        else if(mostVotedIndex == -1)
+		//Eliminar jogador com mais votos
+		mostVoted();
+		if (mostVotedIndex >= 0)
 		{
-			SetState(GameState.EndPhase);		
+			playerManager.KillPlayerByIndex(mostVotedIndex);
+			VerifyEndGameCondition();
+			if (mainPlayer.IsAlive) showElimination();
 		}
-    }
+		else if (mostVotedIndex == -1)
+		{
+			SetState(GameState.EndPhase);
+		}
+	}
 
-    void EndPhase() {
+	void EndPhase()
+	{
 		currentRound++;
 
-        //Debug.Log("Fase de Finalização de Turno");
-        roundResetVote();
+		//Debug.Log("Fase de Finalização de Turno");
+		roundResetVote();
 
-        //Debug.Log(mainPlayer.IsAlive);
+		//Debug.Log(mainPlayer.IsAlive);
 
-        VerifyEndGameCondition();
-        UpdateUI();
+		VerifyEndGameCondition();
+		UpdateUI();
 
-        SetState(GameState.StartPhase);
+		SetState(GameState.StartPhase);
 
 		// Calcula o tension indicator
 
-        
+
 	}
 
 	void VerifyEndGameCondition()
 	{
-        // Condições de Vitória e Derrota
-        if (playerManager.NoCorruptAlive())
-        {
-            endCondition = EndCondition.HonestWin;
-            SetState(GameState.EndGame);
-            return;
-        }
-
-        if (playerManager.IsMostHonestEliminated())
-        {
-            endCondition = EndCondition.CorruptWin;
-            SetState(GameState.EndGame);
-            return;
-        }
-		if (mainPlayer.IsAlive == false && mainPlayer.PlayerRole != Roles.Corrupt)
-        {
-            popup.EndGamePopup(EndCondition.SP_PlayerDead);
+		// Condições de Vitória e Derrota
+		if (playerManager.NoCorruptAlive())
+		{
+			endCondition = EndCondition.HonestWin;
 			SetState(GameState.EndGame);
-        }
-    }
+			return;
+		}
+
+		if (playerManager.IsMostHonestEliminated())
+		{
+			endCondition = EndCondition.CorruptWin;
+			SetState(GameState.EndGame);
+			return;
+		}
+		if (mainPlayer.IsAlive == false && mainPlayer.PlayerRole != Roles.Corrupt)
+		{
+			popup.EndGamePopup(EndCondition.SP_PlayerDead);
+			SetState(GameState.EndGame);
+		}
+	}
 
 	void EndGame()
 	{
 		if (mainPlayer.IsAlive == false && mainPlayer.PlayerRole != Roles.Corrupt) return;
-		switch(mainPlayer.PlayerRole)
+		switch (mainPlayer.PlayerRole)
 		{
 			case Roles.Honest:
 			case Roles.Medic:
 				if (endCondition == EndCondition.HonestWin) SetState(GameState.Win);
-                if (endCondition == EndCondition.CorruptWin) SetState(GameState.Lose);
-                break;
+				if (endCondition == EndCondition.CorruptWin) SetState(GameState.Lose);
+				break;
 
 
 			case Roles.Corrupt:
-                if (endCondition == EndCondition.HonestWin) SetState(GameState.Lose);
-                if (endCondition == EndCondition.CorruptWin) SetState(GameState.Win);
-                break;
-        }
+				if (endCondition == EndCondition.HonestWin) SetState(GameState.Lose);
+				if (endCondition == EndCondition.CorruptWin) SetState(GameState.Win);
+				break;
+		}
 	}
 
 	void Win()
@@ -599,42 +627,42 @@ public class GameManager : MonoBehaviour
 
 	void Lose()
 	{
-        popup.EndGamePopup(endCondition);
-    }
+		popup.EndGamePopup(endCondition);
+	}
 
 	//Função pra resetar os votos que cada player recebeu
-    public void roundResetVote()
-    {
-        foreach (Player jugador in playerList)
-        {
-            jugador.votesReceived = 0;
-        }
-    }
+	public void roundResetVote()
+	{
+		foreach (Player jugador in playerList)
+		{
+			jugador.votesReceived = 0;
+		}
+	}
 
 	//Função para mostrar os votos que cada player recebeu no popup
-    private void showVoteResults()
-    {
+	private void showVoteResults()
+	{
 		string voteCount;
 		voteCount = "";
 		string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("NotificationsTable", "notification_vote_count");
-		foreach(Player jugador in playerList)
+		foreach (Player jugador in playerList)
 		{
 			voteCount += string.Format(localizedText, jugador.PlayerName, jugador.votesReceived);
 		}
-        popup.SetStateAfterPopup(voteCount, 120f, GameState.ShowElimination);
-        popup.PopupClosed += SetState;
+		popup.SetStateAfterPopup(voteCount, 120f, GameState.ShowElimination);
+		popup.PopupClosed += SetState;
 
 		voteCount = "";
-    }
+	}
 
 	//Função para verificar qual jogador teve mais votos
 	private void mostVoted()
 	{
-		mostVotedIndex=-1;
+		mostVotedIndex = -1;
 		//Armazena o número de votos da pessoa que mais recebeu votos na rodada
 		int voteCount = 0;
 
-		for(int i=0; i < playerList.Count; i++)
+		for (int i = 0; i < playerList.Count; i++)
 		{
 			if (playerList[i].votesReceived > voteCount)
 			{
@@ -651,7 +679,7 @@ public class GameManager : MonoBehaviour
 		int index = 0;
 
 		// eliminationMessage = new List<string> {
-        //     $"{playerList[mostVotedIndex].PlayerName} foi eliminado da mesa de negociações.",
+		//     $"{playerList[mostVotedIndex].PlayerName} foi eliminado da mesa de negociações.",
 		// 	$"{playerList[mostVotedIndex].PlayerName} foi enviado ao oblívio, deixando para trás apenas arrependimentos.",
 		// 	$"{playerList[mostVotedIndex].PlayerName} alcançou um destino infeliz.",
 		// 	$"{playerList[mostVotedIndex].PlayerName} teve seus gritos de desespero abafados na prisão, em meio ao fim doloroso e sofrido que encontrou, como muitos outros antes e depois dele.",
@@ -677,59 +705,63 @@ public class GameManager : MonoBehaviour
 
 		popup.SetStateAfterPopup(string.Format(localizedText, playerList[mostVotedIndex].PlayerName), 120f, GameState.EndPhase);
 		// popup.SetStateAfterPopup(eliminationMessage[index], 120f, GameState.EndPhase);
-        popup.PopupClosed += SetState;
-    }
+		popup.PopupClosed += SetState;
+	}
 
 	public void UpdateUI()
 	{
 		string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("NotificationsTable", "round_counter");
-        roundText.text = $"{localizedText} {currentRound.ToString()}";
-    }
+		roundText.text = $"{localizedText} {currentRound.ToString()}";
+	}
 
 	public void UpdateTensionIndicator()
 	{
 		// Variáveis de Balanceamento
 		int averageMaxRound = 12;
 
-		int RoundIndicatorWeight  = 10;
-		int AliveIndicatorWeight  = 0;
+		int RoundIndicatorWeight = 10;
+		int AliveIndicatorWeight = 0;
 		int PoisonIndicatorWeight = 0;
 
 		// Variáveis Gerais
-		int aliveNumber  = playerManager.NumberOfAlive();
+		int aliveNumber = playerManager.NumberOfAlive();
 		int playerNumber = playerManager.NumberOfPlayers();
-		int minPlayer    = 3;
+		int minPlayer = 3;
 
 
 		int mainPlayerPoison = mainPlayer.Poison;
-		int maxPoisonLimit   = playerManager.poisonLimit;
+		int maxPoisonLimit = playerManager.poisonLimit;
 
 		// Formula
-		float RoundIndicator  = (float)currentRound / (float)averageMaxRound;
-		float AliveIndicator  = 1 - ( ((float)aliveNumber - (float)minPlayer) / ((float)playerNumber - (float)minPlayer) );
+		float RoundIndicator = (float)currentRound / (float)averageMaxRound;
+		float AliveIndicator = 1 - (((float)aliveNumber - (float)minPlayer) / ((float)playerNumber - (float)minPlayer));
 		float PoisonIndicator = mainPlayerPoison / maxPoisonLimit;
 
-		float tensionIndicatorFloat =	(RoundIndicator  * (float)RoundIndicatorWeight ) +
-										(AliveIndicator  * (float)AliveIndicatorWeight ) +
-										(PoisonIndicator * (float)PoisonIndicatorWeight) ;
+		float tensionIndicatorFloat = (RoundIndicator * (float)RoundIndicatorWeight) +
+										(AliveIndicator * (float)AliveIndicatorWeight) +
+										(PoisonIndicator * (float)PoisonIndicatorWeight);
 
 		tensionIndicator = (int)Math.Floor(tensionIndicatorFloat);
-		
+
 		Debug.Log($"currentRound: {currentRound}");
 		Debug.Log($"RoundIndicator: {RoundIndicator}, AliveIndicator: {AliveIndicator}, PoisonIndicator = {PoisonIndicator}");
 	}
 
-    public void SwapScene(int nextScene)
-    {
-        AudioManager.Instance.SetMusic(Musics.TerraDoAmanha);
-        SceneManager.LoadScene(nextScene);
-    }
+	public void SwapScene(int nextScene)
+	{
+		AudioManager.Instance.SetMusic(Musics.TerraDoAmanha);
+		SceneManager.LoadScene(nextScene);
+	}
 
-	public void HandleTimer(){
-		string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("OthersTable", "timer_text");  
-		if(remainingTime < 0){
+	public void HandleTimer()
+	{
+		string localizedText = LocalizationSettings.StringDatabase.GetLocalizedString("OthersTable", "timer_text");
+		if (remainingTime < 0)
+		{
 			puzzleControl = true;
-		}else{
+		}
+		else
+		{
 			remainingTime -= Time.deltaTime;
 			int seconds = Mathf.FloorToInt(remainingTime);
 			int milliseconds = Mathf.FloorToInt((remainingTime - seconds) * 100);
