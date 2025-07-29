@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
 
 	//timer do puzzle
 	[SerializeField] TextMeshProUGUI timerText;
-	public float remainingTime = 12F;
+	public float remainingTime = 30F;
 
 	public static GameManager Instance { get; private set; }
 	void Awake()
@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour
 					popup.PuzzlePopout();
 					inputSeq = new List<string>();
 					puzzleControl = false;
-					remainingTime = 12F;
+					remainingTime = 30F;
 					OnPuzzleEnd();
 				}
 				break;
@@ -457,6 +457,7 @@ public class GameManager : MonoBehaviour
 			{
 				remainingTime += 3.00F;
 			}
+			//HandleTimer();
 			//Debug.Log("Passei aqui");
 			//Funções de como funfa o puzzle
 			//Resultado
@@ -509,6 +510,7 @@ public class GameManager : MonoBehaviour
 					Debug.Log(playerList[NPCIndex].PlayerName + " é " + playerList[NPCIndex].PlayerRole + " e seu índice é: " + (NPCIndex));
 				}
 				puzzleControl = true;
+				return;
 			}
 			else
 			{

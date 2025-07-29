@@ -22,11 +22,6 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7e3e3b9325f90fc4399cebc6358bd274
-    m_Address: Assets/Localizations/Asset Table Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 02e7282b7b8d5e641b0ace9dfffc25cb
     m_Address: Assets/Localizations/IntroTable Shared Data.asset
     m_ReadOnly: 1
@@ -51,13 +46,6 @@ MonoBehaviour:
     m_Address: Assets/Localizations/CardsTable Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 81f2b0ad0b5791e489f1c5b0f6ca8486
-    m_Address: logo_branca
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-pt-BR
-    - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 93ac76bac18db794ab6ce4d11839fdf1, type: 2}
