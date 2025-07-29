@@ -1,0 +1,989 @@
+fileFormatVersion: 2
+guid: 81f2b0ad0b5791e489f1c5b0f6ca8486
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3786151867786170048
+    second: logo_branca_0
+  - first:
+      213: -2066629875556196438
+    second: logo_branca_1
+  - first:
+      213: -129794028455689793
+    second: logo_branca_2
+  - first:
+      213: -4281885935899997083
+    second: logo_branca_3
+  - first:
+      213: 4784170533381068324
+    second: logo_branca_4
+  - first:
+      213: -2991805304326590059
+    second: logo_branca_5
+  - first:
+      213: -1858303743351467645
+    second: logo_branca_6
+  - first:
+      213: 5038490355870538189
+    second: logo_branca_7
+  - first:
+      213: 8773567470256367561
+    second: logo_branca_8
+  - first:
+      213: 2310601195930649675
+    second: logo_branca_9
+  - first:
+      213: 3363289801462573071
+    second: logo_branca_10
+  - first:
+      213: -5895237126041261769
+    second: logo_branca_11
+  - first:
+      213: 2921105092764682059
+    second: logo_branca_12
+  - first:
+      213: -5446969764003260932
+    second: logo_branca_13
+  - first:
+      213: 6886061544737945232
+    second: logo_branca_14
+  - first:
+      213: 648506650013263353
+    second: logo_branca_15
+  - first:
+      213: 2598580503812038681
+    second: logo_branca_16
+  - first:
+      213: -8162105446687909481
+    second: logo_branca_17
+  - first:
+      213: -5986192874077525651
+    second: logo_branca_18
+  - first:
+      213: -6255470652794079782
+    second: logo_branca_19
+  - first:
+      213: -9211500129454208744
+    second: logo_branca_20
+  - first:
+      213: -8486770002023891469
+    second: logo_branca_21
+  - first:
+      213: -3906452590092461175
+    second: logo_branca_22
+  - first:
+      213: -6706132129546192760
+    second: logo_branca_23
+  - first:
+      213: 6440987696738360917
+    second: logo_branca_24
+  - first:
+      213: -5934773796929367484
+    second: logo_branca_25
+  - first:
+      213: -1686644866269659860
+    second: logo_branca_26
+  - first:
+      213: 5529192129036983775
+    second: logo_branca_27
+  - first:
+      213: 5460590403576047357
+    second: logo_branca_28
+  - first:
+      213: -6959150295816799052
+    second: logo_branca_29
+  - first:
+      213: 2868820394048933999
+    second: logo_branca_30
+  - first:
+      213: 7490761956644653468
+    second: logo_branca_31
+  - first:
+      213: 3828027561829250719
+    second: logo_branca_32
+  - first:
+      213: -398529620624309139
+    second: logo_branca_33
+  - first:
+      213: 8132713836143648177
+    second: logo_branca_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: logo_branca_0
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 212
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0417ce6afe2e47bc0800000000000000
+      internalID: -3786151867786170048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 226
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf5341e31bd153e0800000000000000
+      internalID: -2066629875556196438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 184
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb18eefc401e23ef0800000000000000
+      internalID: -129794028455689793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_3
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 185
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c80fd7d6fa394c0800000000000000
+      internalID: -4281885935899997083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_4
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 173
+        width: 63
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 426d113a0c9c46240800000000000000
+      internalID: 4784170533381068324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_5
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 183
+        width: 44
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 591fb7e4de8fa76d0800000000000000
+      internalID: -2991805304326590059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_6
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 240
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 381d1c4579af536e0800000000000000
+      internalID: -1858303743351467645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_7
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 185
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc915e998405ce540800000000000000
+      internalID: 5038490355870538189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_8
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 182
+        width: 30
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c7ad8d3129f1c970800000000000000
+      internalID: 8773567470256367561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_9
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 198
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b440a0dab87e01020800000000000000
+      internalID: 2310601195930649675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_10
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 140
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08eed4414eccae20800000000000000
+      internalID: 3363289801462573071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_11
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 140
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 739ad937119ef2ea0800000000000000
+      internalID: -5895237126041261769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_12
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 121
+        width: 42
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b47c2ddea99d98820800000000000000
+      internalID: 2921105092764682059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_13
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 122
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf5da42ebd97864b0800000000000000
+      internalID: -5446969764003260932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_14
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 121
+        width: 42
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0963593bd74309f50800000000000000
+      internalID: 6886061544737945232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_15
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 120
+        width: 44
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5e48cbc55fff800800000000000000
+      internalID: 648506650013263353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_16
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 121
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 910e8f94333001420800000000000000
+      internalID: 2598580503812038681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_17
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 104
+        width: 242
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 799d2e647506abe80800000000000000
+      internalID: -8162105446687909481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_18
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 79
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6962a71c45cceca0800000000000000
+      internalID: -5986192874077525651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_19
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 80
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad5f35d859a1039a0800000000000000
+      internalID: -6255470652794079782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_20
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 80
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 819ca67df6d2a2080800000000000000
+      internalID: -9211500129454208744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_21
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 80
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fdbce2e5afe83a80800000000000000
+      internalID: -8486770002023891469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_22
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 80
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98b52ab011e79c9c0800000000000000
+      internalID: -3906452590092461175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_23
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 79
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 888b099db580fe2a0800000000000000
+      internalID: -6706132129546192760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_24
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 80
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55e50c23f2cf26950800000000000000
+      internalID: 6440987696738360917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_25
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 80
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4429abbeca273ada0800000000000000
+      internalID: -5934773796929367484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_26
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 79
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2db2cb2e65d798e0800000000000000
+      internalID: -1686644866269659860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_27
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 80
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdd922a42f2abbc40800000000000000
+      internalID: 5529192129036983775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_28
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 80
+        width: 7
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df6ae056a0ae7cb40800000000000000
+      internalID: 5460590403576047357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_29
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 79
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bcf8475da12c6f90800000000000000
+      internalID: -6959150295816799052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_30
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 80
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f60deafd2f810d720800000000000000
+      internalID: 2868820394048933999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_31
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 78
+        width: 9
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9980d2df4884f760800000000000000
+      internalID: 7490761956644653468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_32
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 80
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f96bc3529c2ef1530800000000000000
+      internalID: 3828027561829250719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_33
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 76
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d64873aeb63287af0800000000000000
+      internalID: -398529620624309139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_branca_34
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 80
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd1f3f15243dd070800000000000000
+      internalID: 8132713836143648177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      logo_branca_0: -3786151867786170048
+      logo_branca_1: -2066629875556196438
+      logo_branca_10: 3363289801462573071
+      logo_branca_11: -5895237126041261769
+      logo_branca_12: 2921105092764682059
+      logo_branca_13: -5446969764003260932
+      logo_branca_14: 6886061544737945232
+      logo_branca_15: 648506650013263353
+      logo_branca_16: 2598580503812038681
+      logo_branca_17: -8162105446687909481
+      logo_branca_18: -5986192874077525651
+      logo_branca_19: -6255470652794079782
+      logo_branca_2: -129794028455689793
+      logo_branca_20: -9211500129454208744
+      logo_branca_21: -8486770002023891469
+      logo_branca_22: -3906452590092461175
+      logo_branca_23: -6706132129546192760
+      logo_branca_24: 6440987696738360917
+      logo_branca_25: -5934773796929367484
+      logo_branca_26: -1686644866269659860
+      logo_branca_27: 5529192129036983775
+      logo_branca_28: 5460590403576047357
+      logo_branca_29: -6959150295816799052
+      logo_branca_3: -4281885935899997083
+      logo_branca_30: 2868820394048933999
+      logo_branca_31: 7490761956644653468
+      logo_branca_32: 3828027561829250719
+      logo_branca_33: -398529620624309139
+      logo_branca_34: 8132713836143648177
+      logo_branca_4: 4784170533381068324
+      logo_branca_5: -2991805304326590059
+      logo_branca_6: -1858303743351467645
+      logo_branca_7: 5038490355870538189
+      logo_branca_8: 8773567470256367561
+      logo_branca_9: 2310601195930649675
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

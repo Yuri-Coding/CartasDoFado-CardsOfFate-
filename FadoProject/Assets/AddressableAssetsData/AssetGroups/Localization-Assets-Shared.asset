@@ -52,6 +52,13 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 81f2b0ad0b5791e489f1c5b0f6ca8486
+    m_Address: logo_branca
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt-BR
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 93ac76bac18db794ab6ce4d11839fdf1, type: 2}
   m_SchemaSet:

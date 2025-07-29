@@ -14,14 +14,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: Asset Table
   m_TableCollectionNameGuidString: 7e3e3b9325f90fc4399cebc6358bd274
-  m_Entries: []
+  m_Entries:
+  - m_Id: 46051772653797376
+    m_Key: MainMenu/Canvas/GameLogo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46052580107649024
+    m_Key: MainMenu/LogoArea
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46053723906932736
+    m_Key: MainMenu/Canvas/Background
+    m_Metadata:
+      m_Items: []
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 2355941556784201805
   m_KeyGenerator:
     rid: 5928588970850779389
   references:
     version: 2
     RefIds:
+    - rid: 2355941556784201805
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 46051772653797376
+          m_TableCodes:
+          - pt-BR
+          - en
+        - m_KeyId: 46052580107649024
+          m_TableCodes:
+          - en
+        - m_KeyId: 46053723906932736
+          m_TableCodes:
+          - pt-BR
+          - en
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
     - rid: 5928588970850779389
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
